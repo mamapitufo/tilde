@@ -1,0 +1,13 @@
+" gvimrc for macvim.
+" set guifont=Terminus:h16
+" set noantialias
+set guifont=Menlo:h11
+set background=dark
+
+set guiheadroom=0
+set guioptions=
+
+if has("gui_running")
+  set fuoptions=maxvert,maxhorz
+  au GUIEnter * set fullscreen
+endif
