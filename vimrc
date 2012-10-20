@@ -14,13 +14,13 @@ Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-markdown'
-Bundle 'rstacruz/sparkup'
+Bundle 'sukima/xmledit.git'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'mileszs/ack.vim'
-" Bundle 'mattn/gist-vim'
 " Bundle 'tpope/vim-surround'
+" Bundle 'majutsushi/tagbar'
 " Bundle 'scrooloose/nerdtree'
-" Bundle 'AndrewRadev/linediff.vim'
+" Bundle 'mattn/gist-vim'
 
 filetype plugin indent on
 " 
