@@ -15,11 +15,11 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-markdown'
 Bundle 'sukima/xmledit.git'
+Bundle 'scrooloose/nerdtree'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'mileszs/ack.vim'
 " Bundle 'tpope/vim-surround'
 " Bundle 'majutsushi/tagbar'
-" Bundle 'scrooloose/nerdtree'
 " Bundle 'mattn/gist-vim'
 
 filetype plugin indent on

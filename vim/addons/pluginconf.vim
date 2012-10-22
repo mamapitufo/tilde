@@ -21,3 +21,8 @@ let NERDCommentWholeLinesInVMode=1
 let NERDSpaceDelims=1
 map <Leader>c <plug>NERDCommenterToggle
 
+" NERDTree
+map <Leader>tt :NERDTreeToggle<CR>
+let NERDTreeWinSize=35
+let NERDTreeMinimalUI=1
+
