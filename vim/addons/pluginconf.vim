@@ -1,8 +1,7 @@
-" map Ctrl+n to :nohilight (tip #764)
-nmap <silent> <C-N> :silent noh<CR> 
+nmap <leader><space> :noh<CR> 
 
-" bclose.vim plugin
-map <Leader>w :Bclose<CR>
+" bbye plugin
+map <Leader>w :Bdelete<CR>
 
 " scratch plugin
 map <Leader>sc :Scratch<CR>
