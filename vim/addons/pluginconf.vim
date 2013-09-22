@@ -1,4 +1,5 @@
-nmap <leader><space> :noh<CR> 
+" toggle search match hilight
+nmap <Leader><Space> :noh<CR>
 
 " bbye plugin
 map <Leader>w :Bdelete<CR>
@@ -24,4 +25,12 @@ map <Leader>c <plug>NERDCommenterToggle
 map <Leader>tt :NERDTreeToggle<CR>
 let NERDTreeWinSize=35
 let NERDTreeMinimalUI=1
+
+" rainbow_parentheses
+map <Leader>9 :RainbowParenthesesToggle<CR>
+map <Leader>( :RainbowParenthesesToggle<CR>
+
+au syntax clojure RainbowParenthesesLoadRound
+au syntax clojure RainbowParenthesesLoadSquare
+au syntax clojure RainbowParenthesesLoadBraces
 

@@ -17,7 +17,11 @@ Bundle 'sukima/xmledit.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'moll/vim-bbye'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'guns/vim-clojure-static'
+Bundle 'kien/rainbow_parentheses.vim'
 
+" Bundle 'tpope/vim-foreplay'
+"
 " Bundle 'Command-T'
 " Bundle 'Gundo'
 " Bundle 'L9'
@@ -31,7 +35,6 @@ Bundle 'scrooloose/nerdcommenter'
 " Bundle 'mileszs/ack.vim'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'tpope/vim-surround'
-" Bundle 'vim-scripts/VimClojure'
 
 filetype plugin indent on
 " 
@@ -47,9 +50,9 @@ set wildmenu
 set wildmode=longest,full
 " set hidden
 
-set cursorline cursorcolumn
+set cursorline "cursorcolumn
 
-set autoindent
+set smartindent
 set foldmethod=indent
 set foldlevel=20
 set formatoptions=qrn1l
@@ -84,9 +87,6 @@ let html_use_css=1
 set laststatus=2
 set number
 " set relativumber
-
-" matches
-match Todo /KLUDGE/
 
 " statusline
 set statusline=%f\ line:\ %l\ col:\ %v\ (%p%%)\ %L\ lines
