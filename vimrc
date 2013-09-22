@@ -20,7 +20,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'guns/vim-clojure-static'
 Bundle 'kien/rainbow_parentheses.vim'
 
-" Bundle 'tpope/vim-foreplay'
+" Bundle 'tpope/vim-fireplace'
 "
 " Bundle 'Command-T'
 " Bundle 'Gundo'

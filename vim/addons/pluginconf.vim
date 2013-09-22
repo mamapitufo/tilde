@@ -34,3 +34,6 @@ au syntax clojure RainbowParenthesesLoadRound
 au syntax clojure RainbowParenthesesLoadSquare
 au syntax clojure RainbowParenthesesLoadBraces
 
+" vim-clojure-static plugin
+let g:clojure_align_multiline_strings = 1
+
