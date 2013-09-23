@@ -30,9 +30,9 @@ let NERDTreeMinimalUI=1
 map <Leader>9 :RainbowParenthesesToggle<CR>
 map <Leader>( :RainbowParenthesesToggle<CR>
 
-au syntax clojure RainbowParenthesesLoadRound
-au syntax clojure RainbowParenthesesLoadSquare
-au syntax clojure RainbowParenthesesLoadBraces
+" au syntax clojure RainbowParenthesesLoadRound
+" au syntax clojure RainbowParenthesesLoadSquare
+" au syntax clojure RainbowParenthesesLoadBraces
 
 " vim-clojure-static plugin
 let g:clojure_align_multiline_strings = 1
