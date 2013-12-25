@@ -1,0 +1,36 @@
+[color]
+	ui = auto
+
+[core]
+	pager = less -RE
+	excludesfile = ~/.gitexclude
+
+[user]
+	name = Alberto Brealey-Guzman
+	email = alberto.brealey@gmail.com
+
+[github]
+	user = mamapitufo
+
+[alias]
+  co = checkout
+  track = checkout -t
+  up = smart-pull
+
+  st = status --short
+  staged = diff --staged
+  unstaged = diff
+
+  mg = merge --no-ff
+  ff = merge --ff-only
+
+  lg = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(black) %an, %ar%Creset'
+  logrefs = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(black) %an, %ar%Creset' --simplify-by-decoration
+
+[merge]
+	tool = vim -dg
+
+# you might want to take a look in
+# http://stackoverflow.com/questions/267761/what-does-your-gitconfig-contain
+# for ideas.
+

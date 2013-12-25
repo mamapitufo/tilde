@@ -1,0 +1,11 @@
+Host *
+  StrictHostKeyChecking no
+  SendEnv LANG LC_*
+  HashKnownHosts no
+  GSSAPIAuthentication no
+  GSSAPIDelegateCredentials no
+  ForwardAgent yes
+
+Host github.com
+  User git
+
