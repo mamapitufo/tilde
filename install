@@ -1,4 +1,16 @@
 #!/bin/bash
 
 DOTFILES="$( cd "$( dirname "$0" )" && pwd )"
+pushd $DOTFILES
+
+for NAME in */_*; do
+
+  BASENAME=${NAME##*/}
+  DOTNAME=${BASENAME##_}
+
+  ln -siv ${DOTFILES}/${NAME} ~/.${DOTNAME}
+
+done
+
+popd
 
