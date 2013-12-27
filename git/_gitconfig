@@ -34,3 +34,5 @@
 # http://stackoverflow.com/questions/267761/what-does-your-gitconfig-contain
 # for ideas.
 
+[push]
+	default = simple
