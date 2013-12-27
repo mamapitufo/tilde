@@ -12,7 +12,9 @@ for NAME in */_*; do
 
 done
 
+# Git helpers
 git clone https://github.com/gmarik/vundle.git ${DOTFILES}/vim/_vim/bundle/vundle
+sudo gem install git-smart
 
 # SSH config still pending...
 
