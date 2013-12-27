@@ -13,19 +13,19 @@
 	user = mamapitufo
 
 [alias]
-  co = checkout
-  track = checkout -t
-  up = smart-pull
+	co = checkout
+	track = checkout -t
+	up = smart-pull
 
-  st = status --short
-  staged = diff --staged
-  unstaged = diff
+	st = status --short
+	staged = diff --staged
+	unstaged = diff
 
-  mg = merge --no-ff
-  ff = merge --ff-only
+	mg = merge --no-ff
+	ff = merge --ff-only
 
-  lg = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(black) %an, %ar%Creset'
-  logrefs = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(black) %an, %ar%Creset' --simplify-by-decoration
+	lg = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(black) %an, %ar%Creset'
+	logrefs = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(black) %an, %ar%Creset' --simplify-by-decoration
 
 [merge]
 	tool = vim -dg
