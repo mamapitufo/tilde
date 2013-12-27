@@ -12,5 +12,9 @@ for NAME in */_*; do
 
 done
 
+git clone https://github.com/gmarik/vundle.git ${DOTFILES}/vim/_vim/bundle/vundle
+
+# SSH config still pending...
+
 popd
 
