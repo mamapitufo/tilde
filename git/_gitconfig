@@ -2,7 +2,7 @@
 	ui = auto
 
 [core]
-	pager = less -RE
+	pager = less $LESS -FXR
 	excludesfile = ~/.gitexclude
 
 [user]
