@@ -23,7 +23,7 @@ map <Leader>c <plug>NERDCommenterToggle
 
 " NERDTree
 map <Leader>tt :NERDTreeToggle<CR>
-let NERDTreeWinSize=35
+let NERDTreeWinSize=29
 let NERDTreeMinimalUI=1
 
 " rainbow_parentheses
