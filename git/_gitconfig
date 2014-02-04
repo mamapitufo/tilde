@@ -37,4 +37,4 @@
 	autosetuprebase = always
 
 [include]
-	path = .gitconfig-local
+	path = .gitconfig_local
