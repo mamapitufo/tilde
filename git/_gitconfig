@@ -5,10 +5,6 @@
 	pager = less $LESS -FXR
 	excludesfile = ~/.gitexclude
 
-[user]
-	name = Alberto Brealey-Guzman
-	email = alberto.brealey@gmail.com
-
 [github]
 	user = mamapitufo
 
@@ -36,3 +32,9 @@
 
 [push]
 	default = simple
+
+[branch]
+	autosetuprebase = always
+
+[include]
+	path = .gitconfig-local
