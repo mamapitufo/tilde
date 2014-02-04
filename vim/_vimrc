@@ -17,8 +17,15 @@ Bundle 'sukima/xmledit.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'moll/vim-bbye'
 Bundle 'scrooloose/nerdcommenter'
+
 Bundle 'guns/vim-clojure-static'
 Bundle 'kien/rainbow_parentheses.vim'
+
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Raimondi/delimitMate'
+Bundle 'scrooloose/syntastic'
 
 " Bundle 'tpope/vim-fireplace'
 "
@@ -80,6 +87,7 @@ set tabstop=2
 set shiftwidth=2
 set shiftround
 
+set t_Co=256
 set background=light
 colorscheme solarized
 
