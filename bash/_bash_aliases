@@ -14,8 +14,6 @@ if [ ${SYSTEM} = "Linux" ]; then
 elif [ ${SYSTEM} = "Darwin" ]; then
 
     alias gvim='mvim -O2'
-    alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-    alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
 
     alias ls='ls -G'
 fi
