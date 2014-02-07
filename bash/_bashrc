@@ -49,6 +49,9 @@ elif [ ${SYSTEM} = "Darwin" ]; then
         . `brew --prefix`/etc/bash_completion
     fi
 
+    HOMEBREW_CASK_OPTS="--appdir=/Applications"
+    export HOMEBREW_CASK_OPTS
+
 fi
 
 if [ -d ~/bin ]; then
