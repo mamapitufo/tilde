@@ -29,10 +29,9 @@ let NERDTreeMinimalUI=1
 " rainbow_parentheses
 map <Leader>9 :RainbowParenthesesToggle<CR>
 map <Leader>( :RainbowParenthesesToggle<CR>
-
-" au syntax clojure RainbowParenthesesLoadRound
-" au syntax clojure RainbowParenthesesLoadSquare
-" au syntax clojure RainbowParenthesesLoadBraces
+au syntax clojure RainbowParenthesesLoadRound
+au syntax clojure RainbowParenthesesLoadSquare
+au syntax clojure RainbowParenthesesLoadBraces
 
 " vim-clojure-static plugin
 let g:clojure_align_multiline_strings = 1
@@ -43,4 +42,9 @@ let g:syntastic_javascript_jshint_conf="~/.jshintrc"
 
 " delimitMate
 let g:delimitMate_expand_cr = 1
+
+" YouCompleteMe
+let g:ycm_filetype_whitelist = { 'javascript': 1 }
+let g:ycm_complete_in_comments = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
 
