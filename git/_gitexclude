@@ -9,4 +9,5 @@ target/
 *.iml
 
 build/
+node_modules/
 

@@ -15,7 +15,6 @@
 
 	st = status --short
 	staged = diff --staged
-	unstaged = diff
 
 	mg = merge --no-ff
 	ff = merge --ff-only
@@ -25,10 +24,6 @@
 
 [merge]
 	tool = vim -dg
-
-# you might want to take a look in
-# http://stackoverflow.com/questions/267761/what-does-your-gitconfig-contain
-# for ideas.
 
 [push]
 	default = simple
