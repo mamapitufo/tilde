@@ -1,5 +1,4 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# Should work on Darwin/OSX and Debian GNU/Linux systems
 
 # vi mode for readline
 # set -o vi
@@ -8,7 +7,7 @@
 export HISTCONTROL="ignoreboth"
 export HISTIGNORE="&:l:[bf]g:exit"
 
-PS1='\[\033[01;30m\]\w\[\033[00m\]$(__git_ps1 " (%s)") λ '
+PS1='\e[1;94m\w\e[0m$(__git_ps1 " (%s)")\n\e[38;5;239m\D{%m-%d %T}\e[0m λ '
 
 case "$TERM" in
 xterm*|rxvt*|screen*)
