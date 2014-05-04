@@ -14,6 +14,7 @@ map <Leader>! :!sh<CR>
 " CtrlP
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_cmd='CtrlP'
+let g:ctrlp_user_command='ag %s -l --nocolor -g ""'
 
 " NERDCommenter
 let NERDCreateDefaultMappings=0
