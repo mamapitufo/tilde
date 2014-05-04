@@ -41,7 +41,6 @@ Bundle 'marijnh/tern_for_vim'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'majutsushi/tagbar'
 " Bundle 'mattn/gist-vim'
-" Bundle 'mileszs/ack.vim'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'tpope/vim-surround'
 
