@@ -20,6 +20,7 @@ Bundle 'scrooloose/nerdcommenter'
 
 Bundle 'guns/vim-clojure-static'
 Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'tpope/vim-fireplace'
 
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
@@ -29,7 +30,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'marijnh/tern_for_vim'
 
-" Bundle 'tpope/vim-fireplace'
 "
 " Bundle 'Command-T'
 " Bundle 'Gundo'
