@@ -17,6 +17,7 @@ Bundle 'sukima/xmledit.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'moll/vim-bbye'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'bling/vim-airline'
 
 Bundle 'guns/vim-clojure-static'
 Bundle 'kien/rainbow_parentheses.vim'
@@ -36,7 +37,6 @@ Bundle 'marijnh/tern_for_vim'
 " Bundle 'L9'
 " Bundle 'Mustang2'
 "
-" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " Bundle 'Lokaltog/powerline-fonts'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'majutsushi/tagbar'
@@ -45,7 +45,7 @@ Bundle 'marijnh/tern_for_vim'
 " Bundle 'tpope/vim-surround'
 
 filetype plugin indent on
-" 
+"
 " ==========================================================
 
 syntax on
@@ -96,9 +96,6 @@ let html_use_css=1
 set laststatus=2
 set number
 " set relativumber
-
-" statusline
-set statusline=%f\ line:\ %l\ col:\ %v\ (%p%%)\ %L\ lines
 
 " plugin config
 so ~/.vim/addons/pluginconf.vim
