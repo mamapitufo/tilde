@@ -18,6 +18,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'moll/vim-bbye'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-fugitive'
 
 Bundle 'guns/vim-clojure-static'
 Bundle 'kien/rainbow_parentheses.vim'
@@ -41,7 +42,6 @@ Bundle 'marijnh/tern_for_vim'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'majutsushi/tagbar'
 " Bundle 'mattn/gist-vim'
-" Bundle 'tpope/vim-fugitive'
 " Bundle 'tpope/vim-surround'
 
 filetype plugin indent on
