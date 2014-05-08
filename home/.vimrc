@@ -68,7 +68,7 @@ set formatoptions=qrn1l
 
 set textwidth=72
 set nobackup
-set undofile
+set undofile undodir=~/.vim/undo
 set history=50
 
 set colorcolumn=80
@@ -93,10 +93,10 @@ set t_Co=256
 set background=light
 colorscheme solarized
 
-let html_use_css=1
 set laststatus=2
 set number
 " set relativumber
+
 
 " plugin config
 so ~/.vim/addons/pluginconf.vim
