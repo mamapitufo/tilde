@@ -19,6 +19,7 @@ Bundle 'moll/vim-bbye'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
+Bundle 'sjl/gundo.vim'
 
 Bundle 'guns/vim-clojure-static'
 Bundle 'kien/rainbow_parentheses.vim'
