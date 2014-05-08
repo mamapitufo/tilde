@@ -2,6 +2,9 @@
 set nocompatible
 let mapleader='['
 
+scriptencoding utf-8
+set encoding=utf-8
+
 " vundle
 " ==========================================================
 "
@@ -33,24 +36,12 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'marijnh/tern_for_vim'
 
-"
-" Bundle 'Command-T'
-" Bundle 'Gundo'
-" Bundle 'L9'
-" Bundle 'Mustang2'
-"
-" Bundle 'Lokaltog/powerline-fonts'
-" Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'majutsushi/tagbar'
-" Bundle 'mattn/gist-vim'
-" Bundle 'tpope/vim-surround'
 
 filetype plugin indent on
 "
 " ==========================================================
 
 syntax on
-set encoding=utf-8
 set nomodeline
 set ttyfast
 
