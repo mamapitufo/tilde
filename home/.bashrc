@@ -7,7 +7,7 @@
 export HISTCONTROL="ignoreboth"
 export HISTIGNORE="&:l:[bf]g:exit"
 
-PS1='\e[38;5;239m\D{%m-%d %T}\e[0m \e[1;94m\w\e[0m$(__git_ps1 " (%s)") λ '
+PS1='\e[38;5;239m\D{%m-%d %T}\e[0m \e[1;94m\w\e[0m$(__git_ps1 " (%s)") $ '
 
 case "$TERM" in
 xterm*|rxvt*|screen*)
