@@ -68,7 +68,8 @@ set formatoptions=qrn1l
 
 set textwidth=72
 set nobackup
-set undofile undodir=~/.vim/undo
+set undofile
+set undodir=~/.vim/undo
 set history=50
 
 set colorcolumn=80
