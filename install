@@ -25,5 +25,8 @@ sudo gem install git-smart
 
 # SSH config still pending...
 
+#--- Homebrew
+# autojump
+
 popd
 

@@ -51,6 +51,8 @@ elif [ ${SYSTEM} = "Darwin" ]; then
     HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/Applications/Caskroom"
     export HOMEBREW_CASK_OPTS
 
+    [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
 fi
 
 if [ -d ~/bin ]; then
