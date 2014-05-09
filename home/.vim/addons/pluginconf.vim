@@ -11,6 +11,12 @@ map <Leader>ss :Sscratch<CR>
 " exec selected text
 map <Leader>! :!sh<CR>
 
+" toggle numbers
+map <leader>1 :set number!<cr>
+
+" reload config
+map <leader>r :source ~/.vimrc<cr>
+
 " CtrlP
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_cmd='CtrlP'
