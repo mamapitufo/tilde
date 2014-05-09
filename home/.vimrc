@@ -59,6 +59,7 @@ set formatoptions=qrn1l
 
 set textwidth=72
 set nobackup
+set noswapfile
 set undofile
 set undodir=~/.vim/undo
 set history=50
@@ -71,7 +72,8 @@ set colorcolumn=80
 " Search
 set hlsearch
 set showmatch
-" set smartcase
+set ignorecase
+set smartcase
 
 " the damian tab
 set backspace=indent,eol,start
@@ -84,6 +86,8 @@ set shiftround
 set t_Co=256
 set background=light
 colorscheme solarized
+
+set shortmess=atI
 
 set laststatus=2
 set number
