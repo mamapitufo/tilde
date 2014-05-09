@@ -72,6 +72,7 @@ set colorcolumn=80
 " Search
 set hlsearch
 set showmatch
+set incsearch
 set ignorecase
 set smartcase
 
