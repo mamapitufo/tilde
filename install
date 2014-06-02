@@ -27,6 +27,10 @@ sudo gem install git-smart
 
 #--- Homebrew
 # autojump
+# vagrant-completion
+
+#--- Homebrew cask
+# vagrant
 
 popd
 
