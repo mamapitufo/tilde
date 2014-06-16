@@ -23,7 +23,6 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
-Bundle 'christoomey/vim-tmux-navigator'
 
 Bundle 'guns/vim-clojure-static'
 Bundle 'kien/rainbow_parentheses.vim'
@@ -96,6 +95,10 @@ set number
 " set relativumber
 
 " better splits
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-l> <C-w><C-l>
 set splitbelow
 set splitright
 
