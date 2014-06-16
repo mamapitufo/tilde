@@ -21,6 +21,12 @@
 
 	lg = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(black) %an, %ar%Creset'
 	logrefs = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(black) %an, %ar%Creset' --simplify-by-decoration
+	amend = commit -v --amend
+	rb = rebase
+	ci = commit -v
+	a = add -u
+	cia = commit -va
+	di = diff
 
 [merge]
 	tool = vim -dg
