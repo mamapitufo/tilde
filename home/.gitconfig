@@ -13,7 +13,7 @@
 	track = checkout -t
 	up = smart-pull
 
-	st = status --short
+	st = status -sb
 	staged = diff --staged
 
 	mg = merge --no-ff
@@ -30,6 +30,7 @@
 	cp = cherry-pick
 	br = branch
 	pu = push
+	brv = branch -vv
 
 [merge]
 	tool = vim -dg
