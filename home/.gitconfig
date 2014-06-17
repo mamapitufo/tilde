@@ -31,6 +31,8 @@
 	br = branch
 	pu = push
 	brv = branch -vv
+	sh = show
+	aamend = commit -va --amend
 
 [merge]
 	tool = vim -dg
