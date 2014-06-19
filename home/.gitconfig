@@ -33,6 +33,8 @@
 	brv = branch -vv
 	sh = show
 	aamend = commit -va --amend
+	fixup = commit -am 'fixup'
+	prune = remote prune origin
 
 [merge]
 	tool = vim -dg
