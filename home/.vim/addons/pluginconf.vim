@@ -49,9 +49,10 @@ let g:syntastic_javascript_jshint_conf = "~/.jshintrc"
 
 " delimitMate
 let g:delimitMate_expand_cr = 1
-
-au FileType clojure let b:delimitMate_quotes = "\""
 au FileType markdown let b:delimitMate_nesting_quotes = ['`']
+
+au FileType clojure let b:loaded_delimitMate = 1
+"au FileType clojure let b:delimitMate_quotes = "\""
 
 " YouCompleteMe
 let g:ycm_filetype_whitelist = { 'javascript': 1 }

@@ -27,6 +27,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'guns/vim-clojure-static'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'tpope/vim-fireplace'
+Bundle 'vim-scripts/paredit.vim'
 
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
