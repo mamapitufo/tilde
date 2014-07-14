@@ -35,6 +35,8 @@
 	aamend = commit -va --amend
 	fixup = commit -am 'fixup'
 	prune = remote prune origin
+	puu = push -u
+	abort = rebase --abort
 
 [merge]
 	tool = vim -dg
