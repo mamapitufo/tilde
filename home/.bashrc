@@ -53,6 +53,8 @@ elif [ ${SYSTEM} = "Darwin" ]; then
 
     [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
+    JAVA_HOME=$(/usr/libexec/java_home)
+    export JAVA_HOME
 fi
 
 if [ -d ~/bin ]; then
