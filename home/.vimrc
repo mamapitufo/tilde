@@ -22,6 +22,7 @@ Bundle 'moll/vim-bbye'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'sjl/gundo.vim'
 
 Bundle 'guns/vim-clojure-static'
