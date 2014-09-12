@@ -38,6 +38,16 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'marijnh/tern_for_vim'
 
+" tpope stuff to check, soon
+" Plugin 'tpope/vim-abolish'
+" Plugin 'tpope/vim-commentary'
+" Plugin 'tpope/vim-dispatch'
+" Plugin 'tpope/vim-eunuch'
+" Plugin 'tpope/vim-leiningen'
+" Plugin 'tpope/vim-projectionist'
+" Plugin 'tpope/vim-repeat'
+" Plugin 'tpope/vim-surround'
+" Plugin 'tpope/vim-vinegar'
 
 filetype plugin indent on
 "
