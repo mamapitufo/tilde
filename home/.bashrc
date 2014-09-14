@@ -65,6 +65,10 @@ if [ -d ~/.cabal/bin ]; then
     PATH=~/.cabal/bin:${PATH}
 fi
 
+if hash gulp 2>/dev/null; then
+  eval "$(gulp --completion=bash)"
+fi
+
 export PATH MANPATH
 
 if [ -f ~/.bashrc_local ]; then
