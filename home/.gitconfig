@@ -37,6 +37,7 @@
 	prune = remote prune origin
 	puu = push -u
 	abort = rebase --abort
+	puff = push -f
 
 [merge]
 	tool = vim -dg
