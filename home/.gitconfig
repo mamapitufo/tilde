@@ -38,6 +38,8 @@
 	puu = push -u
 	abort = rebase --abort
 	puff = push -f
+	brd = branch -d
+	brdd = branch -D
 
 [merge]
 	tool = vim -dg
