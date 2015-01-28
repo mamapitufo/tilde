@@ -41,6 +41,7 @@
 	brd = branch -d
 	brdd = branch -D
 	curr-branch = rev-parse --abbrev-ref HEAD
+	last-commits = for-each-ref --sort=committerdate refs/heads --format='%(refname:short): %(committerdate:relative)'
 
 [merge]
 	tool = vim -dg
