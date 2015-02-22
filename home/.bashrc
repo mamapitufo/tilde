@@ -75,3 +75,7 @@ if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
 fi
 
+if [ -f ~/.clojurerc ]; then
+  source ~/.clojurerc
+fi
+

@@ -1,0 +1,4 @@
+CLOJURESCRIPT_HOME=~/Sandbox/software/clojure/clojurescript
+
+export CLOJURESCRIPT_HOME
+
