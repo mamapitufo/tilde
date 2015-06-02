@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 pushd "$(cd "$(dirname "$0")" && pwd)"
-stow -t ~/ git
+stow -t ~/ git tmux bash
 
 popd
 
