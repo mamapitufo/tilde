@@ -43,6 +43,7 @@
 	curr-branch = rev-parse --abbrev-ref HEAD
 	last-commits = for-each-ref --sort=committerdate refs/heads --format='%(refname:short): %(committerdate:relative)'
 	continue = rebase --continue
+	cob = checkout -b
 
 [merge]
 	tool = vim -dg
