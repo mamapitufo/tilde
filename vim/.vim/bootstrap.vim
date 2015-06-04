@@ -1,5 +1,5 @@
 " load configuration modules
-for module in split(glob('~/.vim/modules/*.vim')), '\n')
+for module in split(glob('~/.vim/modules/*.vim'), '\n')
   execute 'source' module
 endfor
 
