@@ -4,7 +4,7 @@ DOTFILES=$(cd "$(dirname "$0")" && pwd)
 
 pushd $DOTFILES
 stow -t ~/ $(ls -d */)
-source tilde-update
+./tilde-update
 
 popd
 
