@@ -5,6 +5,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'moll/vim-bbye'
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
