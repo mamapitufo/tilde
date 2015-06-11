@@ -1,0 +1,3 @@
+" [ as leader
+let mapleader='['
+
