@@ -2,6 +2,8 @@
 " plugin configuration goes in modules/plugin/<plugin-name>.vim
 call plug#begin('~/.vim/bundle')
 
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
 Plug 'moll/vim-bbye'
 
 call plug#end()
