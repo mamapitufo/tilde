@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+DOTFILES=$(cd "$(dirname "$0")" && pwd)
+
+pushd $DOTFILES
+
+stow -t ~/ $(ls -d */)
+./bin/bin/update-config
+
+popd
+
