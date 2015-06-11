@@ -3,10 +3,8 @@
 DOTFILES=$(cd "$(dirname "$0")" && pwd)
 
 pushd $DOTFILES
-# Update vim-plug
-curl -fLo vim/.vim/autoload/plug.vim \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-# TODO commit the change if vim-plug is updated
+
+./vim/.vim/update
 
 popd
 
