@@ -7,4 +7,7 @@ set shiftwidth=2
 set expandtab
 
 set number
+set cursorline
+
+set noswapfile
 
