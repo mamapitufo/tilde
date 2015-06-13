@@ -1,2 +1,2 @@
-" <leader>w closes a buffer without killing the split
-nnoremap <leader>w :Bdelete<cr>
+" <leader>w kills a buffer without closing the split
+nnoremap <silent> <leader>w :Bdelete<cr>

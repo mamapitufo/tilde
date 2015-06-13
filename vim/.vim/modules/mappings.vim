@@ -2,5 +2,5 @@
 let mapleader='['
 
 " toggle line numbers
-nnoremap <leader>tn :set number!<cr>
+nnoremap <silent> <leader>tn :set number!<cr>
 
