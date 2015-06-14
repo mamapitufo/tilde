@@ -1,13 +1,10 @@
 [color]
 	ui = auto
-
 [core]
 	pager = less $LESS -FXR
 	excludesfile = ~/.gitexclude
-
 [github]
 	user = mamapitufo
-
 [alias]
 	co = checkout
 	track = checkout -t
@@ -45,17 +42,13 @@
 	continue = rebase --continue
 	cob = checkout -b
 	rbi = rebase -i
-
 [merge]
 	tool = vim -dg
-
 [push]
 	default = simple
-
 [branch]
 	autosetuprebase = always
-
 [include]
-	path = .gitconfig_local
+	path = ~/.gitconfig_local
 [credential]
 	helper = osxkeychain
