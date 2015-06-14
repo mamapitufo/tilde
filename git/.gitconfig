@@ -3,8 +3,6 @@
 [core]
 	pager = less $LESS -FXR
 	excludesfile = ~/.gitexclude
-[github]
-	user = mamapitufo
 [alias]
 	co = checkout
 	track = checkout -t
