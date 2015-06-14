@@ -6,6 +6,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'moll/vim-bbye'
 Plug 'altercation/vim-colors-solarized'
+Plug 'rking/ag.vim'
 
 call plug#end()
 
