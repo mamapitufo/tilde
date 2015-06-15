@@ -7,6 +7,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'moll/vim-bbye'
 Plug 'altercation/vim-colors-solarized'
 Plug 'rking/ag.vim'
+Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
