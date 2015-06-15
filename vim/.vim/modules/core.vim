@@ -11,3 +11,6 @@ set cursorline
 
 set noswapfile
 
+set splitbelow
+set splitright
+
