@@ -8,6 +8,7 @@ Plug 'moll/vim-bbye'
 Plug 'altercation/vim-colors-solarized'
 Plug 'rking/ag.vim'
 Plug 'Raimondi/delimitMate'
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
