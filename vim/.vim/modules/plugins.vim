@@ -11,6 +11,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'pangloss/vim-javascript'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'helino/vim-json'
+Plug 'scrooloose/syntastic'
 
 call plug#end()
 
