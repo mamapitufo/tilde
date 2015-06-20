@@ -13,6 +13,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'helino/vim-json'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
