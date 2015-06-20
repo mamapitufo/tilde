@@ -14,6 +14,8 @@ Plug 'helino/vim-json'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 
 call plug#end()
 
