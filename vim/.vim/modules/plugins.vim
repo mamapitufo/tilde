@@ -12,6 +12,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'helino/vim-json'
 Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-unimpaired'
 
 call plug#end()
 
