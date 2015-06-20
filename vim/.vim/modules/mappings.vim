@@ -1,3 +1,3 @@
 " space as leader
-let mapleader='\<Space>'
+let mapleader="\<Space>"
 
