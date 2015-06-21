@@ -18,6 +18,11 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 
+Plug 'kovisoft/paredit', { 'for': 'clojure' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'kien/rainbow_parentheses.vim', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+
 call plug#end()
 
 " load configuration for plugins
