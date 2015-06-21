@@ -8,12 +8,13 @@ Plug 'moll/vim-bbye'
 Plug 'altercation/vim-colors-solarized'
 Plug 'rking/ag.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'pangloss/vim-javascript'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'helino/vim-json'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
+
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 
