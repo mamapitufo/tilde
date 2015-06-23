@@ -41,6 +41,7 @@
 	cob = checkout -b
 	rbi = rebase -i
 	filelg = log --pretty=format':%C(yellow)%h %C(reset)%s %C(blue) %an, %C(black)%ar%Creset' --follow
+	aa = add .
 [merge]
 	tool = vim -dg
 [push]
