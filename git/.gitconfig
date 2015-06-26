@@ -11,7 +11,7 @@
 	st = status -sb
 	staged = diff --staged
 
-	mg = merge --no-ff
+	mg = smart-merge
 	ff = merge --ff-only
 
 	lg = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(black) %an, %ar%Creset'
