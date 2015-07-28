@@ -16,6 +16,7 @@ Plug 'bling/vim-airline'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
