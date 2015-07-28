@@ -12,6 +12,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'helino/vim-json'
 Plug 'scrooloose/syntastic'
+Plug 'bling/vim-airline'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 
