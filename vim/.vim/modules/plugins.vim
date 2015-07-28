@@ -13,6 +13,7 @@ Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'helino/vim-json'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
+Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 
