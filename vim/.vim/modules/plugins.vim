@@ -2,8 +2,6 @@
 " plugin configuration goes in modules/plugin/<plugin-name>.vim
 call plug#begin('~/.vim/bundle')
 
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-sleuth'
 Plug 'moll/vim-bbye'
 Plug 'altercation/vim-colors-solarized'
 Plug 'rking/ag.vim'
@@ -14,9 +12,14 @@ Plug 'helino/vim-json'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
 Plug 'sjl/gundo.vim'
+
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
