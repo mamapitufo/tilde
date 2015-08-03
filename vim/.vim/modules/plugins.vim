@@ -12,6 +12,7 @@ Plug 'helino/vim-json'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
 Plug 'sjl/gundo.vim'
+Plug 'mtth/scratch.vim'
 
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
