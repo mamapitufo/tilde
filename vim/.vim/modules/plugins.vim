@@ -14,6 +14,7 @@ Plug 'bling/vim-airline'
 Plug 'sjl/gundo.vim'
 Plug 'mtth/scratch.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'embear/vim-localvimrc'
 
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
