@@ -25,6 +25,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-scriptease'
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
