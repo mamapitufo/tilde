@@ -52,5 +52,3 @@
 	path = ~/.gitconfig_local
 [credential]
 	helper = osxkeychain
-[commit]
-	template = /Users/beto/.git-commit-template
