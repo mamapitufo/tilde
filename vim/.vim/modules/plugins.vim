@@ -31,11 +31,12 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 
-Plug 'kovisoft/paredit', { 'for': 'clojure' }
-Plug 'raymond-w-ko/vim-niji', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'guns/vim-sexp', { 'for': 'clojure' }
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
+Plug 'raymond-w-ko/vim-niji', { 'for': 'clojure' }
 
 call plug#end()
 
