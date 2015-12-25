@@ -5,7 +5,7 @@ DOTFILES=$(cd "$(dirname "$0")" && pwd)
 pushd $DOTFILES
 
 stow -R -t ~/ $(ls -d */)
-./bin/bin/update-config
+./bin/bin/tilde-update
 
 popd
 
