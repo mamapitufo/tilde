@@ -37,7 +37,7 @@ Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'kovisoft/paredit', { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
-Plug 'raymond-w-ko/vim-niji', { 'for': 'clojure' }
+Plug 'kien/rainbow_parentheses.vim', { 'for': 'clojure' }
 
 call plug#end()
 
