@@ -14,3 +14,5 @@ set noswapfile
 set splitbelow
 set splitright
 
+set completeopt-=preview
+
