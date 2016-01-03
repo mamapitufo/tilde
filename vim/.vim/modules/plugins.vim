@@ -29,7 +29,7 @@ Plug 'tpope/vim-scriptease'
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install', 'for': 'javascript' }
 
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 " Plug 'guns/vim-sexp', { 'for': 'clojure' }
