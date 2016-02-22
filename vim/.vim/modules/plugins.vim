@@ -39,6 +39,8 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'kien/rainbow_parentheses.vim', { 'for': 'clojure' }
 
+Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
+
 call plug#end()
 
 " load configuration for plugins
