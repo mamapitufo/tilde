@@ -4,46 +4,50 @@
 	pager = less $LESS -FXR
 	excludesfile = ~/.gitexclude
 [alias]
-	co = checkout
-	track = checkout -t
 	up = smart-pull
+	pu = push
+	puu = push -u
+	puff = push -f
+	prune = remote prune origin
+	curr-branch = rev-parse --abbrev-ref HEAD
 
 	st = status -sb
 	staged = diff --staged
+	di = diff
+	sh = show
 
 	mg = smart-merge
 	ff = merge --ff-only
 
 	lg = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(black) %an, %ar%Creset'
 	logrefs = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(black) %an, %ar%Creset' --simplify-by-decoration
-	amend = commit -v --amend
-	rb = rebase
+	last-commits = for-each-ref --sort=committerdate refs/heads --format='%(refname:short): %(committerdate:relative)'
+	filelg = log --pretty=format':%C(yellow)%h %C(reset)%s %C(blue) %an, %C(black)%ar%Creset' --follow
+
 	ci = commit -v
-	a = add -u
 	cia = commit -va
-	di = diff
-	cp = cherry-pick
-	br = branch
-	pu = push
-	brv = branch -vv
-	sh = show
+	amend = commit -v --amend
 	aamend = commit -va --amend
 	fixup = commit -am 'fixup'
-	prune = remote prune origin
-	puu = push -u
-	abort = rebase --abort
-	puff = push -f
+
+	co = checkout
+	br = branch
+	brv = branch -vv
 	brd = branch -d
 	brdd = branch -D
-	curr-branch = rev-parse --abbrev-ref HEAD
-	last-commits = for-each-ref --sort=committerdate refs/heads --format='%(refname:short): %(committerdate:relative)'
-	continue = rebase --continue
 	cob = checkout -b
+
+	rb = rebase
 	rbi = rebase -i
-	filelg = log --pretty=format':%C(yellow)%h %C(reset)%s %C(blue) %an, %C(black)%ar%Creset' --follow
-	aa = add .
+	abort = rebase --abort
+	continue = rebase --continue
+	cp = cherry-pick
+
+	a = add -u
+	A = add .
+
 [merge]
-	tool = vim -dg
+	tool = vimdiff
 [push]
 	default = simple
 [branch]
