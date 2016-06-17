@@ -27,7 +27,10 @@
 	ci = commit -v
 	cia = commit -va
 	amend = commit -v --amend
+	qamend = commit -v --amend --no-edit
 	aamend = commit -va --amend
+	qaamend = commit -va --amend --no-edit
+	wip = commit -am 'wip'
 	fixup = commit -am 'fixup'
 
 	co = checkout
@@ -44,7 +47,8 @@
 	cp = cherry-pick
 
 	a = add -u
-	A = add .
+	aa = add .
+	ap = add -p
 
 [merge]
 	tool = vimdiff
@@ -56,3 +60,4 @@
 	path = ~/.gitconfig_local
 [credential]
 	helper = osxkeychain
+
