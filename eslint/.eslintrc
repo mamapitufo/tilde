@@ -1,12 +1,12 @@
 {
   "parserOptions": {
     "ecmaVersion": 6,
-    "sourceType": "script",
+    "sourceType": "script"
   },
   "env": {
     "browser": true,
     "es6": true,
-    "node": true,
+    "node": true
   },
   "rules": {
     "array-callback-return": 2,
@@ -54,7 +54,6 @@
     "no-irregular-whitespace": 2,
     "no-lone-blocks": 2,
     "no-loop-func": 2,
-    "no-loop-func": 2,
     "no-mixed-requires": 0,
     "no-multi-spaces": 2,
     "no-multi-str": 2,
@@ -81,7 +80,7 @@
     "no-underscore-dangle": 2,
     "no-unexpected-multiline": 2,
     "no-unreachable": 2,
-    "no-unused-expressions": [2, { "allowShortCircuit": true, "allowTernary": true },
+    "no-unused-expressions": [2, { "allowShortCircuit": true, "allowTernary": true }],
     "no-unused-vars": 2,
     "no-use-before-define": 2,
     "no-useless-call": 2,
@@ -89,7 +88,7 @@
     "no-useless-escape": 2,
     "no-with": 2,
     "prefer-const": 2,
-    "prefer-rest-params": 2
+    "prefer-rest-params": 2,
     "quotes": [2, "single", "avoid-escape"],
     "radix": 2,
     "semi": [2, "never"],
@@ -98,6 +97,6 @@
     "valid-typeof": 2,
     "vars-on-top": 2,
     "wrap-iife": [2, "inside"],
-    "yoda": 2,
+    "yoda": 2
   }
 }
