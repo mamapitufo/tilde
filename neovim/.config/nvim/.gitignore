@@ -1,0 +1,10 @@
+bundle/
+undo/
+spell/
+autoload/plug.vim
+autoload/plug.vim.old
+
+.init.vim-rplugin~
+revert-plugupdate
+.netrwhist
+
