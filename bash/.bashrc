@@ -23,8 +23,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-EDITOR=vim
-VISUAL=vim
+EDITOR=nvim
+VISUAL=nvim
 export EDITOR VISUAL
 
 GIT_PS1_SHOWDIRTYSTATE=true
