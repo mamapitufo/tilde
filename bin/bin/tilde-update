@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
 ~/.config/nvim/update
+brew up
+brew outdated
 
