@@ -14,3 +14,5 @@ set splitright
 
 set completeopt-=preview
 
+set updatetime=250
+
