@@ -1,6 +1,6 @@
 " plugin management by junegunn/vim-plug
 " plugin configuration goes in modules/plugin/<plugin-name>.vim
-call plug#begin('~/.vim/bundle')
+call plug#begin()
 
 Plug 'moll/vim-bbye'
 Plug 'altercation/vim-colors-solarized'
@@ -45,7 +45,13 @@ Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 call plug#end()
 
 " load configuration for plugins
-for plugconfig in split(glob('~/.vim/modules/plugins/*.vim'), '\n')
-  exec 'source' plugconfig
+for plugconfig in split(glob(NvimDir('modules/plugins/*.vim')), '\n')
+	let plugname = fnamemodify(plugconfig, ':t:r')
+
+	if (exists('g:plugs["' . plugname . '"]'))
+		exec 'source' plugconfig
+	else
+		echom 'There is no plugin for config file ' . plugconfig
+	endif
 endfor
 

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-~/.vim/update
+~/.config/nvim/update
 
