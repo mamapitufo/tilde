@@ -37,6 +37,7 @@ Plug 'tpope/vim-scriptease'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM'), 'for': 'javascript' }
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install', 'for': 'javascript' }
+" Plug 'Shougo/deoplete.vim' | Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 " Plug 'guns/vim-sexp', { 'for': 'clojure' }
@@ -45,6 +46,7 @@ Plug 'kovisoft/paredit', { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'kien/rainbow_parentheses.vim', { 'for': 'clojure' }
+" Plug 'SevereOverfl0w/async-clj-omni', { 'for': 'clojure' }
 
 Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 
