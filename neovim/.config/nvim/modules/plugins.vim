@@ -52,12 +52,12 @@ call plug#end()
 
 " load configuration for plugins
 for plugconfig in split(glob(NvimDir('modules/plugins/*.vim')), '\n')
-	let plugname = fnamemodify(plugconfig, ':t:r')
+  let plugname = fnamemodify(plugconfig, ':t:r')
 
-	if (exists('g:plugs["' . plugname . '"]'))
-		exec 'source' plugconfig
-	else
-		echom 'There is no plugin for config file ' . plugconfig
-	endif
+  if (exists('g:plugs["' . plugname . '"]'))
+    exec 'source' plugconfig
+  else
+    echom 'There is no plugin for config file ' . plugconfig
+  endif
 endfor
 
