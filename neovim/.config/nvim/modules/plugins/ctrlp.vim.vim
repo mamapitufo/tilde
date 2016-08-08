@@ -1,3 +1,4 @@
+let g:ctrlp_cmd='CtrlPMRU'
 let g:ctrlp_lazy_update=1
 let g:ctrlp_max_files=0
 let g:ctrlp_root_markers=[ 'project.clj', 'package.json' ]
