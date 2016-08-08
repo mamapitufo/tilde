@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
+echo 'update nvim plugins...'
 ~/.config/nvim/update
+echo 'update brew database...'
 brew up
+echo 'outdated packages:'
 brew outdated
 
