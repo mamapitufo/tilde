@@ -16,3 +16,5 @@ set completeopt-=preview
 
 set updatetime=250
 
+set textwidth=80
+
