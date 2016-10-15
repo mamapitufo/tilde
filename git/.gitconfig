@@ -7,7 +7,7 @@
 	up = smart-pull
 	pu = push
 	puu = push -u
-	puff = push -f
+	puff = push --force-with-lease
 	prune = remote prune origin
 	curr-branch = rev-parse --abbrev-ref HEAD
 
@@ -27,9 +27,9 @@
 	ci = commit -v
 	cia = commit -va
 	amend = commit -v --amend
-	qamend = commit -v --amend --no-edit
+	qamend = commit --amend --no-edit
 	aamend = commit -va --amend
-	qaamend = commit -va --amend --no-edit
+	qaamend = commit -a --amend --no-edit
 	wip = commit -am 'wip'
 	fixup = commit -am 'fixup'
 
@@ -49,6 +49,8 @@
 	a = add -u
 	aa = add .
 	ap = add -p
+
+	it = !git init && git commit -m \"root\" --allow-empty
 
 [merge]
 	tool = vimdiff
