@@ -1,9 +1,3 @@
-function! BuildYCM(info)
-  if a:info.status == 'installed' || a:info.force
-    !python2 install.py
-  endif
-endfunction
-
 " plugin management by junegunn/vim-plug
 " plugin configuration goes in modules/plugin/<plugin-name>.vim
 call plug#begin()
@@ -33,7 +27,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-scriptease'
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM'), 'for': 'javascript' }
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install', 'for': 'javascript' }
 " Plug 'Shougo/deoplete.vim' | Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
