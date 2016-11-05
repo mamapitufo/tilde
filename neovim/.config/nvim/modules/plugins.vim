@@ -28,7 +28,7 @@ Plug 'tpope/vim-scriptease'
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install', 'for': 'javascript' }
-" Plug 'Shougo/deoplete.vim' | Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } | Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 " Plug 'guns/vim-sexp', { 'for': 'clojure' }
