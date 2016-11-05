@@ -7,7 +7,7 @@
 	up = smart-pull
 	pu = push
 	puu = push -u
-	puff = push --force-with-lease
+	puje = push --force-with-lease
 	prune = remote prune origin
 	curr-branch = rev-parse --abbrev-ref HEAD
 
