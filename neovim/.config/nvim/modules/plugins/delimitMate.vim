@@ -7,4 +7,5 @@ let g:delimitMate_expand_space=1
 au FileType markdown let b:delimitMate_nesting_quotes=['`']
 " Clojure will be handled by paredit
 au FileType clojure let b:loaded_delimitMate=1
+au FileType clojurescript let b:loaded_delimitMate=1
 
