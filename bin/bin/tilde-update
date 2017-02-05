@@ -2,8 +2,17 @@
 
 echo 'update nvim plugins...'
 ~/.config/nvim/update
-echo 'update brew database...'
-brew up
-echo 'outdated packages:'
-brew outdated
+
+SYSTEM=`uname -s`
+
+if [ $SYSTEM = "Linux" ]; then
+
+    sudo xbps-install -Su
+
+elif [ $SYSTEM = "Darwin" ]; then
+    echo 'update brew database...'
+    brew up 2>&1 >/dev/null
+    echo 'outdated packages:'
+    brew outdated
+fi
 
