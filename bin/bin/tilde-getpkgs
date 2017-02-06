@@ -1,0 +1,4 @@
+#!/bin/sh
+
+xbps-query -m | xargs -n1 xbps-uhelper getpkgname
+
