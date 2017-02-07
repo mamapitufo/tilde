@@ -1,4 +1,14 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-xbps-query -m | xargs -n1 xbps-uhelper getpkgname
+DOTFILES=$(cd "$(dirname "$0")" && pwd)
+pushd $DOTFILES
+
+SYSTEM=`uname -s`
+if [ $SYSTEM = "Linux" ]; then
+    xbps-query -m | xargs -n1 xbps-uhelper getpkgname > void-packages
+elif [ $SYSTEM = "Darwin" ]; then
+    echo "# Not available!"
+fi
+
+popd
 
