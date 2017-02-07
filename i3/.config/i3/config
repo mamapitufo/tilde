@@ -138,6 +138,7 @@ bar {
         separator #073642
     }
     
+    position top
     status_command i3status -c ~/.config/i3/i3status.conf
 }
 
