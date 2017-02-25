@@ -3,13 +3,16 @@ chromium
 curl
 dbus
 dmenu
+fish-shell
 font-inconsolata-otf
 git
 git-extras
 gpm
 grub
+htop
 i3
 i3status
+leiningen
 lxterminal
 neovim
 nodejs
@@ -19,6 +22,7 @@ ruby
 setxkbmap
 st
 the_silver_searcher
+thefuck
 tmux
 virtualbox-ose-guest
 xclip
