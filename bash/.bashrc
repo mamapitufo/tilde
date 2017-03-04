@@ -53,6 +53,10 @@ elif [ ${SYSTEM} = "Darwin" ]; then
 
     [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
+
+    [[ ~/.gem/ruby/2.0.0/bin/ ]] && PATH=~/.gem/ruby/2.0.0/bin/:${PATH}
+    [[ ~/Library/Python/2.7/bin  ]] && PATH=~/Library/Python/2.7/bin:${PATH}
+
     JAVA_HOME=$(/usr/libexec/java_home)
     export JAVA_HOME
 fi
