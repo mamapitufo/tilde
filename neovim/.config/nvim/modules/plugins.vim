@@ -7,7 +7,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'Raimondi/delimitMate'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
-Plug 'helino/vim-json'
+Plug 'elzr/vim-json'
 Plug 'scrooloose/syntastic'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'sjl/gundo.vim'
