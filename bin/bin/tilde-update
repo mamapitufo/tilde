@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+~/.spacemacs.d/update
+
 echo 'update nvim plugins...'
 ~/.config/nvim/update
 

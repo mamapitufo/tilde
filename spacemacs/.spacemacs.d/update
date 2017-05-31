@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ -d ~/.emacs.d ]; then
+  echo 'updating spacemacs...'
+  cd ~/.emacs.d/ && git pull
+else
+  echo 'installing spacemacs...'
+  git clone --recursive https://github.com/syl20bnr/spacemacs ~/.emacs.d
+fi
+
