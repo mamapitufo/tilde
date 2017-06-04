@@ -312,6 +312,9 @@ you should place your code here."
   (setq-default evil-escape-key-sequence "jk")
   (setq mac-command-modifier 'control)
   (setq mac-control-modifier 'meta)
+
+  (define-key global-map (kbd "C-+") 'text-scale-increase)
+  (define-key global-map (kbd "C--") 'text-scale-decrease)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
