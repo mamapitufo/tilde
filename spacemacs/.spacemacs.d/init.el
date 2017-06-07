@@ -313,8 +313,9 @@ you should place your code here."
 
   (setq magit-repository-directories '("~/Sandbox/"))
 
-  (define-key global-map (kbd "C-+") 'text-scale-increase)
   (setq ns-use-srgb-colorspace nil)
+
+  (define-key global-map (kbd "C-=") 'text-scale-increase)
   (define-key global-map (kbd "C--") 'text-scale-decrease)
   )
 
