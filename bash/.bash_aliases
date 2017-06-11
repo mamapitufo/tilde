@@ -19,8 +19,8 @@ elif [ ${SYSTEM} = "Darwin" ]; then
 fi
 
 # Common aliases
-alias l='ls -l'
-alias la='ls -la'
+alias l='ls -lp'
+alias la='ls -lap'
 
 alias vim=nvim
 
