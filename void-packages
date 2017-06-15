@@ -3,6 +3,7 @@ chromium
 curl
 dbus
 dmenu
+emacs-x11
 fish-shell
 font-inconsolata-otf
 git
