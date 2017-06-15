@@ -15,6 +15,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# Scratchpad
+bindsym $mod+semicolon scratchpad show
+bindsym $mod+Shift+semicolon move scratchpad
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
