@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ -d ~/.emacs.d ]; then
+if [ -d ~/.emacs.d/.git ]; then
   echo 'updating spacemacs...'
   cd ~/.emacs.d/ && git pull
 else
