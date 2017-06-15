@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+sudo -v
+
 DOTFILES=$(cd "$(dirname "$0")" && pwd)
 
 pushd $DOTFILES
 
-stow -R -t ~/ $(ls -d */)
+xstow -R -t ~/ $(ls -d */)
 ./bin/bin/tilde-update
 
 popd

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+BINDIR=$(cd "$(dirname "$0")" && pwd)
+DOTFILES=${BINDIR}/../../
+
+SYSTEM=`uname -s`
+if [ $SYSTEM = "Linux" ]; then
+    xbps-query -m | xargs -n1 xbps-uhelper getpkgname > ${DOTFILES}/void-packages
+elif [ $SYSTEM = "Darwin" ]; then
+    echo "# Not available!"
+fi
+

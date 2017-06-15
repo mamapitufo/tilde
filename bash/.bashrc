@@ -1,27 +1,14 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
-# vi mode for readline
-# set -o vi
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-[ -z "$PS1" ] && return
 export HISTCONTROL="ignoreboth"
 export HISTIGNORE="&:l:[bf]g:exit"
 
 PS1='\e[1;94m\D{%Y-%m-%d %T}\e[0m \e[0;34m\w\e[0m\n$(__git_ps1 "(%s) ")λ '
 
-case "$TERM" in
-xterm*|rxvt*|screen*)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-    ;;
-*)
-    ;;
-esac
-
-PATH=/usr/local/bin:${PATH}:/usr/local/sbin
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
 EDITOR=nvim
 VISUAL=nvim
@@ -32,21 +19,16 @@ GIT_PS1_SHOWCOLORHINTS=true
 LESS="-R"
 export LESS GIT_PS1_SHOWDIRTYSTATE GIT_PS1_SHOWCOLORHINTS
 
-# System specific actions
 SYSTEM=`uname -s`
 if [ ${SYSTEM} = "Linux" ]; then
 
-    [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
+    eval `dircolors ~/.config/coreutils/dircolors.256dark`
 
-    if [ "$TERM" != "dumb" ]; then
-        eval "`dircolors -b`"
-    fi
+    [[ -f /usr/share/git/git-prompt.sh ]] && . /usr/share/git/git-prompt.sh
 
 elif [ ${SYSTEM} = "Darwin" ]; then
 
-    if [ -f `brew --prefix`/etc/bash_completion ]; then
-        . `brew --prefix`/etc/bash_completion
-    fi
+    [[ -f `brew --prefix`/etc/bash_completion ]] && . `brew --prefix`/etc/bash_completion
 
     HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/Applications/Caskroom"
     export HOMEBREW_CASK_OPTS
@@ -61,21 +43,8 @@ elif [ ${SYSTEM} = "Darwin" ]; then
     export JAVA_HOME
 fi
 
-if [ -d ~/bin ]; then
-    PATH=~/bin:${PATH}
-fi
+[[ -d ~/bin ]] && PATH=~/bin:${PATH}
+export PATH
 
-if [ -d ~/.cabal/bin ]; then
-    PATH=~/.cabal/bin:${PATH}
-fi
-
-if hash gulp 2>/dev/null; then
-  eval "$(gulp --completion=bash)"
-fi
-
-export PATH MANPATH
-
-if [ -f ~/.bashrc_local ]; then
-    source ~/.bashrc_local
-fi
+[[ -f ~/.bashrc_local ]] && source ~/.bashrc_local
 

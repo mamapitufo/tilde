@@ -2,8 +2,16 @@
 
 Some of my config files.
 
-# TODO
+# Usage
 
-* Ask user for git name and email, add it to `~/.gitconfig-local`
-* Configure Terminal.app
-* Run `vim +BundleInstall` after linking vim's config
+```sh
+$ ./install
+```
+
+# Requirements
+
+* [git](https://git-scm.com/)
+* [xstow](http://xstow.sourceforge.net)
+* [Void Linux](https://voidlinux.eu)
+* [Homebrew](http://brew.sh) on OSX
+
