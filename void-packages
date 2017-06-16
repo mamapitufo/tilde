@@ -1,3 +1,5 @@
+aspell
+aspell-en
 base-system
 chromium
 curl
@@ -21,11 +23,13 @@ python-neovim
 python3-neovim
 ruby
 setxkbmap
+spotify
 st
 the_silver_searcher
 thefuck
 tmux
 virtualbox-ose-guest
+void-repo-nonfree
 xclip
 xdpyinfo
 xf86-input-synaptics
