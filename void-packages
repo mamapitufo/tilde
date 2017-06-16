@@ -1,3 +1,4 @@
+alsa-utils
 aspell
 aspell-en
 base-system
@@ -23,6 +24,7 @@ python-neovim
 python3-neovim
 ruby
 setxkbmap
+socklog-void
 spotify
 st
 the_silver_searcher
