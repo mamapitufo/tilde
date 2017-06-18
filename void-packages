@@ -2,6 +2,7 @@ alsa-utils
 aspell
 aspell-en
 base-system
+bash-completion
 chromium
 curl
 dbus
