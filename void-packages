@@ -4,6 +4,7 @@ aspell-en
 base-system
 bash-completion
 chromium
+chromium-widevine
 curl
 dbus
 dmenu
@@ -31,6 +32,7 @@ st
 the_silver_searcher
 thefuck
 tmux
+tree
 virtualbox-ose-guest
 void-repo-nonfree
 xclip
