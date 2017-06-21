@@ -19,6 +19,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+semicolon scratchpad show
 bindsym $mod+Shift+semicolon move scratchpad
 
+bindsym $mod+Shift+x move absolute position center
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
