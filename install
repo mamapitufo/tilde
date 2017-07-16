@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
 
+set -e
+set -o pipefail
+
 sudo -v
 
 DOTFILES=$(cd "$(dirname "$0")" && pwd)
+SYSTEM=`uname -s`
 
 pushd $DOTFILES
+
+if [ $SYSTEM = "Linux" ]; then
+    sudo xbps-install -S `paste -d' ' -s void-packages`
+fi
 
 xstow -R -t ~/ $(ls -d */)
 ./bin/bin/tilde-update
