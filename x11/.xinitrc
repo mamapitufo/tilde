@@ -1,4 +1,3 @@
-setxkbmap us_intl
-[[ -x /usr/bin/VBoxClient ]] && VBoxClient --clipboard
-[[ -x /usr/bin/VBoxClient ]] && VBoxClient --seamless
+setxkbmap us_intl -option compose:menu -option ctrl:nocaps
+
 exec i3
