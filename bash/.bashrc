@@ -26,6 +26,13 @@ if [ ${SYSTEM} = "Linux" ]; then
 
     [[ -f /usr/share/git/git-prompt.sh ]] && . /usr/share/git/git-prompt.sh
 
+    if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+        ssh-agent > ~/.ssh/ssh-agent-env
+    fi
+    if [[ "$SSH_AGENT_PID" == "" ]]; then
+        eval "$(<~/.ssh/ssh-agent-env)"
+    fi
+
 elif [ ${SYSTEM} = "Darwin" ]; then
 
     [[ -f `brew --prefix`/etc/bash_completion ]] && . `brew --prefix`/etc/bash_completion
