@@ -4,15 +4,14 @@ SYSTEM=`uname -s`
 
 if [ ${SYSTEM} = "Linux" ]; then
 
-    alias ls='ls --color=auto'
+    alias ls='ls --color=auto -p'
 
 elif [ ${SYSTEM} = "Darwin" ]; then
 
-    alias ls='ls -G'
+    alias ls='ls -G -p'
 
 fi
 
-alias ls='ls -p'
 alias l='ls -l'
 alias lh='ls -lh'
 alias la='ls -la'
