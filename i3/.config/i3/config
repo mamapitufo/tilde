@@ -4,7 +4,7 @@
 
 set $mod Mod1
 
-font pango:DejaVu Sans Mono 8
+font pango:Cantarell 9
 
 workspace_layout tabbed
 
