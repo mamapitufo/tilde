@@ -1,4 +1,4 @@
-setxkbmap us_intl -option compose:menu -option ctrl:nocaps
-nm-applet &
+#!/bin/sh
+[ -f ~/.xprofile ] && . ~/.xprofile
 
 exec i3
