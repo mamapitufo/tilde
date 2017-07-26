@@ -16,3 +16,5 @@ alias l='ls -l'
 alias lh='ls -lh'
 alias la='ls -la'
 
+alias feh='feh -FxB black'
+
