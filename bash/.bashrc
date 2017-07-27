@@ -12,7 +12,8 @@ PS1='\e[1;94m\D{%Y-%m-%d %T}\e[0m \e[0;34m\w\e[0m\n$(__git_ps1 "(%s) ")λ '
 
 EDITOR=nvim
 VISUAL=nvim
-export EDITOR VISUAL
+TERMINAL=alacritty
+export EDITOR VISUAL TERMINAL
 
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWCOLORHINTS=true
