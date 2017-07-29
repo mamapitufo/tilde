@@ -1,3 +1,6 @@
+" jk to exit insert mode
+:imap jk <Esc>
+
 " Default indent, vim-sleuth should handle it for most cases
 set tabstop=2
 set shiftwidth=2
