@@ -15,6 +15,9 @@ VISUAL=nvim
 TERMINAL=alacritty
 export EDITOR VISUAL TERMINAL
 
+PAGER='less --ignore-case --quiet'
+export PAGER
+
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWCOLORHINTS=true
 LESS="-R"
