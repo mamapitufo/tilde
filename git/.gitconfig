@@ -1,7 +1,7 @@
 [color]
 	ui = auto
 [core]
-	pager = less $LESS -FXR
+	pager = less -FXR
 	excludesfile = ~/.gitexclude
 [alias]
 	up = smart-pull
@@ -60,6 +60,4 @@
 	autosetuprebase = always
 [include]
 	path = ~/.gitconfig_local
-[credential]
-	helper = osxkeychain
 
