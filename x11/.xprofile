@@ -1,6 +1,8 @@
 export TERMINAL=/usr/bin/alacritty
 
 setxkbmap us_intl -option compose:menu -option ctrl:nocaps
+
 emacs --daemon
+thunar --daemon &
 nm-applet &
 
