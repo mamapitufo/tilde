@@ -37,6 +37,8 @@ if [ ${SYSTEM} = "Linux" ]; then
         eval "$(<~/.ssh/ssh-agent-env)"
     fi
 
+    eval $(thefuck --alias)
+
 elif [ ${SYSTEM} = "Darwin" ]; then
 
     [[ -f `brew --prefix`/etc/bash_completion ]] && . `brew --prefix`/etc/bash_completion
