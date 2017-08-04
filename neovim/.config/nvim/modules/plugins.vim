@@ -15,6 +15,7 @@ Plug 'mtth/scratch.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'embear/vim-localvimrc'
 Plug 'Keithbsmiley/tmux.vim'
+Plug 'dag/vim-fish'
 
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
