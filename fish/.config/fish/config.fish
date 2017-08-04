@@ -1,5 +1,7 @@
 set fish_greeting ""
 
+set PATH ~/bin $PATH
+
 # /etc/profile sets this, and breaks it in the supplied `ls` function
 set -ge LS_COLORS
 
