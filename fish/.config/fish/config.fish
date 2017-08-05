@@ -14,3 +14,5 @@ set -u BROWSER chromium
 
 thefuck --alias| source
 
+alias feh "feh -FxB black"
+
