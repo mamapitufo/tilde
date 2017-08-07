@@ -13,6 +13,7 @@ set -u VISUAL nvim
 set -u BROWSER chromium
 
 thefuck --alias| source
+launch_ssh_agent
 
 alias feh "feh -FxB black"
 
