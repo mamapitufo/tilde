@@ -2,6 +2,11 @@ export TERMINAL=/usr/bin/alacritty
 
 setxkbmap us_intl -option compose:menu -option ctrl:nocaps
 
+# dbus is needed for thunar...
+if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+   eval "$(dbus-launch --sh-syntax --exit-with-session)"
+fi
+
 emacs --daemon
 thunar --daemon &
 nm-applet &
