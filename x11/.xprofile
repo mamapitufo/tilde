@@ -1,7 +1,5 @@
-#!/bin/sh
-
-TERMINAL=/usr/bin/alacritty
-[[ -d ${HOME}/bin ]] && PATH=${HOME}/bin:${PATH}
+export TERMINAL=/usr/bin/alacritty
+test -d ${HOME}/bin && export PATH=${HOME}/bin:${PATH}
 
 export TERMINAL PATH
 
