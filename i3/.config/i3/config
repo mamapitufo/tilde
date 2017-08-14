@@ -145,8 +145,14 @@ bar {
         statusline #839496
         separator #073642
     }
-    
+
     position top
     status_command i3status -c ~/.config/i3/i3status.conf
 }
+
+# Control volume via media keys
+bindsym XF86AudioRaiseVolume exec --no-startup-id snd_volume.fish +
+bindsym XF86AudioLowerVolume exec --no-startup-id snd_volume.fish -
+bindsym XF86AudioMute exec --no-startup-id snd_toggle_out.fish
+#bindsym XF86AudioMicMute exec --no-startup-id amixer set Mic toggle
 
