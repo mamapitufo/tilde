@@ -1,4 +1,9 @@
-export TERMINAL=/usr/bin/alacritty
+#!/bin/sh
+
+TERMINAL=/usr/bin/alacritty
+[[ -d ${HOME}/bin ]] && PATH=${HOME}/bin:${PATH}
+
+export TERMINAL PATH
 
 setxkbmap us_intl -option compose:menu -option ctrl:nocaps
 
