@@ -190,9 +190,9 @@ statusbar = {
 };
 settings = {
   core = {
-    real_name = "Alberto Brealey-Guzman";
-    user_name = "beto";
-    nick = "beto";
+    real_name = "mamá pitufo";
+    user_name = "mamapitufo";
+    nick = "mamapitufo";
   };
   "fe-text" = { actlist_sort = "refnum"; };
 };
