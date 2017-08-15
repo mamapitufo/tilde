@@ -44,7 +44,8 @@ values."
      ;;        shell-default-position 'bottom)
      spell-checking
      syntax-checking
-     version-control
+     (version-control :variables
+                      version-control-global-margin t)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -306,12 +307,6 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq-default evil-escape-key-sequence "jk")
-  ;; (setq mac-command-modifier 'meta)
-  ;; (setq mac-control-modifier 'control)
-  ;;
-  ;; (setq mac-command-modifier 'control)
-  ;; (setq mac-control-modifier 'meta)
-
   (setq magit-repository-directories '("~/Sandbox/"))
 
   (setq ns-use-srgb-colorspace nil)
