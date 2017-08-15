@@ -1,3 +1,0 @@
-#!/bin/sh
-exec apulse flatpak run com.spotify.Client
-
