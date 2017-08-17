@@ -60,4 +60,6 @@
 	autosetuprebase = always
 [include]
 	path = ~/.gitconfig_local
+[filter "irssi"]
+	clean = "sed -e 's/sasl_password .*\";/sasl_password \"<SECRET>\";/'"
 
