@@ -13,4 +13,6 @@ fi
 emacs --daemon
 thunar --daemon &
 nm-applet &
+blueman-applet &
+
 
