@@ -16,8 +16,9 @@ set splitbelow
 set splitright
 
 set completeopt-=preview
-
 set updatetime=250
-
 set textwidth=80
+
+" this could be a bit safer, "only for .txt on Y directory..."
+set modeline
 
