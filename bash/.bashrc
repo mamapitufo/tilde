@@ -39,6 +39,11 @@ if [ ${SYSTEM} = "Linux" ]; then
 
     eval $(thefuck --alias)
 
+    # Infinality mode in freetype (see
+    # http://blog.brunomiguel.net/geekices/how-to-get-good-font-rendering-in-void-linux)
+    FREETYPE_PROPERTIES="truetype:interpreter-version=38"
+    export FREETYPE_PROPERTIES
+
 elif [ ${SYSTEM} = "Darwin" ]; then
 
     [[ -f `brew --prefix`/etc/bash_completion ]] && . `brew --prefix`/etc/bash_completion

@@ -12,6 +12,10 @@ set -u EDITOR nvim
 set -u VISUAL nvim
 set -u BROWSER chromium
 
+# Infinality mode in freetype (see
+# http://blog.brunomiguel.net/geekices/how-to-get-good-font-rendering-in-void-linux)
+set -u FREETYPE_PROPERTIES "truetype:interpreter-version=38"
+
 thefuck --alias| source
 launch_ssh_agent
 
