@@ -5,6 +5,7 @@ SYSTEM=`uname -s`
 if [ $SYSTEM = "Linux" ]; then
 
     sudo xbps-install -Su
+    sudo xbps-remove -vO
 
 elif [ $SYSTEM = "Darwin" ]; then
     echo 'update brew database...'
