@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+TryExec=exodus
+Exec=Exodus
+Icon=
+Terminal=false
+Categories=
+
+Name=Exodus Wallet
+GenericName=Crypto currency wallet
+Comment=A cross-platform, multiple crypto-currency wallet
+StartupWMClass=Exodus
+Actions=New;
