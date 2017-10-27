@@ -139,6 +139,11 @@ bar {
     status_command i3status -c ~/.config/i3/i3status.conf
 }
 
+# Start widgets and filemanager
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id thunar --daemon
+
 # Control volume via media keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id snd_volume.fish +
 bindsym XF86AudioLowerVolume exec --no-startup-id snd_volume.fish -
