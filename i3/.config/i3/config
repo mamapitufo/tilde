@@ -4,23 +4,17 @@
 
 set $mod Mod1
 
-font pango:DejaVu Sans 7
-
 workspace_layout tabbed
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# start a terminal
+font pango:DejaVu Sans 7
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# Scratchpad
+# floating windows
+floating_modifier $mod
 bindsym $mod+semicolon scratchpad show
 bindsym $mod+Shift+semicolon move scratchpad
-
 bindsym $mod+Shift+x move absolute position center
 
 # start dmenu (a program launcher)
@@ -29,13 +23,11 @@ bindsym $mod+d exec dmenu_run
 # lock the screen
 bindsym Control+$mod+l exec --no-startup-id xsecurelock
 
-# change focus
+# change focused window
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -46,8 +38,6 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
