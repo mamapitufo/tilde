@@ -1,10 +1,9 @@
 [Desktop Entry]
 Type=Application
-TryExec=exodus
+TryExec=/home/mamapitufo/bin/Exodus
 Exec=Exodus
-Icon=
 Terminal=false
-Categories=
+Categories=Application
 
 Name=Exodus Wallet
 GenericName=Crypto currency wallet

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+TryExec=/home/mamapitufo/bin/light
+Exec=Lighttable
+Terminal=false
+Categories=Application;Editors
+
+Name=Lighttable Code Editor
+GenericName=Code Editor
+Comment=The next generation code editor
+StartupWMClass=Lighttable
