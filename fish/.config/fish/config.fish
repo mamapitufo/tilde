@@ -16,7 +16,7 @@ set -u BROWSER chromium
 # http://blog.brunomiguel.net/geekices/how-to-get-good-font-rendering-in-void-linux)
 set -u FREETYPE_PROPERTIES "truetype:interpreter-version=38"
 
-thefuck --alias| source
+#thefuck --alias| source
 launch_ssh_agent
 
 alias feh "feh -FxB black"
