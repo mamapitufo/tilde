@@ -11,7 +11,8 @@ SYSTEM=`uname -s`
 pushd $DOTFILES
 
 if [ $SYSTEM = "Linux" ]; then
-    sudo xbps-install -S `paste -d' ' -s void-packages`
+    echo "Installing required packages..."
+    sudo xbps-install -S `paste -d' ' -s tilde-packages`
 fi
 
 stow -R -t ~/ $(ls -d */)
