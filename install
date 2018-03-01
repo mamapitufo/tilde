@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
-set -e
-set -o pipefail
+function msg {
+    printf "\033[0;32m${1}\033[0m"
+}
 
+function msgln {
+    msg "${1}\n"
+}
+
+msg "This script might ask you for your password in order to run sudo."
 sudo -v
 
 DOTFILES=$(cd "$(dirname "$0")" && pwd)
@@ -11,12 +17,18 @@ SYSTEM=`uname -s`
 pushd $DOTFILES
 
 if [ $SYSTEM = "Linux" ]; then
-    echo "Installing required packages..."
+    msgln "Installing required packages..."
     sudo xbps-install -S `paste -d' ' -s tilde-packages`
+    msgln "Done."
 fi
 
-stow -R -t ~/ $(ls -d */)
+msg "Updating symlinks to home directory... "
+stow -R -t ~/ $(ls -d */) || exit
+msgln "Done."
+
+msgln "Updating software..."
 ./bin/bin/tilde-update
+msgln "Done."
 
 popd
 
