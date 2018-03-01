@@ -14,7 +14,7 @@ if [ $SYSTEM = "Linux" ]; then
     sudo xbps-install -S `paste -d' ' -s void-packages`
 fi
 
-xstow -R -t ~/ $(ls -d */)
+stow -R -t ~/ $(ls -d */)
 ./bin/bin/tilde-update
 
 popd

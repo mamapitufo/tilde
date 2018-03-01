@@ -1,6 +1,6 @@
-# dotfiles
+# `tilde`
 
-Some of my config files.
+My config files.
 
 # Usage
 
@@ -10,8 +10,6 @@ $ ./install
 
 # Requirements
 
-* [git](https://git-scm.com/)
-* [xstow](http://xstow.sourceforge.net)
-* [Void Linux](https://voidlinux.eu)
-* [Homebrew](http://brew.sh) on OSX
+Either [Void Linux](https://voidlinux.eu) or OSX with
+[Homebrew](http://brew.sh).
 
