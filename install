@@ -8,7 +8,7 @@ function msgln {
     msg "${1}\n"
 }
 
-msg "This script might ask you for your password in order to run sudo."
+msgln "This script might ask you for your password in order to run sudo.\n\n"
 sudo -v
 
 DOTFILES=$(cd "$(dirname "$0")" && pwd)
