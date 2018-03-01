@@ -8,9 +8,9 @@ set -ge LS_COLORS
 set -x LANG en_GB.UTF-8
 set -x TERMINAL alacritty
 
-set -u EDITOR nvim
-set -u VISUAL nvim
-set -u BROWSER chromium
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+set -gx BROWSER chromium
 
 # Infinality mode in freetype (see
 # http://blog.brunomiguel.net/geekices/how-to-get-good-font-rendering-in-void-linux)
