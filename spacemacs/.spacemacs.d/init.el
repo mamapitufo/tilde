@@ -458,6 +458,12 @@ before packages are loaded."
   (define-key global-map (kbd "C-=") 'text-scale-increase)
   (define-key global-map (kbd "C--") 'text-scale-decrease)
 
+  ;; Clojure
+  (add-hook 'clojure-mode-hook #'(lambda () (modify-syntax-entry ?- "w")))
+
+  ;; Text modes
+  (add-hook 'adoc-mode-hook '(lambda () (turn-on-auto-fill)))
+
   ;; JavaScript
   (add-hook 'js2-mode-hook 'prettier-js-mode)
   (add-hook 'web-mode-hook 'prettier-js-mode)
