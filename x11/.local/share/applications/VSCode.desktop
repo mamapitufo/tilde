@@ -1,11 +1,15 @@
 [Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Visual Studio Code
+Comment=Code editing. Redefined.
+GenericName=Text Editor
+Exec=/home/mamapitufo/bin/code %F
+Icon=/home/mamapitufo/Library/VSCode/resources/app/resources/linux/code.png
 Type=Application
-TryExec=/home/mamapitufo/bin/code
-Exec=code
-Terminal=false
-Categories=Application;Editors
-
-Name=VSCode Editor
-GenericName=Code Editor
-Comment=A cross-platform code editor
+StartupNotify=true
 StartupWMClass=Code
+Categories=Utility;TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;
+Keywords=vscode;
+
