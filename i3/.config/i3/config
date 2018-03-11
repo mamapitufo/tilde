@@ -156,3 +156,4 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 for_window [class="MPlayer"] floating enable
 for_window [class="vlc"] floating enable
+for_window [class="mpv"] floating enable
