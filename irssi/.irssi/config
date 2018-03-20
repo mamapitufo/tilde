@@ -25,6 +25,7 @@ chatnets = {
 channels = (
   { name = "#clojure"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#voidlinux"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#lobsters"; chatnet = "freenode"; autojoin = "yes"; },
   { 
     name = "clojure-beginners";
     chatnet = "freenode";
