@@ -18,7 +18,7 @@ bindsym $mod+Shift+semicolon move scratchpad
 bindsym $mod+Shift+x move absolute position center
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p 'launch'"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'dejavu sans-7'"
 
 # lock the screen
 bindsym Control+$mod+l exec --no-startup-id xsecurelock
