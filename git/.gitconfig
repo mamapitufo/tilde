@@ -6,7 +6,7 @@
 [alias]
 	up = smart-pull
 	pu = push
-	puu = push -u
+	puu = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
 	puje = push --force-with-lease
 	prune = remote prune origin
 	curr-branch = rev-parse --abbrev-ref HEAD
