@@ -18,7 +18,7 @@ bindsym $mod+Shift+semicolon move scratchpad
 bindsym $mod+Shift+x move absolute position center
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'dejavu sans-7' -h 23"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'dejavu sans-7' -h 23"
 
 # lock the screen
 bindsym Control+$mod+l exec --no-startup-id xsecurelock
@@ -61,7 +61,7 @@ bindsym $mod+t layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+comma focus mode_toggle
+bindsym $mod+Space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
