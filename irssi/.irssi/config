@@ -24,14 +24,14 @@ chatnets = {
 
 channels = (
   { name = "#voidlinux"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#lobsters"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#lobsters"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#clojure"; chatnet = "freenode"; autojoin = "no"; },
   { 
     name = "clojure-beginners";
     chatnet = "freenode";
-    autojoin = "no";
+    autojoin = "yes";
   },
-  { name = "clojurescript"; chatnet = "freenode"; autojoin = "no"; }
+  { name = "clojurescript"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 statusbar = {
