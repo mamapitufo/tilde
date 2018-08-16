@@ -20,7 +20,6 @@ blueman
 bluez
 calibre
 chromium
-chromium-widevine
 chrony
 cifs-utils
 clojure
@@ -50,7 +49,6 @@ fuse-exfat
 gettext
 git-extras
 gnome-themes-standard
-google-chrome
 google-fonts-ttf
 gpm
 grub-x86_64-efi
