@@ -26,8 +26,8 @@ case "$1" in
         #echo "PowerButton pressed!">/dev/tty5
         case "$2" in
             PBTN|PWRF)
-		    logger "PowerButton pressed: $2, shutting down..."
-		    shutdown -P now
+		    logger "PowerButton pressed: $2, hibernating..."
+                    zzz -Z
 		    ;;
             *)      logger "ACPI action undefined: $2" ;;
         esac
