@@ -1,0 +1,5 @@
+[User]
+Language=en_GB.utf8
+XSession=i3
+Icon=/var/lib/AccountsService/icons/mamapitufo
+SystemAccount=false
