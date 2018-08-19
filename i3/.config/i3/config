@@ -5,7 +5,7 @@
 set $mod Mod4
 
 workspace_layout tabbed
-font pango:DejaVu Sans 7
+font pango:DejaVu Sans 9
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -18,7 +18,7 @@ bindsym $mod+Shift+semicolon move scratchpad
 bindsym $mod+Shift+x move absolute position center
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'dejavu sans-7' -h 23"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'dejavu sans-9' -h 25"
 
 # lock the screen
 bindsym Control+$mod+l exec --no-startup-id xsecurelock
