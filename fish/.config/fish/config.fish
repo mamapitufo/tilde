@@ -1,6 +1,6 @@
 set fish_greeting ""
 
-set PATH ~/bin ~/bin/gem $PATH
+set PATH ~/bin ~/bin/gem ~/.npm-packages/bin $PATH
 
 # /etc/profile sets this, and breaks it in the supplied `ls` function
 set -ge LS_COLORS
