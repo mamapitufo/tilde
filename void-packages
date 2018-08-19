@@ -104,6 +104,7 @@ s6-dns
 s6-dns-doc
 setxkbmap
 socklog-void
+sshd
 stow
 strace
 terminus-font
@@ -124,6 +125,7 @@ whois
 wireshark-gtk
 xbacklight
 xclip
+xdg-utils
 xdpyinfo
 xev
 xf86-input-synaptics
