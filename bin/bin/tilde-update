@@ -2,21 +2,8 @@
 
 SYSTEM=`uname -s`
 
-if [ $SYSTEM = "Linux" ]; then
-
-    sudo xbps-install -Su
-    sudo xbps-remove -vO
-
-elif [ $SYSTEM = "Darwin" ]; then
-    echo 'update brew database...'
-    brew up 2>&1 >/dev/null
-    echo -e '\ncleaning up old package files...'
-    brew cleanup
-    brew cask cleanup
-    echo 'outdated packages:'
-    brew outdated
-    brew cask outdated
-fi
+sudo xbps-install -Su
+sudo xbps-remove -vO
 
 [[ -f ~/.spacemacs.d/update ]] && ~/.spacemacs.d/update
 [[ -f ~/.config/nvim/update  ]] && ~/.config/nvim/update
