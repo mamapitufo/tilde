@@ -5,6 +5,6 @@ if [ -d ~/.emacs.d/.git ]; then
   cd ~/.emacs.d/ && git pull
 else
   echo 'installing spacemacs...'
-  git clone --recursive https://github.com/syl20bnr/spacemacs ~/.emacs.d
+  git clone --recursive --branch develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 fi
 
