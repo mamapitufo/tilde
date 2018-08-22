@@ -16,7 +16,7 @@ chatnets = {
     max_kicks = "4";
     max_msgs = "5";
     max_whois = "4";
-    sasl_mechanism = "plain";
+    sasl_mechanism = "PLAIN";
     sasl_username = "mamapitufo";
     sasl_password "<SECRET>";
   };
