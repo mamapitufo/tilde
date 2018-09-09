@@ -26,7 +26,6 @@ clojure
 cowsay
 curl
 dbus
-dmenu
 dnstracer
 docker
 dos2unix
@@ -98,6 +97,7 @@ qemu-user-static
 ripgrep
 rlwrap
 rmlint
+rofi
 rsync
 ruby
 s6-dns

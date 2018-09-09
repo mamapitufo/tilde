@@ -1,0 +1,14 @@
+@import "/usr/share/rofi/themes/Paper.rasi"
+
+configuration {
+	combi-modi: "window,drun,run";
+	modi: "combi";
+
+	font: "DejaVu Sans 13";
+	lines: 19;
+	separator-style: "solid";
+
+	run-command: "fish -c '{cmd}'";
+	run-list-command: "fish -c functions";
+}
+
