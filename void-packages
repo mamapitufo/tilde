@@ -60,6 +60,7 @@ hfsprogs
 htop
 hugo
 i3
+i3blocks
 i3status
 iftop
 imlib2-tools
@@ -71,6 +72,7 @@ lightdm-gtk3-greeter
 linux
 linux-firmware-intel
 linux-headers
+lm_sensors
 lsof
 lxqt-policykit
 mlocate
@@ -107,6 +109,7 @@ socklog-void
 sshd
 stow
 strace
+sysstat
 terminus-font
 termsyn-font
 tewi-font
