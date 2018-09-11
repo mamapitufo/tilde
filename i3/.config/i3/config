@@ -5,7 +5,7 @@
 set $mod Mod4
 
 workspace_layout tabbed
-font pango:DejaVu Sans 9
+font pango:DejaVu Sans 6
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -129,12 +129,6 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    colors {
-        background #002b36
-        statusline #839496
-        separator #073642
-    }
-
     position top
     status_command i3status -c ~/.config/i3/i3status.conf
 }
