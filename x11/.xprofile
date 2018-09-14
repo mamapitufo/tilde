@@ -3,7 +3,7 @@ test -d ${HOME}/bin && export PATH=${HOME}/bin:${PATH}
 
 export TERMINAL PATH
 
-setxkbmap us_intl -option compose:menu -option ctrl:nocaps -option lv3:ralt_alt
+setxkbmap us_intl -option compose:prsc -option ctrl:nocaps -option lv3:ralt_alt
 
 # dbus is needed for thunar...
 if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
