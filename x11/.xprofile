@@ -19,7 +19,7 @@ synclient \
 	TapButton3=2 \
 	HorizTwoFingerScroll=1 \
 	PalmDetect=1 \
-	PalmMinWidth=8 \
-	PalmMinz=100 \
+	PalmMinWidth=5 \
+	PalmMinZ=80 \
 	VertScrollDelta=-44 \
 	HorizScrollDelta=-44
