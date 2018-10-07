@@ -107,6 +107,7 @@ ruby
 s6-dns
 s6-dns-doc
 setxkbmap
+slurm
 socklog-void
 sshd
 stow
@@ -126,6 +127,7 @@ transmission-gtk
 tree
 twemoji
 unzip
+usb-reset
 webkitgtk2
 whois
 wireshark-gtk
@@ -149,4 +151,5 @@ xset
 xstow
 xtools
 xz
+yarn
 youtube-viewer
