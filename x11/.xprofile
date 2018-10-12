@@ -13,13 +13,3 @@ fi
 eval $(/usr/bin/gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
-synclient \
-	TapButton1=1 \
-	TapButton2=3 \
-	TapButton3=2 \
-	HorizTwoFingerScroll=1 \
-	PalmDetect=1 \
-	PalmMinWidth=5 \
-	PalmMinZ=80 \
-	VertScrollDelta=-44 \
-	HorizScrollDelta=-44
