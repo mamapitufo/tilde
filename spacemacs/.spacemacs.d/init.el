@@ -40,6 +40,7 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      html
+     prettier
      shell-scripts
      asciidoc
      vimscript
@@ -71,7 +72,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(prettier-js)
+   dotspacemacs-additional-packages '()
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -449,6 +450,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (setq javascript-fmt-tool 'prettier)
   )
 
 (defun dotspacemacs/user-load ()
@@ -479,9 +481,6 @@ before packages are loaded."
   (add-hook 'adoc-mode-hook '(lambda () (turn-on-auto-fill)))
 
   ;; JavaScript
-  (add-hook 'js2-mode-hook 'prettier-js-mode)
-  (add-hook 'web-mode-hook 'prettier-js-mode)
-  (add-hook 'react-mode-hook 'prettier-js-mode)
   (setq prettier-js-args '(
                            "--no-semi"
                            "--single-quote"
