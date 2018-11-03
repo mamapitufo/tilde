@@ -45,9 +45,9 @@ case "$1" in
     button/suspend)
         case "$2" in
             SUSP)
-		    # suspend-hybrid
-		    logger "Suspend Button pressed: $2, suspending..."
-		    zzz -H
+		    # suspend-to-disk
+		    logger "Suspend Button pressed: $2, hibernating..."
+		    zzz -Z
 		    ;;
             *)      logger "ACPI action undefined: $2" ;;
         esac
