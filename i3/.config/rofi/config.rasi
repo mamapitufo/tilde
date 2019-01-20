@@ -1,5 +1,3 @@
-@import "/usr/share/rofi/themes/Paper.rasi"
-
 configuration {
 	combi-modi: "window,drun,run";
 	modi: "combi";
@@ -12,3 +10,4 @@ configuration {
 	run-list-command: "fish -c functions";
 }
 
+@import "/usr/share/rofi/themes/Paper.rasi"
