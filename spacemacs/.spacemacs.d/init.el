@@ -451,7 +451,8 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (setq javascript-fmt-tool 'prettier)
+  (setq javascript-fmt-tool 'prettier
+        ispell-program-name "hunspell")
   )
 
 (defun dotspacemacs/user-load ()
