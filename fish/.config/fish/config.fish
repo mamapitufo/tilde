@@ -10,7 +10,7 @@ set -x TERMINAL alacritty
 
 set -gx EDITOR nvim
 set -gx VISUAL nvim
-set -gx BROWSER chromium
+set -gx BROWSER firefox
 
 # Infinality mode in freetype (see
 # http://blog.brunomiguel.net/geekices/how-to-get-good-font-rendering-in-void-linux)
