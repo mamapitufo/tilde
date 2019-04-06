@@ -8,8 +8,9 @@ workspace_layout tabbed
 font pango:DejaVu Sans 6
 bindsym $mod+Return exec i3-sensible-terminal
 
-default_border pixel 0
+default_border pixel 1
 default_floating_border pixel 1
+hide_edge_borders smart
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -150,9 +151,3 @@ bindsym XF86AudioMute exec --no-startup-id snd_toggle_out.fish
 # control screen brightness via keyboard
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
-
-for_window [class="Alacritty" floating] border pixel 1
-for_window [class="MPlayer"] floating enable, border pixel 1
-for_window [class="mpv"] floating enable, border pixel 1
-for_window [class="Wfica"] floating disable
-#for_window [class="PrimaryAuthManager"] floating enable, border pixel 1
