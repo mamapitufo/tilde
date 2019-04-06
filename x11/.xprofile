@@ -1,6 +1,7 @@
-export TERMINAL=/usr/bin/alacritty
+TERMINAL=/usr/bin/kitty
 test -d ${HOME}/bin && export PATH=${HOME}/bin:${PATH}
 
+# These need to be defined here to be picked up by i3.
 export TERMINAL PATH
 
 setxkbmap us_intl -option compose:prsc -option ctrl:nocaps -option lv3:ralt_alt
