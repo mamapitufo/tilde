@@ -5,7 +5,7 @@
 set $mod Mod4
 
 workspace_layout tabbed
-font pango:DejaVu Sans 6
+font pango:DejaVu Sans 10
 bindsym $mod+Return exec i3-sensible-terminal
 
 default_border pixel 1
