@@ -19,3 +19,5 @@ launch_gnome_keyring
 
 alias feh "feh -FxB black"
 
+set -u ICAROOT "/home/mamapitufo/Library/ICAClient/linuxx64"
+
