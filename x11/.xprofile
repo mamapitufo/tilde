@@ -18,5 +18,3 @@ if ! pgrep --exact mons >/dev/null; then
    nohup mons -a >/dev/null 2>&1 &
 fi
 
-mons -V
-
