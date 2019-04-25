@@ -19,10 +19,10 @@
 	mg = smart-merge
 	ff = merge --ff-only
 
-	lg = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(black) %an, %ar%Creset'
-	logrefs = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(black) %an, %ar%Creset' --simplify-by-decoration
+	lg = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %Cgreen(%an, %ar)%Creset'
+	logrefs = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green)(%an, %ar)%Creset' --simplify-by-decoration
 	last-commits = for-each-ref --sort=committerdate refs/heads --format='%(refname:short): %(committerdate:relative)'
-	filelg = log --pretty=format':%C(yellow)%h %C(reset)%s %C(blue) %an, %C(black)%ar%Creset' --follow
+	filelg = log --pretty=format':%C(yellow)%h %C(reset)%s %C(green)(%an, %ar)%Creset' --follow
 
 	ci = commit -v
 	cia = commit -va
