@@ -8,8 +8,6 @@ workspace_layout tabbed
 font pango:DejaVu Sans 10
 bindsym $mod+Return exec i3-sensible-terminal
 
-default_border pixel 1
-default_floating_border pixel 1
 hide_edge_borders smart
 
 # kill focused window
