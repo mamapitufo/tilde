@@ -4,18 +4,6 @@
 	pager = less -FXR
 	excludesfile = ~/.gitexclude
 [alias]
-	up = smart-pull
-	pu = push
-	puu = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
-	puje = push --force-with-lease
-	prune = remote prune origin
-	curr-branch = rev-parse --abbrev-ref HEAD
-
-	st = status -sb
-	staged = diff --staged
-	di = diff
-	sh = show
-
 	mg = smart-merge
 	ff = merge --ff-only
 
@@ -24,12 +12,6 @@
 	last-commits = for-each-ref --sort=committerdate refs/heads --format='%(refname:short): %(committerdate:relative)'
 	filelg = log --pretty=format':%C(yellow)%h %C(reset)%s %C(green)(%an, %ar)%Creset' --follow
 
-	ci = commit -v
-	cia = commit -va
-	amend = commit -v --amend
-	qamend = commit --amend --no-edit
-	aamend = commit -va --amend
-	qaamend = commit -a --amend --no-edit
 	wip = commit -am 'wip'
 	fixup = commit -am 'fixup'
 
@@ -46,11 +28,32 @@
 	continue = rebase --continue
 	cp = cherry-pick
 
-	a = add -u
-	aa = add .
-	ap = add -p
-
 	it = !git init && git commit -m \"root\" --allow-empty
+
+	; based on magit's commands, and vim (sort of)
+	cc = commit -v
+	cca = commit -va
+	ca = commit -v --amend --no-edit
+	caa = commit -va --amend --no-edit
+	cw = commit -v --amend
+	cwa = commit -va --amend
+
+	pp = push
+	pu = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
+	pf = push --force-with-lease
+
+	gs = status -sb
+
+	su = add -u
+	sa = add .
+	sc = add -p
+
+	du = diff
+	ds = diff --staged
+	dc = show
+
+	fo = smart-pull
+	ff = fetch
 
 [merge]
 	tool = vimdiff
