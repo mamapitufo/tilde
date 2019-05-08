@@ -39,6 +39,7 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     themes-megapack
      rust
      yaml
      html
@@ -50,20 +51,20 @@ This function should only modify configuration layer settings."
      javascript
      react
      clojure
-     helm
-     better-defaults
      auto-completion
+     better-defaults
      emacs-lisp
      git
+     helm
      markdown
      multiple-cursors
-     treemacs
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      spell-checking
      syntax-checking
+     treemacs
      (version-control :variables
                       version-control-global-margin t)
      )
@@ -198,9 +199,20 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-dark
-                         nordless
-                         solarized-light)
+
+   dotspacemacs-themes '(phoenix-dark-mono
+                         espresso)
+                         ;; oldlace
+                         ;; ritchie
+                         ;; minimal-light
+                         ;; leuven
+                         ;; sanityinc-tomorrow-day
+
+                         ;; soft-stone
+                         ;; soft-charcoal
+
+                         ;; solarized-dark
+                         ;; solarized-light
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
