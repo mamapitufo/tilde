@@ -44,7 +44,8 @@
 	gs = status -sb
 
 	su = add -u
-	sa = add .
+	sa = add
+	saa = add .
 	sc = add -p
 
 	du = diff
