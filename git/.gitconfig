@@ -5,7 +5,6 @@
 	excludesfile = ~/.gitexclude
 [alias]
 	mg = smart-merge
-	ff = merge --ff-only
 
 	lg = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %Cgreen(%an, %ar)%Creset'
 	logrefs = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green)(%an, %ar)%Creset' --simplify-by-decoration
