@@ -6,20 +6,8 @@
 [alias]
 	mg = smart-merge
 
-	lg = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %Cgreen(%an, %ar)%Creset'
-	logrefs = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green)(%an, %ar)%Creset' --simplify-by-decoration
-	last-commits = for-each-ref --sort=committerdate refs/heads --format='%(refname:short): %(committerdate:relative)'
-	filelg = log --pretty=format':%C(yellow)%h %C(reset)%s %C(green)(%an, %ar)%Creset' --follow
-
 	wip = commit -am 'wip'
 	fixup = commit -am 'fixup'
-
-	co = checkout
-	br = branch
-	brv = branch -vv
-	brd = branch -d
-	brdd = branch -D
-	cob = checkout -b
 
 	rb = rebase
 	rbi = rebase -i
@@ -30,6 +18,15 @@
 	it = !git init && git commit -m \"root\" --allow-empty
 
 	; based on magit's commands, and vim (sort of)
+	bl = branch --list
+	bv = branch -vv
+	br = branch -r
+	bd = branch -d
+	bdd = brand -D
+	bc = branch
+	bcs = checkout -b
+	bs = checkout
+
 	cc = commit -v
 	cca = commit -va
 	ca = commit -v --amend --no-edit
@@ -37,8 +34,8 @@
 	cw = commit -v --amend
 	cwa = commit -va --amend
 
-	pp = push
-	pu = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
+	pu = push
+	pp = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
 	pf = push --force-with-lease
 
 	gs = status -sb
@@ -54,6 +51,12 @@
 
 	fo = smart-pull
 	ff = fetch
+
+	lg = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %Cgreen(%an, %ar)%Creset'
+	ll = log --oneline
+	lr = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green)(%an, %ar)%Creset' --simplify-by-decoration
+	lc = for-each-ref --sort=committerdate refs/heads --format='%(refname:short): %(committerdate:relative)'
+	lf = log --pretty=format':%C(yellow)%h %C(reset)%s %C(green)(%an, %ar)%Creset' --follow
 
 [merge]
 	tool = vimdiff
