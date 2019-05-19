@@ -483,7 +483,7 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq-default evil-escape-key-sequence "jk")
-  (setq magit-repository-directories '("~/Sandbox/"))
+  (setq magit-repository-directories '(("~/Sandbox/" . 3)))
 
   (setq ns-use-srgb-colorspace nil)
 
