@@ -4,6 +4,7 @@ call plug#begin()
 
 Plug 'moll/vim-bbye'
 Plug 'altercation/vim-colors-solarized'
+Plug 'nightsense/cosmic_latte'
 Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'Raimondi/delimitMate'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
@@ -40,8 +41,6 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'kien/rainbow_parentheses.vim', { 'for': 'clojure' }
 " Plug 'SevereOverfl0w/async-clj-omni', { 'for': 'clojure' }
-
-Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 
 call plug#end()
 

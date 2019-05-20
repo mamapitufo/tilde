@@ -1,5 +1,5 @@
 set fish_color_cwd blue
-set fish_color_time black --bold
+set fish_color_time white
 
 set fish_prompt_pwd_dir_length 0
 
