@@ -490,6 +490,9 @@ before packages are loaded."
   (define-key global-map (kbd "C-=") 'text-scale-increase)
   (define-key global-map (kbd "C--") 'text-scale-decrease)
 
+  ;; Rust
+  (setq-default rust-format-on-save t)
+
   ;; Clojure
   (add-hook 'clojure-mode-hook #'(lambda () (modify-syntax-entry ?- "w")))
 
