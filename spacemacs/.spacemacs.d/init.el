@@ -492,6 +492,7 @@ before packages are loaded."
 
   ;; Rust
   (setq-default rust-format-on-save t)
+  (add-hook 'rust-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 
   ;; Clojure
   (add-hook 'clojure-mode-hook #'(lambda () (modify-syntax-entry ?- "w")))
