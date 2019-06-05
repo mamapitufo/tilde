@@ -200,7 +200,9 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
 
-   dotspacemacs-themes '(espresso
+   dotspacemacs-themes '(monochrome-bright
+                         monochrome
+                         espresso
                          phoenix-dark-mono)
                          ;; oldlace
                          ;; ritchie
@@ -372,7 +374,7 @@ It should only modify the values of Spacemacs settings."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
@@ -482,6 +484,8 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  (global-hl-line-mode -1)
+
   (setq-default evil-escape-key-sequence "jk")
   (setq magit-repository-directories '(("~/Sandbox/" . 3)))
 
@@ -553,6 +557,10 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
+ '(ansi-color-names-vector ["black" "light gray" "dark gray" "light slate gray"])
+ '(custom-safe-themes
+   (quote
+    ("13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "39dd7106e6387e0c45dfce8ed44351078f6acd29a345d8b22e7b8e54ac25bac4" "cab317d0125d7aab145bc7ee03a1e16804d5abdfa2aa8738198ac30dc5f7b569" "c93889826aa14d6bf4ff491780d0888d217e67e04209da823720ee50435e3bb1" "ef07cb337554ffebfccff8052827c4a9d55dc2d0bc7f08804470451385d41c5c" "9f08dacc5b23d5eaec9cccb6b3d342bd4fdb05faf144bdcd9c4b5859ac173538" "0f1733ad53138ddd381267b4033bcb07f5e75cd7f22089c7e650f1bb28fc67f4" "6e38567da69b5110c8e19564b7b2792add8e78a31dfb270168509e7ae0147a8d" "bee55ba5e878d0584db9b2fb33f75c348a3008fcfe8e05ab8cae897ca604fd95" default)))
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
