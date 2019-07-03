@@ -1,4 +1,6 @@
-" space as leader
+inoremap jk <Esc>
+cnoremap jk <C-c>
+
 let mapleader="\<Space>"
 
 " <leader>* to search the current word with Ag
