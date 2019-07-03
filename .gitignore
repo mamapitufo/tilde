@@ -1,14 +1,5 @@
 fish/.config/fish/fishd.*
 
-neovim/.config/nvim/plugged/
-neovim/.config/nvim/undo/
-neovim/.config/nvim/spell/
-neovim/.config/nvim/autoload/plug.vim
-neovim/.config/nvim/autoload/plug.vim.old
-neovim/.config/nvim/.init.vim-rplugin~
-neovim/.config/nvim/revert-plugupdate
-neovim/.config/nvim/.netrwhist
-
 lein/.lein/repl-history
 lein/.lein/repl-port
 
