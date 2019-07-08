@@ -20,6 +20,7 @@ for x in /tmp/.X11-unix/*; do
         export DISPLAY=":$displaynum"
     fi
 done
+CONNECTED_MONITORS=$(xrandr --query | grep -Ec '\<connected')
 
 case "$1" in
     button/power)
@@ -76,7 +77,14 @@ case "$1" in
         ;;
     button/lid)
         case "$3" in
-                close)  logger "LID closed" ;;
+                close)
+                    if [ $CONNECTED_MONITORS -eq 1 ]; then
+                        logger "LID closed, sleeping..."
+                        zzz
+                    else
+                        logger "LID closed with external monitor, doing nothing..."
+                    fi
+                    ;;
                 open)   logger "LID opened" ;;
                 *) logger "ACPI action undefined (LID): $2";;
         esac
