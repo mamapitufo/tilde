@@ -10,8 +10,15 @@ setspeed="/sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed"
 
 set $*
 
-PID=$(pgrep dbus-launch)
-export USER=$(ps -o user --no-headers $PID)
+PIDS=$(pgrep dbus-launch)
+USERS=$(ps -o user --no-headers $PIDS)
+# this just finds the first "regular" user that is running X...
+for user in $USERS; do
+    if ([ "$user" != "root" ] && [ "$user" != "lightdm" ]); then
+        export USER=$user
+        break
+    fi
+done
 USERHOME=$(getent passwd $USER | cut -d: -f6)
 export XAUTHORITY="$USERHOME/.Xauthority"
 for x in /tmp/.X11-unix/*; do
