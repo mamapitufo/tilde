@@ -1,3 +1,4 @@
 #!/bin/sh
 su -c xsecurelock $USER &
+sleep 1
 
