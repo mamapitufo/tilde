@@ -46,6 +46,7 @@ font-hack-ttf
 font-inconsolata-otf
 font-iosevka
 fuse-exfat
+fzf
 gettext
 git-extras
 gnome-keyring
@@ -98,6 +99,7 @@ python-neovim
 python3-neovim
 python3-youtube-dl
 qemu-user-static
+rg
 ripgrep
 rlwrap
 rmlint
