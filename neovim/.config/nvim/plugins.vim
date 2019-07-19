@@ -1,4 +1,5 @@
 Plug 'moll/vim-bbye'
+Plug 'itchyny/lightline.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'nightsense/cosmic_latte'
 Plug 'rking/ag.vim', { 'on': 'Ag' }
@@ -6,7 +7,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'elzr/vim-json'
 Plug 'scrooloose/syntastic'
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'sjl/gundo.vim'
 Plug 'mtth/scratch.vim'
 Plug 'airblade/vim-gitgutter'
