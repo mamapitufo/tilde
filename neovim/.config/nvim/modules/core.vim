@@ -9,7 +9,7 @@ set number
 set splitbelow
 set splitright
 set completeopt-=preview
-set updatetime=500
+set updatetime=350
 
 " this could be a bit safer, "only for .txt on Y directory..."
 set modeline
