@@ -1,6 +1,5 @@
 Plug 'moll/vim-bbye'
 Plug 'itchyny/lightline.vim'
-Plug 'altercation/vim-colors-solarized'
 Plug 'nightsense/cosmic_latte'
 Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'Raimondi/delimitMate'
