@@ -5,12 +5,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'dag/vim-fish'
+Plug 'embear/vim-localvimrc'
+Plug 'jiangmiao/auto-pairs', { 'tag': 'v2.0.0' }
 
-" Plug 'Raimondi/delimitMate'
 " Plug 'elzr/vim-json'
 " Plug 'scrooloose/syntastic'
 " Plug 'sjl/gundo.vim'
-" Plug 'embear/vim-localvimrc'
 " Plug 'Keithbsmiley/tmux.vim'
 
 " Plug 'tpope/vim-unimpaired'
@@ -36,3 +36,4 @@ Plug 'dag/vim-fish'
 
 "Plug 'mtth/scratch.vim'
 "Plug 'PeterRincker/vim-argumentative'
+"Plug 'easymotion/vim-easymotion'
