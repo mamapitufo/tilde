@@ -1,12 +1,5 @@
 set fish_greeting ""
 
-set -l cosmic_latte_path ~/.config/nvim/plugged/cosmic_latte
-
-if status is-interactive; and test -d $cosmic_latte_path
-  source $cosmic_latte_path/shell/cosmic_latte_light.fish
-  eval (dircolors -c $cosmic_latte_path/shell/dircolors)
-end
-
 set --universal fish_user_paths ~/bin ~/bin/gem ~/.npm-packages/bin ~/.cargo/bin
 
 # /etc/profile sets this, and breaks it in the supplied `ls` function
@@ -19,6 +12,10 @@ set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -gx BROWSER firefox
 
+set -gx FZF_DEFAULT_COMMAND "rg --files --hidden --follow -g \"!.git/\"" 2>/dev/null
+set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+set -gx FZF_DEFAULT_OPTS "--color=light"
+
 # Infinality mode in freetype (see http://blog.brunomiguel.net/geekices/how-to-get-good-font-rendering-in-void-linux)
 set -u FREETYPE_PROPERTIES "truetype:interpreter-version=38"
 
@@ -29,4 +26,11 @@ alias feh "feh -FxB black"
 if status is-interactive; and test $TERM = "xterm-kitty"
   alias tmux "tmux -2"
 end
+
+set -l cosmic_latte_path ~/.config/nvim/plugged/cosmic_latte
+if status is-interactive; and test -d $cosmic_latte_path
+  source $cosmic_latte_path/shell/cosmic_latte_light.fish
+  eval (dircolors -c $cosmic_latte_path/shell/dircolors)
+end
+
 
