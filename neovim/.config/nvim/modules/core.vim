@@ -1,9 +1,13 @@
+if &shell =~# 'fish$'
+  set shell=sh
+endif
+
 " Default indent, vim-sleuth should handle it for most cases
 set tabstop=2
 set shiftwidth=2
 set expandtab
 
-set textwidth=80
+set textwidth=79
 
 set number
 set splitbelow
