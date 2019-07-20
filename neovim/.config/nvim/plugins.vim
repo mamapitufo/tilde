@@ -4,6 +4,7 @@ Plug 'nightsense/cosmic_latte'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'dag/vim-fish'
 
 " Plug 'Raimondi/delimitMate'
 " Plug 'elzr/vim-json'
@@ -11,7 +12,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'sjl/gundo.vim'
 " Plug 'embear/vim-localvimrc'
 " Plug 'Keithbsmiley/tmux.vim'
-" Plug 'dag/vim-fish'
 
 " Plug 'tpope/vim-unimpaired'
 " Plug 'tpope/vim-fugitive'
