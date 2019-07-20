@@ -10,6 +10,12 @@ Plug 'jiangmiao/auto-pairs', { 'tag': 'v2.0.0' }
 Plug 'lambdalisue/suda.vim'
 Plug 'liuchengxu/vim-better-default'
 
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' } | Plug 'maxmellon/vim-jsx-pretty'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/1.x',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'graphql', 'json', 'html'] }
+
 " Plug 'elzr/vim-json'
 " Plug 'scrooloose/syntastic'
 " Plug 'sjl/gundo.vim'
