@@ -2,10 +2,10 @@ Plug 'moll/vim-bbye'
 Plug 'itchyny/lightline.vim'
 Plug 'nightsense/cosmic_latte'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 
 Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'Raimondi/delimitMate'
-Plug 'ctrlpvim/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'elzr/vim-json'
 Plug 'scrooloose/syntastic'
 Plug 'sjl/gundo.vim'
