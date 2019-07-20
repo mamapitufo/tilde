@@ -8,6 +8,7 @@ Plug 'dag/vim-fish'
 Plug 'embear/vim-localvimrc'
 Plug 'jiangmiao/auto-pairs', { 'tag': 'v2.0.0' }
 Plug 'lambdalisue/suda.vim'
+Plug 'liuchengxu/vim-better-default'
 
 " Plug 'elzr/vim-json'
 " Plug 'scrooloose/syntastic'
@@ -38,3 +39,4 @@ Plug 'lambdalisue/suda.vim'
 "Plug 'mtth/scratch.vim'
 "Plug 'PeterRincker/vim-argumentative'
 "Plug 'easymotion/vim-easymotion'
+"Plug 'leafgarland/typescript-vim'
