@@ -16,6 +16,8 @@ Plug 'prettier/vim-prettier', {
   \ 'branch': 'release/1.x',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'graphql', 'json', 'html'] }
 
+Plug 'tpope/vim-sleuth'
+
 " Plug 'elzr/vim-json'
 " Plug 'scrooloose/syntastic'
 " Plug 'sjl/gundo.vim'
@@ -25,7 +27,6 @@ Plug 'prettier/vim-prettier', {
 " Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-commentary'
 " Plug 'tpope/vim-sensible'
-" Plug 'tpope/vim-sleuth'
 " Plug 'tpope/vim-surround'
 " Plug 'tpope/vim-repeat'
 " Plug 'tpope/vim-dispatch'
