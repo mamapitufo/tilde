@@ -10,6 +10,7 @@ Plug 'jiangmiao/auto-pairs', { 'tag': 'v2.0.0' }
 Plug 'lambdalisue/suda.vim'
 Plug 'liuchengxu/vim-better-default'
 Plug 'w0rp/ale'
+Plug 'simnalamburt/vim-mundo'
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' } | Plug 'maxmellon/vim-jsx-pretty'
 
