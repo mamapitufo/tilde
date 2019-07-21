@@ -7,11 +7,12 @@ set undodir=~/.config/nvim/undo
 inoremap jk <Esc>
 cnoremap jk <C-c>
 
-nunmap <Leader>q
-nunmap <Leader>Q
+nunmap <leader>bd
+nunmap <leader>q
+nunmap <leader>Q
 
-nnoremap <silent> <Leader>qq :q<cr>
-nnoremap <Leader>qQ :qa!<cr>
+nnoremap <silent> <leader>qq :q<cr>
+nnoremap <leader>qQ :qa!<cr>
 
 set background=light
 set norelativenumber
