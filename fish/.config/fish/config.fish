@@ -16,6 +16,8 @@ set -gx FZF_DEFAULT_COMMAND "rg --files --hidden --follow -g \"!.git/\"" 2>/dev/
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 set -gx FZF_DEFAULT_OPTS "--color=light"
 
+set -gx BAT_THEME "base16"
+
 # Infinality mode in freetype (see http://blog.brunomiguel.net/geekices/how-to-get-good-font-rendering-in-void-linux)
 set -u FREETYPE_PROPERTIES "truetype:interpreter-version=38"
 
