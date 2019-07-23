@@ -7,7 +7,6 @@ set undodir=~/.config/nvim/undo
 inoremap jk <Esc>
 cnoremap jk <C-c>
 
-nunmap <leader>bd
 nunmap <leader>q
 nunmap <leader>Q
 
