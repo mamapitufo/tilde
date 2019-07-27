@@ -138,13 +138,8 @@ bar {
 # Start widgets and filemanager
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
+exec --no-startup-id pa-applet
 exec --no-startup-id thunar --daemon
-
-# Control volume via media keys
-bindsym XF86AudioRaiseVolume exec --no-startup-id snd_volume.fish +
-bindsym XF86AudioLowerVolume exec --no-startup-id snd_volume.fish -
-bindsym XF86AudioMute exec --no-startup-id snd_toggle_out.fish
-#bindsym XF86AudioMicMute exec --no-startup-id amixer set Mic toggle
 
 # control screen brightness via keyboard
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
