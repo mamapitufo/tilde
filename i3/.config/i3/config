@@ -138,7 +138,7 @@ bar {
 # Start widgets and filemanager
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-exec --no-startup-id pa-applet
+exec --no-startup-id pa-applet --disable-notifications
 exec --no-startup-id thunar --daemon
 
 # control screen brightness via keyboard
