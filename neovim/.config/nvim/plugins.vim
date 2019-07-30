@@ -14,6 +14,8 @@ Plug 'simnalamburt/vim-mundo'
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' } | Plug 'maxmellon/vim-jsx-pretty'
 
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
