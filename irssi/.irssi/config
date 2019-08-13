@@ -18,7 +18,7 @@ chatnets = {
     max_whois = "4";
     sasl_mechanism = "PLAIN";
     sasl_username = "mamapitufo";
-    sasl_password "<SECRET>";
+    sasl_password = "<SECRET>";
   };
 };
 
@@ -26,7 +26,7 @@ channels = (
   { name = "#voidlinux"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#lobsters"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#clojure"; chatnet = "freenode"; autojoin = "no"; },
-  { 
+  {
     name = "clojure-beginners";
     chatnet = "freenode";
     autojoin = "yes";
