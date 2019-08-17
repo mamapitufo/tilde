@@ -23,7 +23,7 @@ bindsym $mod+Shift+x move absolute position center
 bindsym $mod+d exec rofi -show combi
 
 # lock the screen
-bindsym Control+$mod+l exec --no-startup-id xsecurelock
+bindsym Control+$mod+l exec --no-startup-id xset s activate
 
 # change focused window
 bindsym $mod+h focus left
