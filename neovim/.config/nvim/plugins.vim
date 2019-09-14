@@ -12,9 +12,13 @@ Plug 'liuchengxu/vim-better-default'
 Plug 'w0rp/ale'
 Plug 'simnalamburt/vim-mundo'
 
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' } | Plug 'maxmellon/vim-jsx-pretty'
+Plug 'Olical/conjure', { 'tag': 'v1.1.0', 'do': 'bin/compile', 'for': 'clojure' }
+"Plug 'guns/vim-sexp' | Plug 'tpope/vim-sexp-mappings-for-regular-people'
 
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' } | Plug 'maxmellon/vim-jsx-pretty'
+"Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': 'javascript' }
 
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-fugitive'
@@ -29,3 +33,6 @@ Plug 'tpope/vim-eunuch'
 "Plug 'leafgarland/typescript-vim'
 "Plug 'easymotion/vim-easymotion'
 "Plug 'tpope/vim-vinegar'
+"Plug 'tpope/vim-abolish'
+"Plug 'tpope/vim-dispatch'
+"Plug 'radenling/vim-dispatch-neovim'
