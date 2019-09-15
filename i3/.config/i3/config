@@ -24,6 +24,8 @@ bindsym $mod+d exec rofi -show combi
 
 # lock the screen
 bindsym Control+$mod+l exec --no-startup-id xset s activate
+# hibernate
+bindsym Control+Shift+$mod+l exec loginctl hibernate
 
 # change focused window
 bindsym $mod+h focus left
