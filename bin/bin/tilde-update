@@ -5,7 +5,5 @@ SYSTEM=`uname -s`
 sudo xbps-install -Su
 sudo xbps-remove -vO
 
-[[ -f ~/.spacemacs.d/update ]] && ~/.spacemacs.d/update
+#[[ -f ~/.spacemacs.d/update ]] && ~/.spacemacs.d/update
 [[ -f ~/.config/nvim/update  ]] && ~/.config/nvim/update
-
-
