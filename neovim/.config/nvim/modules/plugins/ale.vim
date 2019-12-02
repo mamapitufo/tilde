@@ -7,6 +7,7 @@ let g:ale_linters = {
 \   'less': ['prettier'],
 \   'rust': ['rls'],
 \   'typescript': ['prettier'],
+\   'clojure': ['clj-kondo', 'joker'],
 \}
 
 let g:ale_fixers = {

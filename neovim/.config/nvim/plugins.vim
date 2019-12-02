@@ -12,7 +12,7 @@ Plug 'liuchengxu/vim-better-default'
 Plug 'w0rp/ale'
 Plug 'simnalamburt/vim-mundo'
 
-Plug 'Olical/conjure', { 'tag': 'v1.1.0', 'do': 'bin/compile', 'for': 'clojure' }
+Plug 'Olical/conjure', { 'tag': 'v2.1.2', 'do': 'bin/compile', 'for': 'clojure' }
 "Plug 'guns/vim-sexp' | Plug 'tpope/vim-sexp-mappings-for-regular-people'
 
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
