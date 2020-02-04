@@ -22,6 +22,6 @@ nunmap <leader>Q
 
 nnoremap <silent> <leader>qq :q<cr>
 nnoremap <leader>qQ :qa!<cr>
+nnoremap <leader>qa :qa<cr>
 
 set background=light
-set norelativenumber
