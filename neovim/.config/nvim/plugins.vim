@@ -3,7 +3,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'nightsense/cosmic_latte'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'tag': '5.2' }
 Plug 'dag/vim-fish'
 Plug 'embear/vim-localvimrc'
 Plug 'jiangmiao/auto-pairs', { 'tag': 'v2.0.0' }
