@@ -68,4 +68,5 @@
 	path = ~/.gitconfig_local
 [filter "irssi"]
 	clean = "sed -e 's/sasl_password .*\";/sasl_password = \"<SECRET>\";/'"
-
+[filter "spotifyd"]
+	clean = "sed -e 's/password = .*/password = <SECRET>/'"
