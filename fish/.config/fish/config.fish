@@ -24,6 +24,11 @@ set -u FREETYPE_PROPERTIES "truetype:interpreter-version=38"
 launch_gnome_keyring
 
 alias feh "feh -FxB black"
+alias mpvv "mpv --osd-bar-align-y=1 --osd-bar-w=99 --osd-level=2"
+
+alias llatest "ls -1cr"
+alias lsmallest "ls -1S"
+alias llargest "ls -1Sr"
 
 if status is-interactive; and test $TERM = "xterm-kitty"
   alias tmux "tmux -2"
