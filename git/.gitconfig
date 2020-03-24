@@ -70,4 +70,4 @@
 	clean = "sed -e 's/sasl_password .*\";/sasl_password = \"<SECRET>\";/'"
 [filter "spotifyd"]
 	clean = "sed -e 's/password = .*/password = <SECRET>/;s/device_name = .*/device_name = <HOSTNAME>/'"
-	smudge = "sed -e \"s/device_name =.*/device_name = $(hostname)/\""
+	smudge = "sed -e \"s/device_name =.*/device_name = Spotifyd@$(hostname)/\""
