@@ -69,5 +69,5 @@
 [filter "irssi"]
 	clean = "sed -e 's/sasl_password .*\";/sasl_password = \"<SECRET>\";/'"
 [filter "spotifyd"]
-	clean = "sed -e 's/password = .*/password = <SECRET>/;s/device_name = .*/device_name = <HOSTNAME>/'"
-	smudge = "sed -e \"s/device_name =.*/device_name = Spotifyd@$(hostname)/\""
+	clean = "sed -e 's/password = .*/password = <SECRET>/;s/device_name = .*/device_name = <HOSTNAME>/;s/cache_path = .*/cache_path = <CACHE_DIR>/'"
+	smudge = "sed -e \"s/device_name =.*/device_name = Spotifyd@$(hostname)/;s#cache_path = .*#cache_path = $HOME/.cache/spotifyd#\""
