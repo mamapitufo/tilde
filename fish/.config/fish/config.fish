@@ -18,6 +18,8 @@ set -gx FZF_DEFAULT_OPTS "--color=light"
 
 set -gx BAT_THEME "base16"
 
+set -gx SVDIR ~/service
+
 # Infinality mode in freetype (see http://blog.brunomiguel.net/geekices/how-to-get-good-font-rendering-in-void-linux)
 set -u FREETYPE_PROPERTIES "truetype:interpreter-version=38"
 
