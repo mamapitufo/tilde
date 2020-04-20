@@ -1,1 +1,0 @@
-{:conns {:propel {:port #slurp-edn ".prepl-port"}}}
