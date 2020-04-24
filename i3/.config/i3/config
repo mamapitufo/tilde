@@ -147,5 +147,8 @@ exec --no-startup-id thunar --daemon
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
+# toggle detected screen configuration
+bindsym $mod+Print exec --no-startup-id autorandr --change
+
 for_window [class="MPlayer"] floating enable, border pixel 1
 for_window [class="mpv"] floating enable, border pixel 1
