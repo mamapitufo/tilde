@@ -103,6 +103,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# toggle workspace between monitors
+bindsym $mod+Print move workspace to output right
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -146,9 +148,6 @@ exec --no-startup-id thunar --daemon
 # control screen brightness via keyboard
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
-
-# toggle detected screen configuration
-bindsym $mod+Print exec --no-startup-id autorandr --change
 
 for_window [class="skype"] tiling enable
 for_window [class="MPlayer"] floating enable, border pixel 1
