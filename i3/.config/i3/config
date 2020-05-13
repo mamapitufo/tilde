@@ -106,8 +106,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # cycle between monitor modes
 bindsym $mod+Print exec --no-startup-id mons -n right
-# toggle workspace between monitors
-bindsym $mod+Shift+Print move workspace to output right
 # Prefer external monitor over internal for most workspaces
 workspace 1 output HDMI2 eDP1
 workspace 2 output eDP1 HDMI2
