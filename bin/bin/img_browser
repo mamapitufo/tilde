@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+exec feh --draw-filename --edit --on-last-slide quit -Smtime
