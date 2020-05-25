@@ -32,6 +32,8 @@ alias llatest "ls -1cr"
 alias lsmallest "ls -1S"
 alias llargest "ls -1Sr"
 
+alias clj-nrepl 'clj -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]" --interactive'
+
 if status is-interactive; and test $TERM = "xterm-kitty"
   alias tmux "tmux -2"
 end
