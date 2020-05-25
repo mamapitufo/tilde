@@ -12,8 +12,9 @@ Plug 'liuchengxu/vim-better-default'
 Plug 'w0rp/ale'
 Plug 'simnalamburt/vim-mundo'
 
-Plug 'Olical/conjure', { 'branch': 'develop' }
+Plug 'Olical/conjure', { 'tag': 'v3.4.0' }
 "Plug 'guns/vim-sexp' | Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'bakpakin/fennel.vim'
 
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
