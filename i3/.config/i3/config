@@ -23,7 +23,7 @@ bindsym $mod+Shift+x move absolute position center
 bindsym $mod+d exec rofi -show combi
 
 # lock the screen
-bindsym Control+$mod+l exec --no-startup-id xset s activate
+bindsym $mod+Control+q exec --no-startup-id xset s activate
 # hibernate
 bindsym Control+Shift+$mod+l exec loginctl hibernate
 
