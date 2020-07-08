@@ -1,9 +1,25 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
-SYSTEM=`uname -s`
+echo "tilde update"
+doas id >/dev/null
 
-sudo xbps-install -Su
-sudo xbps-remove -vO
+log_info "Updating system package lists..."
+doas xbps-install -S
+log_info "Done."
 
-#[[ -f ~/.spacemacs.d/update ]] && ~/.spacemacs.d/update
-[[ -f ~/.config/nvim/update  ]] && ~/.config/nvim/update
+void-update
+set -l update_status $status
+if test $update_status -eq 16
+  void-xbps-upgrade
+  void-update
+else if test $update_status -ne 0
+  log_error "Unhandled error."
+  exit 1
+end
+
+set -l cache_size_m (du -m /var/cache/xbps |cut -f1)
+if test $cache_size_m -gt 5000
+  void-clean-cache
+end
+
+#[[ -f ~/.config/nvim/update  ]] && ~/.config/nvim/update
