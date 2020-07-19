@@ -107,12 +107,12 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # cycle between monitor modes
 bindsym $mod+Print exec --no-startup-id mons -n right
 # Prefer external monitor over internal for most workspaces
-workspace 1 output HDMI2 eDP1
-workspace 2 output eDP1 HDMI2
-workspace 3 output HDMI2 eDP1
-workspace 4 output HDMI2 eDP1
-workspace 5 output HDMI2 eDP1
-workspace 6 output HDMI2 eDP1
+workspace 1 output HDMI-2 eDP-1
+workspace 2 output eDP-1 HDMI-2
+workspace 3 output HDMI-2 eDP-1
+workspace 4 output HDMI-2 eDP-1
+workspace 5 output HDMI-2 eDP-1
+workspace 6 output HDMI-2 eDP-1
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
