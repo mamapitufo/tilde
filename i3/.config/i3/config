@@ -113,6 +113,9 @@ workspace 3 output HDMI-2 eDP-1
 workspace 4 output HDMI-2 eDP-1
 workspace 5 output HDMI-2 eDP-1
 workspace 6 output HDMI-2 eDP-1
+workspace 7 output HDMI-2 eDP-1
+workspace 8 output HDMI-2 eDP-1
+workspace 9 output eDP-1 HDMI-2
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -160,3 +163,5 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 for_window [class="skype"] tiling enable
 for_window [class="MPlayer"] floating enable, border pixel 1
 for_window [class="mpv"] floating enable, border pixel 1
+
+assign [class="VirtualBox .*"] 8
