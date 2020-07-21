@@ -1,7 +1,6 @@
 {
-  "editor.fontSize": 14,
   "editor.tabSize": 2,
-  "window.zoomLevel": 1,
+  "editor.fontLigatures": true,
   "window.menuBarVisibility": "toggle",
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
