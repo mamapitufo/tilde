@@ -9,3 +9,7 @@ nnoremap <silent> <leader>tS :set spell!<cr>
 
 au FileType gitcommit nnoremap <buffer> <localleader>c :wq<cr>
 au FileType gitcommit nnoremap <buffer> <localleader>k ggdG <bar> :wq!<cr>
+
+" Move visual selection
+vnoremap J :m'>+1<cr>gv=gv
+vnoremap K :m'<-2<cr>gv=gv
