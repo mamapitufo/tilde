@@ -1,32 +1,36 @@
 {
-  "editor.tabSize": 2,
-  "editor.fontLigatures": true,
-  "window.menuBarVisibility": "toggle",
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
-  "editor.fontFamily": "'Fira Code','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-  "editor.cursorStyle": "underline",
-  "files.exclude": {
-    "**/*.sw*": true
+  /**
+   * JavaScript
+   */
+  "javascript.format.enable": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.accessibilitySupport": "off",
+
+  "search.smartCase": true,
+
+  /**
+   * Formatting, encoding, etc.
+   */
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.minimap.enabled": false,
   "files.autoGuessEncoding": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "files.watcherExclude": {
     "**/*.sw*": true
   },
-  "workbench.sideBar.location": "right",
-  "search.smartCase": true,
+  "files.exclude": {
+    "**/*.sw*": true
+  },
+
+  /**
+   * VIM emulation
+   */
   "vim.cursorStylePerMode.insert": "underline",
   "vim.cursorStylePerMode.normal": "block",
   "vim.foldfix": true,
   "vim.visualstar": true,
-  "workbench.colorTheme": "Verdandi",
-  "workbench.editor.enablePreviewFromQuickOpen": false,
   "vim.leader": " ",
   "vim.insertModeKeyBindings": [
     {
@@ -59,5 +63,25 @@
       "before": ["<leader>", "q", "q"],
       "commands": ["workbench.action.closeWindow"]
     }
-  ]
+  ],
+
+  /**
+   * UI
+   */
+  "window.menuBarVisibility": "toggle",
+  "workbench.sideBar.location": "right",
+  "workbench.colorTheme": "Verdandi",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "'Fira Code','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.cursorStyle": "underline",
+  "editor.accessibilitySupport": "off",
+
+  /**
+   * Telemetry nonsense
+   */
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false
 }
