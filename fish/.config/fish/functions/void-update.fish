@@ -8,7 +8,7 @@ function void-update --description "Update Void packages"
     case 16
       log_error "xbps needs to be updated."
     case '*'
-      log_error "Unhandled error code!"
+	  log_error "Unhandled error code: $install_status."
   end
   return $install_status
 end
