@@ -10,6 +10,8 @@ font pango:Roboto Condensed 11
 # Launch frequently used apps
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+Return exec gtk-launch $(xdg-settings get default-web-browser)
+bindsym $mod+Print exec flameshot full -p ~/Downloads
+bindsym $mod+Shift+Print exec flameshot gui -p ~/Downloads
 
 hide_edge_borders smart
 
@@ -107,8 +109,6 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# cycle between monitor modes
-bindsym $mod+Print exec --no-startup-id mons -n right
 # Prefer external monitor over internal for most workspaces
 workspace 1 output HDMI2 eDP1
 workspace 2 output eDP1 HDMI2
