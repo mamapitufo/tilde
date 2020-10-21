@@ -13,6 +13,15 @@ bindsym $mod+Shift+Return exec gtk-launch $(xdg-settings get default-web-browser
 bindsym $mod+Print exec flameshot full -p ~/Downloads
 bindsym $mod+Shift+Print exec flameshot gui -p ~/Downloads
 
+# Cosmic Latte (https://github.com/nightsense/cosmic_latte/) inspired look
+# class                 border  backgr. text    indic.  child brd.
+client.focused          #0096ff #0075c9 #fff8e7 #b1b4a2 #63757e
+client.unfocused        #63757e #485a62 #b1b4a2 #b1b4a2 #63757e
+client.focused_inactive #fff8e7 #efe4d2 #485a62 #b1b4a2 #63757e
+client.urgent           #ff0056 #c44756 #fff8e7 #b1b4a2 #63757e
+client.placeholder      #63757e #63757e #b1b4a2 #b1b4a2 #63757e
+client.background       #364850
+
 hide_edge_borders smart
 
 # kill focused window
