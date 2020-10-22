@@ -1,0 +1,165 @@
+/**
+ * ROFI Color theme
+ *
+ * My take on vim's Cosmic Latte colorscheme (https://github.com/nightsense/cosmic_latte),
+ * based on "Gruvbox Light" by bardisty <b@bah.im>.
+ *
+ * User: mamapitufo
+ */
+* {
+    highlight: bold;
+    scrollbar: true;
+
+    color-bg: #fff8e7;
+    color-hl1: #efe4d2;
+    color-hl2: #b1b4a2;
+    color-fg-dim: #63757e;
+    color-fg: #485a62;
+    color-fg-bold: #364850;
+    color-highlight: #f6c967;
+    color-red: #c44756;
+    color-red-hl: #ff0056;
+    color-blue: #0075c9;
+    color-blue-hl: #0096ff;
+    color-cyan: #007f8a;
+    color-cyan-hl: #00a6c0;
+    color-magenta: #a154ae;
+    color-magenta-hl: #de3ffc;
+    color-gold: #916d03;
+    color-green: #1f8332;
+
+    /* Theme colors */
+    background:                  @color-bg;
+    background-color:            @background;
+    foreground:                  @color-fg;
+    border-color:                @color-hl2;
+    separatorcolor:              @border-color;
+    scrollbar-handle:            @border-color;
+
+    normal-background:           @background;
+    normal-foreground:           @foreground;
+    alternate-normal-background: @color-hl1;
+    alternate-normal-foreground: @foreground;
+    selected-normal-background:  @color-blue;
+    selected-normal-foreground:  @color-bg;
+
+    active-background:           @color-highlight;
+    active-foreground:           @foreground;
+    alternate-active-background: @active-background;
+    alternate-active-foreground: @active-foreground;
+    selected-active-background:  @foreground;
+    selected-active-foreground:  @color-highlight;
+
+    urgent-background:           @color-bg;
+    urgent-foreground:           @color-red;
+    alternate-urgent-background: @urgent-background;
+    alternate-urgent-foreground: @urgent-foreground;
+    selected-urgent-background:  @color-red;
+    selected-urgent-foreground:  @urgent-bg;
+}
+
+window {
+    background-color: @background;
+    border:           1;
+    padding:          5;
+}
+mainbox {
+    border:  0;
+    padding: 0;
+}
+message {
+    border:       1px dash 0px 0px ;
+    border-color: @separatorcolor;
+    padding:      1px ;
+}
+textbox {
+    text-color: @foreground;
+}
+listview {
+    fixed-height: 0;
+    border:       2px dash 0px 0px ;
+    border-color: @separatorcolor;
+    spacing:      2px ;
+    scrollbar:    true;
+    padding:      2px 0px 0px ;
+}
+element {
+    border:  0;
+    padding: 1px ;
+}
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-width: 8px ;
+    padding:      0;
+}
+mode-switcher {
+    border:       2px dash 0px 0px ;
+    border-color: @separatorcolor;
+}
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+inputbar {
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    1px ;
+}
+case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+entry {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+prompt {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @normal-foreground;
+}
