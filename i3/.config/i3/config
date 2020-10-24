@@ -16,8 +16,8 @@ bindsym $mod+Shift+Print exec flameshot gui -p ~/Downloads
 # Cosmic Latte (https://github.com/nightsense/cosmic_latte/) inspired look
 # class                 border  backgr. text    indic.  child brd.
 client.focused          #0096ff #0075c9 #fff8e7 #b1b4a2 #63757e
-client.unfocused        #485a62 #364850 #b1b4a2 #b1b4a2 #63757e
-client.focused_inactive #485a62 #485a62 #fff8e7 #b1b4a2 #63757e
+client.unfocused        #364850 #485a62 #b1b4a2 #b1b4a2 #63757e
+client.focused_inactive #364850 #364850 #fff8e7 #b1b4a2 #63757e
 client.urgent           #ff0056 #c44756 #fff8e7 #b1b4a2 #63757e
 client.placeholder      #63757e #63757e #b1b4a2 #b1b4a2 #63757e
 client.background       #364850
