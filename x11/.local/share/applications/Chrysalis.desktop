@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Chrysalis
+GenericName=Chrysalis
+Comment=keyboard.io layout configurator
+Icon=preferences-desktop-keyboard
+Exec=~/Library/Chrysalis-0.7.9.AppImage
+Terminal=false
+Type=Application
+Categories=Utilyty;Keyboard
