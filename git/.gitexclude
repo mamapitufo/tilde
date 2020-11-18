@@ -1,5 +1,3 @@
-.DS_Store
-
 .?*.sw*
 .netrwhist
 *~
@@ -16,5 +14,3 @@ target/
 build/
 node_modules/
 npm-debug.log
-.tern-port
-

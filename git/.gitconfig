@@ -3,6 +3,7 @@
 [core]
 	pager = less -FXR
 	excludesfile = ~/.gitexclude
+	attributesfile = ~/.gitattributes
 [alias]
 	mg = smart-merge
 
@@ -71,3 +72,6 @@
 [filter "spotifyd"]
 	clean = "sed -e 's/password = .*/password = <SECRET>/;s/device_name = .*/device_name = <HOSTNAME>/;s/cache_path = .*/cache_path = <CACHE_DIR>/'"
 	smudge = "sed -e \"s/device_name =.*/device_name = Spotifyd@$(hostname)/;s#cache_path = .*#cache_path = $HOME/.cache/spotifyd#\""
+[diff "clojure"]
+#	xfuncname = "^[ \t]*(\\((ns|def[a-zA-Z0-9_-]*)[ \t]+[^[]+).*$"
+	xfuncname = "^[ \t]*(\\((ns|def[a-zA-Z0-9_-]*).*)$"
