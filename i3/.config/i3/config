@@ -31,7 +31,6 @@ bindsym $mod+Shift+q kill
 floating_modifier $mod
 bindsym $mod+semicolon scratchpad show
 bindsym $mod+Shift+semicolon move scratchpad
-bindsym $mod+Shift+x move absolute position center
 
 # Program launcher, window switcher, etc.
 bindsym $mod+d exec rofi -show combi
@@ -128,6 +127,8 @@ workspace 6 output HDMI2 eDP1
 workspace 7 output HDMI2 eDP1
 workspace 8 output HDMI2 eDP1
 workspace 9 output eDP1 HDMI2
+
+bindsym $mod+Shift+x move workspace to output right
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
