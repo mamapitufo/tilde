@@ -14,8 +14,8 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
-nnoremap <leader>ff :GFiles<cr>
-nnoremap <leader>fa :Files<cr>
+nnoremap <leader>ff :Files<cr>
+nnoremap <leader>fg :GFiles<cr>
 nnoremap <leader>fr :History<cr>
 
 nnoremap <leader>bb :Buffers<cr>
