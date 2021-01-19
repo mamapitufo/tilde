@@ -36,9 +36,9 @@ bindsym $mod+Shift+semicolon move scratchpad
 bindsym $mod+d exec rofi -show combi
 
 # lock the screen
-bindsym $mod+Control+q exec --no-startup-id xset s activate
+bindsym $mod+Control+l exec --no-startup-id xset s activate
 # hibernate
-bindsym Control+Shift+$mod+l exec loginctl hibernate
+bindsym $mod+Control+Shift+l exec loginctl hibernate
 
 # change focused window
 bindsym $mod+h focus left
