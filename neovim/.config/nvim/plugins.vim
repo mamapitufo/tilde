@@ -14,7 +14,7 @@ Plug 'w0rp/ale'
 Plug 'simnalamburt/vim-mundo'
 Plug 'easymotion/vim-easymotion'
 
-Plug 'Olical/conjure', { 'tag': 'v4.13.0' }
+Plug 'Olical/conjure', { 'tag': 'v4.14.1' }
 Plug 'guns/vim-sexp' | Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'bakpakin/fennel.vim'
 
