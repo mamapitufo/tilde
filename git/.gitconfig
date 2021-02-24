@@ -75,3 +75,5 @@
 [diff "clojure"]
 #	xfuncname = "^[ \t]*(\\((ns|def[a-zA-Z0-9_-]*)[ \t]+[^[]+).*$"
 	xfuncname = "^[ \t]*(\\((ns|def[a-zA-Z0-9_-]*).*)$"
+[init]
+	defaultBranch = main
