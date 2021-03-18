@@ -1,6 +1,8 @@
 let mapleader="\<Space>"
 let maplocalleader=","
 
+" this can't go here because the map is not itialized yet...
+" let g:which_key_map.f = { 'name' : '+file' }
 nnoremap <silent> <leader>feR :source $MYVIMRC<cr>
 nnoremap <silent> <leader>xdw :let _s=@/ <bar> :%s/\s\+$//e <bar> :let @/=_s <bar> :nohl <bar> :unlet _s <cr>
 
