@@ -1,19 +1,13 @@
-Plug 'moll/vim-bbye'
 Plug 'itchyny/lightline.vim'
-Plug 'nightsense/cosmic_latte'
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } | Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'ncm2/float-preview.nvim'
-Plug 'dag/vim-fish'
 Plug 'embear/vim-localvimrc'
-Plug 'jiangmiao/auto-pairs', { 'tag': 'v2.0.0' }
 Plug 'lambdalisue/suda.vim'
-Plug 'liuchengxu/vim-better-default'
 Plug 'w0rp/ale'
 Plug 'simnalamburt/vim-mundo'
 Plug 'easymotion/vim-easymotion'
-Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+"Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 Plug 'Olical/conjure', { 'tag': 'v4.14.1' }
 Plug 'guns/vim-sexp' | Plug 'tpope/vim-sexp-mappings-for-regular-people'
