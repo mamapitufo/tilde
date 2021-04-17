@@ -19,16 +19,19 @@ set expandtab                             " Tabs as spaces
 set shiftwidth=2                          " Auto-indent using 2 columns
 set tabstop=2                             " Number of spaces per TAB character
 set softtabstop=2                         " Number of spaces per <Tab> when editing
+set copyindent                            " Copy current line indent when autoindenting a new line.
+set shiftround                            " Round indents to multiple of `shiftwidth`
 " }}}
 " {{{ visual appearance
 set cursorline                            " Highlight current line
 set number
 set relativenumber
-set nowrap                                " Do not wrap lines
 set shortmess=atOI                        " Abbrev, overwrite read msgs, no intro msg
 set noshowmode                            " Do not show mode message on last line
 set listchars=tab:→\ ,eol:↵,trail:·,extends:↷,precedes:↶  " Taken from vim-better-default
 set pumheight=15                          " Max lines in auto-completion menu
+set lazyredraw                            " Delay redrawing the screen while executing macros
+set signcolumn=yes                        " Always show the gutter
 " }}}
 " {{{ behavior
 set splitright                            " New split window to the right of current
@@ -37,6 +40,8 @@ set showmatch                             " Hilight matching parenthesis/bracket
 set matchtime=3                           " Show the matching paren for n tenths of a second
 set scrolloff=3                           " Min lines to keep above and below cursor
 set scrolljump=3                          " Lines to scroll when cursor is on edge of screen
+set nowrap                                " Do not wrap lines
+set formatoptions=tcrqj                   " Auto-wrap text and comments, continue and format comments, smart comment join
 " }}}
 " {{{ file & buffer navigation
 set autowrite                             " Write file when leaving a modified buffer
@@ -47,24 +52,26 @@ set whichwrap=b,<,>,h,l                   " Allow backspace, arrows and h/l to c
 set wildignore+=*swp,*.class,*.pyc,*.png,*.jpg,*.gif,*.zip,tmp/*,*.o,*.obj,*.so   " Taken from vim-better-default
 " }}}
 " {{{ persistence
-" FIXME: Write backups to a central dir? https://vi.stackexchange.com/questions/21708/how-do-i-disable-vim-from-producing-backup-files
 set nobackup
-set noswapfile
-set nowritebackup
+set writebackup
+set backupdir=~/.config/nvim/backup//     " FIXME: should be based on `stdpath("config")`
 
 set undofile                              " Persistent undo
-set undodir=~/.config/nvim/undo
+set undodir=~/.config/nvim/undo//         " FIXME: should be based on `stdpath("config")`
 " }}}
 " {{{ system
 set fileformats=unix,dos,mac              " Choose unix as default fileformat
 set fileencoding=utf-8                    " Always save files as utf-8
 set clipboard=unnamedplus,unnamed         " yank, delete, change, put go to the '+' and '*' registers
+set grepprg=rg\ --vimgrep
+set spelllang=en_gb,en,es,fr
 " }}}
 " {{{ folds
 set foldenable
 set foldmethod=indent
 set foldlevel=0
 set foldlevelstart=1
+set foldnestmax=10
 " autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
 " }}}
 
