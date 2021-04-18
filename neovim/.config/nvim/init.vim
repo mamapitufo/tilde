@@ -139,16 +139,23 @@ function LightlineFileformat()
   return l:format . l:encoding
 endfunction
 
+function LightlineGit()
+  let l:name = gitbranch#name()
+  return ' ' . l:name
+endfunction
+
 let g:lightline={
   \ 'colorscheme': 'solarized',
   \ 'component_function': {
   \   'readonly': 'LightlineReadonly',
   \   'filename': 'LightlineFilename',
   \   'fileformat': 'LightlineFileformat',
+  \   'gitbranch': 'LightlineGit',
   \ },
   \ 'active': {
   \   'left': [['mode', 'paste'],
-  \            ['readonly', 'filename']],
+  \            ['readonly', 'filename'],
+  \            ['gitbranch']],
   \   'right': [['lineinfo'],
   \             ['percent'],
   \             ['filetype', 'fileformat']]
@@ -165,7 +172,7 @@ call plug#begin()
   Plug 'blankname/vim-fish'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } | Plug 'junegunn/fzf.vim'
   Plug 'airblade/vim-gitgutter'
-  Plug 'itchyny/lightline.vim'        " Statusline
+  Plug 'itchyny/lightline.vim' | Plug 'itchyny/vim-gitbranch'   " Statusline
   Plug 'tpope/vim-unimpaired'         " Complimentary mappings
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'           " Git tools
