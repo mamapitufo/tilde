@@ -80,7 +80,7 @@ set foldnestmax=10
 autocmd BufNewFile,BufRead /*.rasi setfiletype css
 
 autocmd FileType gitcommit nnoremap <buffer> <localleader>c :wq<cr>
-autocmd FileType gitcommit nnoremap <buffer> <localleader>k ggdG <bar> :wq!<cr>
+autocmd FileType gitcommit nnoremap <buffer> <localleader>k :%d <bar> :wq!<cr>
 " }}} -------------------------------------------------------------------------
 " {{{ Plugins (pre)
 
