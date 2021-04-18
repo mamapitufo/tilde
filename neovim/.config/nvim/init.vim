@@ -162,6 +162,17 @@ let g:lightline={
   \ },
   \ }
 " }}}
+" {{{ ale
+let g:ale_linters={
+      \ 'clojure': ['clj-kondo'],
+      \}
+let g:ale_fixers={
+      \ '*': ['trim_whitespace'],
+      \ 'clojure': ['remove_trailing_lines'],
+      \}
+let g:ale_fix_on_save=1
+let g:ale_linters_explicit=1
+" }}}
 
 " }}} -------------------------------------------------------------------------
 " {{{ Plugins
@@ -173,6 +184,7 @@ call plug#begin()
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } | Plug 'junegunn/fzf.vim'
   Plug 'airblade/vim-gitgutter'
   Plug 'itchyny/lightline.vim' | Plug 'itchyny/vim-gitbranch'   " Statusline
+  Plug 'dense-analysis/ale'
   Plug 'tpope/vim-unimpaired'         " Complimentary mappings
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'           " Git tools
@@ -251,6 +263,9 @@ nnoremap <leader>h<space> :Helptags<cr>
 nnoremap <leader>hb :Maps<cr>
 nnoremap <leader>hc :Commands<cr>
 " }}}
+" {{{ Local
+nnoremap <silent> <localleader>== <Plug>(AleFix)
+" }}}
 " {{{ Quit
 nnoremap <leader>qQ :qa!<cr>
 nnoremap <leader>qa :qa<cr>
@@ -273,6 +288,7 @@ nnoremap <silent> <leader>tn :setlocal number!<cr>
 nnoremap <silent> <leader>tnr :setlocal relativenumber!<cr>
 nnoremap <silent> <leader>tp :setlocal paste!<cr>
 nnoremap <silent> <leader>tw :set list!<cr>
+nnoremap <silent> <leader>t= :if g:ale_fix_on_save \| let g:ale_fix_on_save=0 \| else \| let g:ale_fix_on_save=1 \| endif<cr>
 " }}}
 " {{{ Window
 nnoremap <leader>wH <c-w>5<

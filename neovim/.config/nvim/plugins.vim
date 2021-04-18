@@ -2,7 +2,6 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'ncm2/float-preview.nvim'
 Plug 'embear/vim-localvimrc'
 Plug 'lambdalisue/suda.vim'
-Plug 'w0rp/ale'
 Plug 'simnalamburt/vim-mundo'
 Plug 'easymotion/vim-easymotion'
 "Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
