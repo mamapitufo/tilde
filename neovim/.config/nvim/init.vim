@@ -128,7 +128,13 @@ call plug#begin()
   Plug 'blankname/vim-fish'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } | Plug 'junegunn/fzf.vim'
   Plug 'airblade/vim-gitgutter'
-  Plug 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-unimpaired'         " Complimentary mappings
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-fugitive'           " Git tools
+  Plug 'tpope/vim-sleuth'             " Automatically adjusts tab/spaces from surrounding files
+  Plug 'tpope/vim-surround'           " Manipulate surrounding pairs
+  Plug 'tpope/vim-repeat'             " Allow plugins to tap into `.`
+  Plug 'tpope/vim-eunuch'             " Vim sugar for shell commands
 call plug#end()
 
 " }}} -------------------------------------------------------------------------
@@ -193,6 +199,7 @@ nnoremap <silent> <leader>gs :Gstatus<cr>
 nnoremap <silent> <leader>gw :Gwrite<cr>
 nmap ]c <Plug>(GitGutterNextHunk)
 nmap [c <Plug>(GitGutterNextHunk)
+
 " }}}
 " {{{ Help
 nnoremap <leader>h<space> :Helptags<cr>
