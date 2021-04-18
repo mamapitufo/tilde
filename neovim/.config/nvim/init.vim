@@ -115,6 +115,9 @@ command! -bang -nargs=* RgStar
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 " }}}
+" {{{ vim-gitgutter
+let g:gitgutter_map_keys=0
+" }}}
 
 " }}} -------------------------------------------------------------------------
 " {{{ Plugins
@@ -124,6 +127,8 @@ call plug#begin()
   Plug 'nightsense/cosmic_latte'      " colourscheme
   Plug 'blankname/vim-fish'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } | Plug 'junegunn/fzf.vim'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'tpope/vim-unimpaired'
 call plug#end()
 
 " }}} -------------------------------------------------------------------------
@@ -186,6 +191,8 @@ nnoremap <silent> <leader>gd :Gdiff<cr>
 nnoremap <silent> <leader>gf :Gfetch<cr>
 nnoremap <silent> <leader>gs :Gstatus<cr>
 nnoremap <silent> <leader>gw :Gwrite<cr>
+nmap ]c <Plug>(GitGutterNextHunk)
+nmap [c <Plug>(GitGutterNextHunk)
 " }}}
 " {{{ Help
 nnoremap <leader>h<space> :Helptags<cr>
