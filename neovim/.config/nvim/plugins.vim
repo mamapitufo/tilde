@@ -1,4 +1,3 @@
-Plug 'itchyny/lightline.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'ncm2/float-preview.nvim'
 Plug 'embear/vim-localvimrc'
