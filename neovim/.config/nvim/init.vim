@@ -165,9 +165,10 @@ let g:lightline={
 " {{{ ale
 let g:ale_linters={'clojure': ['clj-kondo']}
 let g:ale_fixers={'*': ['remove_trailing_lines', 'trim_whitespace']}
-let g:ale_lint_on_enter=1
-let g:ale_fix_on_save=1
 let g:ale_linters_explicit=1
+
+let g:ale_lint_on_text_changed='never'
+let g:ale_fix_on_save=1
 " }}}
 
 " }}} -------------------------------------------------------------------------
@@ -177,10 +178,12 @@ call plug#begin()
   Plug 'moll/vim-bbye'                " close buffer without changing the layout
   Plug 'nightsense/cosmic_latte'      " colourscheme
   Plug 'blankname/vim-fish'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } | Plug 'junegunn/fzf.vim'
+  Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
+  Plug 'junegunn/fzf.vim'
   Plug 'airblade/vim-gitgutter'
   Plug 'itchyny/lightline.vim' | Plug 'itchyny/vim-gitbranch'   " Statusline
-  Plug 'dense-analysis/ale'
+  Plug 'dense-analysis/ale'           " Linter
+
   Plug 'tpope/vim-unimpaired'         " Complimentary mappings
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'           " Git tools
@@ -188,6 +191,11 @@ call plug#begin()
   Plug 'tpope/vim-surround'           " Manipulate surrounding pairs
   Plug 'tpope/vim-repeat'             " Allow plugins to tap into `.`
   Plug 'tpope/vim-eunuch'             " Vim sugar for shell commands
+
+  Plug 'Olical/conjure', {'tag': 'v4.17.0', 'for': 'clojure'}
+  Plug 'guns/vim-sexp', {'for': 'clojure'}
+  Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
+  Plug 'clojure-vim/clojure.vim', {'for': 'clojure'}
 call plug#end()
 
 " }}} -------------------------------------------------------------------------
@@ -323,4 +331,3 @@ if filereadable(localrc)
 endif
 "
 " }}}
-

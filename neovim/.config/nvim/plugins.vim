@@ -6,8 +6,6 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'easymotion/vim-easymotion'
 "Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
-Plug 'Olical/conjure', { 'tag': 'v4.14.1' }
-Plug 'guns/vim-sexp' | Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'bakpakin/fennel.vim'
 
 "Plug 'mtth/scratch.vim'
