@@ -1,7 +1,7 @@
 "
 " @mamapitufo
 "
-" vim: foldenable fdm=marker fdl=0 fdls=0
+" vim: fdm=marker
 "
 " {{{ Core settings
 
@@ -72,7 +72,7 @@ set foldmethod=indent
 set foldlevel=0
 set foldlevelstart=1
 set foldnestmax=10
-" autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
+" autocmd BufWinEnter * let &foldlevel=max(map(range(1, line('$')), 'foldlevel(v:val)'))
 " }}}
 
 " }}} -------------------------------------------------------------------------
@@ -86,7 +86,7 @@ autocmd FileType gitcommit nnoremap <buffer> <localleader>k :%d <bar> :wq!<cr>
 
 " {{{ fzf
 let g:fzf_history_dir='~/.local/share/fzf'
-let g:fzf_colors =
+let g:fzf_colors=
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Comment'],
@@ -124,23 +124,23 @@ function!LightlineReadonly()
 endfunction
 
 function LightlineFilename()
-  let l:name = winwidth(0) > 70 ? expand('%:p:h:t') . '/' . expand('%:t') : expand('%:t')
-  let filename = expand('%:t') !=# '' ? l:name : '[No Name]'
+  let l:name=winwidth(0) > 70 ? expand('%:p:h:t') . '/' . expand('%:t') : expand('%:t')
+  let filename=expand('%:t') !=# '' ? l:name : '[No Name]'
 
-  let modified = &modified ? ' +' : ''
+  let modified=&modified ? ' +' : ''
 
   return filename . modified
 endfunction
 
 function LightlineFileformat()
-  let l:encoding = &fileencoding !=# '' ? ' (' . &fileencoding . ')' : ''
-  let l:format = &fileformat !=# '' ? &fileformat : ''
+  let l:encoding=&fileencoding !=# '' ? ' (' . &fileencoding . ')' : ''
+  let l:format=&fileformat !=# '' ? &fileformat : ''
 
   return l:format . l:encoding
 endfunction
 
 function LightlineGit()
-  let l:name = gitbranch#name()
+  let l:name=gitbranch#name()
   return ' ' . l:name
 endfunction
 
@@ -163,13 +163,9 @@ let g:lightline={
   \ }
 " }}}
 " {{{ ale
-let g:ale_linters={
-      \ 'clojure': ['clj-kondo'],
-      \}
-let g:ale_fixers={
-      \ '*': ['trim_whitespace'],
-      \ 'clojure': ['remove_trailing_lines'],
-      \}
+let g:ale_linters={'clojure': ['clj-kondo']}
+let g:ale_fixers={'*': ['remove_trailing_lines', 'trim_whitespace']}
+let g:ale_lint_on_enter=1
 let g:ale_fix_on_save=1
 let g:ale_linters_explicit=1
 " }}}
@@ -221,8 +217,8 @@ vnoremap K :m'<-2<cr>gv=gv
 nnoremap <cr> :
 autocmd BufReadPost quickfix nnoremap <buffer> <cr> <cr>  " Keep default <cr> behaviour on quickfix
 
-let mapleader = "\<Space>"
-let maplocalleader = ","
+let mapleader="\<Space>"
+let maplocalleader=","
 
 " {{{ Buffer
 nnoremap <leader>bb :Buffers<cr>
@@ -281,6 +277,7 @@ nnoremap <silent> <leader>sc :nohlsearch<cr>
 nnoremap <silent> <leader>xdw :let _s=@/ <bar> :%s/\s\+$//e <bar> :let @/=_s <bar> :nohl <bar> :unlet _s <cr>
 " }}}
 " {{{ Toggle
+nnoremap <silent> <leader>t= :if g:ale_fix_on_save \| let g:ale_fix_on_save=0 \| else \| let g:ale_fix_on_save=1 \| endif<cr>
 nnoremap <silent> <leader>tS :set spell!<cr>
 nnoremap <silent> <leader>thh :setlocal cursorline!<cr>
 nnoremap <silent> <leader>tl :setlocal wrap!<cr>
@@ -288,7 +285,6 @@ nnoremap <silent> <leader>tn :setlocal number!<cr>
 nnoremap <silent> <leader>tnr :setlocal relativenumber!<cr>
 nnoremap <silent> <leader>tp :setlocal paste!<cr>
 nnoremap <silent> <leader>tw :set list!<cr>
-nnoremap <silent> <leader>t= :if g:ale_fix_on_save \| let g:ale_fix_on_save=0 \| else \| let g:ale_fix_on_save=1 \| endif<cr>
 " }}}
 " {{{ Window
 nnoremap <leader>wH <c-w>5<
@@ -321,7 +317,7 @@ colorscheme cosmic_latte
 " }}} -------------------------------------------------------------------------
 " {{{ Local configuration
 
-let localrc = '~/.nvim.local.vim'
+let localrc='~/.nvim.local.vim'
 if filereadable(localrc)
   source localrc
 endif
