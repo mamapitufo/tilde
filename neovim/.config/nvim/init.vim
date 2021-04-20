@@ -69,10 +69,8 @@ set spelllang=en_gb,en,es,fr
 " {{{ folds
 set foldenable
 set foldmethod=indent
-set foldlevel=0
-set foldlevelstart=1
 set foldnestmax=10
-" autocmd BufWinEnter * let &foldlevel=max(map(range(1, line('$')), 'foldlevel(v:val)'))
+autocmd BufWinEnter * let &foldlevel=max(map(range(1, line('$')), 'foldlevel(v:val)'))
 " }}}
 
 " }}} -------------------------------------------------------------------------
