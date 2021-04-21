@@ -65,6 +65,7 @@ set fileencoding=utf-8                    " Always save files as utf-8
 set clipboard=unnamedplus,unnamed         " yank, delete, change, put go to the '+' and '*' registers
 set grepprg=rg\ --vimgrep
 set spelllang=en_gb,en,es,fr
+set isfname-==                            " Do not consider `=` part of filenames
 " }}}
 " {{{ folds
 set foldenable
