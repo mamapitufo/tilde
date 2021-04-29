@@ -145,7 +145,11 @@ endfunction
 
 function LightlineGit()
   let l:name=gitbranch#name()
-  return ' ' . l:name
+  if len(l:name)
+    return ' ' . l:name
+  else
+    return ''
+  endif
 endfunction
 
 let g:lightline={
