@@ -10,6 +10,11 @@ if &shell =~# 'fish$'
   set shell=sh
 endif
 
+" {{{ providers
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
+" }}}
+
 " {{{ search
 set ignorecase                            " Case insensitive search
 set smartcase                             " But respect case if UC is used in search
