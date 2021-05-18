@@ -178,6 +178,9 @@ let g:ale_linters_explicit=1
 let g:ale_lint_on_text_changed='never'
 let g:ale_fix_on_save=1
 " }}}
+" {{{ airblade/vim-gitgutter
+let g:gitgutter_close_preview_on_escape=1
+" }}}
 
 " }}} -------------------------------------------------------------------------
 " {{{ Plugins
@@ -266,8 +269,11 @@ nnoremap <silent> <leader>gd :Gdiff<cr>
 nnoremap <silent> <leader>gf :Gfetch<cr>
 nnoremap <silent> <leader>gs :Gstatus<cr>
 nnoremap <silent> <leader>gw :Gwrite<cr>
-nmap ]c <Plug>(GitGutterNextHunk)
-nmap [c <Plug>(GitGutterNextHunk)
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
+nmap <leader>ghp <Plug>(GitGutterPreviewHunk)
+nmap <leader>ghs <Plug>(GitGutterStageHunk)
+nmap <leader>ghu <Plug>(GitGutterUndoHunk)
 
 " }}}
 " {{{ Help
