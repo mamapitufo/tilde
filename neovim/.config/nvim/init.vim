@@ -178,6 +178,14 @@ let g:ale_linters_explicit=1
 let g:ale_lint_on_text_changed='never'
 let g:ale_fix_on_save=1
 " }}}
+" {{{ Olical/conjure
+let g:conjure#log#hud#enabled=v:false
+let g:conjure#log#hud#width=1.0
+let g:conjure#log#hud#anchor="SE"
+
+let g:conjure#log#botright=1
+let g:conjure#log#wrap=1
+" }}}
 " {{{ airblade/vim-gitgutter
 let g:gitgutter_close_preview_on_escape=1
 " }}}
@@ -203,7 +211,7 @@ call plug#begin()
   Plug 'tpope/vim-repeat'             " Allow plugins to tap into `.`
   Plug 'tpope/vim-eunuch'             " Vim sugar for shell commands
 
-  Plug 'Olical/conjure', {'tag': 'v4.17.0', 'for': 'clojure'}
+  Plug 'Olical/conjure', {'tag': 'v4.19.0', 'for': 'clojure'}
   Plug 'guns/vim-sexp', {'for': 'clojure'}
   Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
   Plug 'clojure-vim/clojure.vim', {'for': 'clojure'}
@@ -211,6 +219,13 @@ call plug#end()
 
 " }}} -------------------------------------------------------------------------
 " {{{ Plugins (post)
+
+" {{{ Olical/conjure
+" TODO: should get a proper jack-in replacement...
+nnoremap <silent> <localleader>' :ConjureConnect<cr>
+nnoremap <silent> <localleader>" :ConjureShadowSelect app<cr>
+" }}}
+
 " }}} -------------------------------------------------------------------------
 " {{{ Mappings
 
