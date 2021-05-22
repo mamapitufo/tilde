@@ -178,7 +178,7 @@ let g:ale_linters_explicit=1
 let g:ale_fix_on_save=1
 " }}}
 " {{{ Olical/conjure
-let g:conjure#log#hud#enabled=v:false
+"let g:conjure#log#hud#enabled=v:false
 let g:conjure#log#hud#width=1.0
 let g:conjure#log#hud#anchor="SE"
 
@@ -187,6 +187,9 @@ let g:conjure#log#wrap=1
 " }}}
 " {{{ airblade/vim-gitgutter
 let g:gitgutter_close_preview_on_escape=1
+" }}}
+" {{{ neoclide/coc.nvim
+let g:coc_global_extensions=['coc-conjure']
 " }}}
 
 " }}} -------------------------------------------------------------------------
@@ -201,6 +204,7 @@ call plug#begin()
   Plug 'airblade/vim-gitgutter'
   Plug 'itchyny/lightline.vim' | Plug 'itchyny/vim-gitbranch'   " Statusline
   Plug 'dense-analysis/ale'           " Linter
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}                " Completion
 
   Plug 'tpope/vim-unimpaired'         " Complimentary mappings
   Plug 'tpope/vim-commentary'
@@ -250,6 +254,8 @@ vnoremap K :m'<-2<cr>gv=gv
 nnoremap <cr> :
 autocmd BufReadPost quickfix nnoremap <buffer> <cr> <cr>  " Keep default <cr> behaviour on quickfix
 
+nmap <silent> gd <Plug>(coc-definition)
+
 let mapleader="\<Space>"
 let maplocalleader=","
 
@@ -288,7 +294,6 @@ nmap [h <Plug>(GitGutterPrevHunk)
 nmap <leader>ghp <Plug>(GitGutterPreviewHunk)
 nmap <leader>ghs <Plug>(GitGutterStageHunk)
 nmap <leader>ghu <Plug>(GitGutterUndoHunk)
-
 " }}}
 " {{{ Help
 nnoremap <leader>h<space> :Helptags<cr>
@@ -303,11 +308,15 @@ nnoremap <leader>qQ :qa!<cr>
 nnoremap <leader>qa :qa<cr>
 nnoremap <silent> <leader>qq :q<cr>
 " }}}
+" {{{ Refactor
+nmap <silent> <localleader>rrs <Plug>(coc-rename)
+" }}}
 " {{{ Search
 nnoremap <leader>* :RgStar <c-r><c-w><cr>
 nnoremap <leader>s: :History:<cr>
 nnoremap <leader>sf :Rg<cr>
 nnoremap <silent> <leader>sc :nohlsearch<cr>
+nmap <silent> <leader>ssr <Plug>(coc-references)
 " }}}
 " {{{ Text
 nnoremap <silent> <leader>xdw :let _s=@/ <bar> :%s/\s\+$//e <bar> :let @/=_s <bar> :nohl <bar> :unlet _s <cr>
