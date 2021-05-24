@@ -1,7 +1,7 @@
 servers = (
   {
-    address = "chat.freenode.net";
-    chatnet = "freenode";
+    address = "irc.libera.chat";
+    chatnet = "libera";
     port = "6697";
     use_tls = "yes";
     tls_verify = "yes";
@@ -10,28 +10,17 @@ servers = (
 );
 
 chatnets = {
-  freenode = {
+  libera = {
     type = "IRC";
-    max_query_chans = "5";
-    max_kicks = "4";
-    max_msgs = "5";
-    max_whois = "4";
-    sasl_mechanism = "PLAIN";
+    sasl_mechanism = "plain";
     sasl_username = "mamapitufo";
     sasl_password = "<SECRET>";
   };
 };
 
 channels = (
-  { name = "#voidlinux"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#lobsters"; chatnet = "freenode"; autojoin = "no"; },
-  { name = "#clojure"; chatnet = "freenode"; autojoin = "no"; },
-  {
-    name = "clojure-beginners";
-    chatnet = "freenode";
-    autojoin = "yes";
-  },
-  { name = "clojurescript"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#voidlinux"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#lobsters"; chatnet = "libera"; autojoin = "no"; }
 );
 
 statusbar = {
