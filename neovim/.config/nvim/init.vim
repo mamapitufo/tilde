@@ -1,14 +1,6 @@
-"
-" @mamapitufo
-"
-" vim: fdm=marker
-"
-" {{{ Core settings
+runtime tilde-fns.vim
+set shell=sh
 
-" Use a POSIX shell to run commands from nvim
-if &shell =~# 'fish$'
-  set shell=sh
-endif
 
 " {{{ providers
 let g:python_host_prog = '/usr/bin/python'
