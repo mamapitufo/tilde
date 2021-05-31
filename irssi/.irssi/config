@@ -20,8 +20,8 @@ chatnets = {
 
 channels = (
   { name = "#voidlinux"; chatnet = "libera"; autojoin = "yes"; },
-  { name = "#lobsters"; chatnet = "libera"; autojoin = "no"; },
   { name = "#clojure"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#fennel"; chatnet = "libera"; autojoin = "yes"; },
 );
 
 statusbar = {
