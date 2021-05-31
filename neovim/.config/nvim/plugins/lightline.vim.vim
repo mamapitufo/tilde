@@ -6,7 +6,7 @@ function LightlineFilename()
   let l:name=winwidth(0) > 70 ? expand('%:p:h:t') . '/' . expand('%:t') : expand('%:t')
   let filename=expand('%:t') !=# '' ? l:name : '[No Name]'
 
-  let modified=&modified ? ' +' : ''
+  let modified=&modified ? ' ●' : ''
 
   return filename . modified
 endfunction
@@ -35,6 +35,9 @@ let g:lightline={
   \   'fileformat': 'LightlineFileformat',
   \   'gitbranch': 'LightlineGit',
   \ },
+  \ 'component': {
+  \   'percent': '%3p%% (%LL)',
+  \ },
   \ 'active': {
   \   'left': [['mode', 'paste'],
   \            ['readonly', 'filename'],
@@ -42,5 +45,9 @@ let g:lightline={
   \   'right': [['lineinfo'],
   \             ['percent'],
   \             ['filetype', 'fileformat']]
+  \ },
+  \ 'inactive': {
+  \   'left': [['filename']],
+  \   'right': []
   \ },
   \ }
