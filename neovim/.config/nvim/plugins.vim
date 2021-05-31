@@ -1,21 +1,34 @@
-Plug 'Shougo/deoplete.nvim'
-Plug 'ncm2/float-preview.nvim'
-Plug 'embear/vim-localvimrc'
-Plug 'lambdalisue/suda.vim'
-Plug 'simnalamburt/vim-mundo'
-Plug 'easymotion/vim-easymotion'
-"Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+call plug#begin()
+  Plug 'moll/vim-bbye'                " close buffer without changing the layout
+  Plug 'nightsense/cosmic_latte'      " colourscheme
+  Plug 'blankname/vim-fish'
+  Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
+  Plug 'junegunn/fzf.vim'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'itchyny/lightline.vim' | Plug 'itchyny/vim-gitbranch'   " Statusline
+  Plug 'dense-analysis/ale'                                     " Linter
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}               " Completion
 
-Plug 'bakpakin/fennel.vim'
+  Plug 'tpope/vim-unimpaired'         " Complimentary mappings
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-fugitive'           " Git tools
+  Plug 'tpope/vim-sleuth'             " Automatically adjusts tab/spaces from surrounding files
+  Plug 'tpope/vim-surround'           " Manipulate surrounding pairs
+  Plug 'tpope/vim-repeat'             " Allow plugins to tap into `.`
+  Plug 'tpope/vim-eunuch'             " Vim sugar for shell commands
 
-"Plug 'mtth/scratch.vim'
-"Plug 'PeterRincker/vim-argumentative'
-"Plug 'leafgarland/typescript-vim'
-"Plug 'tpope/vim-vinegar'
-"Plug 'tpope/vim-abolish'
-"Plug 'tpope/vim-dispatch'
-"Plug 'radenling/vim-dispatch-neovim'
+  Plug 'clojure-vim/clojure.vim'
+  Plug 'Olical/conjure', {'tag': 'v4.19.0'}
+  Plug 'guns/vim-sexp'
+  Plug 'tpope/vim-sexp-mappings-for-regular-people'
+call plug#end()
 
-"Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-"Plug 'pangloss/vim-javascript', { 'for': 'javascript' } | Plug 'maxmellon/vim-jsx-pretty'
-"Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': 'javascript' }
+for plugconfig in split(glob(stdpath('config') . '/plugins/*.vim'), '\n')
+  let plugname = fnamemodify(plugconfig, ':t:r')
+
+  if (exists('g:plugs["' . plugname . '"]'))
+    exec 'source' plugconfig
+  else
+    echom 'WARN: No plugin defined for config ' . plugconfig
+  endif
+endfor

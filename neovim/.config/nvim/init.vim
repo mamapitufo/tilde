@@ -2,6 +2,7 @@ runtime tilde-fns.vim
 set shell=sh
 
 call LoadModule('options')
+call LoadModule('plugins')
 
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
@@ -103,48 +104,12 @@ let g:ale_linters_explicit=1
 
 let g:ale_fix_on_save=1
 " }}}
-" {{{ Olical/conjure
-"let g:conjure#log#hud#enabled=v:false
-let g:conjure#log#hud#width=1.0
-let g:conjure#log#hud#anchor="SE"
-
-let g:conjure#log#botright=1
-let g:conjure#log#wrap=1
-" }}}
 " {{{ airblade/vim-gitgutter
 let g:gitgutter_close_preview_on_escape=1
 " }}}
 " {{{ neoclide/coc.nvim
 let g:coc_global_extensions=['coc-conjure']
 " }}}
-
-" }}} -------------------------------------------------------------------------
-" {{{ Plugins
-
-call plug#begin()
-  Plug 'moll/vim-bbye'                " close buffer without changing the layout
-  Plug 'nightsense/cosmic_latte'      " colourscheme
-  Plug 'blankname/vim-fish'
-  Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
-  Plug 'junegunn/fzf.vim'
-  Plug 'airblade/vim-gitgutter'
-  Plug 'itchyny/lightline.vim' | Plug 'itchyny/vim-gitbranch'   " Statusline
-  Plug 'dense-analysis/ale'           " Linter
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}                " Completion
-
-  Plug 'tpope/vim-unimpaired'         " Complimentary mappings
-  Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-fugitive'           " Git tools
-  Plug 'tpope/vim-sleuth'             " Automatically adjusts tab/spaces from surrounding files
-  Plug 'tpope/vim-surround'           " Manipulate surrounding pairs
-  Plug 'tpope/vim-repeat'             " Allow plugins to tap into `.`
-  Plug 'tpope/vim-eunuch'             " Vim sugar for shell commands
-
-  Plug 'Olical/conjure', {'tag': 'v4.19.0', 'for': 'clojure'}
-  Plug 'guns/vim-sexp', {'for': 'clojure'}
-  Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
-  Plug 'clojure-vim/clojure.vim', {'for': 'clojure'}
-call plug#end()
 
 " }}} -------------------------------------------------------------------------
 " {{{ Plugins (post)
