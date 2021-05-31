@@ -3,16 +3,10 @@ set shell=sh
 
 call LoadModule('options')
 call LoadModule('plugins')
+call LoadModule('filetypes')
 
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
-
-" {{{ Filetype-specific behavior
-autocmd BufNewFile,BufRead /*.rasi setfiletype css
-
-autocmd FileType gitcommit nnoremap <buffer> <localleader>c :wq<cr>
-autocmd FileType gitcommit nnoremap <buffer> <localleader>k :%d <bar> :wq!<cr>
-" }}} -------------------------------------------------------------------------
 
 " {{{ Mappings
 
