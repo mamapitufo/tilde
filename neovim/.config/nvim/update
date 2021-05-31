@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 CONFIG=$HOME/.config/nvim
+DATA=$HOME/.local/share/nvim
 
-mkdir -p $CONFIG/undo $CONFIG/spell $CONFIG/autoload $CONFIG/swap $CONFIG/backup
+mkdir -p $CONFIG/spell $CONFIG/autoload
+mkdir -p $DATA/backup $DATA/undo
 
 if [ ! -f $CONFIG/autoload/plug.vim ]; then
   curl -fLo $CONFIG/autoload/plug.vim \
@@ -11,4 +13,3 @@ fi
 
 nvim +"PlugSnapshot! $CONFIG/revert-plugupdate" +PlugUpgrade +PlugClean! +PlugUpdate +qa
 nvim +UpdateRemotePlugins +qa
-

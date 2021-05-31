@@ -1,77 +1,11 @@
 runtime tilde-fns.vim
 set shell=sh
 
+call LoadModule('options')
 
-" {{{ providers
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
-" }}}
 
-" {{{ search
-set ignorecase                            " Case insensitive search
-set smartcase                             " But respect case if UC is used in search
-" }}}
-" {{{ tabs & spaces
-set expandtab                             " Tabs as spaces
-set shiftwidth=2                          " Auto-indent using 2 columns
-set tabstop=2                             " Number of spaces per TAB character
-set softtabstop=2                         " Number of spaces per <Tab> when editing
-set copyindent                            " Copy current line indent when autoindenting a new line.
-set shiftround                            " Round indents to multiple of `shiftwidth`
-" }}}
-" {{{ visual appearance
-set cursorline                            " Highlight current line
-set number
-set relativenumber
-set shortmess=atOI                        " Abbrev, overwrite read msgs, no intro msg
-set noshowmode                            " Do not show mode message on last line
-set listchars=tab:→\ ,eol:↵,trail:·,extends:↷,precedes:↶  " Taken from vim-better-default
-set pumheight=15                          " Max lines in auto-completion menu
-set lazyredraw                            " Delay redrawing the screen while executing macros
-set signcolumn=yes                        " Always show the gutter
-" }}}
-" {{{ behavior
-set splitright                            " New split window to the right of current
-set splitbelow                            " New vsplit window to the bottom of current
-set showmatch                             " Hilight matching parenthesis/brackets/etc
-set matchtime=3                           " Show the matching paren for n tenths of a second
-set scrolloff=3                           " Min lines to keep above and below cursor
-set scrolljump=3                          " Lines to scroll when cursor is on edge of screen
-set nowrap                                " Do not wrap lines
-set formatoptions=tcrqj                   " Auto-wrap text and comments, continue and format comments, smart comment join
-" }}}
-" {{{ file & buffer navigation
-set autowrite                             " Write file when leaving a modified buffer
-set hidden                                " Allow buffer switching without saving (`autowrite` should save for us)
-set report=0                              " Always report changed lines (will not report below n if n > 0)
-set wildmode=list:longest,full            " How to complete matches when pressing <Tab> on command line
-set whichwrap=b,<,>,h,l                   " Allow backspace, arrows and h/l to cross line boundaries
-set wildignore+=*swp,*.class,*.pyc,*.png,*.jpg,*.gif,*.zip,tmp/*,*.o,*.obj,*.so   " Taken from vim-better-default
-" }}}
-" {{{ persistence
-set nobackup
-set writebackup
-set backupdir=~/.config/nvim/backup//     " FIXME: should be based on `stdpath("config")`
-
-set undofile                              " Persistent undo
-set undodir=~/.config/nvim/undo//         " FIXME: should be based on `stdpath("config")`
-" }}}
-" {{{ system
-set fileformats=unix,dos,mac              " Choose unix as default fileformat
-set fileencoding=utf-8                    " Always save files as utf-8
-set clipboard=unnamedplus,unnamed         " yank, delete, change, put go to the '+' and '*' registers
-set grepprg=rg\ --vimgrep
-set spelllang=en_gb,en,es,fr
-set isfname-==                            " Do not consider `=` part of filenames
-" }}}
-" {{{ folds
-set foldenable
-set foldmethod=indent
-set foldnestmax=10
-autocmd BufWinEnter * let &foldlevel=max(map(range(1, line('$')), 'foldlevel(v:val)'))
-" }}}
-
-" }}} -------------------------------------------------------------------------
 " {{{ Filetype-specific behavior
 autocmd BufNewFile,BufRead /*.rasi setfiletype css
 
