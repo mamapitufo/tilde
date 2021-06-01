@@ -1,5 +1,7 @@
 function! LightlineReadonly()
-  return &readonly && &filetype !=# 'help' ? 'RO' : ''
+  return &readonly
+        \ && &filetype !=# 'help'
+        \ && &filetype !=# 'fugitive' ? 'RO' : ''
 endfunction
 
 function! LightlineFilename()
@@ -49,6 +51,7 @@ endfunction
 function! LightlineMode()
   return &ft ==# 'help' ? '[Help]' :
         \ &ft ==# 'vim-plug' ? '[VimPlug]' :
+        \ &ft ==# 'fugitive' ? '[Git]' :
         \ lightline#mode()
 endfunction
 
