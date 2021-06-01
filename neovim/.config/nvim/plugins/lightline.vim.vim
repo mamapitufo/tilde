@@ -19,7 +19,7 @@ function LightlineFileformat()
 endfunction
 
 function LightlineGit()
-  let l:name=gitbranch#name()
+  let l:name=fugitive#head(8)
   if len(l:name)
     return ' ' . l:name
   else

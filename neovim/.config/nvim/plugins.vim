@@ -5,9 +5,9 @@ call plug#begin()
   Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
   Plug 'junegunn/fzf.vim'
   Plug 'airblade/vim-gitgutter'
-  Plug 'itchyny/lightline.vim' | Plug 'itchyny/vim-gitbranch'   " Statusline
-  Plug 'dense-analysis/ale'                                     " Linter
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}               " Completion
+  Plug 'itchyny/lightline.vim'        " Statusline
+  Plug 'dense-analysis/ale'           " Linter
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   Plug 'tpope/vim-unimpaired'         " Complimentary mappings
   Plug 'tpope/vim-commentary'
