@@ -1,24 +1,31 @@
-function!LightlineReadonly()
+function! LightlineReadonly()
   return &readonly && &filetype !=# 'help' ? 'RO' : ''
 endfunction
 
-function LightlineFilename()
+function! LightlineFilename()
   let l:name=winwidth(0) > 70 ? expand('%:p:h:t') . '/' . expand('%:t') : expand('%:t')
-  let filename=expand('%:t') !=# '' ? l:name : '[No Name]'
+  let l:filename=expand('%:t') !=# '' ? l:name : '[No Name]'
 
-  let modified=&modified ? ' ●' : ''
+  let l:modified=&modified ? ' ●' : ''
 
-  return filename . modified
+  return l:filename . l:modified
 endfunction
 
-function LightlineFileformat()
-  let l:encoding=&fileencoding !=# '' ? ' (' . &fileencoding . ')' : ''
-  let l:format=&fileformat !=# '' ? &fileformat : ''
+function! LightlineFileInfo()
+  let l:filetype = &ft !=# '' ? &ft : '[no ft]'
+  let l:components = [l:filetype]
 
-  return l:format . l:encoding
+  if &fenc !=# 'utf-8'
+    call add(l:components, &fenc)
+  endif
+  if &ff !=# 'unix'
+    call add(l:components, &ff)
+  endif
+
+  return join(l:components, ' | ')
 endfunction
 
-function LightlineGit()
+function! LightlineGit()
   let l:name=fugitive#head(8)
   if len(l:name)
     return ' ' . l:name
@@ -32,19 +39,18 @@ let g:lightline={
   \ 'component_function': {
   \   'readonly': 'LightlineReadonly',
   \   'filename': 'LightlineFilename',
-  \   'fileformat': 'LightlineFileformat',
   \   'gitbranch': 'LightlineGit',
+  \   'fileinfo': 'LightlineFileInfo',
   \ },
   \ 'component': {
   \   'percent': '%3p%% (%LL)',
   \ },
   \ 'active': {
   \   'left': [['mode', 'paste'],
-  \            ['readonly', 'filename'],
-  \            ['gitbranch']],
+  \            ['gitbranch', 'readonly', 'filename']],
   \   'right': [['lineinfo'],
   \             ['percent'],
-  \             ['filetype', 'fileformat']]
+  \             ['fileinfo']]
   \ },
   \ 'inactive': {
   \   'left': [['filename']],
