@@ -41,24 +41,24 @@ nnoremap <silent> <leader>feR :source $MYVIMRC<cr>
 nnoremap <silent> <leader>fs :update<cr>
 " }}}
 " {{{ Git
-nnoremap <silent> <leader>gF :Gpull<cr>
-nnoremap <silent> <leader>gP :Gpush<cr>
-nnoremap <silent> <leader>gb :Gblame<cr>
-nnoremap <silent> <leader>gcA :Gcommit --amend --no-edit --all<cr>
-nnoremap <silent> <leader>gcC :Gcommit --verbose -all<cr>
-nnoremap <silent> <leader>gcW :Gcommit --amend --verbose --all<cr>
-nnoremap <silent> <leader>gca :Gcommit --amend --no-edit<cr>
-nnoremap <silent> <leader>gcc :Gcommit --verbose<cr>
-nnoremap <silent> <leader>gcw :Gcommit --amend --verbose<cr>
-nnoremap <silent> <leader>gd :Gdiff<cr>
-nnoremap <silent> <leader>gf :Gfetch<cr>
-nnoremap <silent> <leader>gs :Gstatus<cr>
-nnoremap <silent> <leader>gw :Gwrite<cr>
+nnoremap <silent> <leader>gF :Git pull<cr>
+nnoremap <silent> <leader>gP :Git push<cr>
+nnoremap <silent> <leader>gb :Git_blame<cr>
+nnoremap <silent> <leader>gcA :Git commit --amend --no-edit --all<cr>
+nnoremap <silent> <leader>gcC :Git commit --verbose -all<cr>
+nnoremap <silent> <leader>gcW :Git commit --amend --verbose --all<cr>
+nnoremap <silent> <leader>gca :Git commit --amend --no-edit<cr>
+nnoremap <silent> <leader>gcc :Git commit --verbose<cr>
+nnoremap <silent> <leader>gcw :Git commit --amend --verbose<cr>
+nnoremap <silent> <leader>gd :Ghdiffsplit<cr>
+nnoremap <silent> <leader>gD :Gdiffsplit<cr>
+nnoremap <silent> <leader>gf :Git fetch<cr>
+nnoremap <silent> <leader>gs :Git<cr>
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
-nmap <leader>ghp <Plug>(GitGutterPreviewHunk)
-nmap <leader>ghs <Plug>(GitGutterStageHunk)
-nmap <leader>ghu <Plug>(GitGutterUndoHunk)
+nmap <silent> <leader>ghp <Plug>(GitGutterPreviewHunk)
+nmap <silent> <leader>ghs <Plug>(GitGutterStageHunk)
+nmap <silent> <leader>ghu <Plug>(GitGutterUndoHunk)
 " }}}
 " {{{ Help
 nnoremap <leader>h<space> :Helptags<cr>
