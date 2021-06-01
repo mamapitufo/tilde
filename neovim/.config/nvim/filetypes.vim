@@ -2,11 +2,11 @@
 " vim: fdm=marker
 
 " {{{ General
-augroup togglenumbers_aug
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
-augroup END
+" augroup togglenumbers_aug
+"   autocmd!
+"   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+"   autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+" augroup END
 " }}} -------------------------------------------------------------------------
 " {{{ CSS
 augroup css_aug
