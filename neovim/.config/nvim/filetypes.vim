@@ -25,6 +25,6 @@ augroup END
 " {{{ Special buffers
 augroup specialbuff_aug
   autocmd!
-  autocmd FileType help,vim-plug setlocal nonumber norelativenumber | nmap <buffer> q :q<cr>
+  autocmd FileType help,vim-plug setlocal nonumber norelativenumber | nmap <buffer> <localleader>q :q<cr>
 augroup END
 " }}} -------------------------------------------------------------------------
