@@ -8,6 +8,7 @@ call plug#begin()
   Plug 'itchyny/lightline.vim'        " Statusline
   Plug 'dense-analysis/ale'           " Linter
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'jiangmiao/auto-pairs'         " Auto-close parenthesis, brackets, strings, etc.
 
   Plug 'tpope/vim-unimpaired'         " Complimentary mappings
   Plug 'tpope/vim-commentary'
