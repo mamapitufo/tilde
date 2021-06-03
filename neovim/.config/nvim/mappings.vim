@@ -41,19 +41,24 @@ nnoremap <silent> <leader>feR :source $MYVIMRC<cr>
 nnoremap <silent> <leader>fs :update<cr>
 " }}}
 " {{{ Git
-nnoremap <silent> <leader>gF :Git pull<cr>
-nnoremap <silent> <leader>gP :Git push<cr>
-nnoremap <silent> <leader>gb :Git_blame<cr>
-nnoremap <silent> <leader>gcA :Git commit --amend --no-edit --all<cr>
-nnoremap <silent> <leader>gcC :Git commit --verbose -all<cr>
-nnoremap <silent> <leader>gcW :Git commit --amend --verbose --all<cr>
-nnoremap <silent> <leader>gca :Git commit --amend --no-edit<cr>
+nnoremap <silent> <leader>gs :Git<cr>
+" Commit
 nnoremap <silent> <leader>gcc :Git commit --verbose<cr>
+nnoremap <silent> <leader>gcC :Git commit --verbose --all<cr>
+nnoremap <silent> <leader>gca :Git commit --amend --no-edit<cr>
+nnoremap <silent> <leader>gcA :Git commit --amend --no-edit --all<cr>
 nnoremap <silent> <leader>gcw :Git commit --amend --verbose<cr>
+nnoremap <silent> <leader>gcW :Git commit --amend --verbose --all<cr>
+" Diffs
 nnoremap <silent> <leader>gd :Ghdiffsplit<cr>
 nnoremap <silent> <leader>gD :Gdiffsplit<cr>
+nnoremap <silent> <leader>gb :Git_blame<cr>
+" Remotes
 nnoremap <silent> <leader>gf :Git fetch<cr>
-nnoremap <silent> <leader>gs :Git<cr>
+nnoremap <silent> <leader>gF :Git pull<cr>
+nnoremap <silent> <leader>gP :Git push<cr>
+nnoremap <silent> <leader>gPf :Git push --force<cr>
+" Hunks
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
 nmap <silent> <leader>ghp <Plug>(GitGutterPreviewHunk)
