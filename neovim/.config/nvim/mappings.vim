@@ -25,18 +25,15 @@ let mapleader="\<Space>"
 let maplocalleader=","
 
 " {{{ Buffer
-nnoremap <leader>bb :Buffers<cr>
+nnoremap <silent> <leader>bb :Telescope buffers<cr>
 nnoremap <silent> <leader>bD :bufdo :Bdelete<cr>  " kills all buffers without modifying the split layout
 nnoremap <silent> <leader>bd :Bdelete<cr>         " kills a buffer without closing the split
-nnoremap <silent> <leader>bf :bfirst<cr>
-nnoremap <silent> <leader>bl :blast<cr>
 nnoremap <silent> <leader>bn :bnext<cr>
 nnoremap <silent> <leader>bp :bprevious<cr>
 " }}}
 " {{{ File
-nnoremap <leader>ff :Files<cr>
-nnoremap <leader>fg :GFiles<cr>
-nnoremap <leader>fr :History<cr>
+nnoremap <silent> <leader>ff :Telescope find_files<cr>
+nnoremap <silent> <leader>fg :Telescope git_files<cr>
 nnoremap <silent> <leader>feR :source $MYVIMRC<cr>
 nnoremap <silent> <leader>fs :update<cr>
 " }}}
@@ -52,7 +49,7 @@ nnoremap <silent> <leader>gcW :Git commit --amend --verbose --all<cr>
 " Diffs
 nnoremap <silent> <leader>gd :Ghdiffsplit<cr>
 nnoremap <silent> <leader>gD :Gdiffsplit<cr>
-nnoremap <silent> <leader>gb :Git_blame<cr>
+nnoremap <silent> <leader>gb :Git blame<cr>
 " Remotes
 nnoremap <silent> <leader>gf :Git fetch<cr>
 nnoremap <silent> <leader>gF :Git pull<cr>
@@ -82,9 +79,9 @@ nnoremap <silent> <leader>qq :q<cr>
 nmap <silent> <localleader>rrs <Plug>(coc-rename)
 " }}}
 " {{{ Search
-nnoremap <leader>* :RgStar <c-r><c-w><cr>
-nnoremap <leader>s: :History:<cr>
-nnoremap <leader>sf :Rg<cr>
+nnoremap <silent> <leader>* :Telescope grep_string<cr>
+nnoremap <silent> <leader>s: :Telescope command_history<cr>
+nnoremap <silent> <leader>sf :Telescope live_grep<cr>
 nnoremap <silent> <leader>sc :nohlsearch<cr>
 nmap <silent> <leader>ssr <Plug>(coc-references)
 " }}}

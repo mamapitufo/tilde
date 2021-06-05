@@ -2,13 +2,15 @@ call plug#begin()
   Plug 'moll/vim-bbye'                " close buffer without changing the layout
   Plug 'nightsense/cosmic_latte'      " colourscheme
   Plug 'blankname/vim-fish'
-  Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
-  Plug 'junegunn/fzf.vim'
   Plug 'airblade/vim-gitgutter'
   Plug 'itchyny/lightline.vim'        " Statusline
   Plug 'dense-analysis/ale'           " Linter
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'jiangmiao/auto-pairs'         " Auto-close parenthesis, brackets, strings, etc.
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
   Plug 'tpope/vim-unimpaired'         " Complimentary mappings
   Plug 'tpope/vim-commentary'
