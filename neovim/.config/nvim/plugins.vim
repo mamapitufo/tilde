@@ -24,11 +24,18 @@ call plug#begin()
   Plug 'tpope/vim-sexp-mappings-for-regular-people'
 call plug#end()
 
-for plugconfig in split(glob(stdpath('config') . '/plugins/*.vim'), '\n')
+for plugconfig in split(glob(stdpath('config') . '/plugins/*'), '\n')
   let plugname = fnamemodify(plugconfig, ':t:r')
 
   if (exists('g:plugs["' . plugname . '"]'))
-    exec 'source' plugconfig
+    let ext = fnamemodify(plugconfig, ':e')
+    if (ext ==? 'vim')
+      exec 'source' plugconfig
+    elseif (ext ==? 'lua')
+      exec 'luafile' plugconfig
+    else
+      echom 'WARN: Unknown config extension on file ' . plugconfig
+    endif
   else
     echom 'WARN: No plugin defined for config ' . plugconfig
   endif
