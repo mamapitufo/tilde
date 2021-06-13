@@ -32,7 +32,7 @@ nnoremap <silent> <leader>bn :bnext<cr>
 nnoremap <silent> <leader>bp :bprevious<cr>
 " }}}
 " {{{ File
-nnoremap <silent> <leader>ff :Telescope find_files<cr>
+nnoremap <silent> <leader>ff :Telescope find_files hidden=true<cr>
 nnoremap <silent> <leader>fg :Telescope git_files<cr>
 nnoremap <silent> <leader>feR :source $MYVIMRC<cr>
 nnoremap <silent> <leader>fs :update<cr>
