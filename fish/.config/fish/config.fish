@@ -36,6 +36,8 @@ alias disown-all "disown (jobs -g)"
 
 alias youtube-720p "youtube-dl --format 'bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]'"
 
+alias jstree "tree -I node_modules"
+
 if status is-interactive; and test $TERM = "xterm-kitty"
   alias tmux "tmux -2"
 end
