@@ -1,11 +1,13 @@
 local actions = require('telescope.actions')
 require('telescope').setup{
   defaults = {
-    prompt_position = "top",
-    mappings = {
-      i = {
-        ['<esc>'] = actions.close
-      }
+    prompt_position = 'top',
+  },
+  pickers = {
+    buffers = {
+      sort_lastused = true,
+      theme = 'dropdown',
+      previewer = false
     }
   },
   extensions = {
