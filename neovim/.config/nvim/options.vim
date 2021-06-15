@@ -30,7 +30,7 @@ set scrolloff=3                 " Min lines to keep above and below cursor
 set scrolljump=5                " Lines to scroll when cursor is on edge of screen
 set nowrap
 set formatoptions=tcrqj         " Auto-wrap text and comments, continue and format comments, smart comment join
-set timeoutlen=500              " wait 0.5s for mappings to complete
+set timeoutlen=700              " wait 0.5s for mappings to complete
 set updatetime=500              " wait 0.5s for CursorHold
 
 " file & buffer navigation
