@@ -1,13 +1,14 @@
 local actions = require('telescope.actions')
+
 require('telescope').setup{
-  defaults = {
-    prompt_position = 'top',
-  },
   pickers = {
     buffers = {
       sort_lastused = true,
       theme = 'dropdown',
       previewer = false
+    },
+    find_files = {
+      hidden = true
     }
   },
   extensions = {
