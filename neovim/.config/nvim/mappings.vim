@@ -31,10 +31,12 @@ nnoremap <silent> <leader>bd :Bdelete<cr>         " kills a buffer without closi
 nnoremap <silent> <leader>bn :bnext<cr>
 nnoremap <silent> <leader>bp :bprevious<cr>
 " }}}
+" {{{ Configuration
+nnoremap <silent> <leader>cf :Telescope find_files cwd=$HOME/Sandbox/tilde prompt_prefix=\ ~\  prompt_title=Sandbox/tilde<cr>
+nnoremap <silent> <leader>cR :source $MYVIMRC<cr>
+" }}}
 " {{{ File
-nnoremap <silent> <leader>ff :Telescope find_files hidden=true<cr>
-nnoremap <silent> <leader>fg :Telescope git_files<cr>
-nnoremap <silent> <leader>feR :source $MYVIMRC<cr>
+nnoremap <silent> <leader>ff :Telescope find_files<cr>
 nnoremap <silent> <leader>fs :update<cr>
 " }}}
 " {{{ Git
@@ -63,9 +65,7 @@ nmap <silent> <leader>ghs <Plug>(GitGutterStageHunk)
 nmap <silent> <leader>ghu <Plug>(GitGutterUndoHunk)
 " }}}
 " {{{ Help
-nnoremap <leader>h<space> :Helptags<cr>
-nnoremap <leader>hb :Maps<cr>
-nnoremap <leader>hc :Commands<cr>
+nnoremap <leader>h<space> :Telescope help_tags<cr>
 " }}}
 " {{{ Local
 nnoremap <silent> <localleader>== <Plug>(AleFix)
@@ -79,11 +79,12 @@ nnoremap <silent> <leader>qq :q<cr>
 nmap <silent> <localleader>rrs <Plug>(coc-rename)
 " }}}
 " {{{ Search
-nnoremap <silent> <leader>* :Telescope grep_string<cr>
-nnoremap <silent> <leader>s: :Telescope command_history<cr>
-nnoremap <silent> <leader>sf :Telescope live_grep<cr>
-nnoremap <silent> <leader>sc :nohlsearch<cr>
 nmap <silent> <leader>ssr <Plug>(coc-references)
+nnoremap <silent> <leader>* :Telescope grep_string<cr>
+nnoremap <silent> <leader>s/ :Telescope search_history<cr>
+nnoremap <silent> <leader>s: :Telescope command_history<cr>
+nnoremap <silent> <leader>sc :nohlsearch<cr>
+nnoremap <silent> <leader>sf :Telescope live_grep<cr>
 " }}}
 " {{{ Text
 nnoremap <silent> <leader>xdw :let _s=@/ <bar> :%s/\s\+$//e <bar> :let @/=_s <bar> :nohl <bar> :unlet _s <cr>
