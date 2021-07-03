@@ -23,7 +23,7 @@
 	bv = branch -vv
 	br = branch -r
 	bd = branch -d
-	bdd = brand -D
+	bdd = branch -D
 	bc = branch
 	bcs = checkout -b
 	bs = checkout
