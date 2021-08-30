@@ -41,5 +41,6 @@ require'lualine'.setup {
       { 'filename', path = 1 }
     },
     lualine_x = { fileinfo }
-  }
+  },
+  extensions = { 'quickfix', 'fugitive' }
 }
