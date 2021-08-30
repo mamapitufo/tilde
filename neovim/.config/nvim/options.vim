@@ -3,9 +3,9 @@ set ignorecase                  " Case insensitive search
 set smartcase                   " But respect case if UC is used in search
 
 " tabs & spaces
-set shiftwidth=2                " Auto-indent using 2 columns
-set tabstop=2                   " Number of spaces per TAB character
-set softtabstop=2               " Number of spaces per <Tab> when editing
+set shiftwidth=4                " Auto-indent using 2 columns
+set tabstop=4                   " Number of spaces per TAB character
+set softtabstop=4               " Number of spaces per <Tab> when editing
 set copyindent                  " Copy current line indent when autoindenting a new line.
 set shiftround                  " Round indents to multiple of `shiftwidth`
 
