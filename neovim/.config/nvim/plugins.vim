@@ -3,7 +3,7 @@ call plug#begin()
   Plug 'nightsense/cosmic_latte'      " colourscheme
   Plug 'blankname/vim-fish'
   Plug 'airblade/vim-gitgutter'
-  Plug 'itchyny/lightline.vim'        " Statusline
+  Plug 'hoob3rt/lualine.nvim'         " Statusline
   Plug 'dense-analysis/ale'           " Linter
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'jiangmiao/auto-pairs'         " Auto-close parenthesis, brackets, strings, etc.
