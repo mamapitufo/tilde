@@ -33,7 +33,7 @@ nnoremap <silent> <leader>bp :bprevious<cr>
 " }}}
 " {{{ Configuration
 nnoremap <silent> <leader>cf :Telescope find_files cwd=$HOME/Sandbox/tilde prompt_prefix=\ ~\  prompt_title=Sandbox/tilde<cr>
-nnoremap <silent> <leader>cR :source $MYVIMRC<cr>
+nnoremap <silent> <leader>cR :call SourceConfig()<cr>
 " }}}
 " {{{ File
 nnoremap <silent> <leader>ff :Telescope find_files<cr>
