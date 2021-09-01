@@ -56,7 +56,6 @@ set spelllang=en_gb,en,es,fr
 set isfname-==                  " Do not consider `=` part of filenames
 
 " folds
-set foldenable
 set foldmethod=indent
 set foldnestmax=10
-autocmd BufWinEnter * let &foldlevel=max(map(range(1, line('$')), 'foldlevel(v:val)'))
+set foldlevel=10
