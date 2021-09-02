@@ -9,6 +9,4 @@ let g:conjure#eval#gsubs = {
       \ 'do-comment': ['^%(comment[%s%c]', '(do ']
       \ }
 
-" These require neovim 0.5
 let g:conjure#highlight#enabled = v:true
-let g:conjure#extract#tree_sitter#enabled = v:true
