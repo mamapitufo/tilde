@@ -1,5 +1,5 @@
-set fish_color_cwd blue
-set fish_color_time white
+set fish_color_cwd blue --bold
+set fish_color_time black
 set fish_color_failed red --bold
 
 set fish_prompt_pwd_dir_length 0
@@ -29,4 +29,3 @@ function fish_prompt --description "Write out the prompt"
 	end
 	printf " "
 end
-

@@ -1,6 +1,8 @@
 call plug#begin()
   Plug 'moll/vim-bbye'                " close buffer without changing the layout
-  Plug 'nightsense/cosmic_latte'      " colourscheme
+"  Plug 'nightsense/cosmic_latte'      " colourscheme
+  Plug 'mcchrish/zenbones.nvim'       " colourscheme
+  Plug 'rktjmp/lush.nvim'
   Plug 'blankname/vim-fish'
   Plug 'airblade/vim-gitgutter'
   Plug 'hoob3rt/lualine.nvim'         " Statusline

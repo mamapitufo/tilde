@@ -42,8 +42,9 @@ if status is-interactive; and test $TERM = "xterm-kitty"
   alias tmux "tmux -2"
 end
 
-set -l cosmic_latte_path ~/.config/nvim/plugged/cosmic_latte
-if status is-interactive; and test -d $cosmic_latte_path
-  source $cosmic_latte_path/shell/cosmic_latte_light.fish
-  eval (dircolors -c $cosmic_latte_path/shell/dircolors)
+eval (dircolors -c ~/.dircolors)
+
+set -l theme_path ~/.config/fish/zenbones.fish
+if status is-interactive; and test -f $theme_path
+  source $theme_path
 end

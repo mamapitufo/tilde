@@ -21,7 +21,7 @@ require'lualine'.setup {
   options = {
     section_separators = '',
     component_separators = '|',
-    theme = 'solarized_light',
+    theme = 'zenbones',
     disabled_filetypes = { 'help', 'vim-plug', 'gitcommit' }
   },
   sections = {
