@@ -9,6 +9,9 @@ require('telescope').setup{
     },
     find_files = {
       hidden = true
+    },
+    live_grep = {
+      hidden = true
     }
   },
   extensions = {
