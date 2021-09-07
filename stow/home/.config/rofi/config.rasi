@@ -5,9 +5,9 @@ configuration {
 	font: "Roboto Mono 11";
 	lines: 23;
 	separator-style: "solid";
-	theme: "cosmic_latte_light";
 
 	run-command: "fish -c '{cmd}'";
 	run-list-command: "fish -c functions";
 }
 
+@theme "/usr/share/rofi/themes/Arc.rasi"
