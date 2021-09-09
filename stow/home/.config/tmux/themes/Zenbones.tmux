@@ -18,5 +18,5 @@ set -g message-style fg=#2c363c,bg=#d2dfe7
 
 set -g mode-style fg=#c4b6af
 
-set -g display-panes-active-colour #88507d
-set -g display-panes-colour #b2a39b
+set -g display-panes-active-colour '#88507d'
+set -g display-panes-colour '#b2a39b'
