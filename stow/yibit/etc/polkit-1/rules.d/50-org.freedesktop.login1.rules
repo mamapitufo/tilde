@@ -1,0 +1,7 @@
+polkit.addRule(function(action, subject) {
+	polkit.log("action=" + action);
+	polkit.log("subject=" + subject);
+	if (action.id.indexOf("org.freedesktop.login1.") == 0 && subject.isInGroup("power")) {
+		return polkit.Result.YES;
+	}
+});
