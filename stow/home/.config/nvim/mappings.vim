@@ -19,8 +19,6 @@ vmap k gk
 vnoremap J :m'>+1<cr>gv=gv
 vnoremap K :m'<-2<cr>gv=gv
 
-nmap <silent> gd <Plug>(coc-definition)
-
 let mapleader="\<Space>"
 let maplocalleader=","
 

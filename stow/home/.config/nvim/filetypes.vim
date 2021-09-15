@@ -8,6 +8,12 @@
 "   autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 " augroup END
 " }}} -------------------------------------------------------------------------
+" {{{ Clojure
+augroup clojure_aug
+  autocmd!
+  autocmd FileType clojure nmap <buffer> <silent> gd <Plug>(coc-definition)
+augroup END
+" }}} -------------------------------------------------------------------------
 " {{{ CSS
 augroup css_aug
   autocmd!
