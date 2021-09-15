@@ -20,4 +20,4 @@ GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4 slub_debug=P page_poison=1"
 #GRUB_COLOR_NORMAL="light-blue/black"
 #GRUB_COLOR_HIGHLIGHT="light-cyan/blue"
 GRUB_ENABLE_CRYPTODISK=y
-GRUB_CMDLINE_LINUX="rd.auto=1 rd.luks.allow-discards cryptdevice=UUID=e3e65b17-e7d4-4d86-b517-3845bedaa6e5 resume=UUID=19b58cfe-9786-4af1-a3aa-432f266b0614 resume_offset=34816.. rd.lvm=0 rm.dm=0 intel_pstate=skylake_hwp nmi_watchdog=0"
+GRUB_CMDLINE_LINUX="rd.auto=1 rd.luks.allow-discards cryptdevice=UUID=e3e65b17-e7d4-4d86-b517-3845bedaa6e5 resume=UUID=19b58cfe-9786-4af1-a3aa-432f266b0614 resume_offset=84852736.. rd.lvm=0 rm.dm=0 intel_pstate=skylake_hwp nmi_watchdog=0"
