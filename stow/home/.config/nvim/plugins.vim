@@ -1,6 +1,5 @@
 call plug#begin()
   Plug 'moll/vim-bbye'                " close buffer without changing the layout
-"  Plug 'nightsense/cosmic_latte'      " colourscheme
   Plug 'mcchrish/zenbones.nvim'       " colourscheme
   Plug 'rktjmp/lush.nvim'
   Plug 'blankname/vim-fish'
@@ -9,9 +8,10 @@ call plug#begin()
   Plug 'dense-analysis/ale'           " Linter
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'jiangmiao/auto-pairs'         " Auto-close parenthesis, brackets, strings, etc.
-  Plug 'nvim-lua/popup.nvim'
-  Plug 'nvim-lua/plenary.nvim'
+
+  " Finder, picker, previewer...
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-lua/plenary.nvim'        " Lua helper functions
   Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
   Plug 'tpope/vim-unimpaired'         " Complimentary mappings
@@ -26,6 +26,7 @@ call plug#begin()
   Plug 'Olical/conjure', {'tag': 'v4.23.0'}
   Plug 'guns/vim-sexp'
   Plug 'tpope/vim-sexp-mappings-for-regular-people'
+  Plug 'bakpakin/fennel.vim'
 call plug#end()
 
 for plugconfig in split(glob(stdpath('config') . '/plugins/*'), '\n')
