@@ -23,7 +23,7 @@ if [ $SYSTEM = "Linux" ]; then
 fi
 
 msg "Updating symlinks to home directory... "
-stow --stow --dir=stow --target=$HOME --dotfiles home || exit
+stow --stow --dir=stow --target=$HOME home || exit
 msgln "Done."
 
 msgln "Updating software..."
