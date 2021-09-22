@@ -62,9 +62,6 @@ nmap <silent> <leader>ghp <Plug>(GitGutterPreviewHunk)
 nmap <silent> <leader>ghs <Plug>(GitGutterStageHunk)
 nmap <silent> <leader>ghu <Plug>(GitGutterUndoHunk)
 " }}}
-" {{{ Help
-nnoremap <leader>h<space> :Telescope help_tags<cr>
-" }}}
 " {{{ Local
 nnoremap <silent> <localleader>== <Plug>(AleFix)
 " }}}
@@ -83,6 +80,7 @@ nnoremap <silent> <leader>s/ :Telescope search_history<cr>
 nnoremap <silent> <leader>s: :Telescope command_history<cr>
 nnoremap <silent> <leader>sc :nohlsearch<cr>
 nnoremap <silent> <leader>sf :Telescope live_grep<cr>
+nnoremap <silent> <leader>sh :Telescope help_tags<cr>
 " }}}
 " {{{ Text
 nnoremap <silent> <leader>xdw :let _s=@/ <bar> :%s/\s\+$//e <bar> :let @/=_s <bar> :nohl <bar> :unlet _s <cr>

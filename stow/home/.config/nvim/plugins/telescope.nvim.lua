@@ -1,6 +1,20 @@
 local actions = require('telescope.actions')
 
 require('telescope').setup{
+  defaults = {
+    file_ignore_patterns = {'node_modules'},
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '!.git',
+      '--hidden'
+    }
+  },
   pickers = {
     buffers = {
       sort_lastused = true,
@@ -8,9 +22,6 @@ require('telescope').setup{
       previewer = false
     },
     find_files = {
-      hidden = true
-    },
-    live_grep = {
       hidden = true
     }
   },
