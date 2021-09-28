@@ -14,6 +14,9 @@ call plug#begin()
   Plug 'nvim-lua/plenary.nvim'        " Lua helper functions
   Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
+  " Parser tools
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
   Plug 'tpope/vim-unimpaired'         " Complimentary mappings
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'           " Git tools
