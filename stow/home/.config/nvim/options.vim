@@ -32,6 +32,7 @@ set nowrap
 set formatoptions=tcrqj         " Auto-wrap text and comments, continue and format comments, smart comment join
 set timeoutlen=700              " wait 0.5s for mappings to complete
 set updatetime=500              " wait 0.5s for CursorHold
+set completeopt=menuone,noselect    " always show the menu and force a selection
 
 " file & buffer navigation
 set autowrite                   " Write file when leaving a modified buffer
@@ -50,7 +51,7 @@ set undodir=$HOME/.local/share/nvim/undo//
 
 " system
 set fileencoding=utf-8
-set clipboard=unnamed
+set clipboard=unnamedplus
 set grepprg=rg\ --vimgrep
 set spelllang=en_gb,en,es,fr
 set isfname-==                  " Do not consider `=` part of filenames

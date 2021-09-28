@@ -5,8 +5,6 @@ call plug#begin()
   Plug 'blankname/vim-fish'
   Plug 'airblade/vim-gitgutter'
   Plug 'hoob3rt/lualine.nvim'         " Statusline
-  Plug 'dense-analysis/ale'           " Linter
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'jiangmiao/auto-pairs'         " Auto-close parenthesis, brackets, strings, etc.
 
   " Finder, picker, previewer...
@@ -16,6 +14,15 @@ call plug#begin()
 
   " Parser tools
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+  " LSP
+  Plug 'neovim/nvim-lspconfig'
+
+  " Completion
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'PaterJason/cmp-conjure'
 
   Plug 'tpope/vim-unimpaired'         " Complimentary mappings
   Plug 'tpope/vim-commentary'

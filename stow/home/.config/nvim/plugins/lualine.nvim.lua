@@ -31,7 +31,7 @@ require'lualine'.setup {
     lualine_c = {
       {
         'diagnostics',
-        sources = { 'nvim_lsp', 'ale' },
+        sources = { 'nvim_lsp' },
         color_error = '#c44756',
         color_warn = '#916d03',
         color_info = '#0075c9',
