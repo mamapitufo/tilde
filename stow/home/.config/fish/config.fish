@@ -48,3 +48,8 @@ set -l theme_path ~/.config/fish/zenbones.fish
 if status is-interactive; and test -f $theme_path
   source $theme_path
 end
+
+# Homebrew
+if test -d ~/.linuxbrew
+  eval (~/.linuxbrew/bin/brew shellenv)
+end
