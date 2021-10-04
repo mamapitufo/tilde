@@ -23,7 +23,7 @@ if test $cache_size_m -gt 5000
 end
 
 log_info "Updating Homebrew packages..."
-brew update
+brew update --quiet
 log_info "Done."
 
 #[[ -f ~/.config/nvim/update  ]] && ~/.config/nvim/update
