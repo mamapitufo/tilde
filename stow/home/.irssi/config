@@ -138,14 +138,14 @@ statusbar = {
 
 settings = {
   core = {
-    real_name = "Alberto Brealey-Guzman";
+    real_name = "Alberto";
     user_name = "mamapitufo";
     nick = "mamapitufo";
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = {
     beep_msg_level = "MSGS HILIGHT DCCMSGS";
-    theme = "solarized-universal";
+    theme = "simplicity";
     hilight_color = "= %R";
   };
 };
