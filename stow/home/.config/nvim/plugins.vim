@@ -33,7 +33,7 @@ call plug#begin()
   Plug 'tpope/vim-eunuch'             " Vim sugar for shell commands
 
   Plug 'clojure-vim/clojure.vim'
-  Plug 'Olical/conjure', {'tag': 'v4.23.0'}
+  Plug 'Olical/conjure', {'tag': 'v4.24.1'}
   Plug 'guns/vim-sexp'
   Plug 'tpope/vim-sexp-mappings-for-regular-people'
   Plug 'bakpakin/fennel.vim'
