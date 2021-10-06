@@ -56,19 +56,12 @@ nnoremap <silent> <leader>gF :Git pull<cr>
 nnoremap <silent> <leader>gP :Git push<cr>
 nnoremap <silent> <leader>gPf :Git push --force<cr>
 " }}}
-" {{{ Local
-nnoremap <silent> <localleader>== <Plug>(AleFix)
-" }}}
 " {{{ Quit
 nnoremap <leader>qQ :qa!<cr>
 nnoremap <leader>qa :qa<cr>
 nnoremap <silent> <leader>qq :q<cr>
 " }}}
-" {{{ Refactor
-nmap <silent> <localleader>rrs <Plug>(coc-rename)
-" }}}
 " {{{ Search
-nmap <silent> <leader>ssr <Plug>(coc-references)
 nnoremap <silent> <leader>* :Telescope grep_string<cr>
 nnoremap <silent> <leader>s/ :Telescope search_history<cr>
 nnoremap <silent> <leader>s: :Telescope command_history<cr>
