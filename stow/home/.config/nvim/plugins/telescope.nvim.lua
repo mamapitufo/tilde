@@ -34,3 +34,17 @@ require('telescope').setup{
 }
 
 require('telescope').load_extension('fzy_native')
+
+require('which-key').register({
+  ['<leader>'] = {
+    bb = { '<cmd>Telescope buffers<cr>', 'Search buffers' },
+    fc = { '<cmd>Telescope find_files cwd=$HOME/Sandbox/tilde prompt_prefix=\\ ~\\  promp_title=Sandbox/tilde<cr>', 'Find config file' },
+    ff = { '<cmd>Telescope find_files<cr>', 'Find file' },
+    ['*'] = { '<cmd>Telescope grep_string<cr>', 'Find current string' },
+    ['s/'] = { '<cmd>Telescope search_history<cr>', 'Search history' },
+    ['s:'] = { '<cmd>Telescope command_history<cr>', 'Command history' },
+    sf = { '<cmd>Telescope live_grep<cr>', 'Grep in project' },
+    sh = { '<cmd>Telescope help_tags<cr>', 'Find help' },
+  }
+})
+

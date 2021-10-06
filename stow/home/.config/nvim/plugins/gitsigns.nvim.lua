@@ -7,32 +7,7 @@ require('gitsigns').setup {
     changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
   },
   keymaps = {
-    -- Default keymap options
     noremap = true,
-
-    -- navigation
-    ['n ]h'] = { expr = true, "&diff ? ']h' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
-    ['n [h'] = { expr = true, "&diff ? '[h' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
-
-    -- hunk manipulation
-    ['n <leader>ghs'] = '<cmd>lua require"gitsigns".stage_hunk()<cr>',
-    ['v <leader>ghs'] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<cr>',
-    ['n <leader>ghu'] = '<cmd>lua require"gitsigns".undo_stage_hunk()<cr>',
-    ['n <leader>ghr'] = '<cmd>lua require"gitsigns".reset_hunk()<cr>',
-    ['v <leader>ghr'] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<cr>',
-
-    -- display
-    ['n <leader>ghp'] = '<cmd>lua require"gitsigns".preview_hunk()<cr>',
-    ['n <leader>ghb'] = '<cmd>lua require"gitsigns".blame_line(true)<cr>',
-    ['n <leader>tch'] = '<cmd>Gitsigns toggle_linehl<cr>',
-    ['n <leader>tcb'] = '<cmd>Gitsigns toggle_current_line_blame<cr>',
-
-    -- buffer
-    ['n <leader>gR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
-    ['n <leader>ghS'] = '<cmd>lua require"gitsigns".stage_buffer()<CR>',
-    ['n <leader>ghU'] = '<cmd>lua require"gitsigns".reset_buffer_index()<CR>',
-
-    -- Text objects
     ['o ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
     ['x ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>'
   },
@@ -51,3 +26,31 @@ require('gitsigns').setup {
     col = 1
   },
 }
+
+require('which-key').register({
+  ['<leader>'] = {
+    ghS = { '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<cr>', 'Stage hunks' },
+    ghR = { '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<cr>', 'Reset hunks to git index' }
+  },
+}, { mode = 'v' })
+
+require('which-key').register({
+  [']h'] = { '<cmd>Gitsigns next_hunk<cr>', 'Next changed hunk' },
+  ['[h'] = { '<cmd>Gitsigns prev_hunk<cr>', 'Previous changed hunk' },
+  ['<leader>'] = {
+    ghs = { '<cmd>Gitsigns stage_hunk<cr>', 'Stage hunk' },
+    ghu = { '<cmd>Gitsigns undo_stage_hunk<cr>', 'Unstage hunk' },
+    ghr = { '<cmd>Gitsigns reset_hunk<cr>', 'Reset hunk to git index' },
+
+    ghp = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview hunk' },
+    ghb = { '<cmd>lua require"gitsigns".blame_line(true)<cr>', 'Blame current line' },
+
+    tg = { name = '+git' },
+    tgh = { '<cmd>Gitsigns toggle_linehl<cr>', 'Highlight changed lines' },
+    tgb = { '<cmd>Gitsigns toggle_current_line_blame<cr>', 'Blame current line' },
+
+    gR = { '<cmd>Gitsigns reset_buffer<cr>', 'Reset buffer' },
+    ghS = { '<cmd>Gitsigns stage_buffer<cr>', 'Stage buffer' },
+    ghU = { '<cmd>Gitsigns reset_buffer_index<cr>', 'Reset buffer to git index' },
+  }
+})
