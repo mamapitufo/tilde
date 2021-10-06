@@ -3,7 +3,7 @@ call plug#begin()
   Plug 'mcchrish/zenbones.nvim'       " colourscheme
   Plug 'rktjmp/lush.nvim'
   Plug 'blankname/vim-fish'
-  Plug 'airblade/vim-gitgutter'
+  Plug 'lewis6991/gitsigns.nvim'
   Plug 'hoob3rt/lualine.nvim'         " Statusline
   Plug 'jiangmiao/auto-pairs'         " Auto-close parenthesis, brackets, strings, etc.
 

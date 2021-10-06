@@ -55,12 +55,6 @@ nnoremap <silent> <leader>gf :Git fetch<cr>
 nnoremap <silent> <leader>gF :Git pull<cr>
 nnoremap <silent> <leader>gP :Git push<cr>
 nnoremap <silent> <leader>gPf :Git push --force<cr>
-" Hunks
-nmap ]h <Plug>(GitGutterNextHunk)
-nmap [h <Plug>(GitGutterPrevHunk)
-nmap <silent> <leader>ghp <Plug>(GitGutterPreviewHunk)
-nmap <silent> <leader>ghs <Plug>(GitGutterStageHunk)
-nmap <silent> <leader>ghu <Plug>(GitGutterUndoHunk)
 " }}}
 " {{{ Local
 nnoremap <silent> <localleader>== <Plug>(AleFix)
