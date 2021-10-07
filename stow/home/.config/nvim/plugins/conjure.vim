@@ -15,5 +15,5 @@ let g:conjure#highlight#enabled = v:true
 let g:conjure#client#clojure#nrepl#eval#auto_require = v:false
 
 " Handle these with LSP
-let g:conjure#mapping#doc_word = v:false
+let g:conjure#mapping#doc_word = [',K']
 let g:conjure#mapping#def_word = v:false
