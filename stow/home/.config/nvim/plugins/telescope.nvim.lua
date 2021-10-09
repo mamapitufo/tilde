@@ -11,23 +11,22 @@ require('telescope').setup{
       '--line-number',
       '--column',
       '--smart-case',
-      '!.git',
-      '--hidden'
-    }
+      '--hidden',
+    },
   },
   pickers = {
     buffers = {
       sort_lastused = true,
       theme = 'dropdown',
-      previewer = false
+      previewer = false,
     },
   },
   extensions = {
     fzy_native = {
       override_generic_sorter = false,
       override_file_sorter = true,
-    }
-  }
+    },
+  },
 }
 
 require('telescope').load_extension('fzy_native')
@@ -42,6 +41,6 @@ require('which-key').register({
     ['s:'] = { '<cmd>Telescope command_history<cr>', 'Command history' },
     sf = { '<cmd>Telescope live_grep<cr>', 'Grep in project' },
     sh = { '<cmd>Telescope help_tags<cr>', 'Find help' },
-  }
+  },
 })
 
