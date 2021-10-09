@@ -8,8 +8,8 @@ local handlers = {
     vim.lsp.diagnostic.on_publish_diagnostics,
     { severity_sort = true,  update_in_insert = false, underline = true, virtual_text = false}
   ),
-  ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'single' }),
-  ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'single' }),
+  ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' }),
+  ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' }),
 }
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -47,9 +47,12 @@ local on_attach = function(client, bufnr)
 end
 
 local lsp = require('lspconfig')
+local servers = { 'clojure_lsp', 'tsserver' }
+for _, server in ipairs(servers) do
+  lsp[server].setup({
+    on_attach = on_attach,
+    handlers = handlers,
+    capabilities = capabilities
+  })
+end
 
-lsp.clojure_lsp.setup({
-  on_attach = on_attach,
-  handlers = handlers,
-  capabilities = capabilities
-})
