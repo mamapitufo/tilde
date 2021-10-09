@@ -7,6 +7,7 @@ call plug#begin()
   Plug 'hoob3rt/lualine.nvim'         " Statusline
   Plug 'jiangmiao/auto-pairs'         " Auto-close parenthesis, brackets, strings, etc.
   Plug 'folke/which-key.nvim'         " Key mapping hints
+  Plug 'kyazdani42/nvim-tree.lua'     " File browser
 
   " Finder, picker, previewer...
   Plug 'nvim-telescope/telescope.nvim'

@@ -22,7 +22,7 @@ require'lualine'.setup {
     section_separators = '',
     component_separators = '|',
     theme = 'zenbones',
-    disabled_filetypes = { 'help', 'vim-plug', 'gitcommit' }
+    disabled_filetypes = { 'help', 'vim-plug', 'gitcommit', 'NvimTree' }
   },
   sections = {
     lualine_b = {
