@@ -34,9 +34,7 @@ require'lualine'.setup {
         sources = { 'nvim_lsp' },
         color_error = '#c44756',
         color_warn = '#916d03',
-        color_info = '#0075c9',
-        color_hint = '#1f8332',
-        symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' }
+        symbols = { error = ' ', warn = ' ', info = '', hint = '' }
       },
       { 'filename', path = 1 }
     },
