@@ -10,7 +10,6 @@ set termguicolors           " Enables 24-bit colour in the TUI
 
 let g:zenbones_lightness = 'bright'
 let g:zenbones_solid_vert_split = v:true
-let g:zenbones_dim_noncurrent_window = v:true
 
 set background=light
 colorscheme zenbones-lush
