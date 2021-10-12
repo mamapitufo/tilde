@@ -43,4 +43,3 @@ require('which-key').register({
     sh = { '<cmd>Telescope help_tags<cr>', 'Find help' },
   },
 })
-

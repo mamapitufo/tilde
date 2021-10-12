@@ -7,6 +7,8 @@ cmp.setup({
         buffer = '[buff]',
         conjure = '[conj]',
         nvim_lsp = '[lsp]',
+        nvim_lua = '[lua]',
+        path = '[path]',
       })[entry.source.name]
       return vim_item
     end,
@@ -27,5 +29,7 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'conjure' },
     { name = 'buffer' },
+    { name = 'path' },
+    { name = 'nvim_lua' },
   },
 })
