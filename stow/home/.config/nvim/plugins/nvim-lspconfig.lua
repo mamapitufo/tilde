@@ -3,17 +3,10 @@ vim.fn.sign_define('LspDiagnosticsSignWarning', { text = ' ' })
 vim.fn.sign_define('LspDiagnosticsSignInformation', { text = '' })
 vim.fn.sign_define('LspDiagnosticsSignHint', { text = '' })
 
-local handlers = {
-  ['textDocument/publishDiagnostics'] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics,
-    { severity_sort = true,  update_in_insert = false, underline = true, virtual_text = false}
-  ),
-  ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' }),
-  ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' }),
-}
+local hoverHandler = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+local signatureHelpHandler = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
 
 local on_attach = function(client, bufnr)
   local wk = require('which-key')
@@ -47,12 +40,36 @@ local on_attach = function(client, bufnr)
 end
 
 local lsp = require('lspconfig')
-local servers = { 'clojure_lsp', 'tsserver' }
-for _, server in ipairs(servers) do
-  lsp[server].setup({
-    on_attach = on_attach,
-    handlers = handlers,
-    capabilities = capabilities
-  })
-end
+lsp.clojure_lsp.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  handlers = {
+    ['textDocument/publishDiagnostics'] = vim.lsp.with(
+      vim.lsp.diagnostic.on_publish_diagnostics,
+      {
+        severity_sort = true,
+        virtual_text = false,
+      }
+    ),
+    ['textDocument/hover'] = hoverHandler,
+    ['textDocument/signatureHelp'] = signatureHelpHandler,
+  },
+})
+
+lsp.tsserver.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  handlers = {
+    ['textDocument/publishDiagnostics'] = vim.lsp.with(
+      vim.lsp.diagnostic.on_publish_diagnostics,
+      {
+        severity_sort = true,
+        update_in_insert = true,
+        virtual_text = false,
+      }
+    ),
+    ['textDocument/hover'] = hoverHandler,
+    ['textDocument/signatureHelp'] = signatureHelpHandler,
+  },
+})
 

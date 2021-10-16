@@ -41,6 +41,10 @@ call plug#begin()
   Plug 'guns/vim-sexp'
   Plug 'tpope/vim-sexp-mappings-for-regular-people'
   Plug 'bakpakin/fennel.vim'
+
+  " Plug 'MaxMEllon/vim-jsx-pretty'
+  " Plug 'peitalin/vim-jsx-typescript'
+  Plug 'windwp/nvim-ts-autotag'
 call plug#end()
 
 for plugconfig in split(glob(stdpath('config') . '/plugins/*'), '\n')
