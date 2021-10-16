@@ -45,6 +45,7 @@ call plug#begin()
   " Plug 'MaxMEllon/vim-jsx-pretty'
   " Plug 'peitalin/vim-jsx-typescript'
   Plug 'windwp/nvim-ts-autotag'
+  Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 call plug#end()
 
 for plugconfig in split(glob(stdpath('config') . '/plugins/*'), '\n')
