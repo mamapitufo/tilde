@@ -9,6 +9,9 @@ call plug#begin()
   Plug 'folke/which-key.nvim'         " Key mapping hints
   Plug 'kyazdani42/nvim-tree.lua'     " File browser
 
+  " Benchmark, while working on the config...
+  Plug 'tweekmonster/startuptime.vim'
+
   " Finder, picker, previewer...
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-lua/plenary.nvim'        " Lua helper functions
@@ -42,8 +45,6 @@ call plug#begin()
   Plug 'tpope/vim-sexp-mappings-for-regular-people'
   Plug 'bakpakin/fennel.vim'
 
-  " Plug 'MaxMEllon/vim-jsx-pretty'
-  " Plug 'peitalin/vim-jsx-typescript'
   Plug 'windwp/nvim-ts-autotag'
   Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 call plug#end()
