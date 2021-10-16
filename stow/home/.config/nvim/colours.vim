@@ -12,4 +12,4 @@ let g:zenbones_lightness = 'bright'
 let g:zenbones_solid_vert_split = v:true
 
 set background=light
-colorscheme zenbones-lush
+colorscheme zenbones
