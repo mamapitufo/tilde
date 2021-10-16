@@ -8,13 +8,14 @@ call plug#begin()
   Plug 'jiangmiao/auto-pairs'         " Auto-close parenthesis, brackets, strings, etc.
   Plug 'folke/which-key.nvim'         " Key mapping hints
   Plug 'kyazdani42/nvim-tree.lua'     " File browser
+  " Plug 'lambdalisue/suda.vim'
+  Plug 'nvim-lua/plenary.nvim'        " Lua helper functions
 
   " Benchmark, while working on the config...
   Plug 'tweekmonster/startuptime.vim'
 
   " Finder, picker, previewer...
   Plug 'nvim-telescope/telescope.nvim'
-  Plug 'nvim-lua/plenary.nvim'        " Lua helper functions
   Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
   " Parser tools
@@ -47,6 +48,7 @@ call plug#begin()
 
   Plug 'windwp/nvim-ts-autotag'
   Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+  Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 for plugconfig in split(glob(stdpath('config') . '/plugins/*'), '\n')
