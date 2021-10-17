@@ -10,6 +10,7 @@ call plug#begin()
   Plug 'kyazdani42/nvim-tree.lua'     " File browser
   " Plug 'lambdalisue/suda.vim'
   Plug 'nvim-lua/plenary.nvim'        " Lua helper functions
+  Plug 'PeterRincker/vim-argumentative' " Function argument helpers
 
   " Run processes
   " Plug 'tpope/vim-dispatch'
