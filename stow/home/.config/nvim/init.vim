@@ -6,7 +6,7 @@ set shell=sh
 
 call LoadModule('options')
 call LoadModule('plugins')
-call LoadModule('filetypes')
+call LoadModule('autocmds')
 call LoadModule('mappings')
 call LoadModule('colours')
 
