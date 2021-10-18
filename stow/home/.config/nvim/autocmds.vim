@@ -1,4 +1,4 @@
-" filetypes @ mamapitufo
+" autocmds @ mamapitufo
 " vim: fdm=marker
 
 " {{{ General
@@ -7,6 +7,10 @@
 "   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 "   autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 " augroup END
+augroup whitespace_aug
+  autocmd BufWritePre * :call TrimWhitespace()
+augroup end
+
 augroup lastpos_aug
   autocmd!
   autocmd BufReadPost * if line("'\"") >= 1 && line("'\"") <= line('$') && &ft !~# 'gitcommit' | exe 'normal g`"' | endif
