@@ -16,6 +16,7 @@ augroup END
 augroup css_aug
   autocmd!
   autocmd BufNewFile,BufRead /*.rasi setfiletype css
+  autocmd FileType scss setlocal iskeyword+=-,$
 augroup END
 " }}} -------------------------------------------------------------------------
 " {{{ Git
