@@ -1,5 +1,6 @@
-require('nvim-tree').setup()
+require'nvim-tree'.setup {}
 
-require('which-key').register({
-  ['<leader>tt'] = { '<cmd>NvimTreeToggle<cr>', 'Toggle file browser' }
-})
+vim.api.nvim_set_keymap('n', '<leader>tt', ':NvimTreeToggle<cr>', { silent = true, noremap = true })
+require'which-key'.register {
+  ['<leader>tt'] = 'Toggle file browser'
+}

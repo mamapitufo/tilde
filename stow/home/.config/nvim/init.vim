@@ -6,9 +6,9 @@ set shell=sh
 
 call LoadModule('functions')
 call LoadModule('options')
+call LoadModule('mappings')
 call LoadModule('plugins')
 call LoadModule('autocmds')
-call LoadModule('mappings')
 call LoadModule('colours')
 
 let localrc='~/.nvim.local.vim'

@@ -1,4 +1,3 @@
-" autocmds @ mamapitufo
 " vim: fdm=marker
 
 " {{{ General

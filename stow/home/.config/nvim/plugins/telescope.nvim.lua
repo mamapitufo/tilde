@@ -31,15 +31,26 @@ require('telescope').setup{
 
 require('telescope').load_extension('fzy_native')
 
+local map = vim.api.nvim_set_keymap
+local map_opts = { silent = true, noremap = true }
+map('n', '<leader>bb', ':Telescope buffers<cr>', map_opts)
+map('n', '<leader>fc', ':Telescope find_files hidden=true cwd=$HOME/Sandbox/tilde prompt_prefix=\\ ~\\  prompt_title=Sandbox/tilde<cr>', map_opts)
+map('n', '<leader>ff', ':lua require\'telescope-extras\'.git_files_fallback()<cr>', map_opts)
+map('n', '<leader>*', ':Telescope grep_string<cr>', map_opts)
+map('n', '<leader>s/', ':Telescope search_history<cr>', map_opts)
+map('n', '<leader>s:', ':Telescope command_history<cr>', map_opts)
+map('n', '<leader>sf', ':Telescope live_grep<cr>', map_opts)
+map('n', '<leader>sh', ':Telescope help_tags<cr>', map_opts)
+
 require('which-key').register({
   ['<leader>'] = {
-    bb = { '<cmd>Telescope buffers<cr>', 'Search buffers' },
-    fc = { '<cmd>Telescope find_files cwd=$HOME/Sandbox/tilde prompt_prefix=\\ ~\\  promp_title=Sandbox/tilde<cr>', 'Find config file' },
-    ff = { '<cmd>lua require\'telescope-extras\'.git_files_fallback()<cr>', 'Find file' },
-    ['*'] = { '<cmd>Telescope grep_string<cr>', 'Find current string' },
-    ['s/'] = { '<cmd>Telescope search_history<cr>', 'Search history' },
-    ['s:'] = { '<cmd>Telescope command_history<cr>', 'Command history' },
-    sf = { '<cmd>Telescope live_grep<cr>', 'Grep in project' },
-    sh = { '<cmd>Telescope help_tags<cr>', 'Find help' },
+    bb = 'Find buffer',
+    fc = 'Find config file',
+    ff = 'Find file',
+    ['*'] = 'Find string under cursor',
+    ['s/'] = 'Find in search history',
+    ['s:'] = 'Find in command history',
+    sf = 'Grep in project',
+    sh = 'Find help',
   },
 })
