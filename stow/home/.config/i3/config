@@ -168,10 +168,6 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id pa-applet --disable-notifications
 exec --no-startup-id thunar --daemon
 
-# control screen brightness via keyboard
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
-
 # i3-gaps
 # for_window [class=".*"] border pixel 0
 
