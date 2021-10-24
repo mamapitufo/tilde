@@ -6,7 +6,8 @@ windows:
       -
   - window_name: irc
     panes:
-      - irssi
+      # - irssi
+      -
   - window_name: CURRENT
     panes:
       - vim ~/CURRENT.txt
