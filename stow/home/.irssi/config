@@ -21,7 +21,7 @@ chatnets = {
 channels = (
   { name = "#voidlinux"; chatnet = "libera"; autojoin = "yes"; },
   { name = "#clojure"; chatnet = "libera"; autojoin = "yes"; },
-  { name = "#fennel"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#fennel"; chatnet = "libera"; autojoin = "yes"; }
 );
 
 statusbar = {
@@ -145,7 +145,7 @@ settings = {
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = {
     beep_msg_level = "MSGS HILIGHT DCCMSGS";
-    theme = "simplicity";
+    theme = "agon";
     hilight_color = "= %R";
   };
 };
