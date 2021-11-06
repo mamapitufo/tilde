@@ -14,8 +14,8 @@ call plug#begin()
   Plug 'PeterRincker/vim-argumentative' " Function argument helpers
 
   " Run processes
-  " Plug 'tpope/vim-dispatch'
-  " Plug 'radenling/vim-dispatch-neovim'
+  Plug 'tpope/vim-dispatch'
+  Plug 'radenling/vim-dispatch-neovim'
 
   " Benchmark, while working on the config...
   Plug 'tweekmonster/startuptime.vim'
@@ -51,7 +51,7 @@ call plug#begin()
   Plug 'guns/vim-sexp'
   Plug 'tpope/vim-sexp-mappings-for-regular-people'
   Plug 'bakpakin/fennel.vim'
-  " Plug 'clojure-vim/vim-jack-in'
+  Plug 'clojure-vim/vim-jack-in'
 
   Plug 'windwp/nvim-ts-autotag'
   Plug 'JoosepAlviste/nvim-ts-context-commentstring'

@@ -52,3 +52,4 @@ nnoremap <leader>wJ :resize +5<cr>
 nnoremap <leader>wH <c-w>5<
 nnoremap <leader>wL <c-w>5>
 
+tnoremap <esc> <c-\><c-n>
