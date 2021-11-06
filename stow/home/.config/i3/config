@@ -39,6 +39,9 @@ bindsym $mod+d exec rofi -show combi
 bindsym $mod+Control+l exec --no-startup-id xset s activate
 # hibernate
 bindsym $mod+Control+Shift+l exec loginctl hibernate
+# control screen brightness via keyboard
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
 # change focused window
 bindsym $mod+h focus left
