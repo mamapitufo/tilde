@@ -16,7 +16,7 @@ set relativenumber
 set shortmess=atOI              " Abbrev, overwrite read msgs, no intro msg
 set noshowmode                  " Do not show mode message on last line
 set listchars=tab:→\ ,trail:·,extends:↷,precedes:↶
-set pumheight=15                " Max lines in auto-completion menu
+set pumheight=7                " Max lines in auto-completion menu
 set lazyredraw                  " Delay redrawing the screen while executing macros
 set signcolumn=yes              " Always show the gutter
 set mouse=a

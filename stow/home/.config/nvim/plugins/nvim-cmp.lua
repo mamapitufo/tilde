@@ -1,6 +1,9 @@
 local cmp = require('cmp')
 
 cmp.setup({
+  completion = {
+    autocomplete = false,
+  },
   formatting = {
     format = function(entry, vim_item)
       vim_item.menu = ({
@@ -28,7 +31,7 @@ cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
     { name = 'conjure' },
-    { name = 'buffer', keyword_length = 4 },
+    { name = 'buffer' },
     { name = 'path' },
     { name = 'nvim_lua' },
   },
