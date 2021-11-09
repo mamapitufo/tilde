@@ -46,10 +46,12 @@ nnoremap <leader>wq <c-w>q
 nnoremap <leader>ws <c-w>s
 nnoremap <leader>wv <c-w>v
 nnoremap <leader>ww <c-w>w
+nnoremap <leader>wx <c-w>x
 nnoremap <leader>w= <c-w>=
 nnoremap <leader>wK :resize -5<cr>
 nnoremap <leader>wJ :resize +5<cr>
 nnoremap <leader>wH <c-w>5<
 nnoremap <leader>wL <c-w>5>
+nnoremap <leader>w<bar> <c-w><bar>
 
 tnoremap <esc> <c-\><c-n>

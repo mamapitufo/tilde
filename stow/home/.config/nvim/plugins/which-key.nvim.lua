@@ -42,11 +42,13 @@ wk.register({
     ws = 'Split horizontally',
     wv = 'Split vertically',
     ww = 'Switch windows',
+    wx = 'Swap window with next',
     ['w='] = 'Make all windows the same size',
     wK = 'Decrease height',
     wJ = 'Increase height',
     wH = 'Decrease width',
     wL = 'Increase width',
+    ['w<bar>'] = 'Max width',
   },
 })
 
