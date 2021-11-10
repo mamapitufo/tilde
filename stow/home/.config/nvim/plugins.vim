@@ -12,6 +12,7 @@ call plug#begin()
   " Plug 'lambdalisue/suda.vim'
   Plug 'nvim-lua/plenary.nvim'        " Lua helper functions
   Plug 'PeterRincker/vim-argumentative' " Function argument helpers
+  Plug 'tpope/vim-projectionist'      " Granular project configuration
 
   " Run processes
   Plug 'tpope/vim-dispatch'
