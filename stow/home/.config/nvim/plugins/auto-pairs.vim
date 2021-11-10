@@ -1,5 +1,5 @@
 augroup autopairs_config
   autocmd!
-  " vim-sexp will handle this for LISPs
-  autocmd Filetype lisp,scheme,clojure let b:AutoPairs = {}
+  " LISPs don't pair a single quote
+  autocmd Filetype lisp,scheme,clojure let b:AutoPairs = {'"': '"', '{': '}', '(': ')', '[': ']'}
 augroup END
