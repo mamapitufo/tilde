@@ -26,6 +26,7 @@ call plug#begin()
 
   " Parser tools
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'p00f/nvim-ts-rainbow'       " rainbow parenthesis
 
   " LSP
   Plug 'neovim/nvim-lspconfig'
