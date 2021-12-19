@@ -37,6 +37,8 @@ nnoremap <leader>tw :setlocal wrap!<cr>
 nnoremap <leader>tn :setlocal number!<cr>
 nnoremap <leader>tnr :setlocal relativenumber!<cr>
 nnoremap <leader>tp :setlocal paste!<cr>
+nnoremap <leader>te :lua vim.diagnostic.open_float()<cr>
+
 
 nnoremap <leader>wk <c-w>k
 nnoremap <leader>wj <c-w>j
@@ -55,3 +57,7 @@ nnoremap <leader>wL <c-w>5>
 nnoremap <leader>w<bar> <c-w><bar>
 
 tnoremap <esc> <c-\><c-n>
+
+nnoremap [d :lua vim.diagnostic.goto_prev()<cr>
+nnoremap ]d :lua vim.diagnostic.goto_next()<cr>
+nnoremap <leader>eq :lua vim.diagnostic.set_loclist()<cr>

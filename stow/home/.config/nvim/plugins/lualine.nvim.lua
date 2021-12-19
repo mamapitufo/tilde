@@ -31,10 +31,10 @@ require'lualine'.setup {
     lualine_c = {
       {
         'diagnostics',
-        sources = { 'nvim_lsp' },
+        sources = { 'nvim_diagnostic' },
         color_error = '#c44756',
         color_warn = '#916d03',
-        symbols = { error = ' ', warn = ' ', info = '', hint = '' }
+        symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' }
       },
       { 'filename', path = 1 }
     },

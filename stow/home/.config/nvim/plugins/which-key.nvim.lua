@@ -3,6 +3,8 @@ local wk = require('which-key')
 wk.setup()
 
 wk.register({
+  ['[d'] = 'Go to prev diagnostic',
+  [']d'] = 'Go to next diagnostic',
   ['<leader>'] = {
     b = { name = '+buffer' },
     bn = 'Next buffer',
@@ -16,7 +18,8 @@ wk.register({
     g = { name = '+git' },
     gh = { name = '+hunks' },
 
-    l = { name = '+LSP' },
+    l = { name = '+language' },
+    lq = 'Send diagnostics to loclist',
 
     q = { name = '+quit' },
     qq = 'Close all windows and quit',
@@ -32,6 +35,7 @@ wk.register({
     tn = 'Line numbers',
     tnr = 'Relative numbers',
     tp = 'Paste mode',
+    te = 'Diagnostics',
 
     w = { name = '+window' },
     wh = 'Go to window on the left',
