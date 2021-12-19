@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=logseq
 GenericName=logseq
-Exec=~/Library/logseq-linux-x64-0.5.1.AppImage
+Exec=~/Library/Logseq.AppImage
 Terminal=false
 Type=Application
