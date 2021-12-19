@@ -1,6 +1,6 @@
 set fish_greeting ""
 
-set --universal fish_user_paths ~/bin ~/bin/gem ~/.npm-packages/bin ~/.cargo/bin ~/Library/charles/bin
+set --universal fish_user_paths ~/.local/bin ~/bin ~/bin/gem ~/.npm-packages/bin ~/.cargo/bin ~/Library/charles/bin
 
 # /etc/profile sets this, and breaks it in the supplied `ls` function
 set -ge LS_COLORS
