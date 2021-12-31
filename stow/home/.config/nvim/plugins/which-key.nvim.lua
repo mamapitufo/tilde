@@ -36,6 +36,7 @@ wk.register({
     tnr = 'Relative numbers',
     tp = 'Paste mode',
     te = 'Diagnostics',
+    tb = 'Light/Dark background',
 
     w = { name = '+window' },
     wh = 'Go to window on the left',

@@ -8,3 +8,7 @@ function! HighlightTrailingWhitespace()
   highlight TrailingWhitespace ctermbg=red guibg=#a8334c
   match TrailingWhitespace /\s\+$/
 endfunction
+
+function! ToggleBackground()
+  let &background = (&background == 'dark' ? 'light' : 'dark')
+endfunction
