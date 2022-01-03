@@ -19,7 +19,7 @@ local default_bindings = function(bufnr)
   map('n', '<leader>=', ':lua vim.lsp.buf.formatting()<cr>')
 
   map('n', '<leader>la', ':lua require"telescope.builtin".lsp_code_actions(require"telescope.themes".get_cursor())<cr>')
-  map('n', '<leader>lw', ':lua require"telescope.builtin".lsp_workspace_diagnostics()<cr>')
+  map('n', '<leader>lw', ':Telescope diagnostics<cr>')
   map('n', '<leader>lr', ':lua require"telescope.builtin".lsp_references()<cr>')
   map('n', '<leader>li', ':lua require"telescope.builtin".lsp_implementations()<cr>')
 
