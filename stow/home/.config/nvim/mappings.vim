@@ -16,6 +16,9 @@ vmap k gk
 vnoremap J :m'>+1<cr>gv=gv
 vnoremap K :m'<-2<cr>gv=gv
 
+" Select pasted text
+nnoremap gp `[v`]
+
 let mapleader="\<Space>"
 let maplocalleader=","
 

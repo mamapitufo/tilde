@@ -5,6 +5,7 @@ wk.setup()
 wk.register({
   ['[d'] = 'Go to prev diagnostic',
   [']d'] = 'Go to next diagnostic',
+  ['gp'] = 'Select pasted text',
   ['<leader>'] = {
     b = { name = '+buffer' },
     bn = 'Next buffer',
