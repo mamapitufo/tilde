@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-exec feh -FdxB black --edit --on-last-slide quit --sort mtime
+exec feh -FdxB black --edit --on-last-slide quit --sort mtime $@
