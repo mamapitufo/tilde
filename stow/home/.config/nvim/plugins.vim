@@ -60,19 +60,27 @@ call plug#begin()
   Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
-for plugconfig in split(glob(stdpath('config') . '/plugins/*'), '\n')
+" load vimL plugin configs from `plugconfig/` and warn if the plugin is no
+" longer used
+for plugconfig in split(glob(stdpath('config') . '/plugconf/*'), '\n')
   let plugname = fnamemodify(plugconfig, ':t:r')
 
   if (exists('g:plugs["' . plugname . '"]'))
-    let ext = fnamemodify(plugconfig, ':e')
-    if (ext ==? 'vim')
-      exec 'source' plugconfig
-    elseif (ext ==? 'lua')
-      exec 'luafile' plugconfig
-    else
-      echom 'WARN: Unknown config extension on file ' . plugconfig
-    endif
+    exec 'source' plugconfig
   else
-    echom 'WARN: No plugin defined for config ' . plugconfig
+    echom 'WARN: Triying to configure non-existent plugin ' . plugname
+  endif
+endfor
+
+" loads lua plugin config files from the `tilde.plugconf` namespace.
+" TODO have a `lua/tilde/plugconf/init.lua` that handles this and just require
+" that from here.
+for plugmod in split(glob(stdpath('config') . '/lua/tilde/plugconf/*.lua'), '\n')
+  let plugname = fnamemodify(plugmod, ':t:r')
+
+  if (exists('g:plugs["' . plugname . '"]'))
+    exec 'luafile' plugmod
+  else
+    echom 'WARN: Triying to configure non-existent plugin ' . plugname
   endif
 endfor
