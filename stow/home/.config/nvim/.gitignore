@@ -1,9 +1,3 @@
-.init.vim-rplugin~
-.netrwhist
-autoload/plug.vim
-autoload/plug.vim.old
-plugged/
 revert-plugupdate
-spell/
 undo/
 
