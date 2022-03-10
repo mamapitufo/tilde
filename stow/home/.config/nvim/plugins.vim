@@ -5,7 +5,7 @@ call plug#begin()
   Plug 'blankname/vim-fish'
   Plug 'habamax/vim-asciidoctor'
   Plug 'lewis6991/gitsigns.nvim'
-  Plug 'hoob3rt/lualine.nvim'         " Statusline
+  Plug 'nvim-lualine/lualine.nvim'    " Statusline
   Plug 'jiangmiao/auto-pairs'         " Auto-close parenthesis, brackets, strings, etc.
   Plug 'folke/which-key.nvim'         " Key mapping hints
   Plug 'kyazdani42/nvim-tree.lua'     " File browser

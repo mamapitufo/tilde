@@ -1,3 +1,11 @@
+local function lsp_connection()
+  if vim.tbl_isempty(vim.lsp.buf_get_clients(0)) then
+    return ''
+  else
+    return ''
+  end
+end
+
 local function fileinfo()
   local data = {}
 
@@ -14,13 +22,13 @@ local function fileinfo()
   local ft = (vim.bo.filetype ~= '' and vim.bo.filetype) or '[No ft]'
   table.insert(data, ft)
 
-  return table.concat(data, ' | ')
+  return table.concat(data, ', ')
 end
 
 require'lualine'.setup {
   options = {
     section_separators = '',
-    component_separators = '|',
+    component_separators = '',
     theme = 'zenbones',
     disabled_filetypes = { 'help', 'vim-plug', 'gitcommit', 'NvimTree' }
   },
@@ -29,16 +37,20 @@ require'lualine'.setup {
       { 'branch', icon = '' }
     },
     lualine_c = {
+      { 'filename', path = 1 }
+    },
+    lualine_x = {
+      lsp_connection,
       {
         'diagnostics',
-        sources = { 'nvim_diagnostic' },
+        sources = { 'nvim_lsp' },
         color_error = '#c44756',
         color_warn = '#916d03',
         symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' }
       },
-      { 'filename', path = 1 }
     },
-    lualine_x = { fileinfo }
+    lualine_y = { fileinfo },
+    lualine_z = { 'location', 'progress', },
   },
   extensions = { 'quickfix', 'fugitive' }
 }
