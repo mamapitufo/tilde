@@ -44,8 +44,12 @@ require'lualine'.setup {
       {
         'diagnostics',
         sources = { 'nvim_lsp' },
-        color_error = '#c44756',
-        color_warn = '#916d03',
+        diagnostics_color = {
+          error = { fg =  '#a8334c' },
+          warn = { fg = '#803d1c' },
+          info = { fg = '#286486' },
+          hint = { fg = '#4f5e68' },
+        },
         symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' }
       },
     },
