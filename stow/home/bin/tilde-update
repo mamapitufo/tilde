@@ -2,6 +2,10 @@
 
 echo "tilde update"
 doas id >/dev/null
+if test $status -ne 0
+  log_error "Failed authentication."
+  exit 1
+end
 
 log_info "Updating system package lists..."
 doas xbps-install -S
