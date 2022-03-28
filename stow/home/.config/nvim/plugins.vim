@@ -2,8 +2,11 @@ call plug#begin()
   Plug 'moll/vim-bbye'                " close buffer without changing the layout
   Plug 'mcchrish/zenbones.nvim'       " colourscheme
   Plug 'rktjmp/lush.nvim'
+
   Plug 'blankname/vim-fish'
   Plug 'habamax/vim-asciidoctor'
+  Plug 'kmonad/kmonad-vim'
+
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'nvim-lualine/lualine.nvim'    " Statusline
   Plug 'jiangmiao/auto-pairs'         " Auto-close parenthesis, brackets, strings, etc.
