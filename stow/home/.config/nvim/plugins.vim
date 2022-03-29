@@ -7,6 +7,9 @@ call plug#begin()
   Plug 'habamax/vim-asciidoctor'
   Plug 'kmonad/kmonad-vim'
 
+  Plug 'numToStr/Comment.nvim'
+  Plug 'JoosepAlviste/nvim-ts-context-commentstring' " Needed mostly for JSX
+
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'nvim-lualine/lualine.nvim'    " Statusline
   Plug 'jiangmiao/auto-pairs'         " Auto-close parenthesis, brackets, strings, etc.
@@ -44,7 +47,6 @@ call plug#begin()
   Plug 'PaterJason/cmp-conjure'
 
   Plug 'tpope/vim-unimpaired'         " Complimentary mappings
-  Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'           " Git tools
   Plug 'tpope/vim-sleuth'             " Automatically adjusts tab/spaces from surrounding files
   Plug 'tpope/vim-surround'           " Manipulate surrounding pairs
@@ -59,7 +61,6 @@ call plug#begin()
   Plug 'clojure-vim/vim-jack-in'
 
   Plug 'windwp/nvim-ts-autotag'
-  Plug 'JoosepAlviste/nvim-ts-context-commentstring'
   Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
