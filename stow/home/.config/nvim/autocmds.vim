@@ -33,5 +33,5 @@ augroup END
 
 augroup text_aug
   autocmd!
-  autocmd FileType markdown,text,asciidoctor setlocal textwidth=80 formatoptions+=a
+  autocmd FileType markdown,text,asciidoctor setlocal textwidth=80
 augroup END
