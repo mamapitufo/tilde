@@ -1,7 +1,7 @@
 servers = (
   {
     address = "irc.libera.chat";
-    chatnet = "libera";
+    chatnet = "Libera";
     port = "6697";
     use_tls = "yes";
     tls_verify = "yes";
@@ -10,18 +10,18 @@ servers = (
 );
 
 chatnets = {
-  libera = {
+  Libera = {
     type = "IRC";
-    sasl_mechanism = "plain";
+    sasl_mechanism = "PLAIN";
     sasl_username = "mamapitufo";
     sasl_password = "<SECRET>";
   };
 };
 
 channels = (
-  { name = "#voidlinux"; chatnet = "libera"; autojoin = "yes"; },
-  { name = "#clojure"; chatnet = "libera"; autojoin = "yes"; },
-  { name = "#fennel"; chatnet = "libera"; autojoin = "yes"; }
+  { name = "#voidlinux"; chatnet = "Libera"; autojoin = "yes"; },
+  { name = "#clojure"; chatnet = "Libera"; autojoin = "yes"; },
+  { name = "#fennel"; chatnet = "Libera"; autojoin = "yes"; }
 );
 
 statusbar = {
