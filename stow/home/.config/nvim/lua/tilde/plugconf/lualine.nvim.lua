@@ -30,7 +30,8 @@ require'lualine'.setup {
     section_separators = '',
     component_separators = '',
     theme = 'zenbones',
-    disabled_filetypes = { 'help', 'vim-plug', 'gitcommit', 'NvimTree' }
+    disabled_filetypes = { 'help', 'vim-plug', 'gitcommit', 'NvimTree' },
+    globalstatus = true,
   },
   sections = {
     lualine_b = {
