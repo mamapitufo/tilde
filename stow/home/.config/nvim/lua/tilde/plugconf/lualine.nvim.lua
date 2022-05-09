@@ -37,10 +37,11 @@ require'lualine'.setup {
   },
   sections = {
     lualine_b = {
-      { 'branch', icon = '', disabled_filetypes = disable_components }
+      { 'branch', icon = '', disabled_filetypes = disable_components, },
+      { 'diff', disabled_filetypes = disabled_components, },
     },
     lualine_c = {
-      { 'filename', path = 1 }
+      { 'filename', path = 1 },
     },
     lualine_x = {
       { 'lsp_connection', disabled_filetypes = disabled_components },
@@ -58,7 +59,13 @@ require'lualine'.setup {
       },
     },
     lualine_y = { fileinfo },
-    lualine_z = { 'location', 'progress', },
+    lualine_z = {
+      {
+        'location',
+        padding = { left = 1, right = 0 }
+      },
+      'progress',
+    },
   },
   extensions = { 'quickfix', 'fugitive' }
 }
