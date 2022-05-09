@@ -1,3 +1,71 @@
+local function map_keys(bufnr)
+  local gs = package.loaded.gitsigns
+
+  local function map(mode, l, r, opts)
+    opts = opts or {}
+    opts.buffer = bufnr
+    vim.keymap.set(mode, l, r, opts)
+  end
+
+  map('n', ']h', function()
+    if vim.wo.diff then return ']h' end
+    vim.schedule(function() gs.next_hunk() end)
+    return '<Ignore>'
+  end, {expr=true})
+  map('n', '[h', function()
+    if vim.wo.diff then return '[h' end
+    vim.schedule(function() gs.prev_hunk() end)
+    return '<Ignore>'
+  end, {expr=true})
+
+  map({'n', 'v'}, '<leader>ghs', ':Gitsigns stage_hunk<cr>')
+  map({'n', 'v'}, '<leader>ghr', ':Gitsigns reset_hunk<cr>')
+  map('n', '<leader>ghu', gs.undo_stage_hunk)
+  map('n', '<leader>ghp', gs.preview_hunk)
+  map('n', '<leader>ghb', function() gs.blame_line{full=true} end)
+
+  map('n', '<leader>gR', gs.reset_buffer)
+  map('n', '<leader>ghU', gs.reset_buffer_index)
+  map('n', '<leader>ghS', gs.stage_buffer)
+
+  map('n', '<leader>tgh', gs.toggle_linehl)
+  map('n', '<leader>tgb', gs.toggle_current_line_blame)
+  map('n', '<leader>tgd', gs.toggle_deleted)
+
+  local status_ok, which_key = pcall(require, 'which-key')
+  if not status_ok then
+    return
+  end
+
+  which_key.register({
+    ['<leader>'] = {
+      ghs = 'Stage hunks',
+      ghr = 'Reset hunks to git index',
+    },
+  }, { mode = 'v' })
+
+  which_key.register {
+    [']h'] = 'Next changed hunk',
+    ['[h'] = 'Previous changed hunk',
+    ['<leader>'] = {
+      ghs = 'Stage hunk',
+      ghr = 'Reset hunk to git index',
+      ghu = 'Unstage hunk',
+      ghp = 'Preview hunk',
+      ghb = 'Blame current line',
+
+      gR = 'Reset buffer',
+      ghU = 'Reset buffer to git index',
+      ghS = 'Stage buffer',
+
+      tg = { name = '+git' },
+      tgh = 'Highlight changed lines',
+      tgb = 'Blame current line',
+      tgd = 'Show deleted hunks',
+    }
+  }
+end
+
 require'gitsigns'.setup {
   signs = {
     add          = {hl = 'GitSignsAdd'   , text = '+', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
@@ -14,7 +82,8 @@ require'gitsigns'.setup {
   current_line_blame_opts = {
     virt_text = true,
     virt_text_pos = 'right_align', -- 'eol' | 'overlay' | 'right_align'
-    delay = 700,
+    delay = 500,
+    ignore_whitespace = true,
   },
   sign_priority = 6,
   preview_config = {
@@ -25,53 +94,6 @@ require'gitsigns'.setup {
     row = 0,
     col = 1
   },
+  on_attach = map_keys
 }
 
-local map = vim.api.nvim_set_keymap
-local map_opts = { silent = true, noremap = true }
-map('v', '<leader>ghs', ':lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<cr>', map_opts)
-map('v', '<leader>ghR', ':lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<cr>', map_opts)
-
-map('n', ']h', ':Gitsigns next_hunk<cr>', map_opts)
-map('n', '[h', ':Gitsigns prev_hunk<cr>', map_opts)
-map('n', '<leader>ghs', ':Gitsigns stage_hunk<cr>', map_opts)
-map('n', '<leader>ghu', ':Gitsigns undo_stage_hunk<cr>', map_opts)
-map('n', '<leader>ghr', ':Gitsigns reset_hunk<cr>', map_opts)
-
-map('n', '<leader>ghp', ':Gitsigns preview_hunk<cr>', map_opts)
-map('n', '<leader>ghb', ':lua require"gitsigns".blame_line(true)<cr>', map_opts)
-
-map('n', '<leader>tgh', ':Gitsigns toggle_linehl<cr>', map_opts)
-map('n', '<leader>tgb', ':Gitsigns toggle_current_line_blame<cr>', map_opts)
-
-map('n', '<leader>gR', ':Gitsigns reset_buffer<cr>', map_opts)
-map('n', '<leader>ghU', ':Gitsigns reset_buffer_index<cr>', map_opts)
-map('n', '<leader>ghS', ':Gitsigns stage_buffer<cr>', map_opts)
-
-require'which-key'.register({
-  ['<leader>'] = {
-    ghS = 'Stage hunks',
-    ghR = 'Reset hunks to git index',
-  },
-}, { mode = 'v' })
-
-require'which-key'.register {
-  [']h'] = 'Next changed hunk',
-  ['[h'] = 'Previous changed hunk',
-  ['<leader>'] = {
-    ghs = 'Stage hunk',
-    ghu = 'Unstage hunk',
-    ghr = 'Reset hunk to git index',
-
-    ghp = 'Preview hunk',
-    ghb = 'Blame current line',
-
-    tg = { name = '+git' },
-    tgh = 'Highlight changed lines',
-    tgb = 'Blame current line',
-
-    gR = 'Reset buffer',
-    ghS = 'Stage buffer',
-    ghU = 'Reset buffer to git index',
-  }
-}
