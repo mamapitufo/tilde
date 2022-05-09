@@ -25,25 +25,28 @@ local function fileinfo()
   return table.concat(data, ', ')
 end
 
+local disable_components = { 'help', 'gitcommit' }
+
 require'lualine'.setup {
   options = {
     section_separators = '',
     component_separators = '',
     theme = 'zenbones',
-    disabled_filetypes = { 'help', 'vim-plug', 'gitcommit', 'NvimTree' },
+    disabled_filetypes = { 'NvimTree', 'vim-plug' },
     globalstatus = true,
   },
   sections = {
     lualine_b = {
-      { 'branch', icon = '' }
+      { 'branch', icon = '', disabled_filetypes = disable_components }
     },
     lualine_c = {
       { 'filename', path = 1 }
     },
     lualine_x = {
-      lsp_connection,
+      { 'lsp_connection', disabled_filetypes = disabled_components },
       {
         'diagnostics',
+        disabled_filetypes = disabled_components,
         sources = { 'nvim_lsp' },
         diagnostics_color = {
           error = { fg =  '#a8334c' },
