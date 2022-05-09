@@ -35,3 +35,10 @@ augroup text_aug
   autocmd!
   autocmd FileType markdown,text,asciidoctor setlocal textwidth=80
 augroup END
+
+augroup fish_aug
+  autocmd!
+  autocmd FileType fish compiler fish
+  autocmd FileType fish setlocal textwidth=80
+  autocmd FileType fish setlocal foldmethod=expr
+augroup END
