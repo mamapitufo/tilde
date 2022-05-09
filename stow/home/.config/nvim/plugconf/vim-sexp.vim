@@ -1,2 +1,2 @@
-" I have a bunch of issues with double-quote handling!
+" pairing of brackets is handled by auto-pairs
 let g:sexp_enable_insert_mode_mapping = 0
