@@ -9,4 +9,12 @@ autocmd User ProjectionistDetect
   \     'alternate': 'src/{}.clj',
   \     'type': 'test'
   \   },
+  \   'src/*.cljs': {
+  \     'alternate': 'src/{}_test.cljs',
+  \     'type': 'source'
+  \   },
+  \   'src/*_test.cljs': {
+  \     'alternate': 'src/{}.cljs',
+  \     'type': 'test'
+  \   },
   \ })
