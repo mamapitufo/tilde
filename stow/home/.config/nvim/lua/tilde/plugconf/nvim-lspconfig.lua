@@ -4,9 +4,10 @@ local signatureHelpHandler = vim.lsp.with(vim.lsp.handlers.signature_help, { bor
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local default_bindings = function(bufnr)
-  local map = function(mode, mapping, command)
-    local map_opts = { silent = true, noremap = true }
-    vim.api.nvim_buf_set_keymap(bufnr, mode, mapping, command, map_opts)
+  local map = function(mode, l, r, opts)
+    opts = opts or {}
+    opts.buffer = bufnr
+    vim.keymap.set(mode, l, r, opts)
   end
 
   map('n', 'gd', ':lua vim.lsp.buf.definition()<cr>')
@@ -18,35 +19,37 @@ local default_bindings = function(bufnr)
   map('n', '<leader>ln', ':lua vim.lsp.buf.rename()<cr>')
   map('n', '<leader>=', ':lua vim.lsp.buf.formatting()<cr>')
 
-  map('n', '<leader>la', ':lua require"telescope.builtin".lsp_code_actions(require"telescope.themes".get_cursor())<cr>')
-  map('n', '<leader>lw', ':Telescope diagnostics<cr>')
-  map('n', '<leader>lr', ':lua require"telescope.builtin".lsp_references()<cr>')
-  map('n', '<leader>li', ':lua require"telescope.builtin".lsp_implementations()<cr>')
+  map('n', '<leader>la', ':lua vim.lsp.buf.code_action()<cr>')
+  map('n', '<leader>lw', ':Telescope diagnostics bufnr=0<cr>')
+  map('n', '<leader>lr', ':Telescope lsp_references<cr>')
+  map('n', '<leader>li', ':Telescope lsp_implementations<cr>')
 
-  map('v', '<leader>la', ':lua require"telescope.builtin".lsp_range_code_actions(require"telescope.themes".get_cursor())<cr>')
+  map('v', '<leader>la', ':lua vim.lsp.buf.range_code_action()<cr>')
 
-  local wk = require'which-key'
-  wk.register({
-    gd = 'Jump to symbol definition',
-    K = 'Show documentation',
+  local status_ok, which_key = pcall(require, 'which-key')
+  if status_ok then
+    which_key.register({
+      gd = 'Jump to symbol definition',
+      K = 'Show documentation',
 
-    ['<leader>'] = {
-      ld = 'Jump to symbol declaration',
-      lt = 'Jump to type def',
-      lk = 'Show symbol signature',
-      ln = 'Rename symbol',
-      ['='] = 'Format current buffer',
+      ['<leader>'] = {
+        ld = 'Jump to symbol declaration',
+        lt = 'Jump to type def',
+        lk = 'Show symbol signature',
+        ln = 'Rename symbol',
+        ['='] = 'Format current buffer',
 
-      la = 'Find code actions',
-      lw = 'Show diagnostics',
-      lr = 'Find references',
-      li = 'Find implementations',
-    }
-  }, { buffer = bufnr })
+        la = 'Find code actions',
+        lw = 'Show diagnostics',
+        lr = 'Find references',
+        li = 'Find implementations',
+      }
+    }, { buffer = bufnr })
 
-  wk.register({
-    ['<leader>la'] = 'Find code actions'
-  }, { mode = 'v', buffer = bufnr })
+    which_key.register({
+      ['<leader>la'] = 'Find code actions'
+    }, { mode = 'v', buffer = bufnr })
+  end
 end
 
 local lsp = require('lspconfig')
