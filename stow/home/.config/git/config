@@ -2,8 +2,8 @@
 	ui = auto
 [core]
 	pager = less -FXR
-	excludesfile = ~/.gitexclude
-	attributesfile = ~/.gitattributes
+	excludesfile = ~/.config/git/excludes
+	attributesfile = ~/.config/git/attributes
 [alias]
 	mg = smart-merge
 
@@ -66,7 +66,7 @@
 [branch]
 	autosetuprebase = always
 [include]
-	path = ~/.gitconfig_local
+	path = ~/.config/git/local
 [filter "irssi"]
 	clean = "sed -e 's/sasl_password .*\";/sasl_password = \"<SECRET>\";/'"
 [filter "spotifyd"]
