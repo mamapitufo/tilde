@@ -15,5 +15,6 @@ build/
 node_modules/
 npm-debug.log
 
-.clj-kondo/.cache
-.lsp/.cache
+**/.clj-kondo/.cache
+**/.lsp/.cache
+**/.cpcache
