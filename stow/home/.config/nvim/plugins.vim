@@ -19,6 +19,7 @@ call plug#begin()
   Plug 'nvim-lua/plenary.nvim'        " Lua helper functions
   Plug 'PeterRincker/vim-argumentative' " Function argument helpers
   Plug 'tpope/vim-projectionist'      " Granular project configuration
+  Plug 'stevearc/dressing.nvim'       " Improvement over the default `vim.ui` interfaces
 
   " Run processes
   Plug 'tpope/vim-dispatch'
