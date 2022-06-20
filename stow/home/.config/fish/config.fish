@@ -2,6 +2,18 @@ set fish_greeting ""
 
 set --universal fish_user_paths ~/.local/bin ~/bin ~/bin/gem ~/.npm-packages/bin ~/.cargo/bin ~/Library/charles/bin
 
+#-- tide prompt config
+set --global tide_left_prompt_frame_enabled true
+set --global tide_left_prompt_prefix ' '
+set --global tide_lfet_prompt_items pwd git newline character
+set --global tide_right_prompt_frame_enabled true
+set --global tide_right_prompt_suffix ' '
+set --global tide_right_prompt_items time newline status cmd_duration context jobs
+set --global tide_character_icon ' λ'
+set --global tide_time_color grey
+set --global tide_time_format '%d/%m %H:%M:%S'
+set --global tide_cmd_duration_color grey
+
 # /etc/profile sets this, and breaks it in the supplied `ls` function
 set -ge LS_COLORS
 
