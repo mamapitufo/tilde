@@ -40,7 +40,7 @@ nnoremap <leader>tw :setlocal wrap!<cr>
 nnoremap <leader>tn :setlocal number!<cr>
 nnoremap <leader>tnr :setlocal relativenumber!<cr>
 nnoremap <leader>tp :setlocal paste!<cr>
-nnoremap <leader>te :lua vim.diagnostic.open_float()<cr>
+nnoremap <silent> <leader>te :lua vim.diagnostic.open_float()<cr>
 nnoremap <silent> <leader>tb :call ToggleBackground()<cr>
 
 
