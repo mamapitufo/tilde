@@ -1,9 +1,58 @@
+[include]
+	path = ~/.config/git/local
+
 [color]
 	ui = auto
+
 [core]
 	pager = less -FXR
+	whitespace = -trailing-whitespace
 	excludesfile = ~/.config/git/excludes
 	attributesfile = ~/.config/git/attributes
+
+[merge]
+	tool = nvimdiff
+
+[push]
+	default = upstream
+	followTags = true
+
+[status]
+	submoduleSummary = true
+	showUntrackedFiles = all
+
+[branch]
+	autoSetupRebase = always
+
+[filter "irssi"]
+	clean = "sed -e 's/sasl_password .*\";/sasl_password = \"<SECRET>\";/'"
+[filter "spotifyd"]
+	clean = "sed -e 's/password = .*/password = <SECRET>/;s/device_name = .*/device_name = <HOSTNAME>/;s/cache_path = .*/cache_path = <CACHE_DIR>/'"
+	smudge = "sed -e \"s/device_name =.*/device_name = Spotifyd@$(hostname)/;s#cache_path = .*#cache_path = $HOME/.cache/spotifyd#\""
+
+[fetch]
+	recurseSubmodules = on-demand
+
+[diff]
+	mnemonicPrefix = true
+	submodule = log
+[diff "clojure"]
+	xfuncname = "^[ \t]*(\\((ns|def[a-zA-Z0-9_-]*).*)$"
+
+[log]
+	abbrevCommit = true
+	follow = true
+
+[mergetool]
+	keepBackup = false
+	prompt = false
+
+[init]
+	defaultBranch = main
+
+[commit]
+	verbose = true
+
 [alias]
 	mg = smart-merge
 
@@ -11,29 +60,30 @@
 	fixup = commit -am 'fixup'
 
 	rb = rebase
-	rbi = rebase -i
-	abort = rebase --abort
-	continue = rebase --continue
+	rbi = rebase --interactive
+	rba = rebase --abort
+	rbc = rebase --continue
+
 	cp = cherry-pick
 
 	it = !git init && git commit -m \"root\" --allow-empty
 
 	; based on magit's commands, and vim (sort of)
 	bl = branch --list
-	bv = branch -vv
-	br = branch -r
-	bd = branch -d
-	bdd = branch -D
+	bv = branch --verbose
+	br = branch --remotes
+	bd = branch --delete
+	bdd = branch -delete --force
 	bc = branch
 	bcs = checkout -b
 	bs = checkout
 
-	cc = commit -v
-	cca = commit -va
-	ca = commit -v --amend --no-edit
-	caa = commit -va --amend --no-edit
-	cw = commit -v --amend
-	cwa = commit -va --amend
+	cc = commit
+	cca = commit --all
+	ca = commit --amend --no-edit
+	caa = commit --all --amend --no-edit
+	cw = commit --amend
+	cwa = commit -all --amend
 
 	pu = push
 	pp = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
@@ -41,10 +91,10 @@
 
 	gs = status -sb
 
-	su = add -u
+	su = add --update
 	sa = add
 	saa = add .
-	sc = add -p
+	sp = add --patch
 
 	du = diff
 	ds = diff --staged
@@ -59,23 +109,3 @@
 	lc = for-each-ref --sort=committerdate refs/heads --format='%(refname:short): %(committerdate:relative)'
 	lf = log --pretty=format':%C(yellow)%h %C(reset)%s %C(green)(%an, %ar)%Creset' --follow
 
-[merge]
-	tool = vimdiff
-[push]
-	default = simple
-[branch]
-	autosetuprebase = always
-[include]
-	path = ~/.config/git/local
-[filter "irssi"]
-	clean = "sed -e 's/sasl_password .*\";/sasl_password = \"<SECRET>\";/'"
-[filter "spotifyd"]
-	clean = "sed -e 's/password = .*/password = <SECRET>/;s/device_name = .*/device_name = <HOSTNAME>/;s/cache_path = .*/cache_path = <CACHE_DIR>/'"
-	smudge = "sed -e \"s/device_name =.*/device_name = Spotifyd@$(hostname)/;s#cache_path = .*#cache_path = $HOME/.cache/spotifyd#\""
-[diff "clojure"]
-#	xfuncname = "^[ \t]*(\\((ns|def[a-zA-Z0-9_-]*)[ \t]+[^[]+).*$"
-	xfuncname = "^[ \t]*(\\((ns|def[a-zA-Z0-9_-]*).*)$"
-[init]
-	defaultBranch = main
-[commit]
-	verbose = true
