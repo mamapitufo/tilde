@@ -13,6 +13,9 @@ wk.register({
     bN = 'First buffer',
     bP = 'Last buffer',
 
+    e = { name = '+diagnostics' },
+    eq = 'Send diagnostics to quick fix list',
+
     f = { name = '+file' },
     fs = 'Save file',
 
@@ -34,7 +37,7 @@ wk.register({
     thh = 'Highlight current line',
     tl = 'Text wrap',
     tn = 'Line numbers',
-    tnr = 'Relative numbers',
+    tr = 'Relative numbers',
     tp = 'Paste mode',
     te = 'Diagnostics',
     tb = 'Light/Dark background',

@@ -38,7 +38,7 @@ nnoremap <leader>ts :set spell!<cr>
 nnoremap <leader>th :setlocal cursorline!<cr>
 nnoremap <leader>tw :setlocal wrap!<cr>
 nnoremap <leader>tn :setlocal number!<cr>
-nnoremap <leader>tnr :setlocal relativenumber!<cr>
+nnoremap <leader>tr :setlocal relativenumber!<cr>
 nnoremap <leader>tp :setlocal paste!<cr>
 nnoremap <silent> <leader>te :lua vim.diagnostic.open_float()<cr>
 nnoremap <silent> <leader>tb :call ToggleBackground()<cr>
@@ -64,4 +64,4 @@ tnoremap <esc> <c-\><c-n>
 
 nnoremap [d :lua vim.diagnostic.goto_prev()<cr>
 nnoremap ]d :lua vim.diagnostic.goto_next()<cr>
-nnoremap <leader>eq :lua vim.diagnostic.set_loclist()<cr>
+nnoremap <leader>eq :lua vim.diagnostic.setqflist()<cr>
