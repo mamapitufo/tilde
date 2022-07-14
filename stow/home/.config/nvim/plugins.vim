@@ -46,6 +46,8 @@ call plug#begin()
   Plug 'hrsh7th/cmp-nvim-lua'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'PaterJason/cmp-conjure'
+  Plug 'L3MON4D3/LuaSnip'
+  Plug 'saadparwaiz1/cmp_luasnip'
 
   Plug 'tpope/vim-unimpaired'         " Complimentary mappings
   Plug 'tpope/vim-fugitive'           " Git tools
