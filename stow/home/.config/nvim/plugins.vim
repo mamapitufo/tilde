@@ -38,6 +38,7 @@ call plug#begin()
 
   " LSP
   Plug 'neovim/nvim-lspconfig'
+  Plug 'nvim-lua/lsp-status.nvim'
 
   " Completion
   Plug 'hrsh7th/nvim-cmp'

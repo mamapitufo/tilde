@@ -1,5 +1,17 @@
 local hoverHandler = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
 local signatureHelpHandler = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
+local publishDiagnosticsHandler = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    signs = true,
+    update_in_insert = true,
+    virtual_text = {
+      true,
+      spacing = 6,
+      severity_limit = 'Error'
+    },
+    border = 'rounded',
+  }
+)
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -10,21 +22,21 @@ local default_bindings = function(bufnr)
     vim.keymap.set(mode, l, r, opts)
   end
 
-  map('n', 'gd', ':lua vim.lsp.buf.definition()<cr>')
-  map('n', 'K', ':lua vim.lsp.buf.hover()<cr>')
+  map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
+  map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 
-  map('n', '<leader>ld', ':lua vim.lsp.buf.declaration()<cr>')
-  map('n', '<leader>lt', ':lua vim.lsp.buf.type_definition()<cr>')
-  map('n', '<leader>lk', ':lua vim.lsp.buf.signature_help()<cr>')
-  map('n', '<leader>ln', ':lua vim.lsp.buf.rename()<cr>')
-  map('n', '<leader>=', ':lua vim.lsp.buf.formatting()<cr>')
+  map('n', '<leader>gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+  map('n', '<leader>lt', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
+  map('n', '<leader>lk', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
+  map('n', '<leader>ln', '<cmd>lua vim.lsp.buf.rename()<cr>')
+  map('n', '<leader>==', '<cmd>lua vim.lsp.buf.formatting()<cr>')
 
-  map('n', '<leader>la', ':lua vim.lsp.buf.code_action()<cr>')
-  map('n', '<leader>lw', ':Telescope diagnostics bufnr=0<cr>')
-  map('n', '<leader>lr', ':Telescope lsp_references<cr>')
-  map('n', '<leader>li', ':Telescope lsp_implementations<cr>')
+  map('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<cr>')
+  map('n', '<leader>le', '<cmd>Telescope diagnostics bufnr=0<cr>')
+  map('n', '<leader>lr', '<cmd>Telescope lsp_references<cr>')
+  map('n', '<leader>li', '<cmd>Telescope lsp_implementations<cr>')
 
-  map('v', '<leader>la', ':lua vim.lsp.buf.range_code_action()<cr>')
+  map('v', '<leader>la', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
 
   local status_ok, which_key = pcall(require, 'which-key')
   if status_ok then
@@ -37,10 +49,10 @@ local default_bindings = function(bufnr)
         lt = 'Jump to type def',
         lk = 'Show symbol signature',
         ln = 'Rename symbol',
-        ['='] = 'Format current buffer',
+        ['=='] = 'Format current buffer',
 
         la = 'Find code actions',
-        lw = 'Show diagnostics',
+        le = 'Show diagnostics',
         lr = 'Find references',
         li = 'Find implementations',
       }
@@ -59,13 +71,7 @@ lsp.clojure_lsp.setup({
   end,
   capabilities = capabilities,
   handlers = {
-    ['textDocument/publishDiagnostics'] = vim.lsp.with(
-      vim.lsp.diagnostic.on_publish_diagnostics,
-      {
-        severity_sort = true,
-        virtual_text = false,
-      }
-    ),
+    ['textDocument/publishDiagnostics'] = publishDiagnosticsHandler,
     ['textDocument/hover'] = hoverHandler,
     ['textDocument/signatureHelp'] = signatureHelpHandler,
   },
@@ -77,14 +83,7 @@ lsp.tsserver.setup({
   end,
   capabilities = capabilities,
   handlers = {
-    ['textDocument/publishDiagnostics'] = vim.lsp.with(
-      vim.lsp.diagnostic.on_publish_diagnostics,
-      {
-        severity_sort = true,
-        update_in_insert = true,
-        virtual_text = false,
-      }
-    ),
+    ['textDocument/publishDiagnostics'] = publishDiagnosticsHandler,
     ['textDocument/hover'] = hoverHandler,
     ['textDocument/signatureHelp'] = signatureHelpHandler,
   },
