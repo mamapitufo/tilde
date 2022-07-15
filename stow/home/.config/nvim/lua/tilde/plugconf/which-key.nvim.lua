@@ -15,6 +15,7 @@ wk.register({
 
     e = { name = '+diagnostics' },
     eq = 'Send diagnostics to quick fix list',
+    et = 'Show line diagnostics',
 
     f = { name = '+file' },
     fs = 'Save file',
@@ -39,7 +40,6 @@ wk.register({
     tn = 'Line numbers',
     tr = 'Relative numbers',
     tp = 'Paste mode',
-    te = 'Diagnostics',
     tb = 'Light/Dark background',
 
     w = { name = '+window' },
