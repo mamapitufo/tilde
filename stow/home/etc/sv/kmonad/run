@@ -1,0 +1,6 @@
+#!/bin/sh
+
+mkdir -p /run/user/$(id -u)/runit
+
+exec 2>&1
+exec /usr/bin/kmonad /home/mamapitufo/.config/kmonad/internal.kbd || exit 1

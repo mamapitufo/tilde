@@ -1,0 +1,78 @@
+;; KMonad configuration for Lenovo x280 keyboard
+(defcfg
+  input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  output (uinput-sink "kmonad-output")
+
+  cmp-seq rctl
+
+  fallthrough true
+  allow-cmd false
+  )
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  del
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  wkup lctl lmet lalt           spc       ralt prnt rctl pgup up   pgdn
+                                                         left down rght
+  )
+
+(defalias
+  f   (tap-hold-next-release 350 f (tap-next XX (layer-toggle move)))
+  s   (tap-hold-next-release 350 s (tap-next XX (layer-toggle select)))
+  )
+
+(deflayer qwerty
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  del
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  lctl a    @s   d    @f   g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  wkup lctl lmet lalt           spc       ralt prnt rctl pgup up   pgdn
+                                                         left down rght
+  )
+
+(defalias
+  wrl  C-left
+  prd  C-down
+  pru  C-up
+  wrr  C-right
+  )
+
+(deflayer move
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    home pgdn pgup end  _    _    _
+  _    _    _    _    _    _    left down up   rght _    _    _
+  _    _    _    _    _    _    @wrl @prd @pru @wrr _    _
+  _    _    _    _              _         _    _    _    _    _    _
+                                                         _    _    _
+)
+
+(defalias
+  sll S-left
+  sld S-down
+  slu S-up
+  slr S-right
+  slh S-home
+  spd S-pgdn
+  spu S-pgup
+  sle S-end
+  swl S-C-left
+  pds S-C-down
+  pus S-C-up
+  swr S-C-right
+  )
+
+(deflayer select
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    @slh @spd @spd @sle _    _    _
+  _    _    _    _    _    _    @sll @sld @slu @slr _    _    _
+  _    _    _    _    _    _    @swl @pds @pus @swr _    _
+  _    _    _    _              _              _    _    _    _    _    _
+                                                              _    _    _
+)
+
