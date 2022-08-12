@@ -14,7 +14,6 @@ eval $(/usr/bin/gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
 xss-lock -l -- xsecurelock &
-
 picom &
-
 start-pulseaudio-x11 &
+1password --silent &
