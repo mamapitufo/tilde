@@ -20,8 +20,8 @@
   )
 
 (defalias
-  f   (tap-hold 200 f (layer-toggle move))
-  s   (tap-hold 200 s (layer-toggle select))
+  f   (tap-hold 400 f (layer-toggle move))
+  s   (tap-hold 400 s (layer-toggle select))
   )
 
 (deflayer qwerty
