@@ -7,7 +7,6 @@ call plug#begin()
   Plug 'habamax/vim-asciidoctor'
   Plug 'kmonad/kmonad-vim'
 
-  Plug 'numToStr/Comment.nvim'
   Plug 'JoosepAlviste/nvim-ts-context-commentstring' " Needed mostly for JSX
 
   Plug 'lewis6991/gitsigns.nvim'
