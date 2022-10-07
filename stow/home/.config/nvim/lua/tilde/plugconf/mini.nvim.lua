@@ -1,9 +1,9 @@
-nnoremap <silent> <leader>bq :Bdelete<cr>
-nnoremap <silent> <leader>bd :Bwipeout<cr>
+local bufremove = require('mini.bufremove')
 
-nnoremap <silent> <leader>bQ :bufdo :Bdelete<cr>
+bufremove.setup()
+vim.keymap.set('n', '<leader>bq', bufremove.delete, {silent=true})
+vim.keymap.set('n', '<leader>bd', bufremove.wipeout, {silent=true})
 
-lua << EOF
 local status_ok, which_key = pcall(require, 'which-key')
 if not status_ok then
   return
@@ -12,6 +12,4 @@ end
 which_key.register({
   ['<leader>bq'] = 'Close buffer',
   ['<leader>bd'] = 'Close buffer removing it from jumplist',
-  ['<leader>bQ'] = 'Close all buffers',
 })
-EOF

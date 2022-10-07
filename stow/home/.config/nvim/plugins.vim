@@ -1,5 +1,5 @@
 call plug#begin()
-  Plug 'moll/vim-bbye'                " close buffer without changing the layout
+  Plug 'echasnovski/mini.nvim'        " plugin library with various bits of functionality
   Plug 'mcchrish/zenbones.nvim'       " colourscheme
   Plug 'rktjmp/lush.nvim'
 
