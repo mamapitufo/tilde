@@ -1,12 +1,3 @@
--- comment
-require('mini.comment').setup({
-  hooks = {
-    pre = function()
-      require('ts_context_commentstring.internal').update_commentstring()
-    end
-  }
-})
-
 -- bufremove
 local bufremove = require('mini.bufremove')
 bufremove.setup()
@@ -26,3 +17,15 @@ which_key.register({
   ['<leader>bq'] = 'Close buffer',
   ['<leader>bd'] = 'Close buffer removing it from jumplist',
 })
+
+-- comment
+require('mini.comment').setup({
+  hooks = {
+    pre = function()
+      require('ts_context_commentstring.internal').update_commentstring()
+    end
+  }
+})
+
+-- surround
+require('mini.surround').setup()

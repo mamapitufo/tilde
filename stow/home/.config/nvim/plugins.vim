@@ -52,7 +52,6 @@ call plug#begin()
   Plug 'tpope/vim-unimpaired'         " Complimentary mappings
   Plug 'tpope/vim-fugitive'           " Git tools
   Plug 'tpope/vim-sleuth'             " Automatically adjusts tab/spaces from surrounding files
-  Plug 'tpope/vim-surround'           " Manipulate surrounding pairs
   Plug 'tpope/vim-repeat'             " Allow plugins to tap into `.`
   Plug 'tpope/vim-eunuch'             " Vim sugar for shell commands
 
