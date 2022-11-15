@@ -37,8 +37,10 @@ set wildignore+=*swp,*.class,*.pyc,*.png,*.jpg,*.gif,*.zip,tmp/*,*.o,*.obj,*.so 
 set wildmenu wildmode=longest:full,full
 
 " persistence
-set nobackup writebackup backupdir=$HOME/.local/share/nvim/backup//
-set undofile undodir=$HOME/.local/share/nvim/undo//
+set nobackup writebackup
+let &backupdir = stdpath('data') . '/backup//'
+set undofile
+let &undodir = stdpath('data') . '/undo//'
 
 " system
 set fileencoding=utf-8
