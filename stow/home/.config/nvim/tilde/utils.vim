@@ -1,3 +1,11 @@
+function! ModulePath(name)
+  return stdpath("config") . "/tilde/" . a:name . ".vim"
+endfunction
+
+function! LoadModule(name)
+  exec "source" ModulePath(a:name)
+endfunction
+
 function! TrimWhitespace()
   let l:save = winsaveview()
   keeppatterns %s!\s\+$!!e

@@ -1,10 +1,10 @@
+" silence healthcheck warnings
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
 
-runtime tilde-fns.vim
+runtime tilde/utils.vim
 set shell=sh
 
-call LoadModule('functions')
 call LoadModule('options')
 call LoadModule('mappings')
 call LoadModule('plugins')
