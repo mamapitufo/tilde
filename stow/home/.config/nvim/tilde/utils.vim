@@ -20,3 +20,12 @@ endfunction
 function! ToggleBackground()
   let &background = (&background == 'dark' ? 'light' : 'dark')
 endfunction
+
+function! AssertPlugin(plugname)
+  if (exists('g:plugs["' . a:plugname . '"]'))
+    return 1
+  else
+    echoerr "Plugin: '" . a:plugname . "' does not exist."
+    return 0
+  endif
+endfunction
