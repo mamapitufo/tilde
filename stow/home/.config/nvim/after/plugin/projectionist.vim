@@ -1,3 +1,5 @@
+if !AssertPlugin('vim-projectionist') | finish | endif
+
 autocmd User ProjectionistDetect
   \ call projectionist#append(getcwd(),
   \ {

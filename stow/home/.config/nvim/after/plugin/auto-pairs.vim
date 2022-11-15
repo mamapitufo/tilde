@@ -1,3 +1,5 @@
+if !AssertPlugin('auto-pairs') | finish | endif
+
 augroup autopairs_config
   autocmd!
   " LISPs don't pair a single quote

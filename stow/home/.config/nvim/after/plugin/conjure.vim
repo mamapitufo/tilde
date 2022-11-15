@@ -1,3 +1,5 @@
+if !AssertPlugin('conjure') | finish | endif
+
 " HUD at the bottom, full width
 let g:conjure#log#hud#width = 1.0
 let g:conjure#log#hud#anchor = "SE"
