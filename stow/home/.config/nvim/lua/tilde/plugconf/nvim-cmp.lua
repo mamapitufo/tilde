@@ -22,7 +22,7 @@ cmp.setup({
     ['<C-space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
     ['<cr>'] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Insert,
+      behavior = cmp.ConfirmBehavior.Replace,
       select = true
     }),
   }),
@@ -41,6 +41,6 @@ cmp.setup({
     { name = 'luasnip' },
     { name = 'nvim_lua' },
     { name = 'path' },
-    { name = 'buffer', keyword_length = 5 },
+    { name = 'buffer', keyword_length = 4 },
   }),
 })
