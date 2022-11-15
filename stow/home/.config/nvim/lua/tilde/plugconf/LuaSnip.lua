@@ -9,7 +9,7 @@ luasnip.config.set_config({
 require('luasnip.loaders.from_lua').load()
 
 -- keyboard mappings
-vim.keymap.set({ 'i', 's' }, '<c-k>', function()
+vim.keymap.set({ 'i', 's' }, '<c-enter>', function()
   if luasnip.expand_or_jumpable() then
     luasnip.expand_or_jump()
   end
