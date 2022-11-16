@@ -5,13 +5,20 @@
 	ui = auto
 
 [core]
-	pager = less -FXR
+	pager = delta
 	whitespace = -trailing-whitespace
 	excludesfile = ~/.config/git/excludes
 	attributesfile = ~/.config/git/attributes
 
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	light = true
+
 [merge]
-	tool = nvimdiff
+	conflictstyle = diff3
 
 [push]
 	default = upstream
@@ -36,6 +43,7 @@
 [diff]
 	mnemonicPrefix = true
 	submodule = log
+	colorMoved = default
 [diff "clojure"]
 	xfuncname = "^[ \t]*(\\((ns|def[a-zA-Z0-9_-]*).*)$"
 
