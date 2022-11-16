@@ -1,0 +1,15 @@
+keybinding:
+  universal:
+    return: '<c-\>'
+
+gui:
+  theme:
+    selectedLineBgColor:
+      - bold
+    selectedRangeBgColor:
+      - bold
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --light --paging=never
