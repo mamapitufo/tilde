@@ -1,3 +1,6 @@
+if not require('tilde.utils').assert_plug('LuaSnip') then return end
+
+
 local luasnip = require('luasnip')
 
 luasnip.config.set_config({

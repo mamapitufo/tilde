@@ -1,3 +1,5 @@
+if not require('tilde.utils').assert_plug('mini.nvim') then return end
+
 -- bufremove
 local bufremove = require('mini.bufremove')
 bufremove.setup()

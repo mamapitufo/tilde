@@ -1,3 +1,5 @@
+if not require('tilde.utils').assert_plug('nvim-cmp') then return end
+
 local cmp = require('cmp')
 
 cmp.setup({

@@ -1,3 +1,6 @@
+if not require('tilde.utils').assert_plug('gitsigns.nvim') then return end
+
+
 local function map_keys(bufnr)
   local gs = package.loaded.gitsigns
 

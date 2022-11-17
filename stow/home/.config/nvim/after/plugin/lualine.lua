@@ -1,3 +1,6 @@
+if not require('tilde.utils').assert_plug('lualine.nvim') then return end
+
+
 local function lsp_connection()
   if vim.tbl_isempty(vim.lsp.buf_get_clients(0)) then
     return ''

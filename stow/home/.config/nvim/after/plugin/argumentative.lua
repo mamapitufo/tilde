@@ -1,3 +1,5 @@
+if not require('tilde.utils').assert_plug('vim-argumentative') then return end
+
 local status_ok, which_key = pcall(require, 'which-key')
 if status_ok then
   which_key.register({

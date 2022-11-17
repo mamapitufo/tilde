@@ -1,3 +1,5 @@
+if not require('tilde.utils').assert_plug('nvim-treesitter') then return end
+
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {
     'clojure',

@@ -1,4 +1,11 @@
-require'which-key'.register({
+if not require('tilde.utils').assert_plug('vim-unimpaired') then return end
+
+local status_ok, which_key = pcall(require, 'which-key')
+if not status_ok then
+  return
+end
+
+which_key.register({
   ['[a'] = { 'Edit previous file in args list' },
   [']a'] = { 'Edit next file in args list' },
   ['[A'] = { 'Edit first file in args list' },

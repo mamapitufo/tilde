@@ -65,16 +65,3 @@ call plug#begin()
   Plug 'windwp/nvim-ts-autotag'
   Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
-
-" loads lua plugin config files from the `tilde.plugconf` namespace.
-" TODO have a `lua/tilde/plugconf/init.lua` that handles this and just require
-" that from here.
-for plugmod in split(glob(stdpath('config') . '/lua/tilde/plugconf/*.lua'), '\n')
-  let plugname = fnamemodify(plugmod, ':t:r')
-
-  if (exists('g:plugs["' . plugname . '"]'))
-    exec 'luafile' plugmod
-  else
-    echom 'WARN: Triying to configure non-existent plugin ' . plugname
-  endif
-endfor

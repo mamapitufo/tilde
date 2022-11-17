@@ -1,10 +1,6 @@
-local status_ok, toggleterm = pcall(require, 'toggleterm')
-if not status_ok then
-  nvim_err_write("Plugin 'toggleterm.nvim' is not available.")
-  return
-end
+if not require('tilde.utils').assert_plug('toggleterm.nvim') then return end
 
-toggleterm.setup{}
+require('toggleterm').setup{}
 
 local map_opts = {
   noremap = true,

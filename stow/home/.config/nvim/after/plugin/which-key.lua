@@ -1,3 +1,5 @@
+if not require('tilde.utils').assert_plug('which-key.nvim') then return end
+
 local wk = require('which-key')
 
 wk.setup()

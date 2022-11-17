@@ -1,3 +1,5 @@
+if not require('tilde.utils').assert_plug('telescope.nvim') then return end
+
 require('telescope').setup{
   defaults = {
     file_ignore_patterns = {'node_modules'},

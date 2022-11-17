@@ -1,3 +1,5 @@
+if not require('tilde.utils').assert_plug('nvim-colorizer.lua') then return end
+
 -- this needs to be set before invoking the plugin setup...
 vim.o.termguicolors = true
 

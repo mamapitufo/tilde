@@ -1,3 +1,6 @@
+if not require('tilde.utils').assert_plug('lsp-status.nvim') then return end
+
+
 local lsp_status = require('lsp-status')
 
 lsp_status.status()
