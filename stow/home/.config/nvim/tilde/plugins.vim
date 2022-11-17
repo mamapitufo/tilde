@@ -2,6 +2,7 @@ call plug#begin()
   Plug 'echasnovski/mini.nvim'        " plugin library with various bits of functionality
   Plug 'mcchrish/zenbones.nvim'       " colourscheme
   Plug 'rktjmp/lush.nvim'
+  Plug 'akinsho/toggleterm.nvim'      " Better built-in terminal
 
   Plug 'blankname/vim-fish'
   Plug 'habamax/vim-asciidoctor'
@@ -50,7 +51,6 @@ call plug#begin()
   Plug 'saadparwaiz1/cmp_luasnip'
 
   Plug 'tpope/vim-unimpaired'         " Complimentary mappings
-  Plug 'tpope/vim-fugitive'           " Git tools
   Plug 'tpope/vim-sleuth'             " Automatically adjusts tab/spaces from surrounding files
   Plug 'tpope/vim-repeat'             " Allow plugins to tap into `.`
   Plug 'tpope/vim-eunuch'             " Vim sugar for shell commands
