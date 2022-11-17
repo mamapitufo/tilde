@@ -20,4 +20,9 @@ return {
     'end', ''},
     i(0),
   }),
+  s('lua_plug', {
+    t { "if not require('tilde.utils').assert_plug('" },
+    i(1, 'plugname'),
+    t {"') then return end", '', },
+  })
 }
