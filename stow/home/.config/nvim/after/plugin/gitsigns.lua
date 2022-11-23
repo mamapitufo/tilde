@@ -14,59 +14,32 @@ local function map_keys(bufnr)
     if vim.wo.diff then return ']h' end
     vim.schedule(function() gs.next_hunk() end)
     return '<Ignore>'
-  end, {expr=true})
+  end, {
+    expr = true,
+    desc = 'Next changed hunk',
+  })
   map('n', '[h', function()
     if vim.wo.diff then return '[h' end
     vim.schedule(function() gs.prev_hunk() end)
     return '<Ignore>'
-  end, {expr=true})
+  end, {
+    expr = true,
+    desc = 'Previous changed hunk',
+  })
 
-  map({'n', 'v'}, '<leader>ghs', ':Gitsigns stage_hunk<cr>')
-  map({'n', 'v'}, '<leader>ghr', ':Gitsigns reset_hunk<cr>')
-  map('n', '<leader>ghu', gs.undo_stage_hunk)
-  map('n', '<leader>ghp', gs.preview_hunk)
-  map('n', '<leader>ghb', function() gs.blame_line{full=true} end)
+  map({'n', 'v'}, '<leader>ghs', ':Gitsigns stage_hunk<cr>', { desc = 'Stage hunk' })
+  map({'n', 'v'}, '<leader>ghr', ':Gitsigns reset_hunk<cr>', { desc = 'Reset hunk to git index' })
+  map('n', '<leader>ghu', gs.undo_stage_hunk, { desc = 'Unstage hunk' })
+  map('n', '<leader>ghp', gs.preview_hunk, { desc = 'Preview hunk' })
+  map('n', '<leader>ghb', function() gs.blame_line{full=true} end, { desc = 'Blame current line' })
 
-  map('n', '<leader>gR', gs.reset_buffer)
-  map('n', '<leader>ghU', gs.reset_buffer_index)
-  map('n', '<leader>ghS', gs.stage_buffer)
+  map('n', '<leader>gR', gs.reset_buffer, { desc = 'Reset buffer' })
+  map('n', '<leader>ghU', gs.reset_buffer_index, { desc = 'Reset buffer to git index' })
+  map('n', '<leader>ghS', gs.stage_buffer, { desc = 'Stage buffer' })
 
-  map('n', '<leader>tgh', gs.toggle_linehl)
-  map('n', '<leader>tgb', gs.toggle_current_line_blame)
-  map('n', '<leader>tgd', gs.toggle_deleted)
-
-  local status_ok, which_key = pcall(require, 'which-key')
-  if not status_ok then
-    return
-  end
-
-  which_key.register({
-    ['<leader>'] = {
-      ghs = 'Stage hunks',
-      ghr = 'Reset hunks to git index',
-    },
-  }, { mode = 'v' })
-
-  which_key.register {
-    [']h'] = 'Next changed hunk',
-    ['[h'] = 'Previous changed hunk',
-    ['<leader>'] = {
-      ghs = 'Stage hunk',
-      ghr = 'Reset hunk to git index',
-      ghu = 'Unstage hunk',
-      ghp = 'Preview hunk',
-      ghb = 'Blame current line',
-
-      gR = 'Reset buffer',
-      ghU = 'Reset buffer to git index',
-      ghS = 'Stage buffer',
-
-      tg = { name = '+git' },
-      tgh = 'Highlight changed lines',
-      tgb = 'Blame current line',
-      tgd = 'Show deleted hunks',
-    }
-  }
+  map('n', '<leader>tgh', gs.toggle_linehl, { desc = 'Highlight changed lines' })
+  map('n', '<leader>tgb', gs.toggle_current_line_blame, { desc =  'Blame current line' })
+  map('n', '<leader>tgd', gs.toggle_deleted, { desc = 'Show deleted hunks' })
 end
 
 require'gitsigns'.setup {

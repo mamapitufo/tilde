@@ -36,6 +36,7 @@ wk.register({
     sc = 'Clear search highlight',
 
     t = { name = '+toggle' },
+    tg = { name = '+git' },
     tS = 'Spell check',
     thh = 'Highlight current line',
     tl = 'Text wrap',

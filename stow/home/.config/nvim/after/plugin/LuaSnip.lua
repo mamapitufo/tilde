@@ -27,13 +27,4 @@ vim.keymap.set('i', '<c-l>', function()
     luasnip.change_choice(1)
   end
 end, { silent = true })
-vim.keymap.set('n', '<leader>lS', '<cmd>source ~/.config/nvim/lua/tilde/plugconf/LuaSnip.lua<cr>')
-
-local status_ok, which_key = pcall(require, 'which-key')
-if not status_ok then
-  return
-end
-
-which_key.register({
-  ['<leader>lS'] = 'Reload snippets'
-})
+vim.keymap.set('n', '<leader>lS', '<cmd>source ~/.config/nvim/lua/tilde/plugconf/LuaSnip.lua<cr>', { desc = 'Reload snippets' })
