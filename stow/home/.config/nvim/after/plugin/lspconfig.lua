@@ -14,6 +14,11 @@ local publishDiagnosticsHandler = vim.lsp.with(
     },
     border = 'rounded',
   })
+local handlers = {
+  ['textDocument/publishDiagnostics'] = publishDiagnosticsHandler,
+  ['textDocument/hover'] = hoverHandler,
+  ['textDocument/signatureHelp'] = signatureHelpHandler,
+}
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -41,7 +46,7 @@ local default_bindings = function(bufnr)
   map('v', '<leader>la', '<cmd>lua vim.lsp.buf.range_code_action()<cr>', { desc = 'Show code actions' })
 end
 
-local setup_formatting = function(client, bufnr)
+local lsp_formatting = function(client, bufnr)
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_create_autocmd("BufWritePre", {
       group = vim.api.nvim_create_augroup("Format", { clear = true }),
@@ -57,37 +62,24 @@ lsp.clojure_lsp.setup({
     default_bindings(bufnr)
   end,
   capabilities = capabilities,
-  handlers = {
-    ['textDocument/publishDiagnostics'] = publishDiagnosticsHandler,
-    ['textDocument/hover'] = hoverHandler,
-    ['textDocument/signatureHelp'] = signatureHelpHandler,
-  },
+  handlers = handlers,
 })
 
 lsp.tsserver.setup({
   on_attach = function(client, bufnr)
     default_bindings(bufnr)
-    setup_formatting(client, bufnr)
   end,
   capabilities = capabilities,
-  handlers = {
-    ['textDocument/publishDiagnostics'] = publishDiagnosticsHandler,
-    ['textDocument/hover'] = hoverHandler,
-    ['textDocument/signatureHelp'] = signatureHelpHandler,
-  },
+  handlers = handlers,
 })
 
 lsp.sumneko_lua.setup({
   on_attach = function(client, bufnr)
     default_bindings(bufnr)
-    setup_formatting(client, bufnr)
+    lsp_formatting(client, bufnr)
   end,
   capabilities = capabilities,
-  handlers = {
-    ['textDocument/publishDiagnostics'] = publishDiagnosticsHandler,
-    ['textDocument/hover'] = hoverHandler,
-    ['textDocument/signatureHelp'] = signatureHelpHandler,
-  },
+  handlers = handlers,
   settings = {
     Lua = {
       diagnostics = {
@@ -101,3 +93,13 @@ lsp.sumneko_lua.setup({
     },
   },
 })
+
+lsp.tailwindcss.setup({
+  on_attach = function(client, bufnr)
+    default_bindings(bufnr)
+  end,
+  capabilities = capabilities,
+  handlers = handlers,
+})
+
+vim.keymap.set('n', '<leader>l?', ':LspInfo<cr>', { desc = 'Show status for buffer' })
