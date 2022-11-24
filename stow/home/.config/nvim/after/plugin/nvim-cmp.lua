@@ -10,7 +10,6 @@ cmp.setup({
         conjure = '[conj]',
         luasnip = '[snip]',
         nvim_lsp = '[lsp]',
-        nvim_lua = '[lua]',
         path = '[path]',
       })[entry.source.name]
       return vim_item

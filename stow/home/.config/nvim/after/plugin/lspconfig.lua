@@ -3,7 +3,8 @@ if not require('tilde.utils').assert_plug('nvim-lspconfig') then return end
 local hoverHandler = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
 local signatureHelpHandler = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 local publishDiagnosticsHandler = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  {
     signs = true,
     update_in_insert = true,
     virtual_text = {
@@ -12,8 +13,7 @@ local publishDiagnosticsHandler = vim.lsp.with(
       severity_limit = 'Error'
     },
     border = 'rounded',
-  }
-)
+  })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -77,3 +77,27 @@ lsp.tsserver.setup({
   },
 })
 
+lsp.sumneko_lua.setup({
+  on_attach = function(client, bufnr)
+    default_bindings(bufnr)
+    setup_formatting(client, bufnr)
+  end,
+  capabilities = capabilities,
+  handlers = {
+    ['textDocument/publishDiagnostics'] = publishDiagnosticsHandler,
+    ['textDocument/hover'] = hoverHandler,
+    ['textDocument/signatureHelp'] = signatureHelpHandler,
+  },
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' },
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file('', true),
+        checkThirdParty = false,
+      },
+      telemetry = { enable = false },
+    },
+  },
+})
