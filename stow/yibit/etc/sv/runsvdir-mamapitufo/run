@@ -1,5 +1,4 @@
 #!/bin/sh
 
-exec 2>&1
-chpst -u mamapitufo mkdir -p -m 0700 /run/user/$(id -u mamapitufo)/runit
+chpst -u mamapitufo mkdir -p -m 0700 /run/user/$(id -u mamapitufo)/runit || exit 1
 exec chpst -u "mamapitufo:$(id -Gn mamapitufo | tr ' ' ':')" runsvdir /home/mamapitufo/service
