@@ -41,6 +41,16 @@ local default_bindings = function(bufnr)
   map('v', '<leader>la', '<cmd>lua vim.lsp.buf.range_code_action()<cr>', { desc = 'Show code actions' })
 end
 
+local setup_formatting = function(client, bufnr)
+  if client.server_capabilities.documentFormattingProvider then
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = vim.api.nvim_create_augroup("Format", { clear = true }),
+      buffer = bufnr,
+      callback = function() vim.lsp.buf.formatting_seq_sync() end,
+    })
+  end
+end
+
 local lsp = require('lspconfig')
 lsp.clojure_lsp.setup({
   on_attach = function(client, bufnr)
@@ -57,6 +67,7 @@ lsp.clojure_lsp.setup({
 lsp.tsserver.setup({
   on_attach = function(client, bufnr)
     default_bindings(bufnr)
+    setup_formatting(client, bufnr)
   end,
   capabilities = capabilities,
   handlers = {
