@@ -9,6 +9,7 @@ call plug#begin()
   Plug 'kmonad/kmonad-vim'
 
   Plug 'JoosepAlviste/nvim-ts-context-commentstring' " Needed mostly for JSX
+  Plug 'MunifTanjim/prettier.nvim'
 
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'nvim-lualine/lualine.nvim'    " Statusline
@@ -34,11 +35,12 @@ call plug#begin()
 
   " Parser tools
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'p00f/nvim-ts-rainbow'       " rainbow parenthesis
+  Plug 'p00f/nvim-ts-rainbow'         " rainbow parenthesis
 
   " LSP
   Plug 'neovim/nvim-lspconfig'
   Plug 'nvim-lua/lsp-status.nvim'
+  Plug 'jose-elias-alvarez/null-ls.nvim'
 
   " Completion
   Plug 'hrsh7th/nvim-cmp'
