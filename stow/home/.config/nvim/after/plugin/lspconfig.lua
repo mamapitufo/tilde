@@ -1,4 +1,6 @@
-if not require("tilde.utils").assert_plug("nvim-lspconfig") then return end
+if not require("tilde.utils").assert_plug("nvim-lspconfig") then
+	return
+end
 
 local hoverHandler = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 local signatureHelpHandler = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
