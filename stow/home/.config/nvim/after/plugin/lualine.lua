@@ -2,14 +2,6 @@ if not require("tilde.utils").assert_plug("lualine.nvim") then
 	return
 end
 
-local function lsp_connection()
-	if vim.tbl_isempty(vim.lsp.buf_get_clients(0)) then
-		return ""
-	else
-		return ""
-	end
-end
-
 local function fileinfo()
 	local data = {}
 
@@ -29,29 +21,24 @@ local function fileinfo()
 	return table.concat(data, ", ")
 end
 
-local disable_components = { "help", "gitcommit" }
-
 require("lualine").setup({
 	options = {
 		section_separators = "",
 		component_separators = "",
 		theme = "zenbones",
 		disabled_filetypes = { "NvimTree", "vim-plug" },
-		globalstatus = true,
 	},
 	sections = {
 		lualine_b = {
-			{ "branch", icon = "", disabled_filetypes = disable_components },
-			{ "diff", disabled_filetypes = disabled_components },
+			{ "branch", icon = "" },
+			"diff",
 		},
 		lualine_c = {
 			{ "filename", path = 1 },
 		},
 		lualine_x = {
-			{ "lsp_connection", disabled_filetypes = disabled_components },
 			{
 				"diagnostics",
-				disabled_filetypes = disabled_components,
 				sources = { "nvim_lsp" },
 				diagnostics_color = {
 					error = { fg = "#a8334c" },
@@ -69,6 +56,14 @@ require("lualine").setup({
 				padding = { left = 1, right = 0 },
 			},
 			"progress",
+		},
+		inactive_sections = {
+			lualine_a = {},
+			lualine_b = {},
+			lualine_c = { "filename", path = 1 },
+			lualine_x = { "location" },
+			luanine_y = {},
+			lualine_z = {},
 		},
 	},
 	extensions = { "quickfix", "fugitive" },
