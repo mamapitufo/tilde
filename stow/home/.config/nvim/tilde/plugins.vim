@@ -13,7 +13,8 @@ call plug#begin()
 
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'nvim-lualine/lualine.nvim'    " Statusline
-  Plug 'jiangmiao/auto-pairs'         " Auto-close parenthesis, brackets, strings, etc.
+  Plug 'windwp/nvim-autopairs'        " Auto-close parenthesis, brackets, strings, etc.
+  Plug 'windwp/nvim-ts-autotag'       " Manage HTML tags
   Plug 'folke/which-key.nvim'         " Key mapping hints
   Plug 'kyazdani42/nvim-tree.lua'     " File browser
   " Plug 'lambdalisue/suda.vim'
@@ -63,6 +64,5 @@ call plug#begin()
   Plug 'bakpakin/fennel.vim'
   Plug 'clojure-vim/vim-jack-in'
 
-  Plug 'windwp/nvim-ts-autotag'
   Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
