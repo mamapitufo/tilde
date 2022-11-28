@@ -5,6 +5,13 @@ end
 local cmp = require("cmp")
 
 cmp.setup({
+	sources = cmp.config.sources({
+		{ name = "nvim_lsp" },
+		{ name = "conjure" },
+		{ name = "luasnip" },
+		{ name = "path" },
+		{ name = "buffer", keyword_length = 4 },
+	}),
 	formatting = {
 		format = function(entry, vim_item)
 			vim_item.menu = ({
@@ -38,12 +45,4 @@ cmp.setup({
 			luasnip.lsp_expand(args.body)
 		end,
 	},
-	sources = cmp.config.sources({
-		{ name = "nvim_lsp" },
-		{ name = "conjure" },
-		{ name = "luasnip" },
-		{ name = "nvim_lua" },
-		{ name = "path" },
-		{ name = "buffer", keyword_length = 4 },
-	}),
 })
