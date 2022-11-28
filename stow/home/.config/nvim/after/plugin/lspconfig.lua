@@ -36,7 +36,7 @@ local on_attach = function(client, bufnr)
 	map("n", "<leader>lt", "<cmd>lua vim.lsp.buf.type_definition()<cr>", { desc = "Jump to type def" })
 	map("n", "<leader>lk", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { desc = "Show symbol signature" })
 	map("n", "<leader>ln", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename symbol" })
-	map("n", "<leader>==", "<cmd>lua vim.lsp.buf.formatting()<cr>", { desc = "Format current buffer" })
+	map("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", { desc = "Format current buffer" })
 
 	map("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Show code actions" })
 	map("n", "<leader>le", "<cmd>Telescope diagnostics bufnr=0<cr>", { desc = "Show diagnostics" })
