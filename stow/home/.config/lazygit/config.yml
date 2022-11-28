@@ -9,7 +9,3 @@ gui:
     selectedRangeBgColor:
       - bold
 
-# git:
-#   paging:
-#     colorArg: always
-#     pager: delta --light --paging=never

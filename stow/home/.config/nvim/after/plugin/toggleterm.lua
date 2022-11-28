@@ -20,7 +20,7 @@ local lazygit = Terminal:new({
 			desc = "Close LazyGit",
 		})
 	end,
-	on_close = function(term)
+	on_close = function()
 		vim.cmd("startinsert!")
 	end,
 })
