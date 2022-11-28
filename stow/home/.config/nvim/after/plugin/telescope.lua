@@ -37,9 +37,10 @@ map(
 	":Telescope find_files hidden=true cwd=$HOME/Sandbox/tilde prompt_prefix=\\ ~\\  prompt_title=Sandbox/tilde<cr>",
 	{ desc = "Find config file" }
 )
-map("n", "<leader>ff", ":lua require'tilde.telescope-extras'.git_files_fallback()<cr>", { desc = "Find file" })
+map("n", "<leader>ff", ":Telescope find_files<cr>", { desc = "Find file" })
+map("n", "<leader>fg", ":lua require'tilde.telescope-extras'.git_files_fallback()<cr>", { desc = "Find git-controlled file" })
 map("n", "<leader>fr", ":Telescope oldfiles<cr>", { desc = "Find recently opened file" })
-map("n", "<leader>*", ":Telescope grep_string<cr>", { desc = "Find string under cursor" })
+map("n", "<leader>*", ":Telescope grep_string word_match=-w<cr>", { desc = "Find string under cursor" })
 map("n", "<leader>s/", ":Telescope search_history<cr>", { desc = "Find in search history" })
 map("n", "<leader>s:", ":Telescope command_history<cr>", { desc = "Find in command history" })
 map("n", "<leader>sb", ":Telescope current_buffer_fuzzy_find<cr>", { desc = "Fuzzy find in current buffer" })
