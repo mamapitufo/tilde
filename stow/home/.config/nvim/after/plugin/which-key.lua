@@ -12,6 +12,7 @@ wk.register({
 		d = { name = "+diagnostics" },
 		f = { name = "+file" },
 		g = { name = "+git" },
+		gb = { name = "+blame" },
 		gh = { name = "+hunks" },
 		l = { name = "+LSP" },
 		q = { name = "+quit" },

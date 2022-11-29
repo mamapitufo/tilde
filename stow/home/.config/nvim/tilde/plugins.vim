@@ -14,6 +14,7 @@ call plug#begin()
   Plug 'MunifTanjim/prettier.nvim'        " Formatter
 
   Plug 'lewis6991/gitsigns.nvim'          " Git status for the gutter
+  Plug 'tpope/vim-fugitive'               " Git wrapper
   Plug 'nvim-lualine/lualine.nvim'        " Statusline
   Plug 'windwp/nvim-autopairs'            " Auto-close parenthesis, brackets, strings, etc.
   Plug 'windwp/nvim-ts-autotag'           " Manage HTML tags
