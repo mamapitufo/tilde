@@ -28,9 +28,3 @@ vim.keymap.set("i", "<c-l>", function()
 		luasnip.change_choice(1)
 	end
 end, { silent = true })
-vim.keymap.set(
-	"n",
-	"<leader>lS",
-	"<cmd>source ~/.config/nvim/lua/tilde/plugconf/LuaSnip.lua<cr>",
-	{ desc = "Reload snippets" }
-)

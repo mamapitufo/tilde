@@ -4,24 +4,24 @@ end
 
 -- bufremove
 local bufremove = require("mini.bufremove")
-bufremove.setup()
+bufremove.setup({})
 vim.keymap.set("n", "<leader>bq", bufremove.delete, {
 	silent = true,
 	desc = "Close buffer",
 })
 vim.keymap.set("n", "<leader>bd", bufremove.wipeout, {
 	silent = true,
-	desc = "Close buffer removing it from jumplist",
+	desc = "Wipeout buffer",
 })
 
 -- comment
 require("mini.comment").setup({
 	hooks = {
 		pre = function()
-			require("ts_context_commentstring.internal").update_commentstring()
+			require("ts_context_commentstring.internal").update_commentstring({})
 		end,
 	},
 })
 
 -- surround
-require("mini.surround").setup()
+require("mini.surround").setup({})

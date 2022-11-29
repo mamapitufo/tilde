@@ -9,4 +9,18 @@ M.assert_plug = function(plugname)
 	end
 end
 
+M.toggle_qf = function()
+	local qf_open = false
+	for _, win in pairs(vim.fn.getwininfo()) do
+		if win["quickfix"] == 1 then
+			qf_open = true
+		end
+	end
+	if qf_open then
+		vim.cmd("cclose")
+	elseif not vim.tbl_isempty(vim.fn.getqflist()) then
+		vim.cmd("copen")
+	end
+end
+
 return M
