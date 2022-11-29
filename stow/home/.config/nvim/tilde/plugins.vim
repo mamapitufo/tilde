@@ -40,7 +40,6 @@ call plug#begin()
 
   " LSP
   Plug 'neovim/nvim-lspconfig'
-  Plug 'nvim-lua/lsp-status.nvim'
   Plug 'jose-elias-alvarez/null-ls.nvim'
 
   " Completion
