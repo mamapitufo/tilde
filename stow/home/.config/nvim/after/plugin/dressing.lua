@@ -2,4 +2,6 @@ if not require("tilde.utils").assert_plug("dressing.nvim") then
 	return
 end
 
-require("dressing").setup()
+require("dressing").setup({
+	select = { backend = { "builtin", "telescope" } },
+})
