@@ -15,14 +15,14 @@ return {
 	}, {
 		t({ "local status_ok, " }),
 		i(1, "var_name"),
-		t({ " = pcall(require, '" }),
+		t({ ' = pcall(require, "' }),
 		i(2, "mod-name"),
-		t({ "')", "if not status_ok then", "  return", "end", "" }),
+		t({ '")', "if not status_ok then", "  return", "end", "" }),
 		i(0),
 	}),
-	s("lua_plug", {
-		t({ "if not require('tilde.utils').assert_plug('" }),
+	s("assertplug", {
+		t({ 'if not require("tilde.utils").assert_plug("' }),
 		i(1, "plugname"),
-		t({ "') then return end", "" }),
+		t({ '") then return end', "" }),
 	}),
 }
