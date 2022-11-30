@@ -10,7 +10,7 @@ luasnip.config.set_config({
 	enable_autosnippets = false,
 })
 
-require("luasnip.loaders.from_lua").load()
+require("luasnip.loaders.from_snipmate").lazy_load()
 
 -- keyboard mappings
 vim.keymap.set({ "i", "s" }, "<c-l>", function()

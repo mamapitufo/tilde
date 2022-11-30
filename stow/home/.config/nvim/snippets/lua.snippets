@@ -1,0 +1,14 @@
+snippet #!
+  #!/usr/bin/env lua
+  $0
+snippet module
+  local M = {}
+  $0
+  return M
+snippet safereq
+  local status_ok, ${1:var} = pcall(require, "${0:mod-name}")
+  if not status_ok then
+    return
+  end
+snippet assertplug
+  if not require("tilde.utils").assert_plug("${0:plug-name}") then return end
