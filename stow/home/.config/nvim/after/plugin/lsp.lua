@@ -2,23 +2,39 @@ if not require("tilde.utils").assert_plug("nvim-lspconfig") then
 	return
 end
 
-local hoverHandler = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-local signatureHelpHandler = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
-local publishDiagnosticsHandler = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+	vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { border = "rounded" })
+
+vim.diagnostic.config({
 	signs = true,
-	update_in_insert = true,
+	-- 	XXX not sure if this is needed for autotags...
+	-- 	update_in_insert = true,
 	virtual_text = {
-		true,
+		severity = vim.diagnostic.severity.ERROR,
+		source = "if_many",
 		spacing = 6,
-		severity_limit = "Error",
+		signs = false,
 	},
-	border = "rounded",
+	float = {
+		severity_sort = true,
+		source = "if_many",
+		border = "rounded",
+		header = { "  Line diagnostics", "DiagnosticWarning" },
+		prefix = function(diagnostic)
+			local diag_to_format = {
+				[vim.diagnostic.severity.ERROR] = { "Error", "DiagnosticError" },
+				[vim.diagnostic.severity.WARN] = { "Warning", "DiagnosticWarning" },
+				[vim.diagnostic.severity.INFO] = { "Info", "DiagnosticInfo" },
+				[vim.diagnostic.severity.HINT] = { "Hint", "DiagnosticHint" },
+			}
+			local res = diag_to_format[diagnostic.severity]
+			return string.format("(%s) ", res[1]), res[2]
+		end,
+	},
+	severity_sort = true,
 })
-local handlers = {
-	["textDocument/publishDiagnostics"] = publishDiagnosticsHandler,
-	["textDocument/hover"] = hoverHandler,
-	["textDocument/signatureHelp"] = signatureHelpHandler,
-}
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -81,19 +97,16 @@ local lsp = require("lspconfig")
 lsp.clojure_lsp.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	handlers = handlers,
 })
 
 lsp.tsserver.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	handlers = handlers,
 })
 
 lsp.sumneko_lua.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	handlers = handlers,
 	settings = {
 		Lua = {
 			diagnostics = {
