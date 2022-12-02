@@ -82,15 +82,20 @@ local on_attach = function(client, bufnr)
 		vim.lsp.buf.range_code_action()
 	end, { desc = "Show code actions" })
 
-	if client.server_capabilities.documentFormattingProvider then
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			group = vim.api.nvim_create_augroup("Format", { clear = true }),
-			buffer = bufnr,
-			callback = function()
-				vim.lsp.buf.formatting_seq_sync()
-			end,
-		})
-	end
+local format_augroup =  vim.api.nvim_create_augroup("FormatOnSave", { clear=true})
+local format_on_save = function(bufnr)
+	vim.api.nvim_create_autocmd("BufWritePre", {
+		group = format_augroup,
+		buffer = bufnr,
+		callback = function()
+			vim.lsp.buf.format({
+				bufnr=bufnr,
+				filter = function(client)
+					return client.name ~= "tsserver"
+				end
+			})
+		end,
+	})
 end
 
 local lsp = require("lspconfig")
