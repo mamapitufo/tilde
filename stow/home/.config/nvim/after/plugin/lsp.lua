@@ -38,49 +38,28 @@ vim.diagnostic.config({
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local on_attach = function(client, bufnr)
+local set_mappings = function(bufnr)
 	local map = function(mode, l, r, opts)
 		opts = opts or {}
 		opts.buffer = bufnr
 		vim.keymap.set(mode, l, r, opts)
 	end
 
-	map("n", "gd", function()
-		vim.lsp.buf.definition()
-	end, { desc = "Jump to symbol definition" })
-	map("n", "K", function()
-		vim.lsp.buf.hover()
-	end, { desc = "Show documentation" })
+	map("n", "gd", vim.lsp.buf.definition, { desc = "Jump to symbol definition" })
+	map("n", "K", vim.lsp.buf.hover, { desc = "Show documentation" })
 
-	map("n", "gD", function()
-		vim.lsp.buf.declaration()
-	end, { desc = "Jump to symbol declaration" })
-	map("n", "<leader>lt", function()
-		vim.lsp.buf.type_definition()
-	end, { desc = "Jump to type def" })
-	map("n", "<leader>lk", function()
-		vim.lsp.buf.signature_help()
-	end, { desc = "Show symbol signature" })
-	map("n", "<leader>ln", function()
-		vim.lsp.buf.rename()
-	end, { desc = "Rename symbol" })
-	map("n", "<leader>lf", function()
-		vim.lsp.buf.format()
-	end, { desc = "Format current buffer" })
+	map("n", "gD", vim.lsp.buf.declaration, { desc = "Jump to symbol declaration" })
+	map("n", "<leader>lt", vim.lsp.buf.type_definition, { desc = "Jump to type def" })
+	map("n", "<leader>lk", vim.lsp.buf.signature_help, { desc = "Show symbol signature" })
+	map("n", "<leader>ln", vim.lsp.buf.rename, { desc = "Rename symbol" })
+	map("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format current buffer" })
 
-	map("n", "<leader>la", function()
-		vim.lsp.buf.code_action()
-	end, { desc = "Show code actions" })
-	map("n", "<leader>lr", function()
-		vim.lsp.buf.references()
-	end, { desc = "Find references" })
-	map("n", "<leader>li", function()
-		vim.lsp.buf.implementation()
-	end, { desc = "Find implementation" })
+	map("n", "<leader>la", vim.lsp.buf.code_action, { desc = "Show code actions" })
+	map("n", "<leader>lr", vim.lsp.buf.references, { desc = "Find references" })
+	map("n", "<leader>li", vim.lsp.buf.implementation, { desc = "Find implementation" })
 
-	map("v", "<leader>la", function()
-		vim.lsp.buf.range_code_action()
-	end, { desc = "Show code actions" })
+	map("v", "<leader>la", vim.lsp.buf.range_code_action, { desc = "Show code actions" })
+end
 
 local format_augroup =  vim.api.nvim_create_augroup("FormatOnSave", { clear=true})
 local format_on_save = function(bufnr)
@@ -88,29 +67,33 @@ local format_on_save = function(bufnr)
 		group = format_augroup,
 		buffer = bufnr,
 		callback = function()
-			vim.lsp.buf.format({
-				bufnr=bufnr,
-				filter = function(client)
-					return client.name ~= "tsserver"
-				end
-			})
+			vim.lsp.buf.format({ bufnr=bufnr, })
 		end,
 	})
 end
 
 local lsp = require("lspconfig")
 lsp.clojure_lsp.setup({
-	on_attach = on_attach,
+	on_attach = function(_, bufnr)
+		set_mappings(bufnr)
+		format_on_save(bufnr)
+	end,
 	capabilities = capabilities,
 })
 
 lsp.tsserver.setup({
-	on_attach = on_attach,
+	on_attach = function(_, bufnr)
+		set_mappings(bufnr)
+		-- null-ls takes care of formatting
+	end,
 	capabilities = capabilities,
 })
 
 lsp.sumneko_lua.setup({
-	on_attach = on_attach,
+	on_attach = function(_,bufnr)
+		set_mappings(bufnr)
+		format_on_save(bufnr)
+	end,
 	capabilities = capabilities,
 	settings = {
 		Lua = {
@@ -127,9 +110,11 @@ lsp.sumneko_lua.setup({
 })
 
 lsp.tailwindcss.setup({
-	on_attach = on_attach,
+	on_attach = function(_, bufnr)
+		set_mappings(bufnr)
+		format_on_save(bufnr)
+	end,
 	capabilities = capabilities,
-	handlers = handlers,
 })
 
 vim.keymap.set("n", "<leader>ls", ":LspInfo<cr>", { desc = "LSP status" })
