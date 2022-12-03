@@ -1,6 +1,4 @@
-if not require("tilde.utils").assert_plug("nvim-tree.lua") then
-	return
-end
+if not require("tilde.utils").assert_plug("nvim-tree.lua") then return end
 
 require("nvim-tree").setup()
 
