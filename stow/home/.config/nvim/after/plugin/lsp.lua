@@ -61,38 +61,45 @@ local set_mappings = function(bufnr)
 	map("v", "<leader>la", vim.lsp.buf.range_code_action, { desc = "Show code actions" })
 end
 
-local format_augroup =  vim.api.nvim_create_augroup("FormatOnSave", { clear=true})
-local format_on_save = function(bufnr)
-	vim.api.nvim_create_autocmd("BufWritePre", {
-		group = format_augroup,
-		buffer = bufnr,
-		callback = function()
-			vim.lsp.buf.format({ bufnr=bufnr, })
-		end,
-	})
+local format_augroup = vim.api.nvim_create_augroup("FormatOnSave", { clear = true })
+local format_on_save = function(client, bufnr)
+	if client.supports_method("textDocument/formatting") then
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = format_augroup,
+			buffer = bufnr,
+			callback = function()
+				vim.lsp.buf.format({
+					bufnr = bufnr,
+					filter = function(client)
+						return client.name ~= "tsserver"
+					end,
+				})
+			end,
+		})
+	end
 end
 
 local lsp = require("lspconfig")
 lsp.clojure_lsp.setup({
-	on_attach = function(_, bufnr)
+	on_attach = function(client, bufnr)
 		set_mappings(bufnr)
-		format_on_save(bufnr)
+		format_on_save(client, bufnr)
 	end,
 	capabilities = capabilities,
 })
 
 lsp.tsserver.setup({
-	on_attach = function(_, bufnr)
+	on_attach = function(client, bufnr)
 		set_mappings(bufnr)
-		-- null-ls takes care of formatting
+		format_on_save(client, bufnr)
 	end,
 	capabilities = capabilities,
 })
 
 lsp.sumneko_lua.setup({
-	on_attach = function(_,bufnr)
+	on_attach = function(client, bufnr)
 		set_mappings(bufnr)
-		format_on_save(bufnr)
+		format_on_save(client, bufnr)
 	end,
 	capabilities = capabilities,
 	settings = {
@@ -110,9 +117,9 @@ lsp.sumneko_lua.setup({
 })
 
 lsp.tailwindcss.setup({
-	on_attach = function(_, bufnr)
+	on_attach = function(client, bufnr)
 		set_mappings(bufnr)
-		format_on_save(bufnr)
+		format_on_save(client, bufnr)
 	end,
 	capabilities = capabilities,
 })
