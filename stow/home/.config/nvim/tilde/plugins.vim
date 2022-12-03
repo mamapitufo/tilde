@@ -40,6 +40,7 @@ call plug#begin()
   " LSP
   Plug 'neovim/nvim-lspconfig'
   Plug 'jose-elias-alvarez/null-ls.nvim'
+  Plug 'jose-elias-alvarez/typescript.nvim'
 
   " Completion
   Plug 'hrsh7th/nvim-cmp'

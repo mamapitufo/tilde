@@ -94,13 +94,18 @@ lsp.clojure_lsp.setup({
 	capabilities = capabilities,
 })
 
-lsp.tsserver.setup({
-	on_attach = function(client, bufnr)
-		set_mappings(bufnr)
-		format_on_save(client, bufnr)
-	end,
-	capabilities = capabilities,
-})
+-- `typescript.nvim` plugin requires a weird setup...
+if require("tilde.utils").assert_plug("typescript.nvim") then
+	require("typescript").setup({
+		server = {
+			on_attach = function(client, bufnr)
+				set_mappings(bufnr)
+				format_on_save(client, bufnr)
+			end,
+			capabilities = capabilities,
+		}
+	})
+end
 
 lsp.sumneko_lua.setup({
 	on_attach = function(client, bufnr)
