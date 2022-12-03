@@ -11,7 +11,7 @@ require("prettier").setup({
 		use_tabs = false,
 		trailing_comma = "all",
 	},
-	fwletypes = {
+	filetypes = {
 		"css",
 		"graphql",
 		"html",
