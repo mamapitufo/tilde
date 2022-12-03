@@ -5,7 +5,7 @@ end
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
-	vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { border = "rounded" })
+vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { border = "rounded" })
 
 vim.diagnostic.config({
 	signs = true,
@@ -38,6 +38,27 @@ vim.diagnostic.config({
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+local format_augroup = vim.api.nvim_create_augroup("FormatOnSave", { clear = true })
+local format_buff = function(bufnr)
+	vim.lsp.buf.format({
+		bufnr = bufnr,
+		filter = function(client)
+			return client.name ~= "tsserver"
+		end,
+	})
+end
+local format_on_save = function(client, bufnr)
+	if client.supports_method("textDocument/formatting") then
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = format_augroup,
+			buffer = bufnr,
+			callback = function()
+				format_buff(bufnr)
+			end,
+		})
+	end
+end
+
 local set_mappings = function(bufnr)
 	local map = function(mode, l, r, opts)
 		opts = opts or {}
@@ -52,7 +73,9 @@ local set_mappings = function(bufnr)
 	map("n", "<leader>lt", vim.lsp.buf.type_definition, { desc = "Jump to type def" })
 	map("n", "<leader>lk", vim.lsp.buf.signature_help, { desc = "Show symbol signature" })
 	map("n", "<leader>ln", vim.lsp.buf.rename, { desc = "Rename symbol" })
-	map("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format current buffer" })
+	map("n", "<leader>lf", function()
+		format_buff(bufnr)
+	end, { desc = "Format current buffer" })
 
 	map("n", "<leader>la", vim.lsp.buf.code_action, { desc = "Show code actions" })
 	map("n", "<leader>lr", vim.lsp.buf.references, { desc = "Find references" })
@@ -61,25 +84,8 @@ local set_mappings = function(bufnr)
 	map("v", "<leader>la", vim.lsp.buf.range_code_action, { desc = "Show code actions" })
 end
 
-local format_augroup = vim.api.nvim_create_augroup("FormatOnSave", { clear = true })
-local format_on_save = function(client, bufnr)
-	if client.supports_method("textDocument/formatting") then
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			group = format_augroup,
-			buffer = bufnr,
-			callback = function()
-				vim.lsp.buf.format({
-					bufnr = bufnr,
-					filter = function(client)
-						return client.name ~= "tsserver"
-					end,
-				})
-			end,
-		})
-	end
-end
-
 local lsp = require("lspconfig")
+
 lsp.clojure_lsp.setup({
 	on_attach = function(client, bufnr)
 		set_mappings(bufnr)
@@ -109,7 +115,6 @@ lsp.sumneko_lua.setup({
 			},
 			workspace = {
 				library = vim.api.nvim_get_runtime_file("", true),
-				checkThirdParty = false,
 			},
 			telemetry = { enable = false },
 		},
