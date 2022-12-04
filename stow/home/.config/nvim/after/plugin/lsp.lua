@@ -3,7 +3,7 @@ if not require("tilde.utils").assert_plug("nvim-lspconfig") then return end
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
-  vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { border = "rounded" })
+vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { border = "rounded" })
 
 vim.diagnostic.config({
   signs = true,
@@ -81,6 +81,9 @@ local lsp = require("lspconfig")
 lsp.clojure_lsp.setup({
   on_attach = function(client, bufnr)
     set_mappings(bufnr)
+    if require("tilde.utils").assert_plug("conjure") then
+      vim.keymap.set("n", '<localleader>"', ":ConjureShadowSelect app<cr>", { desc = "CLJS REPL connect" })
+    end
     format_on_save(client, bufnr)
   end,
   capabilities = capabilities,
