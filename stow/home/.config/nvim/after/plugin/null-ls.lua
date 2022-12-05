@@ -26,8 +26,8 @@ null_ls.setup({
   end,
   sources = {
     -- formatters
-    null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.stylua,
     -- diagnostics/linters
     null_ls.builtins.diagnostics.eslint_d,
     null_ls.builtins.diagnostics.fish,
