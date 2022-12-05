@@ -31,6 +31,9 @@ null_ls.setup({
     -- diagnostics/linters
     null_ls.builtins.diagnostics.eslint_d,
     null_ls.builtins.diagnostics.fish,
+    -- null_ls.builtins.diagnostics.luacheck,
+    null_ls.builtins.diagnostics.stylelint,
+    null_ls.builtins.diagnostics.tidy,
     -- code actions
     null_ls.builtins.code_actions.eslint_d,
     typescript_code_actions,

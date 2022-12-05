@@ -101,6 +101,16 @@ if require("tilde.utils").assert_plug("typescript.nvim") then
     },
   })
 end
+-- WebDev servers, all have a similar setup
+for _, s in ipairs({ 'cssls', 'html', 'tailwindcss' }) do
+  lsp[s].setup({
+    on_attach = function(client, bufnr)
+      set_mappings(bufnr)
+      format_on_save(client, bufnr)
+    end,
+    capabilities = capabilities
+  })
+end
 
 lsp.sumneko_lua.setup({
   on_attach = function(client, bufnr)
@@ -123,12 +133,6 @@ lsp.sumneko_lua.setup({
   },
 })
 
-lsp.tailwindcss.setup({
-  on_attach = function(client, bufnr)
-    set_mappings(bufnr)
-    format_on_save(client, bufnr)
-  end,
-  capabilities = capabilities,
-})
-
 vim.keymap.set("n", "<leader>ls", ":LspInfo<cr>", { desc = "LSP status" })
+
+-- vim.lsp.set_log_level("debug")
