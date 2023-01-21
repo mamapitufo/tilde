@@ -82,7 +82,7 @@ lsp.clojure_lsp.setup({
   on_attach = function(client, bufnr)
     set_mappings(bufnr)
     if require("tilde.utils").assert_plug("conjure") then
-      vim.keymap.set("n", '<localleader>"', ":ConjureShadowSelect app<cr>", { desc = "CLJS REPL connect" })
+      vim.keymap.set("n", '<localleader>"', ":ConjureShadowSelect app<cr>", { desc = "CLJS REPL connect", buffer = bufnr })
     end
     format_on_save(client, bufnr)
   end,
