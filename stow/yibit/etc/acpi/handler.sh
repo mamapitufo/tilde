@@ -14,8 +14,8 @@ step_backlight() {
     done
 }
 
-minspeed=`cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq`
-maxspeed=`cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq`
+minspeed=$(cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq)
+maxspeed=$(cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq)
 setspeed="/sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed"
 
 set $*
@@ -41,7 +41,6 @@ CONNECTED_MONITORS=$(xrandr --query | grep -Ec '\<connected')
 
 case "$1" in
     button/power)
-        #echo "PowerButton pressed!">/dev/tty5
         case "$2" in
             PBTN|PWRF)
                 logger "PowerButton pressed: $2, suspending..."
