@@ -1,5 +1,6 @@
 " search
 set ignorecase smartcase        " Case insensitive search, but respect case if UC is used
+set incsearch
 
 " tabs & spaces
 set shiftwidth=4 tabstop=4 softtabstop=4 shiftround copyindent
