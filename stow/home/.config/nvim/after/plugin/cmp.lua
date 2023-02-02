@@ -3,19 +3,22 @@ if not require("tilde.utils").assert_plug("nvim-cmp") then return end
 local cmp = require("cmp")
 
 cmp.setup({
+  completion = {
+    autocomplete = false
+  },
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "conjure" },
-    { name = "luasnip" },
+    { name = "snippy" },
     { name = "path" },
-    { name = "buffer", keyword_length = 4 },
+    { name = "buffer" },
   }),
   formatting = {
     format = function(entry, vim_item)
       vim_item.menu = ({
         buffer = "[buff]",
         conjure = "[conj]",
-        luasnip = "[snip]",
+        snippy = "[snip]",
         nvim_lsp = "[lsp]",
         path = "[path]",
       })[entry.source.name]
@@ -36,9 +39,10 @@ cmp.setup({
   }),
   snippet = {
     expand = function(args)
-      local status_ok, luasnip = pcall(require, "luasnip")
+      local status_ok, snippy = pcall(require, "snippy")
       if not status_ok then return end
-      luasnip.lsp_expand(args.body)
+
+      snippy.expand_snippet(args.body)
     end,
   },
 })

@@ -24,7 +24,7 @@ set scrolloff=3 scrolljump=5    " Space near the edge of the screen when scrolli
 set nowrap linebreak            " Don't wrap, but break on word boundaries when doing so
 set formatoptions=tcrqj         " Auto-wrap text and comments, continue and format comments, smart comment join
 set timeoutlen=700 ttimeoutlen=500 updatetime=500
-set completeopt=menuone,preview,noinsert,noselect " always show the menu and force a selection
+set completeopt=menuone,preview " always show the menu and force a selection
 set confirm                     " ask to save when quiting and there are unsaved changes
 set textwidth=100
 

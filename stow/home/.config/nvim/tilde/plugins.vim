@@ -48,8 +48,8 @@ call plug#begin()
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'PaterJason/cmp-conjure'
-  Plug 'L3MON4D3/LuaSnip'
-  Plug 'saadparwaiz1/cmp_luasnip'
+  Plug 'dcampos/nvim-snippy'
+  Plug 'dcampos/cmp-snippy'
 
   Plug 'tpope/vim-unimpaired'             " Complimentary mappings
   Plug 'tpope/vim-sleuth'                 " Automatically adjusts tab/spaces from surrounding files
