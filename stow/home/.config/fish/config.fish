@@ -1,6 +1,6 @@
 set fish_greeting ""
 
-set --universal fish_user_paths ~/.local/bin ~/bin ~/bin/gem ~/.npm-packages/bin ~/.cargo/bin ~/Library/charles/bin
+set --universal fish_user_paths ~/.local/bin ~/bin ~/bin/gem ~/.npm-packages/bin ~/.cargo/bin ~/Library/charles/bin ~/Library/anaconda3/bin
 
 #-- tide prompt config
 set --global tide_left_prompt_frame_enabled true
@@ -63,3 +63,9 @@ end
 if test -d ~/.linuxbrew
   eval (~/.linuxbrew/bin/brew shellenv)
 end
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /home/mamapitufo/Library/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+
