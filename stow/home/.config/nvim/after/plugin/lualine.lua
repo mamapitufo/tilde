@@ -24,7 +24,7 @@ require("lualine").setup({
   },
   sections = {
     lualine_b = {
-      { "branch", icon = "" },
+      "branch",
       "diff",
     },
     lualine_c = {
