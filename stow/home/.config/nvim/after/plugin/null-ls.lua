@@ -26,7 +26,18 @@ null_ls.setup({
   end,
   sources = {
     -- formatters
-    null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.prettierd.with({
+      condition = function(utils)
+        -- FIXME: check if there is a `prettier` key in package.json?
+        return utils.root_has_file_matches(".prettierrc.*")
+      end,
+    }),
+    null_ls.builtins.formatting.eslint_d.with({
+      condition = function(utils)
+        -- FIXME: check if there is a `eslintConfig` key in package.json?
+        return utils.root_has_file_matches(".eslintrc.*")
+      end,
+    }),
     null_ls.builtins.formatting.stylua,
     -- diagnostics/linters
     null_ls.builtins.diagnostics.eslint_d,
