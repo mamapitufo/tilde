@@ -112,26 +112,26 @@ for _, s in ipairs({ 'cssls', 'html', 'tailwindcss' }) do
   })
 end
 
-lsp.sumneko_lua.setup({
-  on_attach = function(client, bufnr)
-    set_mappings(bufnr)
-    format_on_save(client, bufnr)
-  end,
-  capabilities = capabilities,
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" },
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      -- this is handled by null-ls
-      format = { enable = false },
-      telemetry = { enable = false },
-    },
-  },
-})
+-- lsp.sumneko_lua.setup({
+--   on_attach = function(client, bufnr)
+--     set_mappings(bufnr)
+--     format_on_save(client, bufnr)
+--   end,
+--   capabilities = capabilities,
+--   settings = {
+--     Lua = {
+--       diagnostics = {
+--         globals = { "vim" },
+--       },
+--       workspace = {
+--         library = vim.api.nvim_get_runtime_file("", true),
+--       },
+--       -- this is handled by null-ls
+--       format = { enable = false },
+--       telemetry = { enable = false },
+--     },
+--   },
+-- })
 
 vim.keymap.set("n", "<leader>ls", ":LspInfo<cr>", { desc = "LSP status" })
 
