@@ -62,26 +62,59 @@
     {
       "before": ["<leader>", "q", "q"],
       "commands": ["workbench.action.closeWindow"]
+    },
+    {
+      "before": ["<leader>", "t", "t"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "t", "p"],
+      "commands": ["workbench.action.closePanel"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
     }
   ],
 
   /**
    * UI
    */
+  "breadcrumbs.enabled": false,
+  "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.enabled": false,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorStyle": "underline-thin",
+  "editor.fontFamily": "'Fira Code','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontLigatures": true,
+  "editor.guides.bracketPairsHorizontal": false,
+  "editor.guides.indentation": false,
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "all",
+  "editor.showFoldingControls": "never",
+  "editor.tabSize": 2,
+  "explorer.decorations.colors": false,
+  "explorer.openEditors.visible": 0,
   "window.menuBarVisibility": "toggle",
-  "workbench.sideBar.location": "right",
   "workbench.colorTheme": "Verdandi",
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "editor.minimap.enabled": false,
-  "editor.tabSize": 2,
-  "editor.fontLigatures": true,
-  "editor.fontFamily": "'Fira Code','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-  "editor.cursorStyle": "underline",
-  "editor.accessibilitySupport": "off",
+  "workbench.sideBar.location": "right",
+  "workbench.tree.renderIndentGuides": "none",
 
   /**
    * Telemetry nonsense
    */
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false
+  "telemetry.telemetryLevel": "off",
+  "editor.guides.highlightActiveBracketPair": false,
+  "workbench.startupEditor": "none",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
