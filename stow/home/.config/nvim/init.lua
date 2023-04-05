@@ -75,6 +75,8 @@ require('lazy').setup({
     },
   },
 
+  { 'folke/which-key.nvim', opts = {} },    -- Pending keymap hints
+
   -- -- Git related plugins
   -- 'tpope/vim-fugitive',
   -- 'tpope/vim-rhubarb',
@@ -102,8 +104,6 @@ require('lazy').setup({
   --   dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
   -- },
   --
-  -- -- Useful plugin to show you pending keybinds.
-  -- { 'folke/which-key.nvim', opts = {} },
   -- { -- Adds git releated signs to the gutter, as well as utilities for managing changes
   --   'lewis6991/gitsigns.nvim',
   --   opts = {
@@ -188,7 +188,6 @@ require('lazy').setup({
 }, {})
 
 -- [[ Setting options ]]
-
 -- search
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -251,21 +250,70 @@ vim.o.undofile = true
 vim.o.undodir = vim.fn.stdpath('data') .. '/undo//'
 
 -- [[ Basic Keymaps ]]
+-- easier <esc>
+local kmap = vim.keymap.set
 
--- Easier <esc>
-vim.keymap.set({ 'i', 'v' }, 'jk', '<esc>')
-vim.keymap.set('c', 'jk', '<C-c>')
+kmap({ 'i', 'v' }, 'jk', '<esc>')
+kmap('c', 'jk', '<C-c>')
+-- ignore space bar on normal and visual modes
+kmap({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+-- move over wrapped lines by default
+kmap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+kmap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+kmap('n', 'gp', '`[v`]', { desc = 'Select pasted text' })
 
--- Move over wrapped lines by default
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- buffer navigation
+kmap('n', '<leader>bN', '<cmd>blast<cr>', { desc = 'Last buffer' })
+kmap('n', '<leader>bP', '<cmd>bfirst<cr>', { desc = 'First buffer' })
+kmap('n', '<leader>bn', '<cmd>bnext<cr>', { desc = 'Next buffer' })
+kmap('n', '<leader>bp', '<cmd>bprev<cr>', { desc = 'Previous buffer' })
+
+-- diagnostics
+kmap('n', '[d', vim.diagnostic.goto_prev, { desc = 'Prev diagnostic' })
+kmap('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
+-- XXX this can also use `vim.diagnostic.setloclist`:
+kmap('n', '<leader>dq', vim.diagnostic.setqflist, { desc = 'Send diagnostics to Quickfix' })
+kmap('n', '<leader>ds', vim.diagnostic.open_float, { desc = 'Diagnostics for current line' })
+
+-- files
+kmap('n', '<leader>fs', '<cmd>update<cr>', { desc = 'Save file' })
+
+-- search
+kmap('n', '<leader>sc', '<cmd>nohlsearch<cr>', { desc = 'Clear search highlight' })
+
+-- toggle
+-- kmap('n', '<leader>tb', '<cmd>call ToggleBackground()<cr>', { desc = 'Light/Dark background' })
+kmap('n', '<leader>th', '<cmd>set cursorline!<cr>', { desc = 'Current line highlight' })
+kmap('n', '<leader>tn', '<cmd>setlocal number!<cr>', { desc = 'Line numbers' })
+kmap('n', '<leader>tp', '<cmd>setlocal paste!<cr>', { desc = 'Paste mode' })
+kmap('n', '<leader>tq', function() require('tilde.utils').toggle_qf() end, { desc = 'Quickfix window' })
+kmap('n', '<leader>tr', '<cmd>setlocal relativenumber!<cr>', { desc = 'Relative line numbers' })
+kmap('n', '<leader>ts', '<cmd>set spell!<cr>', { desc = 'Spell check' })
+kmap('n', '<leader>tw', '<cmd>setlocal wrap!<cr>', { desc = 'Line wrap' })
+
+-- quit
+kmap('n', '<leader>qQ', '<cmd>qa!<cr>', { desc = 'Force quit' })
+kmap('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Close all windows and quit' })
+
+-- window
+kmap('n', '<leader>wk', '<c-w>k', { desc = 'Focus above' })
+kmap('n', '<leader>wj', '<c-w>j', { desc = 'Focus below' })
+kmap('n', '<leader>wh', '<c-w>h', { desc = 'Focus left' })
+kmap('n', '<leader>wl', '<c-w>l', { desc = 'Focus right' })
+kmap('n', '<leader>wq', '<c-w>q', { desc = 'Close' })
+kmap('n', '<leader>ws', '<c-w>s', { desc = 'Split horizontally' })
+kmap('n', '<leader>wv', '<c-w>v', { desc = 'Split vertically' })
+kmap('n', '<leader>ww', '<c-w>w', { desc = 'Switch windows' })
+kmap('n', '<leader>wx', '<c-w>x', { desc = 'Swap with next window' })
+kmap('n', '<leader>w=', '<c-w>=', { desc = 'Make all windows the same size' })
+kmap('n', '<leader>wK', ':resize -5<cr>', { desc = 'Decrease height' })
+kmap('n', '<leader>wJ', ':resize +5<cr>', { desc = 'Increase height' })
+kmap('n', '<leader>wH', '<c-w>5<', { desc = 'Decrease width' })
+kmap('n', '<leader>wL', '<c-w>5>', { desc = 'Increase width' })
+kmap('n', '<leader>w<bar>', '<c-w><bar>', { desc = 'Maximize width' })
 
 -- [[ Highlight on yank ]]
--- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
@@ -275,6 +323,25 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+-- [[ `folke/which-key.nvim` setup ]]
+require 'which-key'.register {
+  ['<leader>'] = {
+    b = { name = '+buffer' },
+    d = { name = '+diagnostics' },
+    f = { name = '+file' },
+    g = { name = '+git' },
+    gb = { name = '+blame' },
+    gh = { name = '+hunks' },
+    l = { name = '+LSP' },
+    q = { name = '+quit' },
+    s = { name = '+search' },
+    t = { name = '+toggle' },
+    tg = { name = '+git' },
+    w = { name = '+window' },
+  },
+}
+
+-- 
 -- -- [[ Configure Telescope ]]
 -- -- See `:help telescope` and `:help telescope.setup()`
 -- require('telescope').setup {
@@ -373,12 +440,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 --     },
 --   },
 -- }
---
--- -- Diagnostic keymaps
--- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
--- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
--- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
--- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 --
 -- -- LSP settings.
 -- --  This function gets run when an LSP connects to a particular buffer.
