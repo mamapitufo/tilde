@@ -3,9 +3,6 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 vim.o.termguicolors = true
 
--- temporary, just to sort out a readable colour scheme
-vim.cmd.syntax 'off'
-
 -- Install package manager (https://github.com/folke/lazy.nvim)
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -21,6 +18,20 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  { -- Minimal themes
+    'mcchrish/zenbones.nvim',
+    dependencies = { 'rktjmp/lush.nvim' },
+    priority = 1000,
+    config = function()
+      vim.g.zenbones_lightness = 'bright'
+      vim.g.zenbones_solid_vert_split = true
+      vim.g.zenbones_solid_float_border = true
+
+      vim.o.background = 'light'
+      vim.cmd.colorscheme 'zenbones'
+    end,
+  },
+
   -- -- Git related plugins
   -- 'tpope/vim-fugitive',
   -- 'tpope/vim-rhubarb',
@@ -65,14 +76,6 @@ require('lazy').setup({
   --       changedelete = { text = '~' },
   --     },
   --   },
-  -- },
-  --
-  -- { -- Theme inspired by Atom
-  --   'navarasu/onedark.nvim',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'onedark'
-  --   end,
   -- },
   --
   -- { -- Set lualine as statusline
