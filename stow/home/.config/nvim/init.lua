@@ -1,7 +1,9 @@
 -- NOTE: these must happen before any plugins load
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
+
 vim.o.termguicolors = true
+vim.o.background = 'light'
 
 -- Install package manager (https://github.com/folke/lazy.nvim)
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -18,8 +20,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  { -- Minimal themes
-    'mcchrish/zenbones.nvim',
+  { 
+    'mcchrish/zenbones.nvim',               -- Minimal themes
     dependencies = { 'rktjmp/lush.nvim' },
     priority = 1000,
     config = function()
@@ -27,17 +29,55 @@ require('lazy').setup({
       vim.g.zenbones_solid_vert_split = true
       vim.g.zenbones_solid_float_border = true
 
-      vim.o.background = 'light'
       vim.cmd.colorscheme 'zenbones'
     end,
+  },
+
+  -- Additional syntax files
+  'blankname/vim-fish',
+  'kmonad/kmonad-vim',
+  {
+    'habamax/vim-asciidoctor',
+    config = function()
+      vim.g.asciidoctor_fenced_languages = {
+        'clojure',
+        'javascript',
+        'json',
+        'html',
+        'css',
+        'bash',
+        'sh',
+        'rust',
+      }
+    end,
+  },
+
+  -- Run processes
+  'tpope/vim-dispatch',
+  'radenling/vim-dispatch-neovim',
+
+  'tpope/vim-sleuth',                       -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-eunuch',                       -- Vim sugar for shell commands
+  'tpope/vim-repeat',                       -- Enable dot-repeat with plugin mappings
+
+  {
+    'norcalli/nvim-colorizer.lua',          -- Preview hex colours in background
+    opts = {
+      'cljs',
+      'javascript',
+      'javascriptreact',
+      'typescript',
+      'typescriptreact',
+      'html',
+      'css',
+      'scss',
+      'json',
+    },
   },
 
   -- -- Git related plugins
   -- 'tpope/vim-fugitive',
   -- 'tpope/vim-rhubarb',
-  --
-  -- -- Detect tabstop and shiftwidth automatically
-  -- 'tpope/vim-sleuth',
   --
   -- -- NOTE: This is where your plugins related to LSP can be installed.
   -- --  The configuration is done below. Search for lspconfig to find it below.
