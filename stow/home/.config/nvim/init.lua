@@ -189,11 +189,15 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- [[ Basic Keymaps ]]
 
+-- Easier <esc>
+vim.keymap.set({ 'i', 'v' }, 'jk', '<esc>')
+vim.keymap.set('c', 'jk', '<C-c>')
+
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
--- Remap for dealing with word wrap
+-- Move over wrapped lines by default
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
