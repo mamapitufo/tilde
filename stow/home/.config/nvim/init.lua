@@ -101,6 +101,15 @@ require('lazy').setup({
     },
   },
 
+  {
+    'stevearc/dressing.nvim',             -- `vim.ui.*` enhancements
+    opts = {
+      select = {
+        backend = { 'builtin', 'telescope' }
+      }
+    }
+  },
+
   -- -- Git related plugins
   -- 'tpope/vim-fugitive',
   -- 'tpope/vim-rhubarb',
@@ -188,7 +197,6 @@ require('lazy').setup({
   -- --    An additional note is that if you only copied in the `init.lua`, you can just comment this line
   -- --    to get rid of the warning telling you that there are not plugins in `lua/custom/plugins/`.
   -- { import = 'custom.plugins' },
-}, {})
 }, {
   install = {
     colorscheme = { 'zenbones', 'habamax' },
