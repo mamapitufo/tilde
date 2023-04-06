@@ -77,6 +77,19 @@ require('lazy').setup({
 
   { 'folke/which-key.nvim', opts = {} },    -- Pending keymap hints
 
+  {
+    'nvim-telescope/telescope.nvim',        -- fuzzy finder (files, lsp, etc)
+    version = '*',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',   -- fuzzy finder algorithm
+    build = 'make',
+    cond = function()
+      return vim.fn.executable 'make' == 1
+    end,
+  },
+
   -- -- Git related plugins
   -- 'tpope/vim-fugitive',
   -- 'tpope/vim-rhubarb',
@@ -143,22 +156,6 @@ require('lazy').setup({
   --
   -- -- "gc" to comment visual regions/lines
   -- { 'numToStr/Comment.nvim', opts = {} },
-  --
-  -- -- Fuzzy Finder (files, lsp, etc)
-  -- { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
-  --
-  -- -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-  -- -- Only load if `make` is available. Make sure you have the system
-  -- -- requirements installed.
-  -- {
-  --   'nvim-telescope/telescope-fzf-native.nvim',
-  --   -- NOTE: If you are having trouble with this installation,
-  --   --       refer to the README for telescope-fzf-native for more instructions.
-  --   build = 'make',
-  --   cond = function()
-  --     return vim.fn.executable 'make' == 1
-  --   end,
-  -- },
   --
   -- { -- Highlight, edit, and navigate code
   --   'nvim-treesitter/nvim-treesitter',
@@ -324,7 +321,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- [[ `folke/which-key.nvim` setup ]]
-require 'which-key'.register {
+require('which-key').register {
   ['<leader>'] = {
     b = { name = '+buffer' },
     d = { name = '+diagnostics' },
@@ -341,40 +338,87 @@ require 'which-key'.register {
   },
 }
 
--- 
--- -- [[ Configure Telescope ]]
--- -- See `:help telescope` and `:help telescope.setup()`
--- require('telescope').setup {
---   defaults = {
---     mappings = {
---       i = {
---         ['<C-u>'] = false,
---         ['<C-d>'] = false,
---       },
---     },
---   },
--- }
---
--- -- Enable telescope fzf native, if installed
--- pcall(require('telescope').load_extension, 'fzf')
---
--- -- See `:help telescope.builtin`
--- vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
--- vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
--- vim.keymap.set('n', '<leader>/', function()
---   -- You can pass additional configuration to telescope to change theme, layout, etc.
---   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
---     winblend = 10,
---     previewer = false,
---   })
--- end, { desc = '[/] Fuzzily search in current buffer' })
---
--- vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
--- vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
--- vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
--- vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
--- vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
---
+-- [[ 'nvim-telescope/telescope.nvim' setup ]]
+require('telescope').setup {
+  defaults = {
+    file_ignore_patterns = { "node_modules" },
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--hidden",
+    },
+  },
+  pickers = {
+    buffers = {
+      sort_lastused = true,
+      theme = "dropdown",
+      previewer = false,
+    },
+    find_files = {
+      find_command = {
+        "rg",
+        "--files",
+        "--hidden",
+        "--smart-case",
+        "--glob",
+        "!**/.git/*",
+      },
+    },
+  },
+}
+
+-- Enable telescope fzf native, if installed
+pcall(require('telescope').load_extension, 'fzf')
+
+local tbuiltin = require 'telescope.builtin'
+vim.keymap.set('n', '<leader>/', function()
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = 'Fuzzily search in current buffer' })
+kmap('n', '<leader>bb', tbuiltin.buffers, { desc = 'Find buffer' })
+kmap(
+  'n',
+  '<leader>fc',
+  function()
+    tbuiltin.find_files {
+      cwd = '~/Sandbox/tilde',
+      prompt_prefix = ' ~ ',
+      prompt_title = 'Sandbox/tilde',
+    }
+  end,
+  { desc = 'Find config file' }
+)
+kmap('n', '<leader>ff', tbuiltin.find_files, { desc = 'Find file' })
+kmap(
+  'n',
+  '<leader>fg',
+  function()
+    vim.fn.system('git rev-parse --is-inside-working-tree')
+    if vim.v.shell_error == 0 then
+      tbuiltin.git_files()
+    else
+      tbuiltin.find_files()
+    end
+  end,
+  { desc = 'Find git-controlled file' }
+)
+kmap('n', '<leader>fr', tbuiltin.oldfiles, { desc = 'Find recently opened file' })
+kmap('n', '<leader>*', function() tbuiltin.grep_string { word_match = '-w' } end, { desc = 'Find string under cursor' })
+kmap('n', '<leader>s/', tbuiltin.search_history, { desc = 'Find in search history' })
+kmap('n', '<leader>s:', tbuiltin.command_history, { desc = 'Find in command history' })
+kmap('n', '<leader>sd', tbuiltin.diagnostics, { desc = 'Find in diagnostics' })
+kmap('n', '<leader>sf', tbuiltin.live_grep, { desc = 'Grep in project' })
+kmap('n', '<leader>sh', tbuiltin.help_tags, { desc = 'Find help' })
+kmap('n', '<leader>gl', tbuiltin.git_commits, { desc = 'Git log' })
+kmap('n', '<leader>glb', tbuiltin.git_bcommits, { desc = 'Git log for buffer' })
+
 -- -- [[ Configure Treesitter ]]
 -- -- See `:help nvim-treesitter`
 -- require('nvim-treesitter.configs').setup {
