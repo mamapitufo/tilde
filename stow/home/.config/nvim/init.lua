@@ -209,8 +209,8 @@ vim.o.copyindent = true
 
 -- ui settings
 vim.o.cursorline = true
-vim.wo.number = true
-vim.wo.relativenumber = true
+vim.o.number = true
+vim.o.relativenumber = true
 vim.o.mouse = 'a'
 vim.wo.signcolumn = 'yes'                   -- always show the gutter
 vim.o.title = true
