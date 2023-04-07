@@ -163,6 +163,8 @@ require('lazy').setup({
     },
   },
 
+  require 'tilde.plugins.gitsigns'          -- git change markers and various utils to manage changes
+
   -- -- Git related plugins
   -- 'tpope/vim-fugitive',
   -- 'tpope/vim-rhubarb',
@@ -182,30 +184,6 @@ require('lazy').setup({
   --
   --     -- Additional lua configuration, makes nvim stuff amazing!
   --     'folke/neodev.nvim',
-  --   },
-  -- },
-  --
-  -- { -- Adds git releated signs to the gutter, as well as utilities for managing changes
-  --   'lewis6991/gitsigns.nvim',
-  --   opts = {
-  --     -- See `:help gitsigns.txt`
-  --     signs = {
-  --       add = { text = '+' },
-  --       change = { text = '~' },
-  --       delete = { text = '_' },
-  --       topdelete = { text = '‾' },
-  --       changedelete = { text = '~' },
-  --     },
-  --   },
-  -- },
-  --
-  -- { -- Add indentation guides even on blank lines
-  --   'lukas-reineke/indent-blankline.nvim',
-  --   -- Enable `lukas-reineke/indent-blankline.nvim`
-  --   -- See `:help indent_blankline.txt`
-  --   opts = {
-  --     char = '┊',
-  --     show_trailing_blankline_indent = false,
   --   },
   -- },
   --
