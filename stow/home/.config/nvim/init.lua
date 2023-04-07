@@ -110,6 +110,49 @@ require('lazy').setup({
     }
   },
 
+  {
+    'nvim-lualine/lualine.nvim',
+    opts = {
+      options = {
+        section_separators = '',
+        component_separators = '',
+        theme = 'zenbones',
+        disabled_filetypes = { 'NvimTree' },
+      },
+      sections = {
+        lualine_b = {
+          'branch',
+          'diff',
+        },
+        lualine_c = {
+          { 'filename', path = 1 },
+        },
+        lualine_x = {
+          {
+            'diagnostics',
+            sources = { 'nvim_diagnostic', 'nvim_lsp' },
+            diagnostics_color = {
+              error = { fg = '#a8334c' },
+              warn = { fg = '#803d1c' },
+              info = { fg = '#286486' },
+              hint = { fg = '#4f5e68' },
+            },
+            symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' },
+          },
+        },
+        lualine_y = { require('tilde.utils').fileinfo },
+        lualine_z = {
+          {
+            'location',
+            padding = { left = 1, right = 0 },
+          },
+          'progress',
+        },
+      },
+      extensions = { 'quickfix', 'fugitive' },
+    },
+  },
+
   -- -- Git related plugins
   -- 'tpope/vim-fugitive',
   -- 'tpope/vim-rhubarb',
@@ -142,19 +185,6 @@ require('lazy').setup({
   --       delete = { text = '_' },
   --       topdelete = { text = '‾' },
   --       changedelete = { text = '~' },
-  --     },
-  --   },
-  -- },
-  --
-  -- { -- Set lualine as statusline
-  --   'nvim-lualine/lualine.nvim',
-  --   -- See `:help lualine.txt`
-  --   opts = {
-  --     options = {
-  --       icons_enabled = false,
-  --       theme = 'onedark',
-  --       component_separators = '|',
-  --       section_separators = '',
   --     },
   --   },
   -- },
@@ -299,7 +329,6 @@ kmap('n', '<leader>fs', '<cmd>update<cr>', { desc = 'Save file' })
 kmap('n', '<leader>sc', '<cmd>nohlsearch<cr>', { desc = 'Clear search highlight' })
 
 -- toggle
--- kmap('n', '<leader>tb', '<cmd>call ToggleBackground()<cr>', { desc = 'Light/Dark background' })
 kmap('n', '<leader>th', '<cmd>set cursorline!<cr>', { desc = 'Current line highlight' })
 kmap('n', '<leader>tn', '<cmd>setlocal number!<cr>', { desc = 'Line numbers' })
 kmap('n', '<leader>tp', '<cmd>setlocal paste!<cr>', { desc = 'Paste mode' })
