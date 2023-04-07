@@ -3,7 +3,6 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
 vim.o.termguicolors = true
-vim.o.background = 'light'
 
 -- Install package manager (https://github.com/folke/lazy.nvim)
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -29,6 +28,7 @@ require('lazy').setup({
       vim.g.zenbones_solid_vert_split = true
       vim.g.zenbones_solid_float_border = true
 
+      vim.o.background = 'light'
       vim.cmd.colorscheme 'zenbones'
     end,
   },
@@ -233,7 +233,7 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.scrolloff = 3
 vim.o.scrolljump = 5                        -- Show a few lines at the edges when scrolling
-vim.o.nowrap = true
+vim.o.wrap = false
 vim.o.linebreak = true                      -- Don't wrap, but break on word boundaries when wrapping
 vim.o.breakindent = true                    -- keep visual indent when wrapping
 vim.o.formatoptions = 'tcrqj'               -- Auto-wrap text and comments, continue and format comments, smart comment join
