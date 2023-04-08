@@ -19,6 +19,7 @@ return {
   },
   {
     'norcalli/nvim-colorizer.lua',          -- Preview hex colours in background
+    event = 'VeryLazy',
     opts = {
       'cljs',
       'css',
@@ -30,5 +31,10 @@ return {
       'typescript',
       'typescriptreact',
     },
+    config = function(_, opts)
+      require('colorizer').setup(opts)
+
+      vim.keymap.set('n', '<leader>tc', '<cmd>ColorizerToggle<cr>', { desc = 'Colourizer' })
+    end,
   },
 }
