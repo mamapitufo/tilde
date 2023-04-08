@@ -72,130 +72,8 @@ require('lazy').setup({
   },
 })
 
--- [[ Setting options ]]
--- search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
--- tabs & spaces
-vim.o.shiftwidth = 4
-vim.o.tabstop = 4
-vim.o.softtabstop = 4
-vim.o.shiftround = true
-vim.o.copyindent = true
-
--- ui settings
-vim.o.cursorline = true
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.mouse = 'a'
-vim.wo.signcolumn = 'yes'                   -- always show the gutter
-vim.o.title = true
-vim.o.shortmess = 'atOI'                    -- Abbrev, overwrite read msgs, no intro msg
-vim.o.showmode = false                      -- Do not show mode message on last line
-vim.opt.listchars = { tab = '→ ', trail = '·', extends = '↷', precedes = '↶' }
-vim.o.pumheight = 7                         -- Max lines in auto-completion menu
-vim.o.lazyredraw = true                     -- Delay redrawing the screen while executing macros
-
--- behavior
-vim.o.splitbelow = true
-vim.o.splitright = true
-vim.o.scrolloff = 3
-vim.o.scrolljump = 5                        -- Show a few lines at the edges when scrolling
-vim.o.wrap = false
-vim.o.linebreak = true                      -- Don't wrap, but break on word boundaries when wrapping
-vim.o.breakindent = true                    -- keep visual indent when wrapping
-vim.o.formatoptions = 'tcrqj'               -- Auto-wrap text and comments, continue and format comments, smart comment join
-vim.o.updatetime = 250                      -- Decrease update time
-vim.o.timeout = true
-vim.o.timeoutlen = 300
-vim.o.completeopt = 'menuone,preview'       -- Always show complete, force a selection
-vim.o.confirm = true                        -- Ask to save when quitting unsaved buffers
-
--- file & buffer navigation
-vim.o.autowrite = true                      -- Write file when leaving a modified buffer
-vim.o.hidden = true                         -- Allow buffer switching without explicit save
-vim.o.report = 0                            -- Always report num lines changed by command
-vim.o.whichwrap = 'b,<,>,h,l'               -- Allow BS, arrows and h/l to cross line boundaries
-vim.o.wildignore = '*swp,*.class,*.pyc,*.png,*.jpg,*.gif,*.zip,tmp/*,*.o,*.obj,*.so'
-vim.o.wildmenu = true
-vim.o.wildmode = 'longest:full,full'
-
--- system
-vim.o.clipboard = 'unnamedplus'             -- Sync clipboard between OS and Neovim.
-vim.o.grepprg = 'rg --vimgrep'
-vim.o.spelllang = en_gb,en,es,fr
--- vim.o.isfname:remove '='                    -- `=` is not part of a filename in `gf`, for example
-
--- persistence
-vim.o.backup = false
-vim.o.writebackup = true
-vim.o.backupdir = vim.fn.stdpath('data') .. '/backup//'
-vim.o.undofile = true
-vim.o.undodir = vim.fn.stdpath('data') .. '/undo//'
-
--- [[ Basic Keymaps ]]
--- easier <esc>
-local kmap = vim.keymap.set
-
-kmap({ 'i', 'v' }, 'jk', '<esc>')
-kmap('c', 'jk', '<C-c>')
--- ignore space bar on normal and visual modes
-kmap({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
--- move over wrapped lines by default
-kmap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-kmap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
-kmap('n', 'gp', '`[v`]', { desc = 'Select pasted text' })
-
--- buffer navigation
-kmap('n', '<leader>bN', '<cmd>blast<cr>', { desc = 'Last buffer' })
-kmap('n', '<leader>bP', '<cmd>bfirst<cr>', { desc = 'First buffer' })
-kmap('n', '<leader>bn', '<cmd>bnext<cr>', { desc = 'Next buffer' })
-kmap('n', '<leader>bp', '<cmd>bprev<cr>', { desc = 'Previous buffer' })
-
--- diagnostics
-kmap('n', '[d', vim.diagnostic.goto_prev, { desc = 'Prev diagnostic' })
-kmap('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
--- XXX this can also use `vim.diagnostic.setloclist`:
-kmap('n', '<leader>dq', vim.diagnostic.setqflist, { desc = 'Send diagnostics to Quickfix' })
-kmap('n', '<leader>ds', vim.diagnostic.open_float, { desc = 'Diagnostics for current line' })
-
--- files
-kmap('n', '<leader>fs', '<cmd>update<cr>', { desc = 'Save file' })
-
--- search
-kmap('n', '<leader>sc', '<cmd>nohlsearch<cr>', { desc = 'Clear search highlight' })
-
--- toggle
-kmap('n', '<leader>th', '<cmd>set cursorline!<cr>', { desc = 'Current line highlight' })
-kmap('n', '<leader>tn', '<cmd>setlocal number!<cr>', { desc = 'Line numbers' })
-kmap('n', '<leader>tp', '<cmd>setlocal paste!<cr>', { desc = 'Paste mode' })
-kmap('n', '<leader>tq', function() require('tilde.utils').toggle_qf() end, { desc = 'Quickfix window' })
-kmap('n', '<leader>tr', '<cmd>setlocal relativenumber!<cr>', { desc = 'Relative line numbers' })
-kmap('n', '<leader>ts', '<cmd>set spell!<cr>', { desc = 'Spell check' })
-kmap('n', '<leader>tw', '<cmd>setlocal wrap!<cr>', { desc = 'Line wrap' })
-
--- quit
-kmap('n', '<leader>qQ', '<cmd>qa!<cr>', { desc = 'Force quit' })
-kmap('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Close all windows and quit' })
-
--- window
-kmap('n', '<leader>wk', '<c-w>k', { desc = 'Focus above' })
-kmap('n', '<leader>wj', '<c-w>j', { desc = 'Focus below' })
-kmap('n', '<leader>wh', '<c-w>h', { desc = 'Focus left' })
-kmap('n', '<leader>wl', '<c-w>l', { desc = 'Focus right' })
-kmap('n', '<leader>wq', '<c-w>q', { desc = 'Close' })
-kmap('n', '<leader>ws', '<c-w>s', { desc = 'Split horizontally' })
-kmap('n', '<leader>wv', '<c-w>v', { desc = 'Split vertically' })
-kmap('n', '<leader>ww', '<c-w>w', { desc = 'Switch windows' })
-kmap('n', '<leader>wx', '<c-w>x', { desc = 'Swap with next window' })
-kmap('n', '<leader>w=', '<c-w>=', { desc = 'Make all windows the same size' })
-kmap('n', '<leader>wK', ':resize -5<cr>', { desc = 'Decrease height' })
-kmap('n', '<leader>wJ', ':resize +5<cr>', { desc = 'Increase height' })
-kmap('n', '<leader>wH', '<c-w>5<', { desc = 'Decrease width' })
-kmap('n', '<leader>wL', '<c-w>5>', { desc = 'Increase width' })
-kmap('n', '<leader>w<bar>', '<c-w><bar>', { desc = 'Maximize width' })
+require 'tilde.options'
+require 'tilde.mappings'
 
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
@@ -251,8 +129,8 @@ vim.keymap.set('n', '<leader>/', function()
     previewer = false,
   })
 end, { desc = 'Fuzzily search in current buffer' })
-kmap('n', '<leader>bb', tbuiltin.buffers, { desc = 'Find buffer' })
-kmap(
+vim.keymap.set('n', '<leader>bb', tbuiltin.buffers, { desc = 'Find buffer' })
+vim.keymap.set(
   'n',
   '<leader>fc',
   function()
@@ -264,8 +142,8 @@ kmap(
   end,
   { desc = 'Find config file' }
 )
-kmap('n', '<leader>ff', tbuiltin.find_files, { desc = 'Find file' })
-kmap(
+vim.keymap.set('n', '<leader>ff', tbuiltin.find_files, { desc = 'Find file' })
+vim.keymap.set(
   'n',
   '<leader>fg',
   function()
@@ -278,15 +156,15 @@ kmap(
   end,
   { desc = 'Find git-controlled file' }
 )
-kmap('n', '<leader>fr', tbuiltin.oldfiles, { desc = 'Find recently opened file' })
-kmap('n', '<leader>*', function() tbuiltin.grep_string { word_match = '-w' } end, { desc = 'Find string under cursor' })
-kmap('n', '<leader>s/', tbuiltin.search_history, { desc = 'Find in search history' })
-kmap('n', '<leader>s:', tbuiltin.command_history, { desc = 'Find in command history' })
-kmap('n', '<leader>sd', tbuiltin.diagnostics, { desc = 'Find in diagnostics' })
-kmap('n', '<leader>sf', tbuiltin.live_grep, { desc = 'Grep in project' })
-kmap('n', '<leader>sh', tbuiltin.help_tags, { desc = 'Find help' })
-kmap('n', '<leader>gl', tbuiltin.git_commits, { desc = 'Git log' })
-kmap('n', '<leader>glb', tbuiltin.git_bcommits, { desc = 'Git log for buffer' })
+vim.keymap.set('n', '<leader>fr', tbuiltin.oldfiles, { desc = 'Find recently opened file' })
+vim.keymap.set('n', '<leader>*', function() tbuiltin.grep_string { word_match = '-w' } end, { desc = 'Find string under cursor' })
+vim.keymap.set('n', '<leader>s/', tbuiltin.search_history, { desc = 'Find in search history' })
+vim.keymap.set('n', '<leader>s:', tbuiltin.command_history, { desc = 'Find in command history' })
+vim.keymap.set('n', '<leader>sd', tbuiltin.diagnostics, { desc = 'Find in diagnostics' })
+vim.keymap.set('n', '<leader>sf', tbuiltin.live_grep, { desc = 'Grep in project' })
+vim.keymap.set('n', '<leader>sh', tbuiltin.help_tags, { desc = 'Find help' })
+vim.keymap.set('n', '<leader>gl', tbuiltin.git_commits, { desc = 'Git log' })
+vim.keymap.set('n', '<leader>glb', tbuiltin.git_bcommits, { desc = 'Git log for buffer' })
 
 -- [[ 'hrsh7th/nvim-cmp' setup ]]
 local cmp = require 'cmp'
