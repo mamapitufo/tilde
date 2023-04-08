@@ -3,8 +3,11 @@ return {
 
   {
     'folke/which-key.nvim',                 -- Pending keymap hints
-    config = function()
-      require('which-key').register {
+    event = 'VeryLazy',
+    config = function(_, opts)
+      local wk = require('which-key')
+      wk.setup(opts)
+      wk.register {
         ['<leader>'] = {
           b = { name = '+buffer' },
           d = { name = '+diagnostics' },
@@ -20,7 +23,7 @@ return {
           w = { name = '+window' },
         },
       }
-          end,
+    end,
   },
 
   'tpope/vim-dispatch',                     -- run processes
