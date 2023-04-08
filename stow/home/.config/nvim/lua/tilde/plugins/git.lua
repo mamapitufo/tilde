@@ -38,7 +38,7 @@ local function keymaps(bufnr)
 end
 
 return {
-  'lewis6991/gitsigns.nvim',
+  'lewis6991/gitsigns.nvim',                -- git change markers and various utils to manage changes
   opts = {
     signs = {
       add = { hl = 'GitSignsAdd', text = '+', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
