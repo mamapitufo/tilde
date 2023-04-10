@@ -1,4 +1,5 @@
--- [[ Basic Keymaps ]]
+-- [[ General Keymaps ]]
+
 -- easier <esc>
 vim.keymap.set({ 'i', 'v' }, 'jk', '<esc>')
 vim.keymap.set('c', 'jk', '<C-c>')
@@ -33,7 +34,7 @@ vim.keymap.set('n', '<leader>sc', '<cmd>nohlsearch<cr>', { desc = 'Clear search 
 vim.keymap.set('n', '<leader>th', '<cmd>set cursorline!<cr>', { desc = 'Current line highlight' })
 vim.keymap.set('n', '<leader>tn', '<cmd>setlocal number!<cr>', { desc = 'Line numbers' })
 vim.keymap.set('n', '<leader>tp', '<cmd>setlocal paste!<cr>', { desc = 'Paste mode' })
-vim.keymap.set('n', '<leader>tq', function() require('tilde.utils').toggle_qf() end, { desc = 'Quickfix window' })
+vim.keymap.set('n', '<leader>tq', require('tilde').toggle_qf, { desc = 'Quickfix window' })
 vim.keymap.set('n', '<leader>tr', '<cmd>setlocal relativenumber!<cr>', { desc = 'Relative line numbers' })
 vim.keymap.set('n', '<leader>ts', '<cmd>set spell!<cr>', { desc = 'Spell check' })
 vim.keymap.set('n', '<leader>tw', '<cmd>setlocal wrap!<cr>', { desc = 'Line wrap' })
