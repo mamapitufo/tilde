@@ -8,8 +8,18 @@ return {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-nvim-lsp',
-      'dcampos/nvim-snippy',
       'dcampos/cmp-snippy',
+      {
+        'dcampos/nvim-snippy',
+        opts = {
+          mappings = {
+            is = {
+              ['<c-l>'] = 'expand_or_advance',
+              ['<c-h>'] = 'previous',
+            }
+          }
+        },
+      },
     },
     opts = function ()
       local cmp = require 'cmp'
