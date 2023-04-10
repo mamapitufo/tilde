@@ -18,12 +18,26 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup({
-  { import = 'tilde.plugins' },
+require('lazy').setup('tilde.plugins', {
+  install = {
+    colorscheme = { 'zenbones', 'habamax' },
+  },
+})
 
-  -- 'tpope/vim-fugitive',
-  -- 'tpope/vim-rhubarb',
-  --
+require 'tilde.options'
+require 'tilde.mappings'
+
+-- [[ Highlight on yank ]]
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
+
+-- -- LSP settings.
   -- -- NOTE: This is where your plugins related to LSP can be installed.
   -- --  The configuration is done below. Search for lspconfig to find it below.
   -- { -- LSP Configuration & Plugins
@@ -44,26 +58,6 @@ require('lazy').setup({
   --
   -- -- "gc" to comment visual regions/lines
   -- { 'numToStr/Comment.nvim', opts = {} },
-}, {
-  install = {
-    colorscheme = { 'zenbones', 'habamax' },
-  },
-})
-
-require 'tilde.options'
-require 'tilde.mappings'
-
--- [[ Highlight on yank ]]
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = '*',
-})
-
--- -- LSP settings.
 -- --  This function gets run when an LSP connects to a particular buffer.
 -- local on_attach = function(_, bufnr)
 --   -- NOTE: Remember that lua is a real programming language, and as such it is possible
