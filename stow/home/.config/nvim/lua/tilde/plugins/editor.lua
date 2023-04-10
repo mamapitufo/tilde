@@ -205,4 +205,11 @@ return {
       require('mini.bufremove').setup(opts)
     end,
   },
+  -- surround actions
+  {
+    'echasnovski/mini.surround',
+    config = function(_, opts)
+      require('mini.surround').setup(opts)
+    end,
+  }
 }
