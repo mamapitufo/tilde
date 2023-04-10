@@ -11,15 +11,4 @@ return {
       return vim.fn.executable 'make' == 1
     end,
   },
-
-  {
-    'hrsh7th/nvim-cmp',                     -- Autocompletion
-    dependencies = {
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-nvim-lsp',
-      'dcampos/nvim-snippy',
-      'dcampos/cmp-snippy',
-    },
-  },
 }
