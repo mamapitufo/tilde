@@ -2,7 +2,7 @@ function fileinfo ()
   local data = {}
 
   local fenc = vim.bo.fenc
-  if fenc ~= 'utf-8' then table.insert(data, fenc) end
+  if (fenc ~= 'utf-8' and fenc ~= '') then table.insert(data, fenc) end
 
   local fformat = vim.bo.fileformat
   if fformat ~= 'unix' then table.insert(data, fformat) end
