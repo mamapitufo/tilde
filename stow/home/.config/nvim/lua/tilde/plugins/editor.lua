@@ -192,4 +192,6 @@ return {
       require('mini.comment').setup(opts)
     end,
   },
+  -- auto-close html, jsx, etc. tags
+  { 'windwp/nvim-ts-autotag', opts = {} },
 }
