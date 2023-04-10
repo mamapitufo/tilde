@@ -1,4 +1,4 @@
--- [[ General Keymaps ]]
+-- [[ general keymaps ]]
 
 -- easier <esc>
 vim.keymap.set({ 'i', 'v' }, 'jk', '<esc>')

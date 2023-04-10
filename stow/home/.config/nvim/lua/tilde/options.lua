@@ -1,4 +1,4 @@
--- [[ Setting options ]]
+-- [[ setting options ]]
 -- search
 vim.o.ignorecase = true
 vim.o.smartcase = true

@@ -14,44 +14,45 @@ function fileinfo ()
 end
 
 return {
-  'nvim-lualine/lualine.nvim',
-  opts = {
-    options = {
-      section_separators = '',
-      component_separators = '',
-      theme = 'zenbones',
-      disabled_filetypes = { 'NvimTree' },
-    },
-    sections = {
-      lualine_b = {
-        'branch',
-        'diff',
+  {
+    'nvim-lualine/lualine.nvim',
+    opts = {
+      options = {
+        section_separators = '',
+        component_separators = '',
+        theme = 'zenbones',
       },
-      lualine_c = {
-        { 'filename', path = 1 },
-      },
-      lualine_x = {
-        {
-          'diagnostics',
-          sources = { 'nvim_diagnostic', 'nvim_lsp' },
-          diagnostics_color = {
-            error = { fg = '#a8334c' },
-            warn = { fg = '#803d1c' },
-            info = { fg = '#286486' },
-            hint = { fg = '#4f5e68' },
+      sections = {
+        lualine_b = {
+          'branch',
+          'diff',
+        },
+        lualine_c = {
+          { 'filename', path = 1 },
+        },
+        lualine_x = {
+          {
+            'diagnostics',
+            sources = { 'nvim_diagnostic', 'nvim_lsp' },
+            diagnostics_color = {
+              error = { fg = '#a8334c' },
+              warn = { fg = '#803d1c' },
+              info = { fg = '#286486' },
+              hint = { fg = '#4f5e68' },
+            },
+            -- symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' },
           },
-          symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' },
+        },
+        lualine_y = { fileinfo },
+        lualine_z = {
+          {
+            'location',
+            padding = { left = 1, right = 0 },
+          },
+          'progress',
         },
       },
-      lualine_y = { fileinfo },
-      lualine_z = {
-        {
-          'location',
-          padding = { left = 1, right = 0 },
-        },
-        'progress',
-      },
+      extensions = { 'quickfix', 'fugitive' },
     },
-    extensions = { 'quickfix', 'fugitive' },
-  },
+  }
 }

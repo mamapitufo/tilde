@@ -1,5 +1,6 @@
 return {
-  { -- Autocompletion
+  -- Autocompletion
+  {
     'hrsh7th/nvim-cmp',
     version = false,
     event = 'InsertEnter',
@@ -56,7 +57,8 @@ return {
       }
     end,
   },
-  { -- Highlight, edit, and navigate code
+  -- Highlight, edit, and navigate code
+  {
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',

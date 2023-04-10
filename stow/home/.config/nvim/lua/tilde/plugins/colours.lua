@@ -1,6 +1,7 @@
 return {
+  -- Minimal themes
   {
-    'mcchrish/zenbones.nvim',               -- Minimal themes
+    'mcchrish/zenbones.nvim',
     dependencies = { 'rktjmp/lush.nvim' },
     priority = 1000,
     config = function()

@@ -1,8 +1,9 @@
 return {
   { 'folke/lazy.nvim', version = '*' },
 
+  -- pending keymap hints
   {
-    'folke/which-key.nvim',                 -- Pending keymap hints
+    'folke/which-key.nvim',
     event = 'VeryLazy',
     config = function(_, opts)
       local wk = require('which-key')
@@ -26,10 +27,15 @@ return {
     end,
   },
 
-  'tpope/vim-dispatch',                     -- run processes
+  -- run processes
+  'tpope/vim-dispatch',
   'radenling/vim-dispatch-neovim',
 
-  'tpope/vim-sleuth',                       -- detect tabstop and shiftwidth automatically
-  'tpope/vim-eunuch',                       -- vim sugar for shell commands
-  'tpope/vim-repeat',                       -- enable dot-repeat with plugin mappings
+  -- detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth',
+  -- vim sugar for shell commands
+  'tpope/vim-eunuch',
+
+  -- `vim.ui.* enhancements
+  { 'stevearc/dressing.nvim', opts = { select = { backend = { 'builtin', 'telescope' }, } } },
 }

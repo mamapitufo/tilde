@@ -7,8 +7,9 @@ return {
       vim.g.asciidoctor_fenced_languages = { 'bash', 'clojure', 'css', 'html', 'javascript', 'json', 'rust', 'sh', }
     end,
   },
+  -- Preview hex colours in background
   {
-    'norcalli/nvim-colorizer.lua',          -- Preview hex colours in background
+    'norcalli/nvim-colorizer.lua',
     event = 'VeryLazy',
     opts = {
       'cljs',

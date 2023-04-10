@@ -1,39 +1,38 @@
-local tilde = require 'tilde'
-
 return {
-  { -- fuzzy finder (files, lsp, etc)
+  -- fuzzy finder (files, lsp, etc)
+  {
     'nvim-telescope/telescope.nvim',
     command = 'Telescope',
     version = false,
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
       defaults = {
-        file_ignore_patterns = { "node_modules" },
+        file_ignore_patterns = { 'node_modules' },
         vimgrep_arguments = {
-          "rg",
-          "--color=never",
-          "--no-heading",
-          "--with-filename",
-          "--line-number",
-          "--column",
-          "--smart-case",
-          "--hidden",
+          'rg',
+          '--color=never',
+          '--no-heading',
+          '--with-filename',
+          '--line-number',
+          '--column',
+          '--smart-case',
+          '--hidden',
         },
       },
       pickers = {
         buffers = {
           sort_lastused = true,
-          theme = "dropdown",
+          theme = 'dropdown',
           previewer = false,
         },
         find_files = {
           find_command = {
-            "rg",
-            "--files",
-            "--hidden",
-            "--smart-case",
-            "--glob",
-            "!**/.git/*",
+            'rg',
+            '--files',
+            '--hidden',
+            '--smart-case',
+            '--glob',
+            '!**/.git/*',
           },
         },
         current_buffer_fuzzy_find = {
@@ -65,7 +64,8 @@ return {
       { '<leader>sp', ':Telescope live_grep<cr>', desc = 'Grep in project' },
     },
   },
-  { -- fuzzy finder algorithm
+  -- fuzzy finder algorithm
+  {
     'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make',
     cond = function()
