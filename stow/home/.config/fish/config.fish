@@ -37,6 +37,7 @@ set -u FREETYPE_PROPERTIES "truetype:interpreter-version=38"
 
 launch_gnome_keyring
 
+alias lazyvim "NVIM_APPNAME=lazyvim nvim"
 alias feh "feh -FxB black"
 alias mpvv "mpv --osd-bar-align-y=1 --osd-bar-w=99 --osd-level=2"
 
