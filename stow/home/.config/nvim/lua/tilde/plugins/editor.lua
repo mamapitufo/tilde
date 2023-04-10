@@ -56,12 +56,12 @@ return {
       }
     end,
   },
-  {
-    'nvim-treesitter/nvim-treesitter',      -- Highlight, edit, and navigate code
+  { -- Highlight, edit, and navigate code
+    'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
-    event = { "BufReadPost", "BufNewFile" },
+    event = { 'BufReadPost', 'BufNewFile' },
     keys = {
       { '<c-space>', desc = 'Increment selection' },
       { '<bs>', desc = 'Decrement selection', mode = 'x' },
@@ -72,7 +72,6 @@ return {
         'css',
         'fish',
         'graphql',
---        'help',
         'html',
         'javascript',
         'json',
@@ -100,6 +99,10 @@ return {
           scope_incremental = '<c-s>',
           node_decremental = '<bs>',
         },
+      },
+      context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
       },
       textobjects = {
         select = {
@@ -150,6 +153,31 @@ return {
       require('nvim-treesitter.configs').setup(opts)
 
       pcall(require('nvim-treesitter.install').update { with_sync = true })
+    end,
+  },
+  -- auto insert closing parens, brackets, quotes, etc.
+  -- XXX disable pairing for `'` when editing LISPs
+  {
+    'echasnovski/mini.pairs',
+    event = 'VeryLazy',
+    config = function(_, opts)
+      require('mini.pairs').setup(opts)
+    end,
+  },
+  -- comments
+  { 'JoosepAlviste/nvim-ts-context-commentstring', lazy = true },
+  {
+    'echasnovski/mini.comment',
+    event = 'VeryLazy',
+    opts = {
+      hooks = {
+        pre = function()
+          require('ts_context_commentstring.internal').update_commentstring({})
+        end,
+      },
+    },
+    config = function(_, opts)
+      require('mini.comment').setup(opts)
     end,
   },
 }
