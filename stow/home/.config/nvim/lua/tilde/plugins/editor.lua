@@ -70,6 +70,8 @@ return {
   -- Highlight, edit, and navigate code
   {
     'nvim-treesitter/nvim-treesitter',
+    version = false,
+    build = ':TSUpdate',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
@@ -100,7 +102,6 @@ return {
         'yaml',
       },
       auto_install = false,
-
       highlight = { enable = true },
       indent = { enable = true },
       incremental_selection = {
@@ -112,10 +113,7 @@ return {
           node_decremental = '<bs>',
         },
       },
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-      },
+      context_commentstring = { enable = true, enable_autocmd = false, },
       textobjects = {
         select = {
           enable = true,
@@ -163,8 +161,6 @@ return {
     },
     config = function(_, opts)
       require('nvim-treesitter.configs').setup(opts)
-
-      pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
   },
   -- auto insert closing parens, brackets, quotes, etc.
