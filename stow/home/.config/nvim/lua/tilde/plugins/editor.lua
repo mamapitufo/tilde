@@ -193,7 +193,11 @@ return {
     end,
   },
   -- auto-close html, jsx, etc. tags
-  { 'windwp/nvim-ts-autotag', opts = {} },
+  {
+    'windwp/nvim-ts-autotag',
+    event = 'InsertEnter',
+    opts = {}
+  },
   -- close buffer without changing layout
   {
     'echasnovski/mini.bufremove',
