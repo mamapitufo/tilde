@@ -211,5 +211,14 @@ return {
     config = function(_, opts)
       require('mini.surround').setup(opts)
     end,
+  },
+  -- trailing whitespace
+  {
+    'echasnovski/mini.trailspace',
+    config = function(_, opts)
+      require('mini.trailspace').setup(opts)
+
+      vim.cmd[[highlight MiniTrailspace guibg=#de6e7c]]
+    end,
   }
 }
