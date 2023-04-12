@@ -1,6 +1,5 @@
 return {
   { 'folke/lazy.nvim', version = '*' },
-
   -- pending keymap hints
   {
     'folke/which-key.nvim',
@@ -26,16 +25,19 @@ return {
       }
     end,
   },
-
   -- run processes
   'tpope/vim-dispatch',
   'radenling/vim-dispatch-neovim',
-
   -- detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
   -- vim sugar for shell commands
   'tpope/vim-eunuch',
-
   -- `vim.ui.* enhancements
   { 'stevearc/dressing.nvim', opts = { select = { backend = { 'builtin', 'telescope' }, } } },
+  -- go fwd/back with bracket pairs
+  { 'echasnovski/mini.bracketed',
+    config = function(_, opts)
+      require('mini.bracketed').setup(opts)
+    end,
+  },
 }
