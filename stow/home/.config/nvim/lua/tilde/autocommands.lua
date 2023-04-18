@@ -34,3 +34,13 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
   group = gitcommit_group,
 })
+
+-- "helper" buffers
+local helper_group = vim.api.nvim_create_augroup('HelperBuffers', { clear = true })
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'help' },
+  callback = function()
+    vim.keymap.set('n', '<localleader>q', ':q<cr>', { desc = 'Close', buffer = true })
+  end,
+  group = helper_group,
+})
