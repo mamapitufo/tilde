@@ -21,3 +21,16 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   group = format_group,
   pattern = '*',
 })
+
+-- git commits
+local gitcommit_group = vim.api.nvim_create_augroup('GitCommit', { clear = true })
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'gitcommit',
+  callback = function()
+    vim.keymap.set('n', '<localleader>c', ':wq<cr>', { desc = 'Commit', buffer = true })
+    vim.keymap.set('n', '<localleader>k', ':%d <bar> :wq!<cr>', { desc = 'Abort', buffer = true })
+    vim.wo.number = false
+    vim.wo.relativenumber = false
+  end,
+  group = gitcommit_group,
+})
