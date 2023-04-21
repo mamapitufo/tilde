@@ -10,12 +10,12 @@ return {
       wk.register {
         ['<leader>'] = {
           b = { name = '+buffer' },
+          c = { name = '+code' },
           d = { name = '+diagnostics' },
           f = { name = '+file' },
           g = { name = '+git' },
           gb = { name = '+blame' },
           gh = { name = '+hunks' },
-          l = { name = '+LSP' },
           q = { name = '+quit' },
           s = { name = '+search' },
           t = { name = '+toggle' },
