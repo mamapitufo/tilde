@@ -124,21 +124,10 @@ return {
     opts = function()
       local null_ls = require 'null-ls'
       return {
-        root_dir = require('null-ls.utils').root_pattern('.null-ls-root', 'Makefile', '.git'),
+        root_dir = require('null-ls.utils').root_pattern('.null-ls-root', 'package.json', '.git'),
         sources = {
           -- formatters
-          null_ls.builtins.formatting.prettierd.with {
-            condition = function(utils)
-              -- FIXME: check if there is a `prettier` key in package.json?
-              return utils.root_has_file_matches '.prettierrc.*'
-            end,
-          },
-          null_ls.builtins.formatting.eslint_d.with {
-            condition = function(utils)
-              -- FIXME: check if there is a `eslintConfig` key in package.json?
-              return utils.root_has_file_matches '.eslintrc.*'
-            end,
-          },
+          null_ls.builtins.formatting.eslint_d,
           null_ls.builtins.formatting.stylua,
           -- diagnostics/linters
           null_ls.builtins.diagnostics.eslint_d,
@@ -153,6 +142,14 @@ return {
         },
       }
     end,
+  },
+  {
+    'MunifTanjim/prettier.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+    dependencies = { 'null-ls.nvim', 'neovim/nvim-lspconfig' },
+    opts = {
+      bin = 'prettierd',
+    },
   },
 
   -- install LSP servers, linters, formatters, tools...
