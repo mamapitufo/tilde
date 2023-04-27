@@ -20,11 +20,15 @@ function M.on_attach(client, bufnr)
   vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code actions', buffer = bufnr })
 
   -- Formatting might not be available on all servers
-  if client.supports_method('textDocument/formatting') then
-    map('<leader>cf', format, 'Format current buffer')
+  if client.supports_method 'textDocument/formatting' then
+    map('<leader>cf', function()
+      format { bufnr = bufnr }
+    end, 'Format current buffer')
   end
-  if client.supports_method('textDocument/rangeFormatting') then
-    vim.keymap.set('v', '<leader>cf', format, { desc = 'Format selected range', buffer = bufnr })
+  if client.supports_method 'textDocument/rangeFormatting' then
+    vim.keymap.set('v', '<leader>cf', function()
+      format { bufnr = bufnr }
+    end, { desc = 'Format selected range', buffer = bufnr })
   end
 end
 
