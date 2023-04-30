@@ -5,7 +5,7 @@ return {
     'folke/which-key.nvim',
     event = 'VeryLazy',
     config = function(_, opts)
-      local wk = require('which-key')
+      local wk = require 'which-key'
       wk.setup(opts)
       wk.register {
         ['<leader>'] = {
@@ -33,9 +33,17 @@ return {
   -- vim sugar for shell commands
   'tpope/vim-eunuch',
   -- `vim.ui.* enhancements
-  { 'stevearc/dressing.nvim', opts = { select = { backend = { 'builtin', 'telescope' }, } } },
+  {
+    'stevearc/dressing.nvim',
+    opts = {
+      select = {
+        backend = { 'builtin', 'telescope' },
+      },
+    }
+  },
   -- go fwd/back with bracket pairs
-  { 'echasnovski/mini.bracketed',
+  {
+    'echasnovski/mini.bracketed',
     config = function(_, opts)
       require('mini.bracketed').setup(opts)
     end,
