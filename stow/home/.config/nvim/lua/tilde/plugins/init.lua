@@ -95,4 +95,14 @@ return {
       },
     },
   },
+  -- Allows 'projections' (like alternate files: test vs. src, header vs. implementation)
+  {
+    'tpope/vim-projectionist',
+    cmd = { 'A', 'AV', 'AS', 'E', 'S', 'V' },
+    keys = {
+      { 'ga',  ':A<cr>',  desc = 'Go to alternate file' },
+      { 'gav', ':AV<cr>', desc = 'Open alternate file on vsplit' },
+      { 'gas', ':AS<cr>', desc = 'Open alternate file on split' },
+    },
+  },
 }
