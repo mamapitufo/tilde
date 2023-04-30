@@ -8,17 +8,7 @@ return {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       -- better lua when in neovim
-      {
-        'folke/neodev.nvim',
-        config = function()
-          require('neodev').setup {
-            override = function(_, library)
-              library.enabled = true
-              library.plugins = true
-            end,
-          }
-        end,
-      },
+      { 'folke/neodev.nvim', opts = {} },
       -- better ui for lsp-progress
       { 'j-hui/fidget.nvim', opts = {} },
     },
@@ -57,7 +47,14 @@ return {
         jsonls = {},
         lua_ls = {
           Lua = {
-            workspace = { checkThirdParty = false },
+            -- TODO: this should be handled by `neodev.nvim`!
+            diagnostics = {
+              globals = { 'vim' },
+            },
+            workspace = {
+              checkThirdParty = false,
+              library = vim.api.nvim_get_runtime_file('', true),
+            },
             telemetry = { enable = false },
           },
         },
@@ -134,7 +131,6 @@ return {
           null_ls.builtins.diagnostics.fish,
           null_ls.builtins.diagnostics.luacheck,
           null_ls.builtins.diagnostics.stylelint,
-          null_ls.builtins.diagnostics.tidy,
           -- code actions
           null_ls.builtins.code_actions.eslint_d,
           -- TODO: install setup typescript.nvim
