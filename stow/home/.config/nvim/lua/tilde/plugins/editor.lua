@@ -16,17 +16,17 @@ return {
             is = {
               ['<c-l>'] = 'expand_or_advance',
               ['<c-h>'] = 'previous',
-            }
-          }
+            },
+          },
         },
       },
     },
-    opts = function ()
+    opts = function()
       local cmp = require 'cmp'
 
       return {
         completion = {
-          autocomplete = false
+          autocomplete = false,
         },
         sources = cmp.config.sources {
           { name = 'nvim_lsp' },
@@ -78,7 +78,7 @@ return {
     event = { 'BufReadPost', 'BufNewFile' },
     keys = {
       { '<c-space>', desc = 'Increment selection' },
-      { '<bs>', desc = 'Decrement selection', mode = 'x' },
+      { '<bs>',      desc = 'Decrement selection', mode = 'x' },
     },
     opts = {
       ensure_installed = {
@@ -113,15 +113,15 @@ return {
           node_decremental = '<bs>',
         },
       },
-      context_commentstring = { enable = true, enable_autocmd = false, },
+      context_commentstring = { enable = true, enable_autocmd = false },
       textobjects = {
         select = {
           enable = true,
           lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
           keymaps = {
             -- You can use the capture groups defined in textobjects.scm
-            ['aa'] = '@parameter.outer',
-            ['ia'] = '@parameter.inner',
+            ['a,'] = '@parameter.outer',
+            ['i,'] = '@parameter.inner',
             ['af'] = '@function.outer',
             ['if'] = '@function.inner',
             ['ac'] = '@class.outer',
@@ -134,6 +134,7 @@ return {
           goto_next_start = {
             [']m'] = '@function.outer',
             [']]'] = '@class.outer',
+            ['],'] = '@parameter.inner',
           },
           goto_next_end = {
             [']M'] = '@function.outer',
@@ -142,6 +143,7 @@ return {
           goto_previous_start = {
             ['[m'] = '@function.outer',
             ['[['] = '@class.outer',
+            ['[,'] = '@parameter.inner',
           },
           goto_previous_end = {
             ['[M'] = '@function.outer',
@@ -151,10 +153,10 @@ return {
         swap = {
           enable = true,
           swap_next = {
-            ['<leader>a'] = '@parameter.inner',
+            ['>,'] = '@parameter.inner',
           },
           swap_previous = {
-            ['<leader>A'] = '@parameter.inner',
+            ['<,'] = '@parameter.inner',
           },
         },
       },
@@ -180,7 +182,7 @@ return {
     opts = {
       hooks = {
         pre = function()
-          require('ts_context_commentstring.internal').update_commentstring({})
+          require('ts_context_commentstring.internal').update_commentstring {}
         end,
       },
     },
@@ -192,14 +194,26 @@ return {
   {
     'windwp/nvim-ts-autotag',
     event = 'InsertEnter',
-    opts = {}
+    opts = {},
   },
   -- close buffer without changing layout
   {
     'echasnovski/mini.bufremove',
     keys = {
-      { '<leader>bd', function() require('mini.bufremove').delete(0, false) end, desc = 'Delete buffer' },
-      { '<leader>bD', function() require('mini.bufremove').delete(0, true) end, desc = 'Delete buffer' },
+      {
+        '<leader>bd',
+        function()
+          require('mini.bufremove').delete(0, false)
+        end,
+        desc = 'Delete buffer',
+      },
+      {
+        '<leader>bD',
+        function()
+          require('mini.bufremove').delete(0, true)
+        end,
+        desc = 'Delete buffer',
+      },
     },
     config = function(_, opts)
       require('mini.bufremove').setup(opts)
@@ -218,7 +232,7 @@ return {
     config = function(_, opts)
       require('mini.trailspace').setup(opts)
 
-      vim.cmd[[highlight MiniTrailspace guibg=#de6e7c]]
+      vim.cmd [[highlight MiniTrailspace guibg=#de6e7c]]
     end,
-  }
+  },
 }
