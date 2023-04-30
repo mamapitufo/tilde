@@ -24,12 +24,21 @@ return {
     end,
   },
   -- run processes
-  'tpope/vim-dispatch',
-  'radenling/vim-dispatch-neovim',
+  {
+    'radenling/vim-dispatch-neovim',
+    dependencies = { 'tpope/vim-dispatch' },
+    cmd = { 'AbordDispatch', 'Copen', 'Dispatch', 'FocusDispatch', 'Make', 'Spawn', 'Start' },
+  },
   -- detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
+  {
+    'tpope/vim-sleuth',
+    event = 'VeryLazy',
+  },
   -- vim sugar for shell commands
-  'tpope/vim-eunuch',
+  {
+    'tpope/vim-eunuch',
+    cmd = { 'Remove', 'Delete', 'Move', 'Chmod', 'Mkdir', 'SudoWrite', 'SudoEdit' },
+  },
   -- `vim.ui.* enhancements
   {
     'stevearc/dressing.nvim',
@@ -100,7 +109,7 @@ return {
     'tpope/vim-projectionist',
     cmd = { 'A', 'AV', 'AS', 'E', 'S', 'V' },
     keys = {
-      { 'ga',  ':A<cr>',  desc = 'Go to alternate file' },
+      { 'ga', ':A<cr>', desc = 'Go to alternate file' },
       { 'gav', ':AV<cr>', desc = 'Open alternate file on vsplit' },
       { 'gas', ':AS<cr>', desc = 'Open alternate file on split' },
     },
