@@ -10,7 +10,10 @@ return {
       vim.g.zenbones_solid_float_border = true
 
       vim.o.background = 'light'
-      vim.cmd.colorscheme 'zenbones'
+      vim.cmd [[colorscheme zenbones]]
+
+      vim.cmd [[highlight WinSeparator guibg = None]]
+      vim.cmd [[highlight clear SignColumn]]
     end,
-  }
+  },
 }
