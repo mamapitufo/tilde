@@ -20,14 +20,21 @@ vim.keymap.set('n', '<leader>bp', '<cmd>bprev<cr>', { desc = 'Previous buffer' }
 -- diagnostics
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Prev diagnostic' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
-vim.keymap.set('n', '[e', function() vim.diagnostic.goto_prev({severity = 'ERROR' }) end, { desc = 'Prev error' })
-vim.keymap.set('n', ']e', function() vim.diagnostic.goto_next({ severity = 'ERROR' }) end, { desc = 'Next error' })
+vim.keymap.set('n', '[e', function()
+  vim.diagnostic.goto_prev { severity = 'ERROR' }
+end, { desc = 'Prev error' })
+vim.keymap.set('n', ']e', function()
+  vim.diagnostic.goto_next { severity = 'ERROR' }
+end, { desc = 'Next error' })
 -- XXX this can also use `vim.diagnostic.setloclist`:
 vim.keymap.set('n', '<leader>dq', vim.diagnostic.setqflist, { desc = 'Send diagnostics to Quickfix' })
 vim.keymap.set('n', '<leader>ds', vim.diagnostic.open_float, { desc = 'Diagnostics for current line' })
 
 -- files
 vim.keymap.set('n', '<leader>fs', '<cmd>update<cr>', { desc = 'Save file' })
+
+-- editor
+vim.keymap.set('n', '<leader>ep', '<cmd>Lazy<cr>', { desc = 'Plugin manager' })
 
 -- search
 vim.keymap.set('n', '<leader>sc', '<cmd>nohlsearch<cr>', { desc = 'Clear search highlight' })

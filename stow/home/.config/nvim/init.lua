@@ -25,7 +25,7 @@ require('lazy').setup('tilde.plugins', {
 })
 
 require 'tilde.options'
-require 'tilde.mappings'
+require 'tilde.keymaps'
 require 'tilde.autocommands'
 
 -- vim: ts=2 sts=2 sw=2 et
