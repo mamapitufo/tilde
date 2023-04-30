@@ -1,4 +1,13 @@
 return {
+  -- git wrapper
+  {
+    'tpope/vim-fugitive',
+    cmd = 'Git',
+    keys = {
+      { '<leader>gs', ':Git<cr>',       'Git status' },
+      { '<leader>gb', ':Git blame<cr>', 'Blame buffer' },
+    },
+  },
   -- git change markers and various utils to manage changes
   {
     'lewis6991/gitsigns.nvim',
@@ -42,7 +51,9 @@ return {
       map('n', '<leader>ghu', gitsigns.undo_stage_hunk, 'Unstage hunk')
       map('n', '<leader>ghp', gitsigns.preview_hunk, 'Preview hunk')
       map('n', '<leader>gbl', gitsigns.blame_line, 'Blame current line')
-      map('n', '<leader>gbc', function() gitsigns.blame_line({ full = true }) end, 'Show current line commit')
+      map('n', '<leader>gbc', function()
+        gitsigns.blame_line { full = true }
+      end, 'Show current line commit')
 
       map('n', '<leader>gr', gitsigns.reset_buffer, 'Reset buffer')
       map('n', '<leader>gR', gitsigns.reset_buffer_index, 'Reset buffer to git index')
@@ -52,9 +63,7 @@ return {
       map('n', '<leader>tgb', gitsigns.toggle_current_line_blame, 'Blame current line')
       map('n', '<leader>tgd', gitsigns.toggle_deleted, 'Show deleted hunks')
 
-      map({'o', 'x'}, 'ih', ':<C-u>Gitsigns select_hunk<cr>', 'Select hunk')
+      map({ 'o', 'x' }, 'ih', ':<C-u>Gitsigns select_hunk<cr>', 'Select hunk')
     end,
   },
 }
-
-

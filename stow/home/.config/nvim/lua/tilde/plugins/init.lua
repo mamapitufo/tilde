@@ -14,12 +14,10 @@ return {
           d = { name = '+diagnostics' },
           f = { name = '+file' },
           g = { name = '+git' },
-          gb = { name = '+blame' },
           gh = { name = '+hunks' },
           q = { name = '+quit' },
           s = { name = '+search' },
           t = { name = '+toggle' },
-          tg = { name = '+git' },
           w = { name = '+window' },
         },
       }
