@@ -235,4 +235,9 @@ return {
       vim.cmd [[highlight MiniTrailspace guibg=#de6e7c]]
     end,
   },
+  -- handle `hlsearch`
+  {
+    'romainl/vim-cool',
+    event = 'VeryLazy',
+  },
 }
