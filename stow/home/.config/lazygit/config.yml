@@ -1,11 +1,6 @@
-keybinding:
-  universal:
-    return: '<c-\>'
-
 gui:
   theme:
     selectedLineBgColor:
       - bold
     selectedRangeBgColor:
       - bold
-
