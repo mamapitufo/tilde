@@ -7,8 +7,11 @@
 
 # TODO
 
-* Sort out issue with `neodev` and symlinked nvim config directory (loads of warnings showing)
-* `typescript.nvim` setup (handle special case in LSP config with mason, add code actions in `null-ls.nvim` setup).
+* Rainbow parenthesis for LISPs.
+* Allow project config overrides ('neoconf' from folke?).
+* Sort out issue with `neodev` and global `vim`.
 * Toggle auto-formatting (for cases when the code has multiple styles).
 * Disable auto-formatting per LSP server.
-* Handle special cases of LSP servers (like `typescript.nvim`), copying code from LazyVim.
+* syntax:
+    * styled components
+    * graphql

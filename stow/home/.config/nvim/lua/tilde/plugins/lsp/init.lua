@@ -11,13 +11,15 @@ return {
       { 'folke/neodev.nvim', opts = {} },
       -- better ui for lsp-progress
       { 'j-hui/fidget.nvim', opts = {} },
+      -- a few extra things for tsserver
+      { 'jose-elias-alvarez/typescript.nvim' },
     },
     opts = {
       diagnostics = {
         signs = true,
         update_in_insert = false,
         virtual_text = {
-          severity = vim.diagnostic.severity.WARNING,
+          severity = vim.diagnostic.severity.ERROR,
           source = 'if_many',
           spacing = 6,
           signs = false,
@@ -61,6 +63,12 @@ return {
         },
         tsserver = {},
       },
+      setup = {
+        tsserver = function(_, opts)
+          require('typescript').setup { server = opts }
+          return true
+        end,
+      },
     },
     config = function(_, opts)
       -- use rounded borders on all windows
@@ -87,24 +95,39 @@ return {
       local servers = opts.servers
       local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-      -- TODO: copy alternative way of initialising servers (from LazyVim) to
-      -- deal with typescript.nvim
+      local function setup(server)
+        local server_opts = vim.tbl_deep_extend('force', {
+          capabilities = vim.deepcopy(capabilities),
+        }, servers[server] or {})
+
+        if opts.setup[server] then
+          if opts.setup[server](server, server_opts) then
+            return
+          end
+        end
+        require('lspconfig')[server].setup(server_opts)
+      end
 
       -- ensure servers are installed with mason
       local mason_lspconfig = require 'mason-lspconfig'
-      local ensure_installed = vim.tbl_keys(servers)
+      local all_masonlsp_servers = vim.tbl_keys(require('mason-lspconfig.mappings.server').lspconfig_to_package)
+      local ensure_installed = {}
+      for server, server_opts in pairs(servers) do
+        if server_opts then
+          server_opts = server_opts == true and {} or server_opts
+          if server_opts.mason == false or not vim.tbl_contains(all_masonlsp_servers, server) then
+            setup(server)
+          else
+            ensure_installed[#ensure_installed + 1] = server
+          end
+        end
+      end
+
       mason_lspconfig.setup {
         ensure_installed = ensure_installed,
       }
       mason_lspconfig.setup_handlers {
-        function(server_name)
-          require('lspconfig')[server_name].setup {
-            capabilities = capabilities,
-            -- TODO: is this necessary? should be handled by the autocmd
-            -- on_attach = on_attach,
-            settings = servers[server_name],
-          }
-        end,
+        setup,
       }
 
       -- global keymaps
@@ -134,8 +157,7 @@ return {
           null_ls.builtins.diagnostics.stylelint,
           -- code actions
           null_ls.builtins.code_actions.eslint_d,
-          -- TODO: install setup typescript.nvim
-          -- typescript_code_actions,
+          require 'typescript.extensions.null-ls.code-actions',
         },
       }
     end,
