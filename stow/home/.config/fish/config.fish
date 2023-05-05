@@ -60,6 +60,11 @@ if status is-interactive; and test -f $theme_path
   source $theme_path
 end
 
+# Homebrew
+if test -d ~/.linuxbrew
+  eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+end
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 eval /home/mamapitufo/Library/anaconda3/bin/conda "shell.fish" "hook" $argv | source

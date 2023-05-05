@@ -26,4 +26,6 @@ if test $cache_size_m -gt 5000
   void-clean-cache
 end
 
-#[[ -f ~/.config/nvim/update  ]] && ~/.config/nvim/update
+log_info "Updating Homebrew packages..."
+brew update --quiet
+log_info "Done."
