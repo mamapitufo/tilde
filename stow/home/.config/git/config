@@ -64,7 +64,7 @@
 [alias]
 	mg = smart-merge
 
-	wip = commit -am 'wip'
+	wip = commit -am 'WIP'
 	fixup = commit -am 'fixup'
 
 	rb = rebase
@@ -76,10 +76,9 @@
 
 	it = !git init && git commit -m \"root\" --allow-empty
 
-	; based on magit's commands, and vim (sort of)
-	bl = branch --list
-	bv = branch --verbose
-	br = branch --remotes
+	bl = branch --verbose
+	bla = branch --verbose --all
+	blr = branch --remotes --verbose
 	bd = branch --delete
 	bdd = branch -delete --force
 	bc = branch
@@ -116,4 +115,3 @@
 	lr = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green)(%an, %ar)%Creset' --simplify-by-decoration
 	lc = for-each-ref --sort=committerdate refs/heads --format='%(refname:short): %(committerdate:relative)'
 	lf = log --pretty=format':%C(yellow)%h %C(reset)%s %C(green)(%an, %ar)%Creset' --follow
-
