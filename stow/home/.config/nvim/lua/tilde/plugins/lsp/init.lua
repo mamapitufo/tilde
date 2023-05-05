@@ -41,8 +41,9 @@ return {
         severity_sort = true,
       },
       servers = {
-        -- clojure_lsp = {},
+        clojure_lsp = {},
         cssls = {},
+        fennel_language_server = {},
         html = {},
         jsonls = {},
         lua_ls = {
