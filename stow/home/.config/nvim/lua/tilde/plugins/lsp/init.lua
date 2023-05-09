@@ -50,14 +50,7 @@ return {
         jsonls = {},
         lua_ls = {
           Lua = {
-            -- TODO: this should be handled by `neodev.nvim`!
-            diagnostics = {
-              globals = { 'vim' },
-            },
-            workspace = {
-              checkThirdParty = false,
-              library = vim.api.nvim_get_runtime_file('', true),
-            },
+            workspace = { checkThirdParty = false },
             telemetry = { enable = false },
           },
         },
