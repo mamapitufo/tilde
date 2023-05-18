@@ -4,11 +4,10 @@ windows:
     start_directory: ~/Sandbox/tilde
     panes:
       -
-  - window_name: irc
-    panes:
-      # - irssi
-      -
+  # - window_name: irc
+  #   panes:
+  #     # - irssi
+  #     -
   - window_name: CURRENT
     panes:
       - vim ~/CURRENT.txt
-
