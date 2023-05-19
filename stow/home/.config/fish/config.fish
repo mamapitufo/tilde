@@ -68,7 +68,7 @@ if status is-interactive; and test -f $theme_path
 end
 
 # Homebrew
-if test -d ~/.linuxbrew
+if test -d /home/linuxbrew/.linuxbrew
   eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 end
 
