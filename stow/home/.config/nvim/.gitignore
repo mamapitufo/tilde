@@ -1,2 +1,4 @@
 # it might be a good idea to track changes to this, not sure...
 lazy-lock.json
+
+.luarc.json
