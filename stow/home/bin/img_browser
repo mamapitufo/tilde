@@ -2,4 +2,5 @@
 exec feh -FdxB black \
 	--edit --on-last-slide quit --sort mtime \
 	--action 'mv --no-clobber %F ~/Documents/img/%N' \
+	--action9 'cp --dereference --no-clobber %F ~/Documents/img/%N' \
 	$@
