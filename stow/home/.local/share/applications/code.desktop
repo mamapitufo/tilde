@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=VSCode
+Comment=Code Editing. Redefined.
+GenericName=Text Editor
+Exec=/home/mamapitufo/Library/VSCode-linux-x64/bin/code --unity-launch %F
+Icon=code
+Type=Application
+StartupNotify=false
+StartupWMClass=VSCode
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;application/x-code-workspace;
+Actions=new-empty-window;
+Keywords=vscode;
+
+[Desktop Action new-empty-window]
+Name=New Empty Window
+Exec=/home/mamapitufo/Library/VSCode-linux-x64/bin/code --new-window %F
+Icon=code
