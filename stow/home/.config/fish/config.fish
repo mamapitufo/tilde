@@ -71,3 +71,6 @@ if test -d /home/linuxbrew/.linuxbrew
   eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 end
 
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
