@@ -7,7 +7,6 @@ set --universal fish_user_paths \
 	~/.npm-packages/bin \
 	~/.cargo/bin \
 	~/Library/charles/bin \
-	~/Library/anaconda3/bin
 
 #-- tide prompt config
 set --global tide_left_prompt_frame_enabled true
@@ -72,7 +71,3 @@ if test -d /home/linuxbrew/.linuxbrew
   eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 end
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /home/mamapitufo/Library/anaconda3/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
