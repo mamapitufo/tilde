@@ -177,5 +177,6 @@ exec --no-startup-id thunar --daemon
 for_window [class="skype"] tiling enable
 for_window [class="MPlayer"] floating enable, border pixel 1
 for_window [class="mpv"] floating enable, border pixel 1
+for_window [class="(?i)^kit$"] floating enable, border pixel 1
 
 assign [class="VirtualBox .*"] 8
