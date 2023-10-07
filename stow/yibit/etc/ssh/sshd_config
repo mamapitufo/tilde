@@ -3,12 +3,17 @@
 # This is the sshd server system-wide configuration file.  See
 # sshd_config(5) for more information.
 
-# This sshd was compiled with PATH=/usr/bin:/bin:/usr/sbin:/sbin
+# This sshd was compiled with PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin
 
 # The strategy used for options in the default sshd_config shipped with
 # OpenSSH is to specify options with their default value where
 # possible, but leave them commented.  Uncommented options override the
 # default value.
+
+# To avoid conflicts with the packaged configuration, specify custom options
+# in drop-in files under /etc/ssh/sshd_config.d to override any defaults or
+# options set below.
+Include /etc/ssh/sshd_config.d/*.conf
 
 #Port 22
 #AddressFamily any
