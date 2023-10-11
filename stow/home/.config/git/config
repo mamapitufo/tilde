@@ -78,19 +78,16 @@
 
 	bl = branch --verbose
 	bla = branch --verbose --all
-	blr = branch --remotes --verbose
 	bd = branch --delete
-	bdd = branch -delete --force
-	bc = branch
-	bcs = checkout -b
-	bs = checkout
+	bdd = branch --delete --force
+	bc = switch --create
 
 	cc = commit
-	cca = commit --all
-	ca = commit --amend --no-edit
-	caa = commit --all --amend --no-edit
-	cw = commit --amend
-	cwa = commit -all --amend
+	ca = commit --all
+	am = commit --amend --no-edit
+	ama = commit --amend --no-edit --all
+	rw = commit --amend
+	rwa = commit --amend --all
 
 	pu = push
 	pp = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
@@ -98,14 +95,12 @@
 
 	gs = status -sb
 
-	su = add --update
-	sa = add
-	saa = add .
+	ss = add --update
+	sa = add .
 	sp = add --patch
 
 	du = diff
 	ds = diff --staged
-	dc = show
 
 	fo = smart-pull
 	ff = fetch
