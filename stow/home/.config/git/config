@@ -84,8 +84,8 @@
 
 	cc = commit
 	ca = commit --all
-	am = commit --amend --no-edit
-	ama = commit --amend --no-edit --all
+	amend = commit --amend --no-edit
+	amenda = commit --amend --no-edit --all
 	rw = commit --amend
 	rwa = commit --amend --all
 
@@ -95,7 +95,7 @@
 
 	gs = status -sb
 
-	ss = add --update
+	su = add --update
 	sa = add .
 	sp = add --patch
 
