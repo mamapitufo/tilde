@@ -1,7 +1,7 @@
 #-- Zenbones, modified by mamapitufo
 
-set -g status-left '#[fg=#564e4a,bg=#d2a6c8,bold] %d/%m %H:%M '
-set -g status-right ' #[fg=#88507d,bold] [#S] '
+set -g status-left ' #[fg=#b2a39b,bg=#88507d,bold] [#S] '
+set -g status-right '#[fg=#564e4a,bg=#d2a6c8,bold] %d/%m %H:%M '
 set -g status-style fg=#88507d,bg=#f0edec
 set -g status-left-length 13
 set -g status-justify left
