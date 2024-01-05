@@ -160,7 +160,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-    mode hide
+    # mode hide
     position top
     status_command i3status -c ~/.config/i3/i3status.conf
  #   status_command SCRIPT_DIR=~/bin/blocklets i3blocks -c ~/.config/i3/i3blocks.conf
