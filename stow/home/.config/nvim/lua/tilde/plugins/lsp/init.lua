@@ -8,7 +8,7 @@ return {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       -- better lua when in neovim
-      { 'folke/neodev.nvim', opts = {} },
+      'folke/neodev.nvim',
       -- better ui for lsp-progress
       { 'j-hui/fidget.nvim', opts = {} },
       -- a few extra things for tsserver
@@ -127,6 +127,7 @@ return {
       vim.keymap.set('n', '<leader>c?', ':LspInfo<cr>', { desc = 'LSP status' })
 
       -- vim.lsp.set_log_level('debug')
+      require('neodev').setup()
     end,
   },
 
