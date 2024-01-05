@@ -9,7 +9,7 @@ end
 
 log_info "Updating system package lists..."
 doas xbps-install -S
-log_info "Done."
+log_info "Package list update done."
 
 void-update
 set -l update_status $status
@@ -28,4 +28,4 @@ end
 
 log_info "Updating Homebrew packages..."
 brew update --quiet
-log_info "Done."
+log_info "Homebrew update done."
