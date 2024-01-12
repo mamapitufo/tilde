@@ -26,8 +26,9 @@ end, { desc = 'Prev error' })
 vim.keymap.set('n', ']e', function()
   vim.diagnostic.goto_next { severity = 'ERROR' }
 end, { desc = 'Next error' })
--- XXX this can also use `vim.diagnostic.setloclist`:
-vim.keymap.set('n', '<leader>dq', vim.diagnostic.setqflist, { desc = 'Send diagnostics to Quickfix' })
+vim.keymap.set('n', '<leader>dq', function()
+  vim.diagnostic.setqflist { open = true }
+end, { desc = 'Send diagnostics to Quickfix' })
 vim.keymap.set('n', '<leader>ds', vim.diagnostic.open_float, { desc = 'Diagnostics for current line' })
 
 -- files
