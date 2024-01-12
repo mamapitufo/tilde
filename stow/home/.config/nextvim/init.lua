@@ -1,6 +1,8 @@
 -- Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
+
+-- XXX remove once 0.10.x is released
 vim.o.termguicolors = true
 
 -- [[ Install package manager (https://github.com/folke/lazy.nvim) ]]

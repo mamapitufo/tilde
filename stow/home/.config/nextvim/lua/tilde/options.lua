@@ -1,7 +1,6 @@
 -- [[ options ]]
 
 -- ui settings
-vim.o.termguicolors = true
 vim.o.relativenumber = true
 vim.o.title = true
 vim.o.shortmess = 'atOI' -- Abbrev, overwrite read msgs, no intro msg
