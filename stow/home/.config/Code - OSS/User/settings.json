@@ -38,6 +38,18 @@
       "after": ["<Esc>"]
     }
   ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [":"],
+      "commands": ["workbench.actions.showCommands"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"],
+      "silent": true
+    }
+  ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "f", "s"],
@@ -78,6 +90,10 @@
     {
       "before": ["]", "d"],
       "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
     }
   ],
 
@@ -93,6 +109,7 @@
   "editor.fontLigatures": true,
   "editor.guides.bracketPairsHorizontal": false,
   "editor.guides.indentation": false,
+  "editor.hover.enabled": false,
   "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "all",
   "editor.showFoldingControls": "never",
@@ -111,10 +128,19 @@
   "telemetry.telemetryLevel": "off",
   "editor.guides.highlightActiveBracketPair": false,
   "workbench.startupEditor": "none",
+
+  /**
+   * Front-end development
+   */
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+
+  /**
+   * Extensions
+   */
+  "nxConsole.showNodeVersionOnStartup": false
 }
