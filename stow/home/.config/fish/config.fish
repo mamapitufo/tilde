@@ -75,3 +75,9 @@ end
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# TODO: replace this with a proper dotenv implementation
+set -l dotenv ~/.config/fish/dotenv.fish
+if test -f $dotenv
+	source $dotenv
+end

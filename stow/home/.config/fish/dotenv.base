@@ -1,0 +1,2 @@
+# Base .env file, copy to dotenv.fish in ~/.config/fish
+set IPINFO_TOKEN <token-here>
