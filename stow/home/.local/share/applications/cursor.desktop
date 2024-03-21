@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Cursor
+Comment=The AI-first code editor
+GenericName=Text Editor
+Exec=/home/mamapitufo/Library/cursor-0.29.1x86_64.AppImage
+Icon=code
+Type=Application
+StartupNotify=false
+StartupWMClass=Cursor
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;application/x-code-workspace;
+Actions=new-empty-window;
+Keywords=cursor;
