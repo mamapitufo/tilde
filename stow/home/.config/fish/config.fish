@@ -56,10 +56,6 @@ alias disown-all "disown (jobs -g)"
 
 alias jstree "tree -I node_modules"
 
-alias vpn-on "doas /usr/bin/protonvpn connect --cc"
-alias vpn-off "doas /usr/bin/protonvpn disconnect"
-alias vpn-status "doas /usr/bin/protonvpn status"
-
 if status is-interactive; and test $TERM = "xterm-kitty"
   alias tmux "tmux -2"
 end
