@@ -16,6 +16,7 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,preview' -- Always show complete, force a selection
 vim.o.confirm = true -- Ask to save when quitting unsaved buffers
+vim.o.wrap = true
 
 -- file & buffer navigation
 vim.o.autowrite = true -- Write file when leaving a modified buffer
@@ -29,9 +30,11 @@ vim.o.wildmode = 'longest:full,full'
 -- system
 vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim.
 vim.o.grepprg = 'rg --vimgrep'
-vim.o.spelllang = en_gb, en, es, fr
+vim.o.spelllang = 'en_gb,en,es,fr'
 -- vim.o.isfname:remove '='                    -- `=` is not part of a filename in `gf`, for example
 
 -- persistence
 vim.o.backupdir = vim.fn.stdpath 'data' .. '/backup//'
 vim.o.undodir = vim.fn.stdpath 'data' .. '/undo//'
+
+-- vim: ts=2 sts=2 sw=2 et
