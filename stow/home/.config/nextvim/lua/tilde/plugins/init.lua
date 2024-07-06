@@ -40,6 +40,29 @@ return {
       vim.keymap.del({ 'n', 'i', 'x' }, '<C-s>')
     end,
   },
+
+  { -- keymap hints
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
+    config = function(_, opts)
+      local wk = require 'which-key'
+      wk.setup(opts)
+      wk.register {
+        ['<leader>'] = {
+          b = { name = '+buffer' },
+          c = { name = '+code' },
+          d = { name = '+diagnostics' },
+          f = { name = '+file' },
+          g = { name = '+git' },
+          gh = { name = '+hunks' },
+          q = { name = '+quit' },
+          s = { name = '+search' },
+          t = { name = '+toggle' },
+          w = { name = '+window' },
+        },
+      }
+    end,
+  },
 }
 
 -- vim: ts=2 sts=2 sw=2 et

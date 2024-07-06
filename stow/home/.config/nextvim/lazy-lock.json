@@ -1,6 +1,7 @@
 {
-  "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
-  "lush.nvim": { "branch": "main", "commit": "e8a58f36c256af65cda36878f6f2024a612154c3" },
-  "mini.basics": { "branch": "main", "commit": "6bc07c0c5f10aff91e7f17005b4c91cdb08b194d" },
-  "zenbones.nvim": { "branch": "main", "commit": "510d12c088ed45a410371c63ebd62ffb54c1615f" }
+  "lazy.nvim": { "branch": "main", "commit": "6ca23c15f64e88e3ba26be9795343c4c7f2ee851" },
+  "lush.nvim": { "branch": "main", "commit": "7c0e27f50901481fe83b974493c4ea67a4296aeb" },
+  "mini.basics": { "branch": "main", "commit": "833934f57f372ff3d00556efcb4b1506392972c5" },
+  "which-key.nvim": { "branch": "main", "commit": "df400b7b1af36864dfc69d7254a37ac4bc69d2fd" },
+  "zenbones.nvim": { "branch": "main", "commit": "e9ba8305f65524f9355515cdd8704b2c6ba2def6" }
 }
