@@ -63,6 +63,24 @@ return {
       }
     end,
   },
+
+  { -- detect tabstop and shiftwidth automatically
+    'tpope/vim-sleuth',
+    event = 'VeryLazy',
+  },
+
+  { -- vim sugar for shell commands
+    'tpope/vim-eunuch',
+    cmd = { 'Remove', 'Delete', 'Move', 'Chmod', 'Mkdir', 'SudoWrite', 'SudoEdit' },
+  },
+
+  { -- go fwd/back with bracket pairs
+    'echasnovski/mini.bracketed',
+    event = 'VeryLazy',
+    config = function(_, opts)
+      require('mini.bracketed').setup(opts)
+    end,
+  },
 }
 
 -- vim: ts=2 sts=2 sw=2 et
