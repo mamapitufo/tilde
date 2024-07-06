@@ -30,15 +30,14 @@ return {
           win_borders = 'single',
         },
         mappings = {
-          option_toggle_prefix = [[<leader>t]],
+          option_toggle_prefix = '<leader>t',
         },
         autocommands = {
           basic = true,
         },
       }
 
-      vim.keymap.del({ 'n', 'v', 'i' }, '<C-s>')
-      vim.keymap.del({ 'n', 'i' }, '<C-z>')
+      vim.keymap.del({ 'n', 'i', 'x' }, '<C-s>')
     end,
   },
 }
