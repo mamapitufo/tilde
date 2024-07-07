@@ -81,6 +81,29 @@ return {
       require('mini.bracketed').setup(opts)
     end,
   },
+
+  { -- close buffer without changing layout
+    'echasnovski/mini.bufremove',
+    keys = {
+      {
+        '<leader>bd',
+        function()
+          require('mini.bufremove').delete(0, false)
+        end,
+        desc = 'Delete buffer',
+      },
+      {
+        '<leader>bD',
+        function()
+          require('mini.bufremove').delete(0, true)
+        end,
+        desc = 'Delete buffer',
+      },
+    },
+    config = function(_, opts)
+      require('mini.bufremove').setup(opts)
+    end,
+  },
 }
 
 -- vim: ts=2 sts=2 sw=2 et
