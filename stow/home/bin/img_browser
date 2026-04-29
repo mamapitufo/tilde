@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 exec feh -FdxB black \
-	--edit --on-last-slide quit --sort mtime \
+	--edit --on-last-slide quit --sort mtime --reverse \
 	--action 'mv --no-clobber %F ~/Documents/img/%N' \
 	--action9 'cp --dereference --no-clobber %F ~/Documents/img/%N' \
 	$@
