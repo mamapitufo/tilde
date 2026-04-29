@@ -1,14 +1,14 @@
 #!/usr/bin/env fish
 
 echo "tilde update"
-doas id >/dev/null
+sudo id >/dev/null
 if test $status -ne 0
   log_error "Failed authentication."
   exit 1
 end
 
 log_info "Updating system package lists..."
-doas xbps-install -S
+sudo xbps-install -S
 log_info "Package list update done."
 
 void-update
