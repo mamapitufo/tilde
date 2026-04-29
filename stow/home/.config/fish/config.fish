@@ -11,7 +11,7 @@ set --universal fish_user_paths \
 #-- tide prompt config
 set --global tide_left_prompt_frame_enabled true
 set --global tide_left_prompt_prefix ' '
-set --global tide_lfet_prompt_items pwd git newline character
+set --global tide_left_prompt_items pwd git newline character
 set --global tide_right_prompt_frame_enabled true
 set --global tide_right_prompt_suffix ' '
 set --global tide_right_prompt_items time newline status cmd_duration context jobs

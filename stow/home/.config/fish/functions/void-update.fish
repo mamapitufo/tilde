@@ -1,6 +1,6 @@
 function void-update --description "Update Void packages"
   log_info "Updating Void packages..."
-  doas xbps-install --update
+  sudo xbps-install --update
   set --local install_status $status
   switch $install_status
     case 0
